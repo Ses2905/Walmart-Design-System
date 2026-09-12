@@ -3,9 +3,9 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const sizes = {
-  sm: { dollars: "text-xl", small: "text-[11px]", raise: "-translate-y-1" },
+  sm: { dollars: "text-h4", small: "text-[11px]", raise: "-translate-y-1" },
   md: { dollars: "text-3xl", small: "text-sm", raise: "-translate-y-1.5" },
-  lg: { dollars: "text-5xl", small: "text-lg", raise: "-translate-y-2.5" },
+  lg: { dollars: "text-5xl", small: "text-body-lg", raise: "-translate-y-2.5" },
 } as const;
 
 /**

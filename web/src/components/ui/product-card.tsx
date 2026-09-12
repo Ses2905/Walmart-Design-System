@@ -91,7 +91,7 @@ function ProductCard({
         <div className="text-[13px] text-ink-secondary">{fulfillment}</div>
         <button
           onClick={onAdd}
-          className="mt-1 inline-flex h-10 w-fit items-center justify-center gap-1.5 rounded-pill border-[1.5px] border-gray-900 bg-white px-[22px] font-sans text-[15px] font-bold text-bentonville-blue transition-colors duration-fast hover:bg-gray-50"
+          className="mt-1 inline-flex h-10 w-fit items-center justify-center gap-1.5 rounded-pill border-[1.5px] border-gray-900 bg-white px-[22px] font-sans text-body font-bold text-bentonville-blue transition-colors duration-fast hover:bg-gray-50"
         >
           <Icon name="add-to-cart" size={18} /> Add
         </button>

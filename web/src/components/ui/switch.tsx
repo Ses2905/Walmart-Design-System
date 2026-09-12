@@ -46,7 +46,7 @@ function Switch({
     <label
       htmlFor={swId}
       className={cn(
-        "inline-flex items-center gap-3 font-sans text-[15px] text-ink cursor-pointer",
+        "inline-flex items-center gap-3 font-sans text-body text-ink cursor-pointer",
         props.disabled && "cursor-not-allowed opacity-50"
       )}
     >

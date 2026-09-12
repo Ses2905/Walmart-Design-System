@@ -30,7 +30,7 @@ function Input({
 }) {
   const reactId = React.useId();
   const inputId = id || reactId;
-  const sizeClass = size === "lg" ? "h-14 px-[18px] text-[17px]" : "h-12 px-4 text-base";
+  const sizeClass = size === "lg" ? "h-14 px-[18px] text-h5" : "h-12 px-4 text-base";
 
   return (
     <div className={cn("flex flex-col gap-1.5 font-sans", containerClassName)}>

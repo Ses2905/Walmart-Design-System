@@ -25,7 +25,7 @@ const buttonVariants = cva(
       size: {
         sm: "h-9 px-4 text-sm gap-1.5 [&_svg]:size-4",
         md: "h-12 px-6 text-base gap-2 [&_svg]:size-5",
-        lg: "h-14 px-8 text-[17px] gap-2 [&_svg]:size-[22px]",
+        lg: "h-14 px-8 text-h5 gap-2 [&_svg]:size-[22px]",
       },
       block: {
         true: "flex w-full",

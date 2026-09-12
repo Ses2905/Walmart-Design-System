@@ -50,7 +50,7 @@ function Checkbox({
     <label
       htmlFor={cbId}
       className={cn(
-        "inline-flex items-center gap-2.5 font-sans text-[15px] text-ink cursor-pointer",
+        "inline-flex items-center gap-2.5 font-sans text-body text-ink cursor-pointer",
         props.disabled && "cursor-not-allowed opacity-50"
       )}
     >
