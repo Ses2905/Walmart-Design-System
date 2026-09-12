@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"WalmartDesignSystem_e58acd","components":[{"name":"Price","sourcePath":"components/commerce/Price.jsx"},{"name":"ProductCard","sourcePath":"components/commerce/ProductCard.jsx"},{"name":"Rating","sourcePath":"components/commerce/Rating.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Checkbox","sourcePath":"components/core/Checkbox.jsx"},{"name":"Chip","sourcePath":"components/core/Chip.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"Switch","sourcePath":"components/core/Switch.jsx"},{"name":"ICONS","sourcePath":"components/core/icon-data.js"},{"name":"ICON_NAMES","sourcePath":"components/core/icon-data.js"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"components/commerce/Price.jsx":"463cd21148ba","components/commerce/ProductCard.jsx":"93e64de073b6","components/commerce/Rating.jsx":"674468c2d990","components/core/Badge.jsx":"67f74dd7fb6a","components/core/Button.jsx":"2035521dbac1","components/core/Card.jsx":"f0fa7ac6efa7","components/core/Checkbox.jsx":"21013e67bcd4","components/core/Chip.jsx":"ec86b240b33a","components/core/Icon.jsx":"e402f656f042","components/core/Input.jsx":"431401dc9033","components/core/Switch.jsx":"7bae09a9e6fc","components/core/icon-data.js":"1ecb807554ef","components/navigation/Tabs.jsx":"124f2e3d82df","ui_kits/storefront/Cart.jsx":"b1f3cf348d00","ui_kits/storefront/Header.jsx":"951aad270d31","ui_kits/storefront/Homepage.jsx":"cf820b3efadf","ui_kits/storefront/ProductDetail.jsx":"7c0c380cda92","ui_kits/storefront/SearchResults.jsx":"19f13b784490","ui_kits/storefront/data.js":"3552fb118050"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"WalmartDesignSystem_e58acd","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Checkbox","sourcePath":"components/core/Checkbox.jsx"},{"name":"Chip","sourcePath":"components/core/Chip.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"Switch","sourcePath":"components/core/Switch.jsx"},{"name":"Table","sourcePath":"components/core/Table.jsx"},{"name":"ICONS","sourcePath":"components/core/icon-data.js"},{"name":"ICON_NAMES","sourcePath":"components/core/icon-data.js"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"45d4ad5710ae","components/core/Button.jsx":"a7a02dbae632","components/core/Card.jsx":"f0fa7ac6efa7","components/core/Checkbox.jsx":"21013e67bcd4","components/core/Chip.jsx":"ec86b240b33a","components/core/Icon.jsx":"e402f656f042","components/core/Input.jsx":"be16d7c9debc","components/core/Switch.jsx":"7bae09a9e6fc","components/core/Table.jsx":"f4b9dafa043f","components/core/icon-data.js":"f6d78e081889","components/navigation/Tabs.jsx":"3491369c296d"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -8,189 +8,12 @@ const __ds_scope = {};
 
 (__ds_ns.__errors = __ds_ns.__errors || []);
 
-// components/commerce/Price.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/**
- * Walmart price display. Big, tight, navy-black numerals with the dollar
- * sign and cents set smaller and raised — the supermarket price convention.
- */
-function Price({
-  value,
-  was,
-  size = 'md',
-  savings,
-  align = 'left',
-  style,
-  ...rest
-}) {
-  const sizes = {
-    sm: {
-      dollars: 20,
-      small: 11,
-      raise: -4
-    },
-    md: {
-      dollars: 30,
-      small: 14,
-      raise: -7
-    },
-    lg: {
-      dollars: 46,
-      small: 18,
-      raise: -11
-    }
-  };
-  const s = sizes[size] || sizes.md;
-  const [dollars, cents] = Number(value).toFixed(2).split('.');
-  const computedSavings = savings != null ? savings : was != null ? was - value : null;
-  return /*#__PURE__*/React.createElement("div", _extends({
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: align === 'left' ? 'flex-start' : 'center',
-      gap: 2,
-      fontFamily: 'var(--font-sans)',
-      ...style
-    }
-  }, rest), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'flex-start',
-      color: 'var(--text-price)',
-      lineHeight: 1
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: s.small,
-      fontWeight: 'var(--fw-bold)',
-      transform: `translateY(${s.raise}px)`
-    }
-  }, "$"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: s.dollars,
-      fontWeight: 'var(--fw-black)',
-      letterSpacing: '-0.02em'
-    }
-  }, dollars), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: s.small,
-      fontWeight: 'var(--fw-bold)',
-      transform: `translateY(${s.raise}px)`
-    }
-  }, cents)), (was != null || computedSavings != null) && /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 8,
-      fontSize: size === 'lg' ? 13 : 12
-    }
-  }, was != null && /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: 'var(--text-tertiary)',
-      textDecoration: 'line-through'
-    }
-  }, "$", Number(was).toFixed(2)), computedSavings != null && computedSavings > 0 && /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: 'var(--text-savings)',
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, "You save $", Number(computedSavings).toFixed(2))));
-}
-Object.assign(__ds_scope, { Price });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/commerce/Price.jsx", error: String((e && e.message) || e) }); }
-
-// components/commerce/Rating.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const Star = ({
-  fill,
-  size
-}) => /*#__PURE__*/React.createElement("svg", {
-  width: size,
-  height: size,
-  viewBox: "0 0 20 20",
-  style: {
-    display: 'block'
-  },
-  "aria-hidden": "true"
-}, /*#__PURE__*/React.createElement("path", {
-  d: "M10 1.6l2.47 5.01 5.53.8-4 3.9.94 5.5L10 14.22 5.06 16.81 6 11.31l-4-3.9 5.53-.8z",
-  fill: fill
-}));
-
-/**
- * Star rating with Walmart's Everyday-Blue stars. Read-only by default;
- * optionally shows the numeric count.
- */
-function Rating({
-  value = 0,
-  count,
-  size = 16,
-  showValue = false,
-  style,
-  ...rest
-}) {
-  const full = Math.round(value * 2) / 2;
-  return /*#__PURE__*/React.createElement("div", _extends({
-    style: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 6,
-      fontFamily: 'var(--font-sans)',
-      ...style
-    }
-  }, rest), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'inline-flex',
-      gap: 1
-    },
-    "aria-label": `${value} out of 5 stars`
-  }, [0, 1, 2, 3, 4].map(i => {
-    const pct = Math.max(0, Math.min(1, full - i));
-    return /*#__PURE__*/React.createElement("span", {
-      key: i,
-      style: {
-        position: 'relative',
-        width: size,
-        height: size
-      }
-    }, /*#__PURE__*/React.createElement(Star, {
-      fill: "var(--wm-gray-300)",
-      size: size
-    }), pct > 0 && /*#__PURE__*/React.createElement("span", {
-      style: {
-        position: 'absolute',
-        inset: 0,
-        width: `${pct * 100}%`,
-        overflow: 'hidden'
-      }
-    }, /*#__PURE__*/React.createElement(Star, {
-      fill: "var(--wm-everyday-blue)",
-      size: size
-    })));
-  })), showValue && /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: size * 0.82,
-      fontWeight: 'var(--fw-medium)',
-      color: 'var(--text-primary)'
-    }
-  }, Number(value).toFixed(1)), count != null && /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: size * 0.82,
-      color: 'var(--text-link)'
-    }
-  }, "(", count.toLocaleString(), ")"));
-}
-Object.assign(__ds_scope, { Rating });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/commerce/Rating.jsx", error: String((e && e.message) || e) }); }
-
 // components/core/Badge.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
- * Small status/label pill. Walmart uses these for delivery promises,
- * stock state, "Rollback", "Best seller", etc.
+ * Small status/label pill for campaign and ad group state — "Active",
+ * "Under review", "Optimized", "Rejected", "Sponsored", etc.
  */
 function Badge({
   variant = 'neutral',
@@ -380,53 +203,127 @@ function Switch({
 Object.assign(__ds_scope, { Switch });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Switch.jsx", error: String((e && e.message) || e) }); }
 
+// components/core/Table.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/**
+ * Data table — campaign, ad group, and keyword lists. Numeric columns
+ * (impressions, clicks, spend) get `data-numeric` so tokens/base.css's
+ * `.wm-numeric` rule renders them in Everyday Sans Mono with tabular
+ * figures, matching the rest of the system's numeral treatment.
+ */
+function Table({
+  columns = [],
+  rows = [],
+  getRowKey,
+  style,
+  ...rest
+}) {
+  const [hoverIdx, setHoverIdx] = React.useState(null);
+  return /*#__PURE__*/React.createElement("div", _extends({
+    style: {
+      overflowX: 'auto',
+      border: '1px solid var(--border-subtle)',
+      borderRadius: 'var(--radius-md)',
+      fontFamily: 'var(--font-sans)',
+      ...style
+    }
+  }, rest), /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse',
+      fontSize: 'var(--text-sm)'
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+    style: {
+      background: 'var(--color-surface-sunken)'
+    }
+  }, columns.map(col => /*#__PURE__*/React.createElement("th", {
+    key: col.key,
+    style: {
+      textAlign: col.align === 'right' ? 'right' : 'left',
+      padding: '12px 16px',
+      fontSize: 'var(--text-xs)',
+      fontWeight: 'var(--fw-bold)',
+      textTransform: 'uppercase',
+      letterSpacing: 'var(--ls-wide)',
+      color: 'var(--text-secondary)',
+      borderBottom: '1px solid var(--border-subtle)',
+      whiteSpace: 'nowrap'
+    }
+  }, col.label)))), /*#__PURE__*/React.createElement("tbody", null, rows.map((row, i) => /*#__PURE__*/React.createElement("tr", {
+    key: getRowKey ? getRowKey(row) : i,
+    onMouseEnter: () => setHoverIdx(i),
+    onMouseLeave: () => setHoverIdx(h => h === i ? null : h),
+    style: {
+      background: hoverIdx === i ? 'var(--color-surface-sunken)' : 'transparent',
+      borderBottom: i === rows.length - 1 ? 'none' : '1px solid var(--border-subtle)',
+      transition: 'background var(--dur-fast)'
+    }
+  }, columns.map(col => /*#__PURE__*/React.createElement("td", {
+    key: col.key,
+    "data-numeric": col.numeric || undefined,
+    style: {
+      textAlign: col.align === 'right' || col.numeric ? 'right' : 'left',
+      padding: '14px 16px',
+      color: 'var(--text-primary)',
+      whiteSpace: 'nowrap'
+    }
+  }, col.render ? col.render(row) : row[col.key])))))));
+}
+Object.assign(__ds_scope, { Table });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Table.jsx", error: String((e && e.message) || e) }); }
+
 // components/core/icon-data.js
 try { (() => {
 // Auto-generated Walmart functional icon set.
-// Source: Walmart Brand Asset Library (Functional Icons). Single-weight line icons.
-// Each value is an inline <svg> using fill="currentColor" and a viewBox (no width/height),
-// so the Icon component can size via CSS and tint via color.
+// Source: assets/icons/*.svg (regenerated from the clean, full-precision source
+// files — the design system's own pre-minified icon-data.js had corrupted path
+// data in 10/40 icons, a scientific-notation bug in its minifier, confirmed by
+// rendering every icon headlessly and diffing against these source files.
+// Each value is an inline <svg> using fill="currentColor" and a viewBox (no
+// width/height), so the Icon component can size via CSS and tint via color.
 const ICONS = {
-  "add-to-cart": "<svg viewBox=\"0 0 42 39\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-544 -161)\"><g><path d=\"M14.89 11.54 22.05 11.54 22.05 18.71C22.06 18.88 22.19 19.02 22.36 19.02L24.6 19.02C24.77 19.02 24.91 18.88 24.91 18.71L24.91 11.54 32.07 11.54C32.24 11.54 32.38 11.4 32.38 11.23L32.38 9C32.38 8.83 32.24 8.69 32.07 8.69L24.91 8.69 24.91 1.52C24.91 1.35 24.77 1.21 24.6 1.21L22.36 1.21C22.19 1.21 22.06 1.35 22.05 1.52L22.05 8.69 14.89 8.69C14.72 8.69 14.58 8.83 14.58 9L14.58 11.23C14.58 11.4 14.72 11.54 14.89 11.54Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 545 162.06)\"></path><path d=\"M17.15 30.66C15.16 30.66 13.55 32.27 13.55 34.25 13.55 36.24 15.16 37.85 17.15 37.85 19.14 37.85 20.75 36.24 20.75 34.25 20.75 32.27 19.14 30.66 17.15 30.66ZM17.15 35.84C16.27 35.84 15.56 35.13 15.56 34.25 15.56 33.38 16.27 32.66 17.15 32.66 18.03 32.66 18.74 33.38 18.74 34.25 18.74 35.13 18.03 35.84 17.15 35.84Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 545 162.06)\"></path><path d=\"M29.77 30.66C27.78 30.66 26.17 32.27 26.17 34.25 26.17 36.24 27.78 37.85 29.77 37.85 31.76 37.85 33.37 36.24 33.37 34.25 33.37 32.27 31.76 30.66 29.77 30.66ZM29.77 35.84C28.89 35.84 28.18 35.13 28.18 34.25 28.18 33.38 28.89 32.66 29.77 32.66 30.65 32.66 31.36 33.38 31.36 34.25 31.36 35.13 30.65 35.84 29.77 35.84Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 545 162.06)\"></path><path d=\"M40.19 7.25C39.64 7.13 39.11 7.48 38.99 8.03 38.99 8.03 38.99 8.03 38.99 8.03L36.09 22.15 10.84 22.15 8.03 8.51 7.61 6.5 6.98 3.43C6.85 2.79 6.41 2.26 5.81 2L1.4 0.08C0.9-0.14 0.3 0.1 0.08 0.6-0.14 1.11 0.1 1.7 0.6 1.93L5.01 3.84 9.87 27.43C10.06 28.36 10.89 29.03 11.84 29.03L35.9 29.03C36.46 29.03 36.9 28.58 36.9 28.03 36.9 27.47 36.46 27.02 35.9 27.02L11.84 27.02 11.25 24.15 36.09 24.15C37.04 24.15 37.86 23.48 38.05 22.55L40.98 8.44C41.09 7.9 40.74 7.36 40.19 7.25 40.19 7.25 40.19 7.25 40.19 7.25Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 545 162.06)\"></path></g></g></svg>",
-  "bag": "<svg viewBox=\"0 0 31 37\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-490 -252)\"><g><path d=\"M28.53 9.17 23.63 9.17 23.63 6.59C23.64 2.96 20.7 0.01 17.07 1.45e-06 16.260 15.45 0.15 14.69 0.44 11.3-0.87 7.5 0.83 6.2 4.22 5.91 4.97 5.76 5.78 5.76 6.59L5.76 9.17 0.86 9.17C0.39 9.17 9.66e-05 9.55-7.5e-09 10.03-2.77e-08 10.03-3.07e-08 10.03-1.65e-08 10.03L0 36.14C-9.18e-05 36.61 0.39 37 0.86 37 0.86 37 0.86 37 0.86 37L28.53 37C29 37 29.39 36.62 29.39 36.14 29.39 36.14 29.39 36.14 29.39 36.14L29.39 10.03C29.39 9.55 29 9.17 28.53 9.17 28.53 9.17 28.53 9.17 28.53 9.17ZM27.67 35.28 1.72 35.28 1.72 10.89 27.67 10.89ZM17.04 1.72C19.72 1.72 21.9 3.9 21.91 6.59L21.91 9.17 18.94 9.17 18.94 6.59C18.94 4.75 18.17 2.99 16.8 1.74 16.88 1.74 16.96 1.72 17.04 1.72ZM14.69 2.35C16.25 3.2 17.22 4.82 17.22 6.59L17.22 9.17 12.17 9.17 12.17 6.59C12.17 4.82 13.14 3.2 14.69 2.35ZM7.48 6.59C7.48 3.9 9.66 1.72 12.35 1.72 12.43 1.72 12.51 1.74 12.58 1.74 11.22 2.99 10.45 4.75 10.44 6.59L10.44 9.17 7.48 9.17Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 491 252)\"></path><path d=\"M14.69 20.43C15.07 20.43 15.39 20.23 15.43 19.98L15.8 15.73C15.8 15.31 15.31 14.97 14.69 14.97 14.08 14.97 13.58 15.31 13.58 15.73L13.96 19.98C14 20.23 14.31 20.43 14.69 20.43Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 491 252)\"></path><path d=\"M20.51 27.72C20.87 27.93 21.41 27.68 21.73 27.14 22.03 26.61 21.98 26.01 21.62 25.8L17.75 24C17.51 23.91 17.18 24.08 16.99 24.41 16.8 24.74 16.82 25.11 17.02 25.28Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 491 252)\"></path><path d=\"M14.69 31.2C15.31 31.2 15.8 30.86 15.8 30.44L15.43 26.19C15.39 25.93 15.07 25.74 14.69 25.74 14.31 25.74 14 25.93 13.96 26.19L13.58 30.44C13.58 30.86 14.08 31.2 14.69 31.2Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 491 252)\"></path><path d=\"M7.77 20.37 11.64 22.17C11.88 22.26 12.21 22.09 12.4 21.76 12.59 21.43 12.57 21.06 12.37 20.9L8.88 18.45C8.52 18.24 7.97 18.49 7.66 19.02 7.35 19.56 7.41 20.16 7.77 20.37Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 491 252)\"></path><path d=\"M17.75 22.17 21.62 20.37C21.98 20.16 22.03 19.56 21.73 19.02 21.41 18.49 20.87 18.24 20.51 18.45L17.02 20.9C16.82 21.06 16.8 21.43 16.99 21.76 17.18 22.09 17.51 22.26 17.75 22.17Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 491 252)\"></path><path d=\"M8.88 27.72 12.37 25.28C12.57 25.11 12.59 24.74 12.4 24.41 12.21 24.08 11.88 23.91 11.64 24L7.77 25.8C7.41 26.01 7.35 26.61 7.66 27.14 7.97 27.68 8.52 27.93 8.88 27.72Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 491 252)\"></path></g></g></svg>",
-  "cart": "<svg viewBox=\"0 0 41 38\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-485 -160)\"><g><path d=\"M16.76 29.96C14.82 29.96 13.25 31.54 13.25 33.48 13.25 35.42 14.82 37 16.76 37 18.71 37 20.28 35.42 20.28 33.48 20.28 31.54 18.71 29.97 16.76 29.96ZM16.76 35.03C15.91 35.03 15.21 34.34 15.21 33.48 15.21 32.62 15.91 31.93 16.76 31.93 17.62 31.93 18.32 32.62 18.32 33.48 18.32 34.34 17.62 35.03 16.76 35.03Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 486.01 161)\"></path><path d=\"M29.1 29.96C27.16 29.96 25.58 31.54 25.58 33.48 25.58 35.42 27.16 37 29.1 37 31.04 37 32.61 35.42 32.61 33.48 32.61 31.54 31.04 29.97 29.1 29.96ZM29.1 35.03C28.24 35.03 27.54 34.34 27.54 33.48 27.54 32.62 28.24 31.93 29.1 31.93 29.96 31.93 30.65 32.62 30.65 33.48 30.65 34.34 29.95 35.03 29.1 35.03Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 486.01 161)\"></path><path d=\"M15.9 13.41 29.96 13.41C30.51 13.41 30.95 12.98 30.95 12.43 30.95 11.89 30.51 11.45 29.97 11.45 29.96 11.45 29.96 11.45 29.96 11.45L15.9 11.45C15.35 11.45 14.91 11.89 14.92 12.43 14.92 12.97 15.35 13.41 15.9 13.41Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 486.01 161)\"></path><path d=\"M29.2 16.55 16.66 16.55C16.12 16.55 15.68 16.99 15.68 17.53 15.68 18.07 16.12 18.51 16.66 18.51L29.2 18.51C29.74 18.51 30.18 18.07 30.18 17.53 30.18 16.99 29.74 16.55 29.2 16.55Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 486.01 161)\"></path><path d=\"M39.54 7.08C39.17 6.62 38.61 6.35 38.02 6.35L7.44 6.35 6.82 3.36C6.69 2.73 6.27 2.21 5.68 1.95L1.37 0.08C0.88-0.13 0.3 0.09 0.08 0.59-0.13 1.09 0.09 1.67 0.59 1.88L4.9 3.75 9.65 26.81C9.84 27.72 10.64 28.37 11.57 28.38L35.09 28.38C35.63 28.37 36.07 27.93 36.07 27.39 36.07 26.85 35.63 26.41 35.09 26.41L11.57 26.41 10.99 23.61 35.27 23.61C36.2 23.6 37 22.95 37.19 22.04L39.94 8.71C40.06 8.14 39.91 7.53 39.54 7.08ZM35.27 21.64 10.59 21.64 7.84 8.32 38.02 8.32Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 486.01 161)\"></path></g></g></svg>",
-  "chat": "<svg viewBox=\"0 0 38 38\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-552 -136)\"><g><path d=\"M567.86 158.05C567.61 158.05 567.35 158.05 567.1 158.04 566.59 158.02 566.05 158.01 565.54 158.06 565.13 158.09 564.77 158.48 564.48 158.8 564.41 158.88 564.33 158.96 564.27 159.03 562.81 160.45 561.35 161.86 559.89 163.28L559.79 163.38 559.79 158.73C559.8 158.52 559.7 158.32 559.52 158.2 559.41 158.11 559.27 158.06 559.12 158.05L556.36 158.05 556.36 143.51 580.59 143.51 580.59 149.45C580.59 150.3 581.93 150.3 581.93 149.45L581.93 142.84C581.93 142.47 581.63 142.18 581.26 142.17L555.69 142.17C555.32 142.18 555.02 142.47 555.02 142.84L555.02 158.73C555.02 159.1 555.32 159.39 555.69 159.4L558.45 159.4 558.45 164.96C558.45 165 558.46 165.04 558.47 165.08 558.5 165.32 558.67 165.52 558.91 165.59 558.98 165.62 559.06 165.63 559.14 165.63 559.29 165.63 559.43 165.58 559.54 165.48 559.55 165.48 559.56 165.47 559.57 165.47L565.82 159.4 567.86 159.4C568.29 159.4 568.51 159.06 568.51 158.73 568.52 158.56 568.46 158.4 568.35 158.27 568.23 158.13 568.05 158.05 567.86 158.05Z\" fill=\"currentColor\"></path><path d=\"M587.64 152.4 570.92 152.4C570.13 152.41 569.49 153.04 569.49 153.83L569.49 164.42C569.49 165.2 570.13 165.84 570.92 165.84L581.79 165.84 585.62 169.47C585.94 169.78 586.45 169.76 586.76 169.44 586.9 169.29 586.97 169.1 586.98 168.89L587 165.84 587.64 165.84C588.42 165.84 589.06 165.2 589.06 164.42L589.06 153.83C589.06 153.04 588.42 152.41 587.64 152.4ZM587.72 153.83 587.72 164.42C587.72 164.46 587.68 164.5 587.64 164.5L586.47 164.5C586.03 164.5 585.67 164.86 585.66 165.3L585.64 167.64 582.54 164.71C582.4 164.57 582.2 164.5 582 164.5L570.92 164.5C570.87 164.5 570.83 164.46 570.83 164.42L570.83 153.83C570.83 153.79 570.87 153.75 570.92 153.75L587.64 153.75C587.68 153.75 587.72 153.79 587.72 153.83Z\" fill=\"currentColor\"></path><path d=\"M574.86 158.15 574.86 158.16C574.42 158.6 574.42 159.32 574.86 159.77 575.31 160.22 576.03 160.21 576.48 159.77 576.92 159.32 576.92 158.6 576.48 158.15 576.05 157.73 575.29 157.73 574.86 158.15Z\" fill=\"currentColor\"></path><path d=\"M579.47 157.82C578.84 157.82 578.33 158.33 578.33 158.96 578.33 159.59 578.84 160.1 579.47 160.1 580.1 160.1 580.61 159.59 580.61 158.96 580.61 158.33 580.1 157.82 579.47 157.82Z\" fill=\"currentColor\"></path><path d=\"M583.27 157.82C582.64 157.82 582.13 158.33 582.13 158.96 582.13 159.59 582.64 160.1 583.27 160.1 583.9 160.1 584.41 159.59 584.41 158.96 584.41 158.33 583.9 157.82 583.27 157.82Z\" fill=\"currentColor\"></path><path d=\"M561.04 153.22C560.62 153.22 560.39 153.56 560.39 153.9 560.39 154.23 560.62 154.57 561.04 154.57L566.84 154.57C567.27 154.57 567.49 154.23 567.49 153.9 567.49 153.56 567.27 153.22 566.84 153.22Z\" fill=\"currentColor\"></path><path d=\"M576.79 148.49C576.79 148.15 576.57 147.82 576.14 147.82L561.04 147.82C560.62 147.82 560.39 148.15 560.39 148.49 560.39 148.82 560.62 149.16 561.04 149.16L576.14 149.16C576.57 149.16 576.79 148.82 576.79 148.49Z\" fill=\"currentColor\"></path></g></g></svg>",
-  "checkmark": "<svg viewBox=\"0 0 32 31\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-896 -141)\"><g><path d=\"M29.83 3.63C28.89 2.69 27.21 2.63 26.27 3.63 22.31 7.84 18.35 12.04 14.38 16.25L9.16 10.58C6.92 8.23 3.37 11.79 5.6 14.14 7.96 16.63 10.33 19.12 12.69 21.61 13.61 22.58 15.34 22.58 16.25 21.61 20.21 17.4 24.18 13.2 28.14 8.99L29.83 7.19C30.77 6.2 30.82 4.61 29.83 3.63Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 896 142.01)\"></path><path d=\"M27.05 14.48C27 18.74 24.87 22.76 21.25 25.06 17.65 27.34 13.01 27.66 9.15 25.82 5.38 24.01 2.74 20.46 2.1 16.32 1.46 12.07 3.13 7.73 6.37 4.94 10.45 1.41 16.4 1.05 21.01 3.75 22.1 4.4 23.1 2.69 22 2.05 17.28-0.72 11.28-0.72 6.66 2.28 2.55 4.94 0 9.58 0 14.48 0 19.38 2.55 24.02 6.66 26.68 10.84 29.4 16.24 29.69 20.73 27.59 25.79 25.22 28.96 20.01 29.02 14.48 29.03 13.21 27.06 13.21 27.05 14.48Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 896 142.01)\"></path></g></g></svg>",
-  "clock": "<svg viewBox=\"0 0 41 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-892 -332)\"><g><path d=\"M20.57 6.41C12.76 6.41 6.41 12.76 6.41 20.57 6.41 28.38 12.76 34.73 20.57 34.73 28.37 34.73 34.72 28.38 34.72 20.57 34.72 12.76 28.37 6.41 20.57 6.41ZM29.98 28.56 29.3 27.89C28.91 27.49 28.28 27.48 27.89 27.87 27.49 28.26 27.48 28.89 27.87 29.29 27.87 29.29 27.88 29.3 27.89 29.3L28.56 29.98C26.59 31.66 24.15 32.68 21.57 32.88L21.57 31.92C21.57 31.37 21.12 30.92 20.57 30.92 20.01 30.92 19.57 31.37 19.57 31.92L19.57 32.88C16.99 32.67 14.54 31.66 12.57 29.98L13.25 29.3C13.64 28.91 13.64 28.28 13.25 27.89 12.86 27.49 12.22 27.5 11.83 27.89L11.15 28.56C9.47 26.6 8.46 24.15 8.25 21.57L9.21 21.57C9.77 21.57 10.21 21.12 10.21 20.57 10.21 20.02 9.77 19.57 9.21 19.57L8.25 19.57C8.46 16.99 9.48 14.54 11.16 12.57L11.83 13.25C12.23 13.64 12.86 13.63 13.25 13.23 13.63 12.84 13.63 12.22 13.25 11.83L12.57 11.16C14.54 9.48 16.98 8.46 19.56 8.25L19.56 9.22C19.56 9.77 20.01 10.22 20.56 10.22 21.12 10.22 21.57 9.77 21.57 9.22L21.57 8.25C24.14 8.46 26.59 9.48 28.56 11.16L27.88 11.83C27.49 12.22 27.48 12.85 27.87 13.25 28.25 13.65 28.89 13.65 29.28 13.27 29.29 13.26 29.3 13.26 29.3 13.25L29.98 12.57C31.66 14.54 32.67 16.99 32.88 19.57L31.92 19.57C31.36 19.57 30.92 20.02 30.92 20.57 30.92 21.12 31.36 21.57 31.92 21.57L32.88 21.57C32.67 24.15 31.66 26.6 29.98 28.56Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 893 333)\"></path><path d=\"M20.57 4.67C11.8 4.67 4.67 11.8 4.67 20.56 4.67 29.33 11.8 36.46 20.57 36.46 29.33 36.46 36.46 29.33 36.46 20.56 36.46 11.8 29.33 4.67 20.57 4.67ZM20.57 35.87C12.12 35.87 5.26 29 5.26 20.56 5.26 12.12 12.12 5.25 20.57 5.25 29.01 5.25 35.88 12.12 35.88 20.56 35.88 29 29.01 35.87 20.57 35.87Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 893 333)\"></path><path d=\"M24.33 16.68 22 18.95 21.84 19.11C21.21 18.7 20.4 18.7 19.76 19.09L16.04 15.28C15.86 15.09 15.67 14.91 15.49 14.72 15.03 14.25 14.31 14.97 14.77 15.44L18.67 19.43 19.06 19.83C18.55 20.79 18.9 21.98 19.85 22.49 20.81 23.01 22 22.65 22.51 21.7 22.82 21.13 22.83 20.44 22.53 19.86L24.72 17.72 25.05 17.4C25.24 17.21 25.25 16.86 25.05 16.68 24.85 16.48 24.53 16.48 24.33 16.68ZM20.79 21.79C20.22 21.79 19.76 21.33 19.76 20.76 19.76 20.19 20.22 19.73 20.79 19.73 21.36 19.73 21.82 20.19 21.82 20.76 21.81 21.33 21.35 21.79 20.79 21.79Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 893 333)\"></path></g></g></svg>",
-  "close": "<svg viewBox=\"0 0 34 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-202 -238)\"><g><path d=\"M25.35 5.65C19.91 0.22 11.11 0.22 5.67 5.65 0.24 11.09 0.24 19.9 5.68 25.33 11.11 30.76 19.92 30.76 25.35 25.33 27.96 22.72 29.42 19.18 29.42 15.49 29.43 11.8 27.97 8.26 25.35 5.65ZM23.85 23.83C19.24 28.43 11.78 28.43 7.17 23.83 2.57 19.22 2.57 11.76 7.17 7.15 11.78 2.55 19.24 2.55 23.85 7.15 26.06 9.37 27.3 12.36 27.3 15.49 27.3 18.62 26.06 21.62 23.85 23.83Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 203 239)\"></path><path d=\"M26.47 4.53C20.41-1.51 10.59-1.51 4.53 4.53-1.51 10.58-1.51 20.42 4.53 26.47 10.59 32.51 20.41 32.51 26.47 26.47 32.51 20.42 32.51 10.58 26.47 4.53ZM26.06 26.06C20.23 31.9 10.77 31.9 4.94 26.06-0.9 20.23-0.9 10.77 4.94 4.94 10.77-0.9 20.23-0.9 26.06 4.94 31.89 10.77 31.89 20.22 26.06 26.06Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 203 239)\"></path><path d=\"M19.92 13.58C20.57 12.93 20.62 11.73 19.92 11.08 19.21 10.43 18.12 10.38 17.42 11.08 16.78 11.72 16.15 12.35 15.51 12.99 15.14 12.62 14.76 12.24 14.39 11.87 14.12 11.61 13.86 11.34 13.6 11.08 12.94 10.43 11.74 10.38 11.1 11.08 10.45 11.79 10.4 12.88 11.1 13.58 11.74 14.22 12.37 14.85 13.01 15.49 12.63 15.87 12.26 16.24 11.89 16.61 11.62 16.88 11.36 17.14 11.1 17.4 10.44 18.06 10.4 19.26 11.1 19.9 11.8 20.55 12.9 20.6 13.6 19.9 14.24 19.26 14.87 18.63 15.51 17.99 15.88 18.37 16.26 18.74 16.63 19.11L17.42 19.9C18.07 20.56 19.27 20.6 19.92 19.9 20.57 19.2 20.62 18.1 19.92 17.4 19.28 16.76 18.65 16.13 18.01 15.49 18.38 15.12 18.76 14.74 19.13 14.37 19.39 14.11 19.66 13.84 19.92 13.58Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 203 239)\"></path></g></g></svg>",
-  "coupon": "<svg viewBox=\"0 0 41 24\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-348 -448)\"><g><path d=\"M36.65 2.88C36.85 2.88 37.01 3.04 37.01 3.24L37.01 3.83C37.01 4.03 36.85 4.2 36.65 4.2L36.06 4.2C35.86 4.2 35.7 4.03 35.7 3.83L35.7 3.24C35.7 3.04 35.86 2.88 36.06 2.88Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M36.65 4.45 36.06 4.45C35.72 4.45 35.44 4.18 35.44 3.83L35.44 3.24C35.44 2.9 35.72 2.63 36.06 2.63L36.65 2.63C36.99 2.63 37.27 2.9 37.27 3.24L37.27 3.83C37.27 4.18 36.99 4.45 36.65 4.45ZM36.06 3.14C36 3.14 35.96 3.19 35.96 3.24 35.96 3.24 35.96 3.24 35.96 3.24L35.96 3.83C35.96 3.89 36 3.94 36.06 3.94L36.65 3.94C36.71 3.94 36.76 3.89 36.76 3.83L36.76 3.24C36.76 3.19 36.71 3.14 36.65 3.14Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M38.98 8.13C39.34 8.13 39.64 7.84 39.64 7.48L39.64 0.91C39.64 0.55 39.34 0.26 38.98 0.26L0.91 0.26C0.55 0.26 0.26 0.55 0.26 0.91L0.26 7.48C0.26 7.84 0.55 8.13 0.91 8.13 2.73 8.13 4.19 9.6 4.19 11.42 4.19 13.23 2.73 14.7 0.91 14.7 0.55 14.7 0.26 14.99 0.26 15.35L0.26 21.92C0.26 22.28 0.55 22.57 0.91 22.57L38.98 22.57C39.34 22.57 39.64 22.28 39.64 21.92L39.64 15.35C39.64 14.99 39.34 14.7 38.98 14.7 37.17 14.7 35.7 13.23 35.7 11.42 35.7 9.6 37.17 8.13 38.98 8.13ZM34.43 12.07C34.72 14.09 36.31 15.67 38.33 15.96L38.33 21.26 1.57 21.26 1.57 15.96C4.08 15.6 5.83 13.27 5.46 10.76 5.17 8.74 3.59 7.16 1.57 6.87L1.57 1.57 38.33 1.57 38.33 6.87C35.81 7.23 34.07 9.56 34.43 12.07Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M38.98 22.83 0.91 22.83C0.41 22.83 0 22.42-3.7e-08 21.92L0 15.35C0 14.85 0.41 14.44 0.91 14.44 2.58 14.44 3.94 13.08 3.94 11.41 3.93 9.74 2.58 8.39 0.91 8.39 0.41 8.39 0 7.98-3.7e-08 7.48L0 0.91C0 0.41 0.41 0 0.91-3.7e-08L38.98 0C39.49 0 39.9 0.41 39.9 0.91L39.9 7.48C39.9 7.98 39.49 8.39 38.98 8.39 37.31 8.39 35.96 9.74 35.96 11.41 35.95 13.08 37.31 14.44 38.98 14.44 38.98 14.44 38.98 14.44 38.98 14.44 39.49 14.44 39.9 14.85 39.9 15.35L39.9 21.92C39.9 22.42 39.49 22.83 38.98 22.83ZM0.91 0.51C0.69 0.51 0.51 0.69 0.51 0.91L0.51 7.48C0.51 7.7 0.69 7.88 0.91 7.88 2.87 7.88 4.45 9.46 4.45 11.42 4.45 13.37 2.87 14.95 0.91 14.95 0.69 14.95 0.51 15.13 0.51 15.35L0.51 21.92C0.51 22.14 0.69 22.32 0.91 22.32L38.98 22.32C39.2 22.32 39.38 22.14 39.38 21.92L39.38 15.35C39.38 15.13 39.2 14.95 38.98 14.95 37.03 14.95 35.44 13.37 35.44 11.42 35.44 9.46 37.03 7.88 38.98 7.88 39.2 7.88 39.38 7.7 39.38 7.48L39.38 0.91C39.38 0.69 39.2 0.51 38.98 0.51ZM38.58 21.52 1.31 21.52 1.31 15.74 1.53 15.71C3.9 15.37 5.55 13.17 5.21 10.8 4.93 8.9 3.44 7.4 1.53 7.12L1.31 7.09 1.31 1.31 38.58 1.31 38.58 7.09 38.36 7.12C35.99 7.46 34.35 9.66 34.68 12.03 34.69 12.03 34.69 12.03 34.69 12.03 34.97 13.93 36.46 15.43 38.36 15.71L38.58 15.74ZM1.83 21 38.07 21 38.07 16.18C36.04 15.78 34.48 14.15 34.18 12.1 33.81 9.54 35.52 7.14 38.07 6.65L38.07 1.83 1.83 1.83 1.83 6.65C3.86 7.05 5.42 8.68 5.72 10.73 6.08 13.29 4.37 15.69 1.83 16.18Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M19.95 4.85C18.5 4.85 17.32 6.03 17.32 7.48 17.32 8.93 18.5 10.1 19.95 10.1 21.4 10.1 22.57 8.93 22.57 7.48 22.57 6.03 21.4 4.85 19.95 4.85ZM19.95 8.79C19.22 8.79 18.64 8.2 18.64 7.48 18.64 6.75 19.22 6.16 19.95 6.16 20.67 6.16 21.26 6.75 21.26 7.48 21.26 8.2 20.67 8.79 19.95 8.79 19.95 8.79 19.95 8.79 19.95 8.79Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M19.95 10.36C18.36 10.36 17.06 9.07 17.06 7.48 17.06 5.89 18.35 4.59 19.95 4.59 21.54 4.59 22.83 5.88 22.83 7.48 22.83 9.07 21.54 10.36 19.95 10.36ZM19.95 5.11C18.64 5.11 17.58 6.17 17.58 7.48 17.58 8.78 18.64 9.85 19.95 9.85 21.26 9.85 22.32 8.79 22.32 7.48 22.32 7.48 22.32 7.48 22.32 7.48 22.31 6.17 21.26 5.11 19.95 5.11ZM19.95 9.05C19.08 9.05 18.38 8.34 18.38 7.48 18.38 6.61 19.08 5.91 19.95 5.91 20.81 5.91 21.52 6.61 21.52 7.48 21.52 8.34 20.81 9.05 19.95 9.05ZM19.95 6.42C19.36 6.42 18.89 6.89 18.89 7.48 18.89 8.06 19.36 8.53 19.95 8.53 20.53 8.53 21 8.06 21 7.48 21 7.48 21 7.48 21 7.48 21 6.89 20.53 6.42 19.95 6.42Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M27.82 12.73C26.37 12.73 25.2 13.9 25.2 15.35 25.2 16.8 26.37 17.98 27.82 17.98 29.27 17.98 30.45 16.8 30.45 15.35 30.45 13.9 29.27 12.73 27.82 12.73ZM27.82 16.67C27.1 16.67 26.51 16.08 26.51 15.35 26.51 14.63 27.1 14.04 27.82 14.04 28.55 14.04 29.14 14.63 29.14 15.35 29.14 16.08 28.55 16.67 27.82 16.67 27.82 16.67 27.82 16.67 27.82 16.67Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M27.82 18.24C26.23 18.24 24.94 16.94 24.94 15.35 24.94 13.76 26.23 12.47 27.82 12.47 29.42 12.47 30.71 13.76 30.71 15.35 30.71 16.94 29.42 18.23 27.82 18.24ZM27.82 12.99C26.52 12.99 25.46 14.05 25.46 15.35 25.46 16.66 26.52 17.72 27.82 17.72 29.13 17.72 30.19 16.66 30.19 15.35 30.19 14.05 29.13 12.99 27.82 12.99ZM27.82 16.92C26.96 16.92 26.25 16.22 26.25 15.35 26.26 14.49 26.96 13.78 27.82 13.78 28.69 13.78 29.39 14.49 29.39 15.35 29.39 16.22 28.69 16.92 27.82 16.92ZM27.82 14.3C27.24 14.3 26.77 14.77 26.77 15.35 26.77 15.94 27.24 16.41 27.82 16.41 28.41 16.41 28.88 15.94 28.88 15.35 28.88 14.77 28.41 14.3 27.82 14.3Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M31.32 10.8C31.38 10.8 31.43 10.85 31.43 10.91L31.43 12.01C31.43 12.07 31.38 12.11 31.32 12.11L16.63 12.11C16.57 12.11 16.52 12.07 16.52 12.01L16.52 10.91C16.52 10.85 16.57 10.8 16.63 10.8Z\" fill=\"currentColor\" transform=\"matrix(0.7 -0.71 0.7 0.71 347.98 468.38)\"></path><path d=\"M19.1 17.34C19 17.34 18.91 17.3 18.84 17.23L18.07 16.46C17.92 16.32 17.92 16.09 18.07 15.94 18.07 15.94 18.07 15.94 18.07 15.94L28.41 5.59C28.56 5.45 28.79 5.45 28.93 5.59 28.93 5.59 28.93 5.59 28.93 5.59L29.71 6.37C29.85 6.51 29.85 6.74 29.71 6.89L19.36 17.23C19.29 17.3 19.2 17.34 19.1 17.34ZM18.53 16.2 19.1 16.77 29.24 6.63 28.67 6.06Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M36.65 18.64C36.85 18.64 37.01 18.8 37.01 19L37.01 19.59C37.01 19.79 36.85 19.95 36.65 19.95L36.06 19.95C35.86 19.95 35.7 19.79 35.7 19.59L35.7 19C35.7 18.8 35.86 18.64 36.06 18.64Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M36.65 20.2 36.06 20.2C35.72 20.2 35.44 19.93 35.44 19.59L35.44 19C35.44 18.66 35.72 18.38 36.06 18.38L36.65 18.38C36.99 18.38 37.27 18.66 37.27 19L37.27 19.59C37.27 19.93 36.99 20.2 36.65 20.2ZM36.06 18.89C36 18.89 35.96 18.94 35.96 19 35.96 19 35.96 19 35.96 19L35.96 19.59C35.96 19.64 36 19.69 36.06 19.69 36.06 19.69 36.06 19.69 36.06 19.69L36.65 19.69C36.71 19.69 36.76 19.64 36.76 19.59L36.76 19C36.76 18.94 36.71 18.89 36.65 18.89Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M3.92 2.88C4.12 2.88 4.29 3.04 4.29 3.24L4.29 3.83C4.29 4.03 4.12 4.2 3.92 4.2L3.33 4.2C3.13 4.2 2.97 4.03 2.97 3.83L2.97 3.24C2.97 3.04 3.13 2.88 3.33 2.88Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M3.92 4.45 3.33 4.45C2.99 4.45 2.72 4.18 2.72 3.83L2.72 3.24C2.72 2.9 2.99 2.63 3.33 2.63L3.92 2.63C4.26 2.63 4.54 2.9 4.54 3.24L4.54 3.83C4.54 4.18 4.26 4.45 3.92 4.45ZM3.33 3.14C3.28 3.14 3.23 3.19 3.23 3.24L3.23 3.83C3.23 3.89 3.28 3.94 3.33 3.94L3.92 3.94C3.98 3.94 4.03 3.89 4.03 3.83L4.03 3.24C4.03 3.19 3.98 3.14 3.92 3.14 3.92 3.14 3.92 3.14 3.92 3.14Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M3.92 18.64C4.12 18.64 4.29 18.8 4.29 19L4.29 19.59C4.29 19.79 4.12 19.95 3.92 19.95L3.33 19.95C3.13 19.95 2.97 19.79 2.97 19.59L2.97 19C2.97 18.8 3.13 18.64 3.33 18.64Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M3.92 20.2 3.33 20.2C2.99 20.2 2.72 19.93 2.72 19.59L2.72 19C2.72 18.66 2.99 18.38 3.33 18.38L3.92 18.38C4.26 18.38 4.54 18.66 4.54 19L4.54 19.59C4.54 19.93 4.26 20.2 3.92 20.2ZM3.33 18.89C3.28 18.89 3.23 18.94 3.23 19L3.23 19.59C3.23 19.64 3.28 19.69 3.33 19.69L3.92 19.69C3.98 19.69 4.03 19.64 4.03 19.59 4.03 19.59 4.03 19.59 4.03 19.59L4.03 19C4.03 18.94 3.98 18.89 3.92 18.89 3.92 18.89 3.92 18.89 3.92 18.89Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 2.74C11.87 2.74 12.07 2.94 12.07 3.18L12.07 3.9C12.07 4.14 11.87 4.34 11.63 4.34L10.91 4.34C10.67 4.34 10.47 4.14 10.47 3.9L10.47 3.18C10.47 2.94 10.67 2.74 10.91 2.74Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 4.6 10.91 4.6C10.52 4.6 10.21 4.28 10.21 3.9L10.21 3.18C10.21 2.79 10.53 2.48 10.91 2.48L11.63 2.48C12.02 2.48 12.33 2.79 12.33 3.18L12.33 3.9C12.33 4.28 12.02 4.6 11.63 4.6ZM10.91 2.99C10.81 2.99 10.73 3.08 10.73 3.18L10.73 3.9C10.73 4 10.81 4.08 10.91 4.08L11.63 4.08C11.73 4.08 11.81 4 11.81 3.9L11.81 3.18C11.81 3.08 11.73 2.99 11.63 2.99Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 5.36C11.87 5.36 12.07 5.56 12.07 5.81L12.07 6.52C12.07 6.77 11.87 6.97 11.63 6.97L10.91 6.97C10.67 6.97 10.47 6.77 10.47 6.52L10.47 5.81C10.47 5.56 10.67 5.36 10.91 5.36Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 7.22 10.91 7.22C10.52 7.22 10.21 6.91 10.21 6.52L10.21 5.8C10.21 5.42 10.53 5.11 10.91 5.11L11.63 5.11C12.02 5.11 12.33 5.42 12.33 5.8L12.33 6.52C12.33 6.91 12.02 7.22 11.63 7.22ZM10.91 5.62C10.81 5.62 10.73 5.7 10.73 5.8L10.73 6.52C10.73 6.63 10.81 6.71 10.91 6.71L11.63 6.71C11.73 6.71 11.81 6.63 11.81 6.52L11.81 5.8C11.81 5.7 11.73 5.62 11.63 5.62Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 7.99C11.87 7.99 12.07 8.19 12.07 8.43L12.07 9.15C12.07 9.39 11.87 9.59 11.63 9.59L10.91 9.59C10.67 9.59 10.47 9.39 10.47 9.15L10.47 8.43C10.47 8.19 10.67 7.99 10.91 7.99Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 9.85 10.91 9.85C10.53 9.85 10.21 9.54 10.21 9.15L10.21 8.43C10.21 8.05 10.52 7.73 10.91 7.73L11.63 7.73C12.02 7.73 12.33 8.05 12.33 8.43L12.33 9.15C12.33 9.54 12.02 9.85 11.63 9.85ZM10.91 8.25C10.81 8.25 10.73 8.33 10.73 8.43L10.73 9.15C10.73 9.25 10.81 9.33 10.91 9.33L11.63 9.33C11.73 9.33 11.81 9.25 11.81 9.15L11.81 8.43C11.81 8.33 11.73 8.25 11.63 8.25Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 10.69C11.87 10.69 12.07 10.88 12.07 11.13L12.07 11.85C12.07 12.09 11.87 12.29 11.63 12.29L10.91 12.29C10.67 12.29 10.47 12.09 10.47 11.85L10.47 11.13C10.47 10.88 10.67 10.69 10.91 10.69Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 12.55 10.91 12.55C10.53 12.55 10.21 12.23 10.21 11.85L10.21 11.13C10.21 10.74 10.52 10.43 10.91 10.43L11.63 10.43C12.02 10.43 12.33 10.74 12.33 11.13L12.33 11.85C12.33 12.23 12.02 12.55 11.63 12.55ZM10.91 10.94C10.81 10.94 10.73 11.03 10.73 11.13L10.73 11.85C10.73 11.95 10.81 12.03 10.91 12.03L11.63 12.03C11.73 12.03 11.81 11.95 11.81 11.85L11.81 11.13C11.81 11.03 11.73 10.94 11.63 10.94Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 13.17C11.87 13.17 12.07 13.37 12.07 13.61L12.07 14.33C12.07 14.57 11.87 14.77 11.63 14.77L10.91 14.77C10.67 14.77 10.47 14.57 10.47 14.33L10.47 13.61C10.47 13.37 10.67 13.17 10.91 13.17Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 15.03 10.91 15.03C10.53 15.03 10.21 14.71 10.21 14.33L10.21 13.61C10.21 13.22 10.52 12.91 10.91 12.91L11.63 12.91C12.02 12.91 12.33 13.22 12.33 13.61L12.33 14.33C12.33 14.71 12.02 15.03 11.63 15.03ZM10.91 13.42C10.81 13.42 10.73 13.51 10.73 13.61L10.73 14.33C10.73 14.43 10.81 14.51 10.91 14.51L11.63 14.51C11.73 14.51 11.81 14.43 11.81 14.33L11.81 13.61C11.81 13.51 11.73 13.42 11.63 13.42Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 15.79C11.87 15.79 12.07 15.99 12.07 16.23L12.07 16.95C12.07 17.2 11.87 17.4 11.63 17.4L10.91 17.4C10.67 17.4 10.47 17.2 10.47 16.95L10.47 16.23C10.47 15.99 10.67 15.79 10.91 15.79Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 17.65 10.91 17.65C10.53 17.65 10.21 17.34 10.21 16.95L10.21 16.23C10.21 15.85 10.52 15.54 10.91 15.54L11.63 15.54C12.02 15.54 12.33 15.85 12.33 16.23L12.33 16.95C12.33 17.34 12.02 17.65 11.63 17.65ZM10.91 16.05C10.81 16.05 10.73 16.13 10.73 16.23L10.73 16.95C10.73 17.06 10.81 17.14 10.91 17.14L11.63 17.14C11.73 17.14 11.81 17.06 11.81 16.95L11.81 16.23C11.81 16.13 11.73 16.05 11.63 16.05Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 18.49C11.87 18.49 12.07 18.69 12.07 18.93L12.07 19.65C12.07 19.9 11.87 20.09 11.63 20.09L10.91 20.09C10.67 20.09 10.47 19.9 10.47 19.65L10.47 18.93C10.47 18.69 10.67 18.49 10.91 18.49Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path><path d=\"M11.63 20.35 10.91 20.35C10.53 20.35 10.21 20.04 10.21 19.65L10.21 18.93C10.21 18.55 10.53 18.23 10.91 18.23L11.63 18.23C12.02 18.23 12.33 18.55 12.33 18.93L12.33 19.65C12.33 20.04 12.02 20.35 11.63 20.35ZM10.91 18.75C10.81 18.75 10.73 18.83 10.73 18.93L10.73 19.65C10.73 19.75 10.81 19.84 10.91 19.84L11.63 19.84C11.73 19.84 11.81 19.75 11.81 19.65L11.81 18.93C11.81 18.83 11.73 18.75 11.63 18.75Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 349.05 448)\"></path></g></g></svg>",
-  "credit-card": "<svg viewBox=\"0 0 45 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-893 -352)\"><g><path d=\"M33.64 24.47 28.93 24.47C27.64 24.47 26.59 23.42 26.59 22.12L26.59 17.41C26.59 16.12 27.64 15.07 28.93 15.07L33.64 15.07C34.94 15.07 35.99 16.12 35.99 17.41L35.99 22.12C35.99 23.42 34.94 24.47 33.64 24.47ZM28.93 17.11C28.76 17.11 28.63 17.24 28.63 17.41L28.63 22.12C28.63 22.29 28.76 22.43 28.93 22.43L33.64 22.43C33.81 22.43 33.95 22.29 33.95 22.12L33.95 17.41C33.95 17.24 33.81 17.11 33.64 17.11Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 894 353.04)\"></path><path d=\"M8.51 18.68 21.1 18.68C22.75 18.68 22.75 16.13 21.1 16.13L8.51 16.13C6.86 16.13 6.86 18.68 8.51 18.68Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 894 353.04)\"></path><path d=\"M8.51 23.55 21.1 23.55C22.75 23.55 22.75 20.99 21.1 20.99L8.51 20.99C6.86 20.99 6.86 23.55 8.51 23.55Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 894 353.04)\"></path><path d=\"M40.54 6.41 2.43 6.41 2.43 3.37C2.43 2.85 2.85 2.43 3.37 2.43L39.6 2.43C40.12 2.43 40.54 2.85 40.54 3.37ZM40.54 26.54C40.54 27.06 40.12 27.48 39.6 27.48L3.37 27.48C2.85 27.48 2.43 27.06 2.43 26.54L2.43 12.05 40.54 12.05ZM39.6 0 3.37 0C1.51 0 0 1.51-1.12e-07 3.37L0 26.54C0 28.4 1.51 29.91 3.37 29.91L39.6 29.91C41.46 29.91 42.97 28.4 42.97 26.54L42.97 3.37C42.97 1.51 41.46 0 39.6-5.99e-08\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 894 353.04)\"></path></g></g></svg>",
-  "download": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-784 -138)\"><g><path d=\"M29.09 9.25C27.74 7.8 26.2 6.97 24.34 6.65 24.32 6.65 24.31 6.64 24.3 6.62 23.99 4.76 23.16 3.11 21.71 1.87 20.26 0.62 18.6 0 16.62 0 14.65 0 12.99 0.62 11.53 1.87 10.08 3.12 9.25 4.67 8.93 6.54L7.79 6.54C6.72 6.54 5.66 6.75 4.67 7.17 3.79 7.57 2.98 8.14 2.29 8.83 1.58 9.55 1.02 10.4 0.62 11.32 0.21 12.270 13.3-1.68e-08 14.34-0.01 15.37 0.2 16.4 0.62 17.35 1.02 18.28 1.58 19.12 2.29 19.84 2.91 20.57 3.74 21.09 4.67 21.5 5.66 21.92 6.72 22.13 7.79 22.13L14.39 22.13C14.99 22.13 15.48 21.64 15.48 21.04 15.48 20.43 14.99 19.95 14.39 19.95L7.79 19.95C6.3 19.95 4.88 19.35 3.84 18.28 2.7 17.14 2.18 15.89 2.18 14.34 2.18 12.88 2.7 11.53 3.84 10.39 4.88 9.35 6.23 8.83 7.79 8.83L11.01 8.83 11.01 7.69C11.01 6.13 11.63 4.88 12.67 3.74 13.82 2.7 15.06 2.18 16.62 2.18 18.08 2.18 19.49 2.73 20.56 3.73 20.57 3.74 20.57 3.74 20.57 3.75 21.61 4.89 22.13 6.13 22.13 7.69L22.13 8.83 23.27 8.83C24.83 8.83 26.07 9.35 27.11 10.39 28.26 11.53 28.78 12.88 28.78 14.34 28.78 15.89 28.26 17.14 27.11 18.28 26.07 19.32 24.83 19.95 23.27 19.95 23.27 19.95 22.08 19.98 22.13 21.02 22.18 22.24 23.27 22.13 23.27 22.13 24.31 22.13 25.33 21.92 26.28 21.5 27.21 21.11 28.06 20.55 28.78 19.84 29.4 19.11 30.02 18.28 30.44 17.35 30.85 16.41 30.96 15.48 30.96 14.34 30.96 12.36 30.33 10.7 29.09 9.25Z\" fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 1 784.02 139)\"></path><path d=\"M21.95 25.06C21.87 24.99 21.76 24.99 21.68 25.06L20.27 26.39C20.19 26.47 20.07 26.46 20 26.39 19.96 26.35 19.95 26.3 19.95 26.25L19.95 17.85C19.95 17.75 19.86 17.66 19.75 17.66L17.96 17.66C17.85 17.66 17.76 17.75 17.76 17.85 17.76 17.85 17.76 17.85 17.76 17.85L17.76 26.25C17.76 26.36 17.68 26.45 17.57 26.45 17.52 26.45 17.48 26.43 17.44 26.39L16.03 25.06C15.95 24.99 15.84 24.99 15.76 25.06L14.47 26.35C14.4 26.43 14.4 26.55 14.47 26.63 14.47 26.63 14.47 26.63 14.47 26.63L18.67 30.82C18.74 30.9 18.86 30.9 18.94 30.82L23.24 26.63C23.31 26.55 23.31 26.43 23.24 26.35 23.24 26.35 23.24 26.35 23.24 26.35Z\" fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 1 784.02 139)\"></path></g></g></svg>",
-  "edit": "<svg viewBox=\"0 0 30 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-374 -137)\"><g><path d=\"M22.75 16.53C22.35 16.53 22.03 16.85 22.03 17.25L22.03 28.23C22.03 28.3 21.97 28.37 21.9 28.37L1.57 28.37C1.5 28.37 1.44 28.31 1.44 28.23L1.44 7.4 5.83 7.4C6.69 7.4 7.4 6.69 7.4 5.83L7.4 1.44 21.9 1.44C21.97 1.44 22.03 1.5 22.03 1.57L22.03 3.84C22.03 4.24 22.35 4.56 22.75 4.56 23.15 4.56 23.47 4.24 23.47 3.84L23.47 1.57C23.47 0.7 22.77 0 21.9-3.42e-08L6.68 0C6.49 4.4e-05 6.31 0.08 6.17 0.21L0.21 6.17C0.08 6.31 2.29e-05 6.49 5.6e-09 6.68L0 28.23C0 29.1 0.7 29.8 1.57 29.8L21.9 29.8C22.77 29.8 23.47 29.1 23.47 28.23L23.47 17.25C23.47 16.85 23.15 16.53 22.75 16.53 22.75 16.53 22.75 16.53 22.75 16.53ZM5.96 2.46 5.96 5.83C5.96 5.9 5.9 5.96 5.83 5.96L2.46 5.96Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.04 375 138)\"></path><path d=\"M28.29 5.84 27.44 5C26.49 4.05 24.95 4.05 24 5L17.28 11.72 5.63 11.72C5.23 11.72 4.91 12.04 4.91 12.44 4.91 12.83 5.23 13.16 5.63 13.16L15.84 13.16 11.51 17.49 5.63 17.49C5.23 17.49 4.91 17.81 4.91 18.2 4.91 18.6 5.23 18.92 5.63 18.92L10.07 18.92 10.06 18.94C9.97 19.02 9.91 19.13 9.88 19.25L8.77 23.25 5.63 23.25C5.23 23.25 4.91 23.58 4.91 23.97 4.91 24.37 5.23 24.69 5.63 24.69L9.31 24.69C9.31 24.69 9.47 24.67 9.49 24.67 9.5 24.67 14.03 23.41 14.03 23.41 14.15 23.38 14.26 23.31 14.35 23.22L28.29 9.29C29.24 8.34 29.24 6.8 28.29 5.84ZM12.36 23.06 9.69 23.75C9.61 23.77 9.52 23.72 9.5 23.64 9.49 23.61 9.49 23.58 9.5 23.55L10.27 20.95C10.3 20.86 10.39 20.81 10.48 20.84 10.5 20.85 10.53 20.86 10.54 20.88L12.44 22.8C12.5 22.86 12.5 22.96 12.44 23.02 12.42 23.04 12.39 23.06 12.36 23.06ZM13.7 22.03 11.17 19.45 23.1 7.59 25.7 10.11Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.04 375 138)\"></path></g></g></svg>",
-  "fast-shipping": "<svg viewBox=\"0 0 62 37\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-884 -160)\"><g><path d=\"M60.71 19.74 52.39 6.79C52.22 6.53 51.93 6.37 51.61 6.37L42.4 6.37 42.4 0.96C42.39 0.43 41.97 0.01 41.44 2.33e-08L6.31 0C5.08 0 5.07 1.91 6.31 1.91L40.49 1.91 40.49 3.59 9.36 3.59C9.21 3.59 9.08 3.72 9.08 3.87L9.08 5.16C9.08 5.32 9.21 5.44 9.36 5.44 9.36 5.44 9.36 5.44 9.36 5.44L40.49 5.44 40.49 25.81C40.45 25.79 40.41 25.78 40.37 25.78L25.38 25.78C25.18 25.78 25.02 25.95 25.02 26.15 25.02 26.15 25.02 26.15 25.02 26.15L25.02 27.27C25.02 27.47 25.18 27.63 25.38 27.63 25.38 27.63 25.38 27.63 25.38 27.63L40.37 27.63C40.41 27.63 40.45 27.62 40.49 27.61L40.49 29.45 23.79 29.45C23.26 26.44 20.39 24.42 17.38 24.94 15.05 25.34 13.24 27.18 12.86 29.5 12.81 29.49 12.75 29.48 12.69 29.48L5.01 29.48C4.64 29.48 4.33 29.67 4.33 29.9L4.33 30.91C4.33 31.14 4.64 31.33 5.01 31.33L12.69 31.33C12.75 31.33 12.81 31.32 12.86 31.31 13.36 34.33 16.2 36.38 19.22 35.88 21.55 35.5 23.38 33.69 23.79 31.36L41.44 31.36C41.49 31.36 41.54 31.35 41.59 31.33L44.3 31.33C44.81 34.35 47.66 36.38 50.68 35.88 53.01 35.49 54.84 33.66 55.23 31.33L59.93 31.33C60.44 31.33 60.86 30.92 60.86 30.41 60.86 30.41 60.86 30.41 60.86 30.41L60.86 20.24C60.86 20.06 60.81 19.89 60.71 19.74ZM18.33 34.1C16.28 34.1 14.63 32.45 14.63 30.41 14.63 28.36 16.28 26.71 18.33 26.71 20.37 26.71 22.02 28.36 22.02 30.41 22.02 30.41 22.02 30.41 22.02 30.41 22.02 32.45 20.37 34.1 18.33 34.1ZM53.46 11.91 53.46 11.88 57.64 18.39 46.06 18.39 46.06 11.91ZM49.76 34.1C47.72 34.1 46.06 32.45 46.06 30.41 46.06 28.36 47.72 26.71 49.76 26.71 51.8 26.71 53.46 28.36 53.46 30.41 53.46 30.41 53.46 30.41 53.46 30.41 53.46 32.45 51.8 34.1 49.76 34.1ZM59.01 25.78 59.01 29.48 55.23 29.48C54.72 26.46 51.86 24.43 48.84 24.94 46.52 25.33 44.69 27.15 44.3 29.48L42.4 29.48 42.4 8.22 51.11 8.22 52.3 10.07 45.14 10.07C44.63 10.07 44.22 10.48 44.21 10.99 44.21 10.99 44.21 10.99 44.21 10.99L44.21 19.31C44.21 19.82 44.63 20.24 45.14 20.24 45.14 20.24 45.14 20.24 45.14 20.24L58.83 20.24 59.01 20.51Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M7.24 25.34 11.94 25.34C12.18 25.34 12.36 25.53 12.36 25.76L12.36 26.77C12.36 27 12.18 27.19 11.94 27.19L7.24 27.19C7 27.19 6.82 27 6.82 26.77L6.82 25.76C6.82 25.53 7 25.34 7.24 25.34 7.24 25.34 7.24 25.34 7.24 25.34Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M19.28 12.99 22.36 14.42C22.72 14.44 23.02 14.17 23.05 13.81 23.05 13.67 23.02 13.53 22.94 13.41L20.16 11.46C19.87 11.3 19.44 11.5 19.2 11.92 18.95 12.35 18.99 12.82 19.28 12.99Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M24.79 21.61C25.28 21.61 25.67 21.33 25.67 21L25.37 17.62C25.21 17.3 24.81 17.17 24.49 17.33 24.37 17.39 24.27 17.5 24.2 17.62L23.9 21C23.9 21.33 24.29 21.61 24.79 21.61Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M26.63 16.89 29.41 18.84C29.7 19.01 30.13 18.8 30.38 18.38 30.62 17.95 30.58 17.48 30.29 17.31L27.22 15.88C26.86 15.86 26.55 16.13 26.53 16.5 26.52 16.64 26.56 16.78 26.63 16.89Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M24.79 13.04C25.04 13.07 25.28 12.92 25.37 12.68L25.67 9.3C25.67 8.97 25.28 8.69 24.79 8.69 24.29 8.69 23.9 8.97 23.9 9.3L24.2 12.68C24.29 12.92 24.53 13.07 24.79 13.04Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M19.2 18.38C19.44 18.8 19.87 19.01 20.16 18.84L22.94 16.89C23.14 16.59 23.05 16.19 22.75 15.99 22.64 15.91 22.5 15.87 22.36 15.88L19.28 17.31C18.99 17.48 18.95 17.95 19.2 18.38Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M27.22 14.42 30.29 12.99C30.58 12.82 30.62 12.35 30.38 11.92 30.13 11.5 29.7 11.3 29.41 11.46L26.63 13.41C26.43 13.71 26.52 14.12 26.82 14.32 26.94 14.39 27.08 14.43 27.22 14.42Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M4.84 9.27 12.63 9.27C12.87 9.27 13.05 9.09 13.05 8.85L13.05 7.84C13.05 7.61 12.87 7.42 12.63 7.42 12.63 7.42 12.63 7.42 12.63 7.42L4.84 7.42C4.61 7.42 4.42 7.61 4.42 7.84 4.42 7.84 4.42 7.84 4.42 7.84L4.42 8.85C4.42 9.09 4.61 9.27 4.84 9.27 4.84 9.27 4.84 9.27 4.84 9.27Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M7.12 23.27 10.2 23.27C10.44 23.27 10.62 23.08 10.62 22.85L10.62 21.84C10.62 21.61 10.44 21.42 10.2 21.42 10.2 21.42 10.2 21.42 10.2 21.42L2.41 21.42C2.18 21.42 1.99 21.61 1.99 21.84 1.99 21.84 1.99 21.84 1.99 21.84L1.99 22.85C1.99 23.08 2.18 23.27 2.41 23.27L7.12 23.27Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M13.75 18.48 13.75 17.47C13.75 17.24 13.56 17.05 13.33 17.05 13.33 17.05 13.33 17.05 13.33 17.05L6.97 17.05C6.73 17.05 6.54 17.24 6.54 17.47 6.54 17.47 6.54 17.47 6.54 17.47L6.54 18.48C6.54 18.71 6.73 18.9 6.97 18.9 6.97 18.9 6.97 18.9 6.97 18.9L13.33 18.9C13.56 18.9 13.75 18.71 13.75 18.48 13.75 18.48 13.75 18.48 13.75 18.48Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path><path d=\"M3.72 13.97 10.09 13.97C10.32 13.97 10.51 13.78 10.51 13.55L10.51 12.54C10.51 12.31 10.32 12.12 10.09 12.12 10.09 12.12 10.09 12.12 10.09 12.12L0.42 12.12C0.19 12.12-1.42e-05 12.31-8.65e-09 12.54L0 13.55C4.26e-05 13.78 0.19 13.97 0.42 13.97L3.72 13.97Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 885 161.02)\"></path></g></g></svg>",
-  "favorite": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-84 -138)\"><g><path d=\"M23.55 17.12C23.52 16.98 23.57 16.85 23.66 16.75L28.57 11.97C29.38 11.19 29.39 9.89 28.61 9.08 28.29 8.76 27.88 8.55 27.44 8.49L20.66 7.5C20.53 7.48 20.41 7.4 20.35 7.28L17.32 1.14C16.82 0.13 15.6-0.29 14.58 0.21 14.18 0.41 13.86 0.74 13.66 1.14L10.63 7.28C10.57 7.4 10.45 7.48 10.32 7.5L3.54 8.49C2.42 8.65 1.65 9.69 1.81 10.8 1.88 11.25 2.09 11.66 2.41 11.97L7.31 16.75C7.41 16.85 7.45 16.98 7.43 17.12L6.27 23.87C6.08 24.98 6.83 26.03 7.94 26.23 8.38 26.3 8.84 26.23 9.24 26.02L15.3 22.83C15.42 22.77 15.56 22.77 15.68 22.83L21.74 26.02C22.74 26.54 23.97 26.16 24.5 25.16 24.71 24.76 24.78 24.31 24.7 23.87ZM22.93 24.54C22.81 24.64 22.64 24.65 22.5 24.57L16.44 21.39C15.84 21.07 15.13 21.07 14.54 21.39L8.48 24.57C8.28 24.68 8.03 24.6 7.92 24.4 7.88 24.32 7.87 24.23 7.88 24.14L9.04 17.39C9.15 16.73 8.93 16.05 8.45 15.58L3.55 10.8C3.39 10.65 3.38 10.39 3.54 10.23 3.6 10.16 3.69 10.12 3.78 10.11L10.55 9.12C11.22 9.02 11.79 8.61 12.09 8L15.12 1.86C15.22 1.66 15.47 1.58 15.67 1.68 15.75 1.72 15.82 1.78 15.85 1.86L15.85 1.86 18.89 8C19.18 8.61 19.76 9.02 20.42 9.12L27.2 10.11C27.43 10.14 27.58 10.35 27.55 10.57 27.53 10.66 27.49 10.74 27.43 10.8L22.52 15.58C22.04 16.05 21.82 16.73 21.94 17.39L23.09 24.14C23.12 24.3 23.06 24.45 22.93 24.54Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.02 85.01 139)\"></path><path d=\"M23.21 3.65C23.57 3.92 24.08 3.84 24.35 3.47 24.35 3.47 24.35 3.47 24.35 3.47L25.22 2.28C25.48 1.91 25.4 1.4 25.03 1.14 24.67 0.87 24.16 0.95 23.89 1.32 23.89 1.32 23.89 1.32 23.89 1.32L23.03 2.51C22.76 2.88 22.84 3.39 23.21 3.65 23.21 3.65 23.21 3.65 23.21 3.65Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.02 85.01 139)\"></path><path d=\"M6.63 3.47C6.89 3.83 7.4 3.92 7.77 3.65 8.13 3.39 8.21 2.88 7.95 2.51 7.95 2.51 7.95 2.51 7.95 2.51L7.08 1.31C6.81 0.95 6.3 0.87 5.94 1.13 5.57 1.4 5.49 1.91 5.76 2.27Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.02 85.01 139)\"></path><path d=\"M1.97 17.81 0.56 18.26C0.14 18.4-0.1 18.86 0.04 19.29 0.18 19.72 0.64 19.96 1.07 19.82 1.07 19.82 1.07 19.82 1.07 19.82L2.47 19.36C2.9 19.22 3.14 18.76 3 18.33 2.86 17.9 2.4 17.67 1.97 17.81Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.02 85.01 139)\"></path><path d=\"M15.49 27.41C15.04 27.41 14.67 27.77 14.67 28.22L14.67 29.7C14.67 30.15 15.04 30.52 15.49 30.52 15.94 30.52 16.31 30.15 16.31 29.7 16.31 29.7 16.31 29.7 16.31 29.7L16.31 28.22C16.31 27.77 15.94 27.41 15.49 27.41 15.49 27.41 15.49 27.41 15.49 27.41Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.02 85.01 139)\"></path><path d=\"M30.41 18.27 29.01 17.81C28.58 17.67 28.12 17.91 27.98 18.34 27.84 18.76 28.07 19.22 28.5 19.36L29.91 19.82C30.34 19.96 30.8 19.72 30.94 19.3 31.08 18.87 30.84 18.41 30.41 18.27Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.02 85.01 139)\"></path></g></g></svg>",
-  "filter": "<svg viewBox=\"0 0 29 24\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-897 -240)\"><g><path d=\"M1.36 2.81 26.64 2.81C28.45 2.81 28.45 0 26.64 0L1.36 0C-0.45 0-0.45 2.81 1.36 2.81Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 898 241.01)\"></path><path d=\"M7.48 12.76 26.64 12.76C28.45 12.76 28.45 9.95 26.64 9.95L7.48 9.95C5.67 9.95 5.67 12.76 7.48 12.76Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 898 241.01)\"></path><path d=\"M12.98 22.75 26.64 22.75C28.45 22.75 28.45 19.94 26.64 19.94L12.98 19.94C11.18 19.94 11.17 22.75 12.98 22.75Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 898 241.01)\"></path></g></g></svg>",
-  "gift": "<svg viewBox=\"0 0 36 33\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-100 -352)\"><g><path d=\"M33.48 8.38 24.42 8.38 28.43 6.56 28.6 6.48C29.38 6.05 29.9 5.26 29.99 4.37 30.08 3.48 29.83 2.59 29.31 1.87 28.79 1.09 28.02 0.51 27.14 0.2 26.25-0.13 25.27-0.06 24.44 0.39L17.77 4.88 17.67 4.96C17.51 5.09 17.36 5.23 17.24 5.4 17.11 5.23 16.96 5.08 16.8 4.95L10.19 0.48 10.05 0.4C9.22-0.05 8.23-0.13 7.34 0.2 6.45 0.51 5.69 1.09 5.16 1.87 4 3.58 4.31 5.6 5.88 6.48L10.07 8.38 1 8.38C0.45 8.38 0 8.79 0 9.29L0 32.1C0 32.59 0.45 33 1 33L33.48 33C34.03 33 34.48 32.59 34.48 32.1L34.48 9.29C34.48 8.79 34.03 8.38 33.48 8.38ZM32.48 19.65 18.24 19.65 18.24 11.94 26.52 17.47C26.76 17.62 27.05 17.68 27.33 17.62 27.56 17.58 27.77 17.46 27.92 17.28 28.22 16.91 28.17 16.38 27.8 16.08 27.77 16.05 27.74 16.03 27.71 16.01L18.99 10.19 32.48 10.19ZM18.97 6.33 25.48 1.93C25.63 1.85 25.8 1.81 25.97 1.81 26.13 1.81 26.29 1.84 26.44 1.89 26.92 2.07 27.33 2.39 27.61 2.82 27.9 3.21 28.04 3.7 28 4.18 27.98 4.49 27.81 4.78 27.54 4.94L20.29 8.23C19.9 8.38 19.35 8.11 19.02 7.62 18.68 7.14 18.67 6.57 18.97 6.33ZM6.87 2.82C7.15 2.39 7.56 2.07 8.04 1.89 8.34 1.77 8.69 1.79 8.99 1.93L15.49 6.32C15.81 6.57 15.79 7.14 15.46 7.62 15.13 8.11 14.57 8.38 14.25 8.26L6.93 4.94C6.33 4.6 6.3 3.65 6.87 2.82ZM15.59 10.19 6.87 16.01C6.47 16.26 6.34 16.78 6.59 17.18 6.61 17.21 6.63 17.25 6.66 17.28 6.81 17.46 7.02 17.58 7.25 17.62 7.53 17.68 7.82 17.62 8.06 17.47L16.24 12.01 16.24 19.65 2 19.65 2 10.19ZM2 21.46 16.24 21.46 16.24 31.19 2 31.19ZM18.24 31.19 18.24 21.46 32.48 21.46 32.48 31.19Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 101.08 352)\"></path></g></g></svg>",
-  "globe": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-373 -340)\"><g><path d=\"M389.5 341C380.94 341 374 347.94 374 356.5 374 365.06 380.94 372 389.5 372 398.06 372 405 365.06 405 356.5 404.99 347.94 398.06 341.01 389.5 341ZM390.18 363.14 390.18 357.18 396.91 357.18C396.87 359.2 396.58 361.2 396.05 363.14ZM401.14 364.51C399.39 367.04 396.87 368.93 393.95 369.91 394.69 369.13 395.33 368.25 395.84 367.3 396.32 366.41 396.72 365.47 397.04 364.51ZM390.18 348.2 390.18 342.44C392.3 342.81 394.23 344.9 395.5 348.2ZM396.94 348.2C396.64 347.34 396.27 346.5 395.84 345.7 395.33 344.75 394.69 343.87 393.95 343.09 396.75 344.03 399.18 345.82 400.92 348.2ZM390.18 355.82 390.18 349.57 395.96 349.57C396.55 351.6 396.87 353.7 396.91 355.82ZM403.6 357.18C403.51 359.27 402.95 361.31 401.96 363.16 401.93 363.14 401.89 363.14 401.84 363.14L397.45 363.14C397.96 361.19 398.24 359.19 398.28 357.18ZM403.6 355.82 398.28 355.82C398.24 353.71 397.94 351.61 397.38 349.57L401.8 349.57C402.88 351.48 403.5 353.62 403.6 355.82ZM395.61 364.51C394.35 367.98 392.38 370.17 390.18 370.56L390.18 364.51ZM375.4 357.18 380.72 357.18C380.76 359.19 381.04 361.19 381.55 363.14L377.16 363.14C377.12 363.14 377.08 363.14 377.04 363.16 376.05 361.31 375.49 359.27 375.4 357.18ZM375.4 355.82C375.5 353.62 376.12 351.48 377.2 349.57L381.62 349.57C381.06 351.61 380.76 353.71 380.72 355.82ZM388.82 349.57 388.82 355.82 382.09 355.82C382.14 353.7 382.45 351.6 383.04 349.57ZM378.08 348.2C379.82 345.82 382.26 344.03 385.05 343.09 384.31 343.87 383.67 344.75 383.17 345.7 382.73 346.5 382.36 347.34 382.06 348.2ZM388.82 364.51 388.82 370.56C386.62 370.17 384.65 367.98 383.39 364.51ZM381.96 364.51C382.28 365.47 382.68 366.41 383.17 367.3 383.67 368.25 384.31 369.13 385.05 369.91 382.13 368.93 379.61 367.04 377.86 364.51ZM388.82 357.18 388.82 363.14 382.95 363.14C382.42 361.2 382.13 359.2 382.09 357.18ZM383.5 348.2C384.77 344.9 386.7 342.81 388.82 342.44L388.82 348.2Z\" fill=\"currentColor\"></path></g></g></svg>",
-  "grid": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-556 -236)\"><g><path d=\"M18.34 19.28 11.66 19.28C11.14 19.28 10.72 18.86 10.72 18.34L10.72 11.66C10.72 11.14 11.14 10.72 11.66 10.72L18.34 10.72C18.86 10.72 19.28 11.14 19.28 11.66L19.28 18.34C19.28 18.86 18.86 19.28 18.34 19.28ZM12.14 17.86 17.86 17.86 17.86 12.14 12.14 12.14Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M7.62 8.56 0.94 8.56C0.42 8.56 0 8.14 3.78e-08 7.62L0 0.94C0 0.42 0.42 0 0.94-3.21e-08L7.62 0C8.14 0 8.56 0.42 8.56 0.94L8.56 7.62C8.56 8.14 8.14 8.56 7.62 8.56ZM1.42 7.15 7.15 7.15 7.15 1.42 1.42 1.42Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M18.34 30 11.66 30C11.14 30 10.72 29.58 10.72 29.06L10.72 22.38C10.72 21.86 11.14 21.44 11.66 21.44L18.34 21.44C18.86 21.44 19.28 21.86 19.28 22.38L19.28 29.06C19.28 29.58 18.86 30 18.34 30ZM12.14 28.58 17.86 28.58 17.86 22.85 12.14 22.85Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M7.62 19.28 0.94 19.28C0.42 19.28 0 18.86 3.78e-08 18.34L0 11.66C0 11.14 0.42 10.72 0.94 10.72L7.62 10.72C8.14 10.72 8.56 11.14 8.56 11.66L8.56 18.34C8.56 18.86 8.14 19.28 7.62 19.28ZM1.42 17.86 7.15 17.86 7.15 12.14 1.42 12.14Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M7.62 30 0.94 30C0.42 30 0 29.58 3.78e-08 29.06L0 22.38C0 21.86 0.42 21.44 0.94 21.44L7.62 21.44C8.14 21.44 8.56 21.86 8.56 22.38L8.56 29.06C8.56 29.58 8.14 30 7.62 30ZM1.42 28.58 7.15 28.58 7.15 22.85 1.42 22.85Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M29.06 8.56 22.38 8.56C21.86 8.56 21.44 8.14 21.44 7.62L21.44 0.94C21.44 0.42 21.86 0 22.38-3.21e-08L29.06 0C29.58 0 30 0.42 30 0.94L30 7.62C30 8.14 29.58 8.56 29.06 8.56ZM22.85 7.15 28.58 7.15 28.58 1.42 22.85 1.42Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M18.34 8.56 11.66 8.56C11.14 8.56 10.72 8.14 10.72 7.62L10.72 0.94C10.72 0.42 11.14 0 11.66-3.21e-08L18.34 0C18.86 0 19.28 0.42 19.28 0.94L19.28 7.62C19.28 8.14 18.86 8.56 18.34 8.56ZM12.14 7.15 17.86 7.15 17.86 1.42 12.14 1.42Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M29.06 19.28 22.38 19.28C21.86 19.28 21.44 18.86 21.44 18.34L21.44 11.66C21.44 11.14 21.86 10.72 22.38 10.72L29.06 10.72C29.58 10.72 30 11.14 30 11.66L30 18.34C30 18.86 29.58 19.28 29.06 19.28ZM22.85 17.86 28.58 17.86 28.58 12.14 22.85 12.14Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path><path d=\"M29.06 30 22.38 30C21.86 30 21.44 29.58 21.44 29.06L21.44 22.38C21.44 21.86 21.86 21.44 22.38 21.44L29.06 21.44C29.58 21.44 30 21.86 30 22.38L30 29.06C30 29.58 29.58 30 29.06 30ZM22.85 28.58 28.58 28.58 28.58 22.85 22.85 22.85Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.03 557 237)\"></path></g></g></svg>",
-  "help": "<svg viewBox=\"0 0 34 30\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-664 -140)\"><g><path d=\"M29.07 23.79C31.19 21.28 32.36 18.1 32.38 14.81 32.38 10.84 30.68 7.11 27.61 4.31 24.56 1.53 20.5 0 16.19 0 11.88 0 7.82 1.53 4.77 4.31 1.69 7.11 0 10.84 0 14.81 0 18.78 1.69 22.51 4.77 25.31 7.82 28.09 11.88 29.62 16.19 29.62 18.86 29.63 21.5 29.02 23.9 27.84L29.54 29.95C29.94 30.1 30.39 29.9 30.54 29.5 30.6 29.34 30.6 29.17 30.56 29.01ZM24.12 26.26C23.91 26.19 23.68 26.2 23.49 26.3 21.23 27.47 18.73 28.07 16.19 28.07 8.12 28.07 1.55 22.12 1.55 14.81 1.55 7.5 8.12 1.55 16.19 1.55 24.26 1.55 30.82 7.5 30.82 14.81 30.82 17.85 29.72 20.71 27.62 23.08 27.45 23.28 27.38 23.56 27.46 23.81L28.64 27.95Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 665.01 140)\"></path><path d=\"M17.05 16.83C17.05 17.05 16.87 17.23 16.65 17.23 16.65 17.23 16.65 17.23 16.65 17.23L14.39 17.23C14.17 17.23 13.99 17.05 13.99 16.83 13.99 16.83 13.99 16.83 13.99 16.83L13.99 15.27C13.99 13.49 16.9 12.71 16.9 11.36 16.9 10.7 16.23 10.11 15.32 10.11 13.84 10.11 13.44 11.44 12.91 10.98L11.62 9.71C11.47 9.57 11.46 9.33 11.6 9.18 11.61 9.17 11.61 9.16 11.62 9.16 12.73 7.98 14.28 7.3 15.91 7.3 18.15 7.3 20.22 8.86 20.22 11 20.22 13.79 17.05 13.87 17.05 16.16ZM15.51 19.03C16.48 19.04 17.26 19.82 17.28 20.78 17.28 21.74 16.46 22.52 15.51 22.52 14.56 22.51 13.79 21.74 13.77 20.78 13.78 19.83 14.55 19.05 15.51 19.03Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 665.01 140)\"></path></g></g></svg>",
-  "home": "<svg viewBox=\"0 0 41 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-80 -428)\"><g><path d=\"M117.6 445.69 102.29 434.48C102 434.27 101.6 434.27 101.3 434.48L86 445.69C85.62 445.95 85.52 446.48 85.79 446.86 86.05 447.24 86.58 447.33 86.96 447.07 86.97 447.06 86.98 447.05 86.99 447.04L101.8 436.2 116.61 447.04C116.99 447.31 117.52 447.21 117.78 446.83 118.03 446.47 117.96 445.96 117.6 445.69Z\" fill=\"currentColor\"></path><path d=\"M113.55 447.23C113.08 447.23 112.71 447.61 112.71 448.07L112.71 461.43 106 461.43 106 454.14C106 451.82 104.12 449.94 101.8 449.94 99.48 449.94 97.6 451.82 97.6 454.14L97.6 461.43 90.89 461.43 90.89 448.07C90.88 447.61 90.5 447.24 90.03 447.25 89.59 447.26 89.23 447.62 89.22 448.07L89.22 462.27C89.22 462.73 89.59 463.11 90.05 463.11L98.44 463.11C98.88 463.11 99.24 462.77 99.28 462.33 99.28 462.31 99.28 462.29 99.28 462.27L99.28 454.14C99.28 452.75 100.41 451.62 101.8 451.62 103.19 451.62 104.32 452.75 104.32 454.14L104.32 462.27C104.32 462.29 104.32 462.31 104.32 462.33 104.35 462.77 104.72 463.11 105.16 463.11L113.55 463.11C114.01 463.11 114.38 462.73 114.38 462.27L114.38 448.07C114.38 447.61 114.01 447.23 113.55 447.23 113.55 447.23 113.55 447.23 113.55 447.23Z\" fill=\"currentColor\"></path></g></g></svg>",
-  "lists": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-372 -428)\"><g><path d=\"M381.65 435.56 406.91 435.56C407.45 435.55 407.87 435.11 407.86 434.57 407.85 434.05 407.43 433.64 406.91 433.62L381.65 433.62C381.11 433.64 380.69 434.08 380.7 434.61 380.71 435.13 381.13 435.55 381.65 435.56\" fill=\"currentColor\"></path><path d=\"M376.97 433.62C376.43 433.62 375.99 434.06 375.99 434.59 375.99 435.13 376.43 435.56 376.96 435.57 377.5 435.57 377.94 435.13 377.94 434.59 377.94 434.59 377.94 434.59 377.94 434.59 377.94 434.06 377.5 433.62 376.97 433.62\" fill=\"currentColor\"></path><path d=\"M376.97 439.31C376.43 439.3 375.99 439.74 375.99 440.28 375.99 440.81 376.43 441.25 376.96 441.25 377.5 441.25 377.94 440.82 377.94 440.28 377.94 440.28 377.94 440.28 377.94 440.28 377.94 439.74 377.5 439.31 376.97 439.31\" fill=\"currentColor\"></path><path d=\"M406.91 439.31 381.65 439.31C381.11 439.32 380.69 439.76 380.7 440.3 380.71 440.82 381.13 441.24 381.65 441.25L406.91 441.25C407.45 441.24 407.87 440.79 407.86 440.26 407.85 439.74 407.43 439.32 406.91 439.31\" fill=\"currentColor\"></path><path d=\"M376.97 444.99C376.43 444.99 375.99 445.42 375.99 445.96 375.99 446.49 376.43 446.93 376.96 446.93 377.5 446.93 377.94 446.5 377.94 445.96 377.94 445.96 377.94 445.96 377.94 445.96 377.94 445.42 377.5 444.99 376.97 444.99 376.97 444.99 376.97 444.99 376.97 444.99\" fill=\"currentColor\"></path><path d=\"M406.91 444.99 381.65 444.99C381.11 445 380.69 445.45 380.7 445.98 380.71 446.5 381.13 446.92 381.65 446.93L406.91 446.93C407.45 446.94 407.89 446.52 407.9 445.98 407.91 445.45 407.49 445 406.96 444.99 406.94 444.99 406.93 444.99 406.91 444.99\" fill=\"currentColor\"></path><path d=\"M404.57 454.82 400.28 459.69C400.1 459.9 399.84 460.02 399.57 460.02L399.54 460.02C399.28 460.02 399.03 459.92 398.85 459.74L396.23 457.12C395.86 456.72 395.88 456.1 396.27 455.73 396.65 455.38 397.24 455.38 397.61 455.73L399.5 457.61 403.09 453.53C403.45 453.12 404.07 453.08 404.48 453.44 404.89 453.79 404.93 454.41 404.57 454.82M400.67 450.04C397.33 450.04 394.62 452.75 394.62 456.1 394.62 459.44 397.33 462.15 400.67 462.16 404.02 462.16 406.73 459.44 406.73 456.1 406.73 456.1 406.73 456.1 406.73 456.1 406.73 452.75 404.02 450.04 400.67 450.04\" fill=\"currentColor\"></path></g></g></svg>",
-  "location": "<svg viewBox=\"0 0 30 42\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-228 -346)\"><g><path d=\"M14.5 20.39C11.07 20.39 8.29 17.61 8.29 14.18 8.29 10.75 11.07 7.97 14.5 7.97 17.92 7.97 20.7 10.75 20.7 14.18 20.7 17.61 17.92 20.38 14.5 20.39ZM14.5 9.82C12.09 9.82 10.14 11.77 10.14 14.18 10.14 16.59 12.09 18.54 14.5 18.54 16.9 18.54 18.85 16.59 18.85 14.18 18.85 11.77 16.9 9.82 14.5 9.82Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 229.01 347)\"></path><path d=\"M14.5 20.53C10.99 20.53 8.15 17.69 8.15 14.18 8.15 10.67 10.99 7.83 14.5 7.83 18 7.83 20.85 10.67 20.85 14.18 20.84 17.68 18 20.53 14.5 20.53ZM14.5 8.11C11.15 8.11 8.43 10.83 8.43 14.18 8.43 17.53 11.15 20.24 14.5 20.24 17.85 20.24 20.56 17.53 20.56 14.18 20.56 10.83 17.84 8.12 14.5 8.11ZM14.5 18.68C12.01 18.68 9.99 16.66 9.99 14.18 9.99 11.69 12.01 9.68 14.5 9.68 16.98 9.68 19 11.69 19 14.18 18.99 16.66 16.98 18.68 14.5 18.68ZM14.5 9.96C12.17 9.96 10.28 11.85 10.28 14.18 10.28 16.51 12.17 18.4 14.5 18.4 16.82 18.4 18.71 16.51 18.71 14.18 18.71 11.85 16.82 9.96 14.5 9.96Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 229.01 347)\"></path><path d=\"M13.45 39.1C13.86 39.67 14.65 39.81 15.23 39.41 15.35 39.32 15.45 39.22 15.54 39.1 17.03 37 24.57 26.34 26.72 22.74 28.12 20.39 28.85 17.7 28.85 14.97 28.85 6.79 22.41 0.14 14.49 0.14 6.58 0.14 0.14 6.79 0.14 14.97 0.14 17.71 0.88 20.41 2.29 22.76 4.52 26.48 12.55 37.82 13.45 39.1ZM14.49 2.17C21.29 2.17 26.83 7.91 26.83 14.97 26.83 17.34 26.19 19.66 24.98 21.7 23.08 24.88 16.63 34.05 14.5 37.07 12.37 34.06 5.95 24.94 4.02 21.72 2.8 19.68 2.16 17.34 2.16 14.97 2.16 7.91 7.7 2.17 14.49 2.17Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 229.01 347)\"></path><path d=\"M14.5 39.78C14.03 39.78 13.6 39.56 13.34 39.18L13.34 39.18C12.98 38.67 4.47 26.69 2.16 22.83 0.74 20.460 17.74 4.48e-08 14.97 0 6.71 6.5 0 14.49 0 22.49 0 28.99 6.71 28.99 14.97 28.99 17.73 28.25 20.44 26.84 22.81 24.78 26.27 17.76 36.22 15.65 39.18 15.39 39.56 14.96 39.78 14.5 39.78ZM14.49 0.29C6.66 0.29 0.29 6.87 0.29 14.97 0.28 17.69 1.01 20.35 2.41 22.69 4.71 26.53 13.21 38.51 13.57 39.01L13.57 39.01C13.93 39.53 14.63 39.65 15.14 39.29 15.25 39.22 15.34 39.12 15.42 39.02 17.52 36.05 24.54 26.12 26.6 22.66 27.98 20.34 28.71 17.68 28.71 14.97 28.71 6.87 22.33 0.29 14.49 0.29ZM14.5 37.32 14.38 37.15C12.42 34.38 5.86 25.08 3.9 21.8 2.66 19.73 2.02 17.37 2.02 14.97 2.02 7.83 7.62 2.02 14.49 2.02 21.37 2.02 26.97 7.83 26.97 14.97 26.97 17.36 26.33 19.71 25.11 21.77 23.18 25 16.59 34.36 14.61 37.15ZM14.49 2.31C7.77 2.31 2.31 7.99 2.31 14.97 2.3 17.32 2.94 19.63 4.14 21.65 6.07 24.86 12.4 33.87 14.5 36.82 16.6 33.85 22.98 24.78 24.86 21.63 26.06 19.61 26.69 17.31 26.68 14.97 26.68 7.99 21.22 2.31 14.49 2.31Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 229.01 347)\"></path></g></g></svg>",
-  "lock": "<svg viewBox=\"0 0 24 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-845 -140)\"><g><path d=\"M9.99 21.22 9.59 24.85C9.55 25.2 9.8 25.51 10.15 25.55 10.18 25.55 10.2 25.56 10.22 25.56L12.78 25.56C13.13 25.56 13.42 25.27 13.42 24.92 13.42 24.89 13.42 24.87 13.41 24.85L13.01 21.22C13.67 20.75 14.06 19.98 14.06 19.17 14.06 17.76 12.91 16.61 11.5 16.61 10.09 16.61 8.94 17.76 8.94 19.17 8.94 19.98 9.33 20.75 9.99 21.22ZM11.5 17.89C12.2 17.89 12.78 18.45 12.78 19.16 12.78 19.65 12.5 20.1 12.05 20.31 11.81 20.43 11.66 20.69 11.69 20.96L12.06 24.28 10.94 24.28 11.31 20.96C11.34 20.69 11.19 20.43 10.95 20.31 10.31 20.01 10.04 19.25 10.35 18.62 10.56 18.17 11.01 17.89 11.5 17.89Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 846 140.04)\"></path><path d=\"M22.36 11.5 20.44 11.5 20.44 8.94C20.44 4 16.44 1.38e-05 11.5 1.02e-05 6.56 6.61e-06 2.56 4 2.56 8.94L2.56 11.5 0.64 11.5C0.29 11.5 0 11.79 2.8e-08 12.14-1.09e-07 12.14-1.09e-07 12.14 2.8e-08 12.14L0 28.11C0 29.52 1.14 30.67 2.56 30.67L20.44 30.67C21.86 30.67 23 29.52 23 28.11L23 12.14C23 11.79 22.71 11.5 22.36 11.5 22.36 11.5 22.36 11.5 22.36 11.5ZM3.83 8.94C3.83 4.71 7.27 1.28 11.5 1.28 15.73 1.28 19.17 4.71 19.17 8.94L19.17 11.5 17.89 11.5 17.89 8.94C17.89 5.42 15.02 2.56 11.49 2.56 7.97 2.57 5.11 5.42 5.11 8.94L5.11 11.5 3.83 11.5ZM16.61 8.94 16.61 11.5 6.39 11.5 6.39 8.94C6.39 6.12 8.67 3.83 11.5 3.83 14.32 3.83 16.61 6.12 16.61 8.94 16.61 8.94 16.61 8.94 16.61 8.94ZM21.72 28.11C21.72 28.82 21.15 29.39 20.44 29.39L2.56 29.39C1.85 29.39 1.28 28.82 1.28 28.11L1.28 12.78 21.72 12.78Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 846 140.04)\"></path></g></g></svg>",
-  "mail": "<svg viewBox=\"0 0 37 25\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-432 -344)\"><g><path d=\"M33.39 0 2.08 0C0.93 0 0 0.93 1.99e-08 2.09L0 22.92C0 24.07 0.93 25 2.08 25L33.39 25C34.54 25 35.47 24.07 35.47 22.92L35.47 2.09C35.47 0.93 34.54 0 33.39 6.73e-09ZM24.13 12.01 33.68 2.98 33.68 21.89ZM18.73 14.65C18.34 15.03 17.72 15.03 17.32 14.66L3.56 1.79 32.32 1.79ZM13.06 13.14 16.09 15.97C17.19 16.99 18.88 16.98 19.97 15.96L22.83 13.25 32.46 23.21 3.33 23.21ZM11.75 11.91 1.79 22.21 1.79 2.59Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 433.04 344)\"></path></g></g></svg>",
-  "minus": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-142 -341)\"><g><path d=\"M158.5 371.4C150.82 371.4 144.59 365.17 144.59 357.49 144.59 349.81 150.82 343.58 158.5 343.58 166.18 343.58 172.41 349.81 172.41 357.49 172.4 365.16 166.18 371.39 158.5 371.4ZM158.5 345.7C151.99 345.7 146.71 350.98 146.71 357.49 146.71 364 151.99 369.27 158.5 369.27 165.01 369.27 170.29 364 170.29 357.49 170.28 350.98 165.01 345.71 158.5 345.7Z\" fill=\"currentColor\"></path><path d=\"M158.5 373C149.94 373 143 366.06 143 357.5 143 348.94 149.94 342 158.5 342 167.06 342 174 348.94 174 357.5 173.99 366.06 167.06 372.99 158.5 373ZM158.5 342.57C150.25 342.57 143.57 349.25 143.57 357.5 143.57 365.75 150.25 372.43 158.5 372.43 166.75 372.43 173.43 365.75 173.43 357.5 173.42 349.26 166.74 342.58 158.5 342.57Z\" fill=\"currentColor\"></path><path d=\"M162.97 355.72 154.03 355.72C153.11 355.72 152.22 356.53 152.27 357.49 152.31 358.45 153.04 359.25 154.03 359.25L162.97 359.25C163.89 359.25 164.78 358.44 164.73 357.49 164.69 356.53 163.96 355.72 162.97 355.72Z\" fill=\"currentColor\"></path></g></g></svg>",
-  "money": "<svg viewBox=\"0 0 41 28\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-29 -356)\"><g><path d=\"M37.93 24.65 8.64 24.65 8.64 20.16 32.4 20.16C32.97 20.16 33.43 19.7 33.43 19.12L33.43 8.64 37.93 8.64ZM2.07 2.07 31.36 2.07 31.36 18.09 2.07 18.09ZM38.96 6.57 33.43 6.57 33.43 1.04C33.43 0.46 32.97 0 32.4 1.3e-08 32.4-3.32e-08 32.4-3.32e-08 32.4 1.3e-08L1.04 0C0.460 0 0.46 1.3e-08 1.04-3.32e-08 1.04-3.32e-08 1.04 1.3e-08 1.04L0 19.12C0 19.7 0.46 20.16 1.04 20.16L6.57 20.16 6.57 25.69C6.57 26.26 7.03 26.72 7.6 26.72 7.6 26.72 7.6 26.72 7.6 26.72L38.96 26.72C39.54 26.72 40 26.26 40 25.69 40 25.69 40 25.69 40 25.69L40 7.6C40 7.03 39.54 6.57 38.96 6.57 38.96 6.57 38.96 6.57 38.96 6.57\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 30 357.07)\"></path><path d=\"M16.66 13.05C15.86 13.05 15.31 12.68 14.81 12.3 14.69 12.2 14.51 12.22 14.4 12.34 14.39 12.35 14.39 12.37 14.38 12.38L13.9 13.17C13.79 13.34 13.85 13.43 13.97 13.52 14.61 14.06 15.4 14.4 16.24 14.47L16.14 15.72C16.13 15.94 16.4 16.14 16.73 16.13 17.05 16.11 17.32 15.94 17.31 15.72L17.2 14.46C18.68 14.27 19.59 13.2 19.59 12.07 19.59 10.47 18.19 9.73 16.98 9.26 15.99 8.89 15.55 8.5 15.55 7.94 15.55 7.48 15.91 7.13 16.6 7.13 17.27 7.13 17.77 7.45 18.3 7.78 18.47 7.86 18.66 7.79 18.75 7.63L19.25 6.91C19.34 6.78 19.3 6.61 19.17 6.52 19.17 6.52 19.17 6.52 19.17 6.52 18.59 6.1 17.91 5.83 17.2 5.73L17.31 4.44C17.32 4.22 17.05 4.02 16.73 4.03 16.4 4.05 16.13 4.22 16.14 4.44L16.25 5.72C14.57 5.88 13.88 7.03 13.88 8.04 13.88 9.49 15.04 10.24 16.21 10.7 17.24 11.09 17.76 11.53 17.76 12.14 17.76 12.65 17.3 13.05 16.66 13.05\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 30 357.07)\"></path></g></g></svg>",
-  "more": "<svg viewBox=\"0 0 32 8\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-198 -444)\"><g><path d=\"M7.8 3.9C7.8 6.06 6.06 7.8 3.9 7.8 1.75 7.8-1.25e-07 6.06-1.25e-07 3.9-1.25e-07 1.75 1.75-1.25e-07 3.9-1.25e-07 6.06-1.25e-07 7.8 1.75 7.8 3.9Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 199 444.03)\"></path><path d=\"M30.69 4.03C30.69 6.19 28.94 7.93 26.78 7.93 24.63 7.93 22.88 6.19 22.88 4.03 22.88 1.88 24.63 0.13 26.78 0.13 28.94 0.13 30.69 1.88 30.69 4.03Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 199 444.03)\"></path><path d=\"M19.32 3.9C19.32 6.06 17.58 7.8 15.42 7.8 13.27 7.8 11.52 6.06 11.52 3.9 11.52 1.75 13.27-1.25e-07 15.42-1.25e-07 17.58-1.25e-07 19.32 1.75 19.32 3.9Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 199 444.03)\"></path></g></g></svg>",
-  "notification": "<svg viewBox=\"0 0 24 31\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-316 -138)\"><g><path d=\"M21.55 24.32 20.09 21.58 20.09 14.79C20.08 10.69 17.37 7.09 13.43 5.94L13.43 2.56C13.43 1.14 12.290 10.880 9.470 8.32 1.14 8.32 2.55 8.32 2.55 8.32 2.56 8.32 2.56L8.32 5.94C4.38 7.09 1.67 10.69 1.66 14.79L1.66 21.58 0.2 24.32C-0.24 25.15 0.07 26.17 0.9 26.61 1.14 26.74 1.42 26.81 1.69 26.81L7.5 26.81C7.61 28.67 9.2 30.1 11.07 29.99 12.78 29.9 14.15 28.53 14.25 26.81L20.06 26.81C20.99 26.81 21.75 26.05 21.75 25.12 21.75 24.84 21.68 24.57 21.55 24.32ZM9.67 2.56C9.67 1.89 10.21 1.35 10.88 1.35 11.54 1.35 12.08 1.89 12.08 2.56L12.08 5.66C11.28 5.56 10.47 5.56 9.67 5.66L9.67 2.56ZM3.02 14.79C3.02 10.45 6.54 6.93 10.88 6.93 15.22 6.93 18.74 10.45 18.74 14.79L18.74 21.02 3.02 21.02ZM10.88 28.65C9.83 28.65 8.96 27.85 8.86 26.81L12.89 26.81C12.8 27.85 11.92 28.65 10.88 28.65Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 317.02 139)\"></path><path d=\"M10.57 12.88C10.76 13 10.99 13 11.18 12.88 11.26 12.84 11.32 12.78 11.37 12.71L11.58 10.17C11.58 10.04 11.49 9.91 11.37 9.86 11.07 9.67 10.68 9.67 10.38 9.86 10.26 9.91 10.18 10.04 10.17 10.17L10.42 12.71C10.42 12.77 10.48 12.82 10.57 12.88Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 317.02 139)\"></path><path d=\"M14.56 17.28C14.68 17.37 14.84 17.37 14.96 17.28 15.12 17.22 15.25 17.1 15.32 16.94 15.43 16.81 15.48 16.64 15.45 16.48 15.46 16.35 15.38 16.22 15.26 16.16L12.81 15.1C12.73 15.07 12.64 15.07 12.56 15.1 12.47 15.16 12.38 15.24 12.32 15.33 12.27 15.41 12.25 15.51 12.26 15.61 12.25 15.7 12.29 15.78 12.35 15.85Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 317.02 139)\"></path><path d=\"M12.56 13.97C12.64 14.01 12.73 14.02 12.81 14L15.26 12.94C15.39 12.87 15.46 12.73 15.45 12.59 15.48 12.43 15.43 12.26 15.32 12.13 15.25 11.97 15.12 11.85 14.96 11.79 14.83 11.73 14.68 11.73 14.56 11.79L12.35 13.23C12.29 13.29 12.25 13.37 12.26 13.46 12.25 13.56 12.27 13.66 12.32 13.74 12.38 13.84 12.46 13.92 12.56 13.97Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 317.02 139)\"></path><path d=\"M7.19 11.79C7.07 11.73 6.92 11.73 6.79 11.79 6.63 11.85 6.5 11.97 6.43 12.13 6.33 12.26 6.29 12.43 6.3 12.59 6.3 12.73 6.37 12.86 6.49 12.94L8.94 14C9.03 14.02 9.11 14.01 9.19 13.97 9.29 13.92 9.37 13.84 9.43 13.74 9.48 13.66 9.5 13.56 9.49 13.46 9.5 13.37 9.46 13.29 9.4 13.23Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 317.02 139)\"></path><path d=\"M11.37 19.24C11.5 19.18 11.58 19.04 11.58 18.9L11.37 16.39C11.33 16.3 11.27 16.23 11.18 16.19 11.09 16.14 10.98 16.12 10.88 16.13 10.77 16.12 10.66 16.14 10.57 16.19 10.48 16.25 10.42 16.31 10.42 16.39L10.17 18.9C10.17 19.04 10.25 19.18 10.38 19.24 10.69 19.39 11.06 19.39 11.37 19.24Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 317.02 139)\"></path><path d=\"M9.19 15.1C9.11 15.07 9.02 15.07 8.94 15.1L6.49 16.16C6.38 16.23 6.31 16.35 6.3 16.48 6.29 16.64 6.33 16.81 6.43 16.94 6.5 17.1 6.63 17.22 6.79 17.28 6.91 17.37 7.07 17.37 7.19 17.28L9.4 15.85C9.46 15.78 9.5 15.7 9.49 15.61 9.5 15.51 9.48 15.41 9.43 15.33 9.37 15.24 9.28 15.16 9.19 15.1Z\" fill=\"currentColor\" transform=\"matrix(1.01 0 0 1 317.02 139)\"></path></g></g></svg>",
-  "pharmacy": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-676 -340)\"><g><path d=\"M714 366.12 703.13 366.12C702.57 366.12 702.12 366.57 702.12 367.12 702.12 367.12 702.12 367.12 702.12 367.12L702.12 378 689.88 378 689.88 367.12C689.88 366.57 689.43 366.12 688.88 366.12L678.01 366.12 678.01 353.88 688.88 353.88C689.43 353.88 689.88 353.43 689.88 352.88 689.88 352.88 689.88 352.88 689.88 352.88L689.88 342 702.12 342 702.12 352.88C702.12 353.43 702.57 353.88 703.12 353.88 703.12 353.88 703.12 353.88 703.13 353.88L714 353.88ZM715 351.87 704.13 351.87 704.13 341C704.13 340.45 703.68 340 703.13 340L688.88 340C688.32 340 687.88 340.45 687.87 341 687.87 341 687.87 341 687.87 341L687.87 351.87 677 351.87C676.45 351.87 676 352.32 676 352.88L676 367.12C676 367.68 676.45 368.13 677 368.13 677 368.13 677 368.13 677 368.13L687.87 368.13 687.87 379C687.87 379.55 688.32 380 688.88 380 688.88 380 688.88 380 688.88 380L703.13 380C703.68 380 704.13 379.55 704.13 379L704.13 368.13 715 368.13C715.55 368.13 716 367.68 716 367.12 716 367.12 716 367.12 716 367.12L716 352.88C716 352.32 715.55 351.87 715 351.87\" fill=\"currentColor\"></path></g></g></svg>",
-  "photo": "<svg viewBox=\"0 0 38 37\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-414 -144)\"><g><path d=\"M2.02 30.82 2.02 20.92C2.43 20.19 4.28 17.42 8.41 17.42 12.64 17.42 15.07 19.28 17.42 21.08 19.58 22.73 21.81 24.44 25.22 24.44 27.78 24.44 29.59 23.6 30.82 22.56L30.82 30.82ZM30.82 2.02 30.82 19.22C30.61 19.77 29.43 22.43 25.22 22.43 22.5 22.43 20.71 21.06 18.64 19.47 16.15 17.57 13.33 15.41 8.41 15.41 5.39 15.41 3.33 16.58 2.02 17.77L2.02 2.02ZM32.83 31.82 32.83 1.01C32.83 0.45 32.38 0 31.82 1.58e-09 31.82-3.66e-08 31.82-3.38e-08 31.82 1.01e-08L1.01 0C0.450 0 0.45 2.2e-09 1.01-4.17e-08 1.01-4.45e-08 1.01-6.31e-09 1.01L0 31.82C0 32.38 0.45 32.83 1.01 32.83 1.01 32.83 1.01 32.83 1.01 32.83L31.82 32.83C32.38 32.83 32.83 32.38 32.83 31.82 32.83 31.82 32.83 31.82 32.83 31.82\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path><path d=\"M23.3 8.37C23.54 8.37 23.74 8.25 23.77 8.08L24.01 5.37C24.01 5.1 23.69 4.88 23.3 4.88 22.9 4.88 22.59 5.1 22.59 5.37L22.83 8.08C22.86 8.25 23.06 8.37 23.3 8.37\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path><path d=\"M27.01 13.03C27.24 13.16 27.59 13 27.79 12.66 27.99 12.32 27.95 11.94 27.72 11.8L25.25 10.65C25.1 10.6 24.89 10.7 24.77 10.91 24.64 11.12 24.65 11.36 24.78 11.47Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path><path d=\"M25.25 9.48 27.72 8.33C27.95 8.2 27.99 7.82 27.79 7.47 27.59 7.13 27.24 6.97 27.01 7.1L24.78 8.67C24.65 8.77 24.64 9.01 24.77 9.22 24.89 9.43 25.1 9.54 25.25 9.48\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path><path d=\"M23.3 15.25C23.69 15.25 24.01 15.03 24.01 14.76L23.77 12.05C23.74 11.89 23.54 11.76 23.3 11.76 23.05 11.76 22.86 11.89 22.83 12.05L22.59 14.76C22.59 15.03 22.9 15.25 23.3 15.25\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path><path d=\"M19.58 13.03 21.81 11.47C21.94 11.36 21.95 11.13 21.83 10.91 21.71 10.7 21.5 10.6 21.34 10.65L18.88 11.8C18.64 11.94 18.61 12.32 18.81 12.66 19 13 19.35 13.16 19.58 13.03\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path><path d=\"M21.34 9.48C21.5 9.54 21.71 9.43 21.83 9.22 21.95 9.01 21.94 8.77 21.81 8.67L19.58 7.1C19.35 6.97 19 7.13 18.81 7.47 18.61 7.82 18.64 8.2 18.88 8.33Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path><path d=\"M35.97 4.9C35.41 4.9 34.96 5.35 34.96 5.91 34.96 5.91 34.96 5.91 34.96 5.91L34.96 34.85 6 34.85C5.45 34.85 5 35.3 5 35.86 5 36.42 5.45 36.87 6 36.87L35.97 36.87C36.53 36.87 36.98 36.42 36.98 35.86 36.98 35.86 36.98 35.86 36.98 35.86L36.98 5.91C36.98 5.35 36.53 4.9 35.97 4.9 35.97 4.9 35.97 4.9 35.97 4.9\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 415.01 144)\"></path></g></g></svg>",
-  "pick-up": "<svg viewBox=\"0 0 28 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-164 -437)\"><g><path d=\"M11.85 6.19 12.73 6.19C12.68 6.33 12.65 6.48 12.65 6.62 12.65 7.12 13.04 7.52 13.53 7.52 13.55 7.52 13.57 7.52 13.59 7.52 14.14 7.52 14.54 7.15 14.54 6.66 14.54 6.44 14.45 6.23 14.29 6.08 14.43 6.06 14.53 5.93 14.52 5.8 14.52 5.75 14.49 5.71 14.45 5.7 14.44 5.7 14.44 5.7 14.44 5.7L11.85 5.7C11.8 5.7 11.77 5.74 11.76 5.79L11.76 6.1C11.77 6.15 11.8 6.19 11.85 6.19ZM13.2 6.19 13.85 6.19C14 6.26 14.1 6.42 14.1 6.59 14.08 6.84 13.87 7.03 13.62 7.02 13.61 7.02 13.6 7.02 13.59 7.02 13.34 7.04 13.12 6.85 13.1 6.6 13.1 6.59 13.1 6.58 13.1 6.57 13.1 6.43 13.13 6.3 13.2 6.19Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path><path d=\"M14.42 8.41C14.46 8.41 14.5 8.37 14.5 8.32L14.5 8C14.5 7.96 14.46 7.92 14.42 7.92L12.78 7.92C12.73 7.92 12.7 7.96 12.69 8L12.69 8.32C12.7 8.37 12.73 8.4 12.78 8.41Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path><path d=\"M15.13 7.85C14.96 7.84 14.81 7.98 14.81 8.15 14.81 8.15 14.81 8.15 14.81 8.16 14.81 8.33 14.95 8.47 15.12 8.47 15.12 8.47 15.12 8.47 15.13 8.47 15.3 8.47 15.43 8.33 15.43 8.16 15.43 8.16 15.43 8.16 15.43 8.16 15.44 7.99 15.3 7.85 15.13 7.85 15.13 7.85 15.13 7.85 15.13 7.85Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path><path d=\"M13.93 10.25 14.11 10.41C14.15 10.45 14.2 10.47 14.24 10.43 14.43 10.26 14.54 10.01 14.54 9.76 14.55 9.23 14.13 8.8 13.61 8.8 13.09 8.79 12.66 9.21 12.65 9.73 12.65 9.74 12.65 9.74 12.65 9.75 12.64 10.04 12.79 10.31 13.03 10.47 13.08 10.5 13.12 10.48 13.16 10.44L13.31 10.26C13.34 10.23 13.33 10.18 13.3 10.15 13.17 10.06 13.1 9.92 13.1 9.76 13.11 9.49 13.35 9.28 13.62 9.29 13.88 9.3 14.08 9.51 14.1 9.77 14.1 9.9 14.04 10.03 13.94 10.13 13.9 10.16 13.88 10.21 13.93 10.25Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path><path d=\"M15.35 10.83 12.78 10.83C12.73 10.83 12.7 10.87 12.69 10.92L12.69 11.24C12.7 11.28 12.73 11.32 12.78 11.32L13.54 11.32 12.73 12C12.71 12.02 12.69 12.05 12.69 12.08L12.69 12.46C12.69 12.51 12.72 12.54 12.76 12.54 12.79 12.54 12.81 12.54 12.82 12.52L13.67 11.77 14.37 12.48C14.4 12.51 14.45 12.51 14.48 12.48 14.5 12.47 14.5 12.45 14.5 12.43L14.5 12.06C14.5 12.01 14.48 11.97 14.45 11.94L13.82 11.32 15.35 11.32C15.4 11.32 15.43 11.28 15.43 11.24L15.43 10.92C15.43 10.87 15.39 10.84 15.35 10.83Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path><path d=\"M13.46 13.33 14.42 13.33C14.46 13.33 14.5 13.29 14.5 13.24 14.5 13.24 14.5 13.24 14.5 13.24L14.5 12.92C14.5 12.88 14.47 12.84 14.42 12.84 14.42 12.84 14.42 12.84 14.42 12.84L13.46 12.84C13 12.84 12.65 12.96 12.65 13.52 12.66 13.73 12.75 13.92 12.9 14.07 12.77 14.09 12.67 14.21 12.68 14.35 12.67 14.39 12.71 14.44 12.75 14.44 12.76 14.44 12.76 14.44 12.76 14.44L14.42 14.44C14.46 14.44 14.5 14.41 14.5 14.36 14.5 14.36 14.5 14.36 14.5 14.36L14.5 14.05C14.5 13.98 14.49 13.95 14.42 13.95L13.43 13.95C13.28 13.92 13.1 13.83 13.1 13.63 13.1 13.41 13.22 13.33 13.46 13.33Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path><path d=\"M14.52 15.04C14.52 14.99 14.49 14.95 14.45 14.94 14.44 14.94 14.44 14.94 14.44 14.94L11.85 14.94C11.8 14.94 11.77 14.98 11.76 15.03L11.76 15.35C11.77 15.39 11.8 15.43 11.85 15.43L12.73 15.43C12.68 15.57 12.65 15.72 12.65 15.87 12.65 16.36 13.04 16.76 13.53 16.76 13.55 16.76 13.57 16.76 13.59 16.76 14.14 16.76 14.54 16.39 14.54 15.9 14.54 15.68 14.45 15.47 14.29 15.32 14.43 15.3 14.53 15.18 14.52 15.04ZM13.59 16.26C13.34 16.28 13.12 16.09 13.1 15.84 13.1 15.83 13.1 15.82 13.1 15.81 13.1 15.68 13.13 15.55 13.2 15.43L13.85 15.43C14 15.5 14.1 15.66 14.1 15.83 14.08 16.08 13.87 16.27 13.62 16.26 13.61 16.26 13.6 16.26 13.59 16.26Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path><path d=\"M26.93 4.86C26.93 4.44 26.7 4.05 26.33 3.86 25.97 3.66 25.61 3.48 25.23 3.31 22.99 2.32 20.75 1.34 18.51 0.33 18.02 0.11 17.48-0.01 16.93 0 14.62 0.01 12.3 0.01 9.98 3.88e-05 9.440 8.9 0.11 8.41 0.34 6.55 1.18 4.68 2 2.81 2.83 2.23 3.09 1.65 3.35 1.07 3.62 0.87 3.71 0.67 3.82 0.48 3.95 0.21 4.12 0.03 4.42 0.02 4.74 0.01 5.15 0 5.56 0 5.970 10.60 15.23 7.75e-05 19.87 6.03e-05 24.5 0 29.13 0 33.76 0 34.17 0 34.58 0.01 34.99 0.03 35.36 0.23 35.7 0.54 35.89 0.73 36.02 0.94 36.12 1.14 36.21 2.01 36.6 2.89 36.98 3.75 37.37 5.2 38.02 6.65 38.67 8.1 39.33 8.76 39.63 9.48 39.78 10.21 39.76 12.39 39.73 14.57 39.74 16.75 39.76 17.52 39.77 18.29 39.6 18.98 39.26 19.76 38.89 20.54 38.54 21.33 38.19 22.78 37.54 24.24 36.9 25.69 36.25 25.94 36.15 26.18 36.03 26.41 35.88 26.72 35.68 26.92 35.34 26.93 34.97 26.94 34.61 26.94 34.24 26.94 33.88 26.94 24.57 26.94 15.26 26.94 5.95 26.94 5.59 26.93 5.22 26.93 4.86ZM8.25 35.8C8.25 36.19 8.2 36.58 8.18 36.96 8.17 37.06 7.98 37.17 7.88 37.13 7.64 37.04 7.39 36.97 7.16 36.86 5.61 36.15 4.06 35.44 2.51 34.72 2.2 34.58 1.9 34.42 1.57 34.25 1.51 34.05 1.47 33.84 1.44 33.63 1.42 33.24 1.43 32.85 1.43 32.47 1.43 24.08 1.43 15.69 1.43 7.3 1.43 6.95 1.43 6.61 1.43 6.26 1.42 5.78 1.59 5.46 2.06 5.26 3.04 4.85 4 4.38 4.97 3.94 5.91 3.52 6.84 3.11 7.78 2.7 7.93 2.62 8.12 2.69 8.19 2.85 8.21 2.89 8.22 2.94 8.22 2.99 8.23 3.12 8.25 3.25 8.25 3.37 8.25 3.59 8.25 3.81 8.25 4.02 8.25 14.62 8.25 25.21 8.25 35.8ZM17.11 36.18C17.11 36.48 17.1 36.78 17.08 37.08 17.05 37.3 16.86 37.47 16.63 37.48 16.41 37.5 16.18 37.51 15.95 37.51 14.28 37.52 12.6 37.52 10.92 37.51 10.74 37.51 10.56 37.51 10.38 37.49 10.05 37.47 9.87 37.31 9.86 37.02 9.85 36.81 9.84 36.6 9.84 36.38 9.84 31.77 9.84 27.17 9.84 22.56 9.84 22.3 9.86 22.05 9.88 21.79 9.92 21.62 10.07 21.48 10.24 21.46 10.47 21.43 10.69 21.41 10.92 21.4 11.82 21.4 12.73 21.4 13.64 21.4 14.45 21.4 15.27 21.4 16.08 21.4 16.26 21.4 16.45 21.42 16.63 21.43 16.85 21.46 17.03 21.62 17.07 21.85 17.09 22.1 17.11 22.36 17.11 22.61 17.11 24.96 17.11 27.31 17.11 29.65 17.11 31.83 17.11 34.01 17.11 36.18ZM17.11 10.66C17.11 13.05 17.11 15.44 17.11 17.83 17.11 18.2 17.08 18.57 17.07 18.94 17.03 19.11 16.9 19.25 16.73 19.29 16.55 19.32 16.37 19.34 16.19 19.35 14.38 19.35 12.57 19.35 10.75 19.35 10.57 19.34 10.39 19.32 10.21 19.29 10.04 19.25 9.91 19.12 9.88 18.95 9.87 18.82 9.85 18.7 9.84 18.58 9.84 18.29 9.84 18 9.84 17.71 9.84 13.06 9.84 8.4 9.84 3.74 9.84 3.5 9.84 3.25 9.84 3 9.86 2.3 9.97 2.18 10.68 2.17 12.54 2.16 14.4 2.17 16.26 2.17 16.44 2.17 16.62 2.2 16.79 2.26 16.91 2.3 17 2.39 17.04 2.51 17.09 2.83 17.11 3.16 17.11 3.49 17.11 5.88 17.11 8.27 17.11 10.66ZM25.43 32.85C25.43 33.2 25.41 33.54 25.39 33.88 25.38 34.06 25.28 34.22 25.12 34.29 24.59 34.56 24.05 34.82 23.51 35.07 22.28 35.64 21.04 36.2 19.8 36.76 19.49 36.9 19.17 37.01 18.85 37.14 18.76 37 18.65 36.9 18.64 36.79 18.6 36.41 18.6 36.02 18.6 35.63 18.59 31.88 18.59 28.13 18.6 24.37 18.6 17.65 18.6 10.92 18.6 4.19 18.6 3.76 18.63 3.33 18.65 2.9 18.68 2.74 18.83 2.64 18.99 2.67 19.01 2.67 19.02 2.67 19.04 2.68 20.24 3.22 21.44 3.76 22.64 4.3 23.42 4.65 24.19 5.01 24.96 5.36 25.25 5.48 25.43 5.76 25.42 6.07 25.43 6.33 25.44 6.58 25.44 6.84 25.44 15.51 25.44 24.18 25.43 32.85Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 164.03 438)\"></path></g></g></svg>",
-  "plus": "<svg viewBox=\"0 0 34 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-82 -340)\"><g><path d=\"M15.5 1.58C7.82 1.58 1.59 7.81 1.59 15.49 1.59 23.17 7.82 29.39 15.5 29.39 23.18 29.39 29.41 23.17 29.41 15.49 29.4 7.81 23.18 1.59 15.5 1.58ZM15.5 27.27C8.99 27.27 3.71 22 3.71 15.49 3.71 8.98 8.99 3.7 15.5 3.7 22.01 3.7 27.29 8.98 27.29 15.49 27.28 21.99 22.01 27.27 15.5 27.27Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 83 340)\"></path><path d=\"M15.5 0C6.95 0 0 6.95 0 15.5 0 24.05 6.95 31 15.5 31 24.05 31 31 24.05 31 15.5 31 6.95 24.05 0 15.5 0ZM15.5 30.43C7.25 30.43 0.57 23.75 0.57 15.5 0.57 7.25 7.25 0.57 15.5 0.57 23.75 0.57 30.43 7.25 30.43 15.5 30.42 23.74 23.74 30.42 15.5 30.43Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 83 340)\"></path><path d=\"M19.97 13.72 17.27 13.72 17.27 11.02C17.27 10.1 16.45 9.21 15.5 9.25 14.54 9.3 13.73 10.03 13.73 11.02L13.73 13.72 11.03 13.72C10.11 13.72 9.22 14.53 9.27 15.49 9.31 16.44 10.04 17.25 11.03 17.25L13.73 17.25 13.73 19.95C13.73 20.88 14.55 21.76 15.5 21.72 16.46 21.68 17.27 20.94 17.27 19.95L17.27 17.25 19.97 17.25C20.89 17.25 21.78 16.44 21.73 15.49 21.69 14.53 20.96 13.72 19.97 13.72Z\" fill=\"currentColor\" transform=\"matrix(1.03 0 0 1 83 340)\"></path></g></g></svg>",
-  "rating": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-609 -334)\"><g><path d=\"M620.96 354.27C620.3 354.27 619.76 354.81 619.76 355.47 619.76 356.13 620.3 356.67 620.96 356.67 621.62 356.67 622.16 356.13 622.16 355.47 622.16 355.47 622.16 355.47 622.16 355.47 622.16 354.81 621.62 354.27 620.96 354.27Z\" fill=\"currentColor\"></path><path d=\"M640.58 351.15C640.94 350.47 640.95 349.65 640.61 348.96 640.49 348.73 640.32 348.52 640.12 348.34 640.18 348.3 640.23 348.24 640.27 348.19 640.88 347.51 641.02 346.6 640.66 345.77 640.3 344.9 639.47 344.33 638.53 344.3 637.2 344.25 635.85 344.27 634.54 344.28 634.19 344.29 633.84 344.29 633.49 344.29 633.74 343.14 634.1 341.34 634.17 341 634.43 339.47 634.2 338.26 633.49 337.41 632.63 336.37 631.31 336.19 630.59 336.18 630.08 336.18 629.65 336.57 629.59 337.08 628.97 342.02 625.46 343.99 624.39 344.48 623.9 343.29 622.74 342.5 621.45 342.5L617.39 342.5C616.85 342.5 616.41 342.94 616.41 343.48L616.41 358.17C616.41 358.71 616.85 359.15 617.39 359.15L621.26 359.15C622.44 359.15 623.53 358.53 624.14 357.51L627.74 358.75C628.36 358.96 629.03 359 629.68 359.03 630.52 359.07 631.38 359.07 632.2 359.06L632.73 359.06C633.46 359.06 634.87 359.06 635.17 359.06L636.15 359.06C636.24 359.06 636.34 359.06 636.43 359.07 636.65 359.07 636.88 359.07 637.1 359.06 637.9 358.99 638.61 358.56 639 357.9 639.37 357.25 639.39 356.46 639.04 355.79 639.04 355.78 639.03 355.76 639.02 355.75 639.69 355.6 640.26 355.17 640.58 354.57 640.94 353.88 640.95 353.07 640.6 352.38 640.48 352.14 640.31 351.92 640.11 351.75 640.3 351.58 640.46 351.38 640.58 351.15ZM638.03 357.34C637.96 357.3 637.92 357.23 637.92 357.15L638.1 357.21 638.09 357.23C638.07 357.27 638.05 357.3 638.03 357.34ZM639.42 354.28 639.25 354.19C639.19 354.26 639.12 354.31 639.05 354.35 638.88 354.46 638.69 354.51 638.5 354.51 638.33 354.51 638.16 354.51 637.99 354.51L636.8 354.51C636.45 354.51 636.19 354.75 636.17 355.1 636.14 355.39 636.31 355.72 636.67 355.79 636.77 355.82 636.88 355.84 636.98 355.85 637.24 355.88 637.32 355.89 637.49 355.99 637.53 356.02 637.58 356.05 637.62 356.08 637.64 356.09 637.66 356.11 637.67 356.12L637.8 355.98 637.72 356.17C637.78 356.22 637.83 356.29 637.87 356.36 637.89 356.4 637.91 356.44 637.93 356.49L637.98 356.68 638.17 356.68 637.99 356.74C637.99 356.77 637.99 356.8 637.99 356.82L637.99 356.88 637.99 356.9C637.98 356.96 637.97 357.02 637.95 357.07L637.93 357.14C637.9 357.2 637.87 357.26 637.83 357.31L637.75 357.41C637.73 357.43 637.7 357.46 637.67 357.49 637.6 357.55 637.52 357.6 637.44 357.64 637.28 357.72 637.11 357.76 636.93 357.76 636.76 357.76 636.58 357.76 636.4 357.76L636.14 357.76 635.14 357.76C635.11 357.75 635.03 357.75 634.18 357.77 633.61 357.77 632.94 357.78 632.66 357.78 632.42 357.78 632.16 357.78 631.89 357.79 630.75 357.8 629.46 357.82 628.48 357.61 628.02 357.51 627.55 357.33 627.1 357.16 626.89 357.09 626.69 357.01 626.48 356.94L624.6 356.29C624.62 356.12 624.64 355.95 624.64 355.78L624.64 345.76C625.48 345.41 629.98 343.31 630.81 337.46 631.3 337.5 632.05 337.65 632.52 338.22 632.98 338.77 633.11 339.63 632.92 340.78 632.92 340.79 632.46 343.11 632.2 344.3L630.15 344.3C629.73 344.3 629.51 344.63 629.51 344.95 629.51 345.27 629.73 345.6 630.15 345.6L637.95 345.6 638.14 345.6C638.27 345.6 638.39 345.6 638.51 345.6 639.11 345.63 639.56 346.08 639.56 346.64 639.56 346.94 639.48 347.17 639.31 347.34 638.88 347.75 637.94 347.72 637.26 347.69 637.09 347.68 636.94 347.68 636.8 347.68 636.38 347.68 636.16 348 636.16 348.33 636.16 348.65 636.38 348.98 636.8 348.98 637.14 348.98 637.51 348.97 637.81 348.97L638.25 348.97C638.37 348.98 638.56 348.98 638.58 348.98L638.69 348.99C638.72 349 638.76 349.01 638.79 349.02 638.84 349.03 638.89 349.05 638.93 349.07L639.05 349.13C639.1 349.16 639.14 349.19 639.19 349.23L639.33 349.37C639.37 349.42 639.4 349.47 639.43 349.53 639.61 349.85 639.6 350.24 639.42 350.56 639.39 350.6 639.36 350.65 639.36 350.66 639.35 350.68 639.31 350.71 639.28 350.74L639.42 350.87 639.25 350.78C639.19 350.84 639.12 350.9 639.04 350.94 638.88 351.04 638.69 351.09 638.5 351.09 638.33 351.09 638.16 351.09 637.99 351.09L636.8 351.09C636.38 351.09 636.16 351.42 636.16 351.74 636.16 352.06 636.38 352.39 636.8 352.39L637.74 352.39C637.75 352.39 638.35 352.38 638.59 352.39 638.71 352.4 638.83 352.43 638.93 352.48L639.05 352.54C639.09 352.56 639.13 352.59 639.16 352.61L639.23 352.68 639.38 352.57 639.28 352.73 639.33 352.79C639.37 352.83 639.4 352.88 639.43 352.94 639.61 353.26 639.6 353.65 639.42 353.97 639.39 354.02 639.36 354.06 639.36 354.08 639.35 354.09 639.31 354.12 639.28 354.15L639.42 354.28ZM623.37 345.69 623.37 355.78C623.37 356.94 622.43 357.89 621.26 357.89L617.67 357.89 617.67 343.77 621.45 343.77C622.51 343.77 623.37 344.63 623.37 345.69Z\" fill=\"currentColor\"></path><path d=\"M622.79 365.07 620.37 364.72 619.29 362.53C619.17 362.28 618.92 362.13 618.65 362.13 618.38 362.13 618.13 362.28 618.01 362.53L616.92 364.72 614.5 365.07C614.11 365.13 613.84 365.49 613.89 365.88 613.92 366.04 613.99 366.18 614.1 366.29L615.86 368 615.44 370.42C615.37 370.8 615.63 371.17 616.02 371.24 616.18 371.27 616.34 371.25 616.48 371.17L618.65 370.03 620.81 371.17C621.16 371.36 621.59 371.22 621.78 370.88 621.85 370.74 621.88 370.57 621.85 370.42L621.44 368 623.19 366.29C623.48 366.02 623.48 365.57 623.21 365.28 623.1 365.17 622.95 365.1 622.79 365.07Z\" fill=\"currentColor\"></path><path d=\"M632.92 365.07 630.49 364.72 629.41 362.53C629.24 362.17 628.81 362.03 628.45 362.2 628.31 362.27 628.2 362.38 628.13 362.53L627.05 364.72 624.62 365.07C624.23 365.13 623.96 365.49 624.02 365.88 624.04 366.04 624.11 366.18 624.22 366.29L625.98 368 625.56 370.42C625.5 370.81 625.76 371.18 626.14 371.24 626.3 371.27 626.46 371.25 626.6 371.17L628.77 370.03 630.93 371.17C631.28 371.36 631.72 371.22 631.9 370.87 631.97 370.73 632 370.57 631.97 370.42L631.56 368 633.31 366.29C633.6 366.02 633.61 365.57 633.33 365.28 633.22 365.17 633.08 365.1 632.92 365.07Z\" fill=\"currentColor\"></path><path d=\"M643.76 365.56C643.67 365.3 643.45 365.11 643.18 365.07L640.76 364.72 639.67 362.53C639.5 362.17 639.07 362.03 638.72 362.2 638.58 362.27 638.46 362.38 638.39 362.53L637.31 364.72 634.89 365.07C634.49 365.13 634.22 365.49 634.28 365.88 634.3 366.04 634.38 366.18 634.49 366.29L636.24 368 635.83 370.42C635.76 370.81 636.02 371.18 636.4 371.25 636.56 371.27 636.73 371.25 636.87 371.17L639.03 370.03 641.2 371.17C641.55 371.36 641.98 371.22 642.17 370.88 642.24 370.74 642.27 370.57 642.24 370.42L641.83 368 643.58 366.29C643.77 366.1 643.84 365.82 643.76 365.56Z\" fill=\"currentColor\"></path></g></g></svg>",
-  "receipt": "<svg viewBox=\"0 0 36 37\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-420 -252)\"><g><path d=\"M32.46 3.29C32.47 2.91 32.3 2.56 32.01 2.33 31.73 2.05 31.35 1.9 30.96 1.91 30.52 1.9 30.09 2.05 29.75 2.33 29.46 2.56 29.29 2.91 29.3 3.29L29.3 13.57 32.46 13.57ZM27.35 31.42 27.35 2.54C27.35 2.31 27.44 2.09 27.59 1.91L3.21 1.91C2.85 1.91 2.61 2.04 2.26 2.29 2.02 2.52 1.89 2.84 1.9 3.17L1.9 31.42 4.28 33.55 6.89 31.17C7.1 30.92 7.41 30.78 7.73 30.79 8.04 30.81 8.34 30.94 8.56 31.17L11.18 33.55 13.79 31.17C14.2 30.71 14.9 30.66 15.36 31.07 15.39 31.1 15.43 31.13 15.46 31.17L18.07 33.55 20.69 31.17C21.09 30.71 21.79 30.66 22.25 31.07 22.29 31.1 22.32 31.13 22.36 31.17L24.97 33.55ZM30.56 0C31.510 32.42 0.39 33.08 1.09 33.75 1.81 34.11 2.76 34.11 3.74L34.11 14.13C34.12 14.45 33.99 14.76 33.76 14.98 33.56 15.22 33.27 15.35 32.96 15.34L29.3 15.34 29.3 31.53C29.3 31.65 29.18 31.89 29.18 32.01 29.1 32.19 28.98 32.36 28.84 32.5L25.41 35.64C25.29 35.76 25.18 35.88 25.06 35.88 24.93 35.97 24.77 36.02 24.61 36 24.45 36.01 24.29 35.96 24.15 35.88 24.03 35.88 23.92 35.76 23.81 35.64L21.29 33.34 18.77 35.64C18.56 35.85 18.27 35.98 17.97 36 17.66 36.01 17.37 35.87 17.17 35.64L14.65 33.34 12.13 35.64C11.92 35.85 11.63 35.98 11.33 36 11.02 36.01 10.73 35.87 10.53 35.64L8.01 33.34 5.49 35.64C5.28 35.85 5 35.98 4.69 36 4.38 36.01 4.09 35.87 3.89 35.64L0.34 32.5C0.2 32.38 0.12 32.2 0.11 32.01 0.02 31.87-0.02 31.7 2.24e-08 31.53L0 3.74C-0.01 2.76 0.36 1.81 1.03 1.09 1.83 0.36 2.63 0 3.66 0Z\" fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(1.02 0 0 1 420.04 253)\"></path><path d=\"M6.78 10.84 15.2 10.84C16.59 10.84 16.59 8.69 15.2 8.69L6.78 8.69C5.39 8.69 5.39 10.84 6.78 10.84Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 420.04 253)\"></path><path d=\"M6.78 17.75 21.61 17.75C23 17.75 23 15.59 21.61 15.59L6.78 15.59C5.39 15.59 5.39 17.75 6.78 17.75Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 420.04 253)\"></path><path d=\"M6.78 25.54 21.61 25.54C23 25.54 23 23.39 21.61 23.39L6.78 23.39C5.39 23.39 5.39 25.54 6.78 25.54Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 420.04 253)\"></path></g></g></svg>",
-  "reorder": "<svg viewBox=\"0 0 41 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-601 -160)\"><g><path d=\"M16.73 30.85C14.8 30.85 13.22 32.42 13.22 34.36 13.22 36.3 14.8 37.87 16.73 37.87 18.67 37.87 20.24 36.3 20.24 34.36 20.24 34.36 20.24 34.36 20.24 34.36 20.24 32.42 18.67 30.85 16.73 30.85ZM16.73 35.91C15.88 35.91 15.18 35.21 15.18 34.36 15.18 33.5 15.88 32.81 16.73 32.81 17.59 32.81 18.28 33.5 18.28 34.36 18.28 34.36 18.28 34.36 18.28 34.36 18.28 35.21 17.59 35.91 16.73 35.91Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 602 161.04)\"></path><path d=\"M29.04 30.85C27.11 30.85 25.53 32.42 25.53 34.36 25.53 36.3 27.11 37.87 29.04 37.87 30.98 37.87 32.55 36.3 32.55 34.36 32.55 32.42 30.98 30.85 29.04 30.85ZM29.04 35.91C28.19 35.91 27.49 35.21 27.49 34.36 27.49 33.5 28.19 32.81 29.04 32.81 29.9 32.81 30.59 33.5 30.59 34.36 30.59 35.21 29.9 35.91 29.04 35.91Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 602 161.04)\"></path><path d=\"M39.21 8.01C38.68 7.9 38.15 8.24 38.04 8.78 38.04 8.78 38.04 8.78 38.04 8.78L35.21 22.55 10.57 22.55 7.83 9.24 7.43 7.28 6.81 4.29C6.68 3.67 6.26 3.14 5.67 2.89L1.37 1.02C0.87 0.81 0.3 1.04 0.08 1.53-0.13 2.03 0.1 2.6 0.59 2.82L4.89 4.69 9.63 27.7C9.82 28.61 10.62 29.26 11.55 29.26L35.03 29.26C35.57 29.26 36.01 28.83 36.01 28.29 36.01 27.74 35.57 27.3 35.03 27.3 35.03 27.3 35.03 27.3 35.03 27.3L11.55 27.3 10.97 24.5 35.21 24.5C36.14 24.5 36.94 23.85 37.13 22.94L39.98 9.18C40.09 8.64 39.75 8.12 39.21 8.01 39.21 8.01 39.21 8.01 39.21 8.01Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 602 161.04)\"></path><path d=\"M14.49 11.96 22.16 18.83C22.75 19.36 23.68 19.44 24.26 18.83 26.65 16.36 29.04 13.88 31.43 11.4 32.76 10.02 30.66 7.92 29.33 9.3 27.7 10.99 26.07 12.67 24.45 14.36L24.45 1.44C24.45-0.48 21.47-0.48 21.47 1.44L21.47 14.23C19.85 12.77 18.22 11.31 16.6 9.86 15.17 8.58 13.07 10.68 14.49 11.96Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 602 161.04)\"></path></g></g></svg>",
-  "return": "<svg viewBox=\"0 0 38 36\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-350 -252)\"><g><path d=\"M33.98 34.12 1.86 34.12 1.86 11.06 33.98 11.06ZM10.52 1.86 16.99 1.86 16.99 9.2 3.17 9.2ZM32.66 9.2 18.85 9.2 18.85 1.86 25.32 1.86ZM35.76 9.78C35.72 9.66 35.65 9.56 35.56 9.47L26.36 0.27C26.18 0.1 25.950 25.7-6.64e-09L10.13 0C9.89-8.85e-05 9.65 0.1 9.48 0.27L0.27 9.47C0.1 9.65 0 9.89 3.16e-10 10.13L0 35.05C0 35.56 0.42 35.98 0.93 35.98L34.9 35.98C35.42 35.98 35.83 35.56 35.83 35.05 35.83 35.05 35.83 35.05 35.83 35.05L35.83 10.13C35.83 10.01 35.81 9.89 35.76 9.78\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 351 252.01)\"></path><path d=\"M13.53 16.32C13.53 16.58 13.63 16.83 13.82 17.01L16.76 19.95C17.14 20.33 17.76 20.33 18.14 19.95 18.52 19.56 18.52 18.94 18.14 18.56L16.88 17.31C20.04 17.41 22.51 20.05 22.41 23.21 22.3 26.36 19.66 28.83 16.51 28.73 13.42 28.63 10.98 26.1 10.98 23.01 10.98 22.47 10.54 22.04 10 22.04 9.46 22.04 9.02 22.47 9.02 23.01 9.02 27.25 12.45 30.69 16.69 30.7 20.93 30.7 24.37 27.27 24.38 23.03 24.38 18.85 21.04 15.44 16.87 15.35L18.14 14.07C18.52 13.69 18.52 13.07 18.14 12.69 17.76 12.31 17.14 12.31 16.76 12.69L13.82 15.62C13.63 15.81 13.53 16.06 13.53 16.32\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 351 252.01)\"></path></g></g></svg>",
-  "search": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-498 -433)\"><g><path d=\"M502.29 437.29C497.9 441.68 497.9 448.8 502.29 453.2 506.46 457.37 513.15 457.61 517.61 453.74L518.95 455.08 517.59 456.45C517.28 456.76 517.28 457.26 517.59 457.57L523.98 463.97C525.36 465.35 527.59 465.34 528.97 463.97 530.34 462.59 530.34 460.36 528.97 458.98L522.57 452.59C522.26 452.28 521.76 452.28 521.45 452.59L520.08 453.95 518.74 452.61C522.81 447.92 522.3 440.82 517.61 436.75 513.15 432.88 506.46 433.12 502.29 437.29ZM528.18 459.93C529.09 460.84 529.09 462.32 528.18 463.23 527.27 464.14 525.8 464.14 524.89 463.23L520.58 458.92 523.87 455.62ZM517.75 437.74C521.9 441.89 521.89 448.61 517.74 452.76 513.59 456.9 506.87 456.9 502.72 452.75 498.58 448.6 498.58 441.88 502.72 437.74 506.87 433.59 513.6 433.59 517.75 437.74Z\" fill=\"currentColor\"></path><path d=\"M503.46 438.48C499.72 442.22 499.72 448.28 503.46 452.02 507.2 455.77 513.26 455.77 517.01 452.03 517.01 452.03 517.01 452.03 517.01 452.02 520.75 448.28 520.75 442.22 517.01 438.48 513.27 434.73 507.21 434.73 503.47 438.47 503.46 438.47 503.46 438.47 503.46 438.48ZM515.62 439.86C518.6 442.84 518.6 447.66 515.62 450.64 512.65 453.61 507.82 453.61 504.85 450.64 501.87 447.66 501.87 442.84 504.85 439.86 506.28 438.43 508.22 437.63 510.24 437.63 512.26 437.63 514.2 438.43 515.62 439.86Z\" fill=\"currentColor\"></path></g></g></svg>",
-  "settings": "<svg viewBox=\"0 0 35 33\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-842 -340)\"><g><path d=\"M12.15 16.87C15 16.63 17.11 14.13 16.87 11.28 16.63 8.43 14.13 6.32 11.28 6.56 8.43 6.8 6.32 9.3 6.56 12.15 6.78 14.83 9.02 16.89 11.71 16.89 11.86 16.89 12 16.88 12.15 16.87ZM8.03 12.03C7.86 9.99 9.37 8.21 11.4 8.03 11.51 8.02 11.61 8.02 11.72 8.02 13.76 8.02 15.41 9.68 15.41 11.72 15.41 13.76 13.75 15.41 11.71 15.41 9.79 15.41 8.19 13.94 8.03 12.03Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 843 340.02)\"></path><path d=\"M19.41 19.9 18.86 18.46C19.11 18.2 19.35 17.92 19.57 17.63L21.07 17.92C21.38 17.98 21.7 17.84 21.86 17.57 22.18 17 22.47 16.4 22.7 15.78 22.81 15.49 22.72 15.15 22.47 14.95L21.28 13.98C21.37 13.63 21.43 13.27 21.48 12.91L22.92 12.41C23.22 12.31 23.43 12.02 23.42 11.7 23.42 11.35 23.41 11.03 23.38 10.72 23.36 10.43 23.32 10.12 23.26 9.75 23.2 9.43 22.96 9.19 22.64 9.14L21.14 8.89C21.03 8.54 20.91 8.2 20.76 7.87L21.77 6.71C21.98 6.47 22.01 6.13 21.85 5.85 21.52 5.28 21.14 4.74 20.72 4.23 20.52 3.99 20.18 3.9 19.89 4.02L18.46 4.56C18.19 4.31 17.91 4.08 17.62 3.86L17.92 2.35C17.98 2.04 17.84 1.73 17.56 1.57 16.99 1.24 16.39 0.95 15.77 0.72 15.48 0.62 15.14 0.71 14.94 0.95L13.98 2.14C13.63 2.06 13.27 1.99 12.91 1.95L12.41 0.5C12.3 0.2 12.02 8.89e-06 11.71-1.1e-08 11.39 0 11.06 0.01 10.72 0.04 10.4 0.07 10.07 0.11 9.74 0.17 9.43 0.22 9.19 0.47 9.14 0.78L8.89 2.29C8.54 2.39 8.2 2.52 7.86 2.66L6.71 1.65C6.47 1.44 6.13 1.41 5.86 1.57 5.29 1.9 4.74 2.27 4.24 2.69 3.99 2.9 3.9 3.23 4.02 3.53L4.56 4.96C4.31 5.23 4.08 5.5 3.86 5.8L2.35 5.5C2.04 5.44 1.73 5.58 1.57 5.86 1.24 6.43 0.96 7.03 0.73 7.65 0.62 7.94 0.71 8.27 0.96 8.47L2.14 9.44C2.06 9.8 1.99 10.16 1.95 10.52L0.5 11.01C0.2 11.110 11.4 3.29e-05 11.72 0 12.1 0.02 12.41 0.04 12.7 0.06 12.99 0.1 13.29 0.17 13.68 0.22 13.99 0.47 14.24 0.78 14.29L2.29 14.53C2.39 14.88 2.52 15.22 2.66 15.56L1.65 16.71C1.44 16.95 1.41 17.3 1.57 17.57 1.9 18.15 2.28 18.69 2.7 19.19 2.91 19.43 3.24 19.52 3.53 19.41L4.96 18.86C5.23 19.12 5.5 19.35 5.8 19.57L5.5 21.07C5.44 21.38 5.58 21.7 5.86 21.86 6.43 22.19 7.03 22.47 7.64 22.7 7.94 22.81 8.27 22.72 8.47 22.47L9.44 21.28C9.8 21.37 10.15 21.43 10.51 21.47L11.01 22.92C11.11 23.22 11.39 23.42 11.71 23.42L11.74 23.42C12.09 23.42 12.4 23.41 12.71 23.39 13.01 23.36 13.32 23.32 13.68 23.26 13.99 23.21 14.24 22.96 14.29 22.65L14.53 21.14C14.88 21.03 15.22 20.91 15.56 20.77L16.71 21.77C16.95 21.98 17.3 22.02 17.57 21.86 18.14 21.53 18.68 21.15 19.19 20.73 19.43 20.52 19.52 20.19 19.41 19.9ZM9.17 19.71C8.95 19.71 8.74 19.81 8.6 19.98L7.67 21.12C7.47 21.03 7.26 20.93 7.06 20.83L7.34 19.39C7.4 19.09 7.27 18.79 7.02 18.63 6.54 18.3 6.09 17.92 5.68 17.49 5.47 17.28 5.16 17.21 4.88 17.31L3.51 17.83C3.38 17.65 3.25 17.47 3.12 17.28L4.09 16.17C4.28 15.95 4.33 15.63 4.2 15.37 3.94 14.83 3.74 14.27 3.59 13.7 3.52 13.41 3.29 13.2 2.99 13.15L1.55 12.91C1.53 12.8 1.52 12.69 1.51 12.58 1.5 12.47 1.5 12.36 1.49 12.24L2.88 11.76C3.16 11.67 3.35 11.41 3.38 11.12 3.42 10.53 3.52 9.95 3.69 9.39 3.77 9.1 3.68 8.79 3.45 8.6L2.31 7.67C2.4 7.46 2.49 7.26 2.6 7.06L4.04 7.34C4.33 7.4 4.63 7.27 4.8 7.03 5.12 6.54 5.51 6.09 5.93 5.68 6.15 5.47 6.22 5.16 6.11 4.88L5.59 3.51C5.77 3.37 5.96 3.24 6.15 3.12L7.25 4.09C7.47 4.28 7.79 4.33 8.06 4.19 8.59 3.94 9.15 3.73 9.72 3.59 10.01 3.52 10.23 3.29 10.28 2.99L10.51 1.55C10.62 1.53 10.74 1.52 10.85 1.51 10.96 1.5 11.07 1.5 11.19 1.49L11.66 2.88C11.76 3.16 12.01 3.35 12.31 3.38 12.9 3.42 13.48 3.52 14.04 3.69 14.33 3.77 14.64 3.68 14.82 3.45L15.75 2.31C15.95 2.4 16.16 2.49 16.36 2.6L16.08 4.04C16.02 4.33 16.15 4.63 16.39 4.79 16.88 5.12 17.33 5.51 17.74 5.93 17.95 6.14 18.26 6.21 18.54 6.11L19.91 5.59C20.05 5.77 20.18 5.96 20.3 6.15L19.34 7.25C19.14 7.48 19.1 7.79 19.23 8.06 19.49 8.59 19.69 9.15 19.83 9.72 19.9 10.01 20.14 10.23 20.43 10.28L21.87 10.51C21.89 10.63 21.9 10.74 21.91 10.84 21.92 10.95 21.92 11.07 21.93 11.19L20.55 11.66C20.26 11.76 20.07 12.01 20.05 12.31 20.01 12.9 19.9 13.48 19.74 14.04 19.65 14.33 19.75 14.64 19.98 14.83L21.12 15.75C21.03 15.96 20.93 16.16 20.82 16.37L19.38 16.09C19.09 16.03 18.8 16.15 18.63 16.4 18.3 16.89 17.92 17.34 17.49 17.75 17.28 17.95 17.21 18.26 17.31 18.54L17.83 19.91C17.65 20.05 17.47 20.18 17.27 20.3L16.17 19.34C15.95 19.14 15.63 19.1 15.36 19.23 14.83 19.49 14.27 19.69 13.7 19.83 13.41 19.9 13.19 20.14 13.15 20.43L12.91 21.88C12.8 21.89 12.69 21.9 12.58 21.91 12.47 21.92 12.35 21.93 12.23 21.93L11.76 20.55C11.67 20.26 11.41 20.07 11.11 20.05 10.52 20 9.94 19.9 9.37 19.74 9.31 19.72 9.24 19.71 9.17 19.71Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 843 340.02)\"></path><path d=\"M26.09 21.67C24.27 21.8 22.9 23.37 23.03 25.19 23.15 26.91 24.58 28.25 26.31 28.25 26.39 28.25 26.47 28.25 26.54 28.24 28.36 28.12 29.73 26.54 29.6 24.73 29.48 22.91 27.9 21.55 26.09 21.67ZM27.68 26.15C27.03 26.91 25.88 26.99 25.12 26.33 24.76 26.01 24.54 25.56 24.5 25.09 24.44 24.09 25.19 23.22 26.19 23.15 26.23 23.14 26.27 23.14 26.32 23.14 27.27 23.14 28.06 23.88 28.13 24.83 28.16 25.31 28 25.79 27.68 26.15Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 843 340.02)\"></path><path d=\"M33.98 24.43C33.96 24.12 33.92 23.81 33.86 23.5 33.81 23.23 33.6 23.01 33.33 22.93L32.26 22.63C32.12 22.28 31.95 21.95 31.76 21.63L32.17 20.58C32.27 20.32 32.22 20.03 32.03 19.82 31.61 19.36 31.14 18.94 30.62 18.59 30.39 18.43 30.09 18.42 29.84 18.56L28.86 19.11C28.52 18.96 28.17 18.84 27.81 18.75L27.37 17.73C27.25 17.47 27 17.3 26.72 17.28 26.41 17.27 26.1 17.27 25.78 17.29 25.47 17.31 25.17 17.35 24.86 17.41 24.58 17.46 24.36 17.67 24.29 17.94L23.99 19.02C23.64 19.15 23.31 19.32 22.99 19.51L21.95 19.1C21.68 18.99 21.39 19.05 21.18 19.24 20.72 19.66 20.31 20.13 19.95 20.65 19.8 20.88 19.78 21.18 19.92 21.42L20.47 22.41C20.32 22.75 20.2 23.1 20.11 23.46L19.08 23.91C18.83 24.02 18.66 24.27 18.64 24.55 18.6 25.17 18.65 25.8 18.77 26.41 18.82 26.69 19.03 26.92 19.3 26.99L20.38 27.29C20.51 27.64 20.68 27.97 20.87 28.29L20.46 29.33C20.36 29.59 20.41 29.89 20.6 30.09 21.02 30.56 21.49 30.97 22.01 31.33 22.24 31.49 22.54 31.5 22.79 31.36L23.77 30.81C24.11 30.96 24.46 31.08 24.82 31.16L25.27 32.19C25.38 32.45 25.63 32.62 25.91 32.63 26.05 32.64 26.19 32.64 26.33 32.64 26.51 32.64 26.68 32.64 26.84 32.63 27.15 32.6 27.46 32.56 27.77 32.51 28.05 32.45 28.27 32.25 28.34 31.98L28.65 30.9C28.99 30.77 29.32 30.6 29.64 30.41L30.68 30.82C30.94 30.92 31.24 30.87 31.45 30.68 31.91 30.26 32.33 29.79 32.68 29.27 32.84 29.03 32.85 28.73 32.71 28.49L32.16 27.51C32.31 27.17 32.43 26.82 32.52 26.46L33.54 26.01C33.8 25.9 33.97 25.66 33.99 25.38 34.01 25.06 34 24.74 33.98 24.43ZM31.14 25.8C31.06 26.29 30.9 26.76 30.68 27.2 30.56 27.42 30.57 27.69 30.69 27.9L31.19 28.8C31.06 28.96 30.93 29.12 30.78 29.27L29.83 28.89C29.59 28.8 29.33 28.83 29.13 28.97 28.73 29.26 28.28 29.48 27.81 29.63 27.58 29.71 27.39 29.89 27.33 30.13L27.05 31.12C26.94 31.13 26.84 31.14 26.74 31.15 26.64 31.16 26.54 31.16 26.43 31.16L26.03 30.22C25.93 30 25.72 29.83 25.48 29.79 24.99 29.7 24.52 29.55 24.08 29.32 23.86 29.21 23.59 29.21 23.38 29.33L22.48 29.84C22.32 29.71 22.16 29.57 22.01 29.43L22.39 28.47C22.48 28.24 22.45 27.98 22.3 27.78 22.02 27.37 21.8 26.93 21.65 26.45 21.57 26.22 21.38 26.03 21.14 25.97L20.15 25.69C20.14 25.59 20.13 25.49 20.12 25.39 20.12 25.29 20.11 25.18 20.11 25.08L21.05 24.66C21.28 24.57 21.44 24.36 21.49 24.11 21.57 23.63 21.73 23.16 21.95 22.72 22.07 22.5 22.06 22.23 21.94 22.02L21.44 21.12C21.57 20.96 21.71 20.8 21.85 20.65L22.81 21.03C23.04 21.11 23.3 21.08 23.5 20.94 23.9 20.66 24.35 20.44 24.82 20.29 25.06 20.21 25.24 20.02 25.31 19.78L25.58 18.79C25.69 18.78 25.79 18.77 25.89 18.76 25.99 18.76 26.09 18.75 26.2 18.75L26.61 19.69C26.71 19.92 26.91 20.08 27.16 20.13 27.65 20.22 28.12 20.37 28.56 20.6 28.78 20.71 29.04 20.7 29.26 20.58L30.15 20.08C30.32 20.21 30.47 20.35 30.62 20.49L30.25 21.45C30.16 21.67 30.19 21.93 30.33 22.14 30.61 22.54 30.83 22.99 30.99 23.46 31.06 23.7 31.25 23.88 31.49 23.95L32.48 24.23C32.49 24.33 32.5 24.43 32.51 24.53 32.52 24.64 32.52 24.74 32.52 24.85L31.58 25.25C31.35 25.35 31.19 25.56 31.14 25.8Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1.01 843 340.02)\"></path></g></g></svg>",
-  "share": "<svg viewBox=\"0 0 29 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-496 -237)\"><g><path d=\"M24.28 20.11 24.28 10.89C27.28 10.43 29.33 7.64 28.88 4.65 28.43 1.66 25.63-0.4 22.64 0.05 19.65 0.51 17.59 3.3 18.05 6.29 18.09 6.59 18.16 6.88 18.25 7.16L9.85 12.19C8.03 9.77 4.6 9.28 2.18 11.1-0.24 12.92-0.72 16.35 1.09 18.77 2.91 21.19 6.34 21.67 8.76 19.86 9.22 19.51 9.61 19.1 9.94 18.64L18.25 23.83C17.32 26.71 18.89 29.8 21.77 30.73 24.65 31.67 27.74 30.1 28.67 27.22 29.61 24.34 28.04 21.25 25.16 20.32 24.87 20.22 24.58 20.15 24.28 20.11ZM23.46 29.35C21.35 29.35 19.63 27.64 19.63 25.52 19.63 23.4 21.35 21.68 23.46 21.68 25.58 21.68 27.3 23.4 27.3 25.52 27.3 27.64 25.58 29.35 23.46 29.35ZM22.64 20.11C21.17 20.33 19.86 21.14 19 22.36L10.69 17.17C11.06 16.02 11.04 14.77 10.63 13.64L18.99 8.63C19.85 9.85 21.17 10.66 22.64 10.89ZM19.92 6.94C19.09 4.97 20.02 2.7 21.99 1.88 23.96 1.05 26.23 1.97 27.06 3.94 27.88 5.91 26.96 8.18 24.99 9.01 23.36 9.69 21.48 9.19 20.41 7.79L20.42 7.78ZM5.48 19.31C3.36 19.31 1.64 17.59 1.64 15.48 1.64 13.36 3.36 11.64 5.48 11.64 7.6 11.64 9.31 13.36 9.31 15.48 9.31 17.59 7.59 19.31 5.48 19.31Z\" fill=\"currentColor\" transform=\"matrix(1 0 0 1 496 238)\"></path></g></g></svg>",
-  "shipping": "<svg viewBox=\"0 0 52 49\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-24 -436)\"><g><path d=\"M46.64 25.58 40.16 15.5C40.03 15.29 39.8 15.17 39.55 15.17L32.35 15.17 32.35 10.85C32.35 10.45 32.03 10.13 31.63 10.13 31.63 10.13 31.63 10.13 31.63 10.13L4.27 10.13C3.87 10.13 3.55 10.45 3.55 10.85L3.55 33.89C3.55 34.29 3.87 34.61 4.27 34.61 4.27 34.61 4.27 34.61 4.27 34.61L9.38 34.61C9.77 36.96 11.99 38.55 14.33 38.16 16.15 37.85 17.57 36.43 17.88 34.61L31.63 34.61 31.63 34.61 33.87 34.61C34.26 36.96 36.47 38.55 38.82 38.16 40.64 37.85 42.06 36.43 42.36 34.61L46.04 34.61C46.43 34.61 46.76 34.29 46.76 33.9 46.76 33.89 46.76 33.89 46.76 33.89L46.76 25.97C46.76 25.83 46.72 25.7 46.64 25.58ZM13.63 36.77C12.04 36.77 10.75 35.48 10.75 33.89 10.75 32.3 12.04 31.01 13.63 31.01 15.22 31.01 16.51 32.3 16.51 33.89 16.51 35.48 15.22 36.77 13.63 36.77ZM30.91 13.01 6.64 13.01C6.52 13.01 6.43 13.11 6.43 13.23L6.43 14.23C6.43 14.35 6.52 14.45 6.64 14.45L30.91 14.45 30.91 30.34C30.88 30.32 30.84 30.3 30.8 30.29L19.12 30.29C18.97 30.29 18.84 30.42 18.84 30.58 18.84 30.58 18.84 30.58 18.84 30.58L18.84 31.45C18.84 31.61 18.97 31.73 19.12 31.73 19.12 31.73 19.12 31.73 19.12 31.73L30.8 31.73C30.84 31.73 30.88 31.71 30.91 31.68L30.91 33.17 17.88 33.17C17.49 30.83 15.27 29.24 12.92 29.63 11.11 29.93 9.68 31.36 9.38 33.17L4.99 33.17 4.99 31.73 8.26 31.73C8.44 31.73 8.59 31.59 8.59 31.41L8.59 30.62C8.59 30.44 8.44 30.29 8.26 30.29L4.99 30.29 4.99 11.57 30.91 11.57ZM41 19.49 41 19.46 44.25 24.53 35.23 24.53 35.23 19.49ZM38.11 36.77C36.52 36.77 35.23 35.48 35.23 33.89 35.23 32.3 36.52 31.01 38.11 31.01 39.71 31.01 41 32.3 41 33.89 40.99 35.48 39.7 36.77 38.11 36.77ZM45.32 33.17 42.36 33.17C41.97 30.83 39.76 29.24 37.41 29.63 35.59 29.93 34.17 31.36 33.87 33.17L32.35 33.17 32.35 16.61 39.16 16.61 40.09 18.05 34.51 18.05C34.12 18.05 33.79 18.37 33.79 18.77 33.79 18.77 33.79 18.77 33.79 18.77L33.79 25.25C33.79 25.65 34.12 25.97 34.51 25.97 34.51 25.97 34.51 25.97 34.51 25.97L45.18 25.97 45.32 26.18Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 25 436)\"></path><path d=\"M18.66 20.37C18.89 20.37 19.09 20.25 19.11 20.09L19.35 17.46C19.35 17.2 19.04 16.98 18.66 16.98 18.28 16.98 17.97 17.2 17.97 17.46L18.21 20.09C18.23 20.25 18.42 20.37 18.66 20.37Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 25 436)\"></path><path d=\"M16.77 21.44C16.92 21.5 17.12 21.39 17.24 21.19 17.35 20.98 17.35 20.76 17.22 20.65L15.06 19.14C14.83 19.01 14.5 19.16 14.3 19.5 14.11 19.83 14.15 20.2 14.37 20.33Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 25 436)\"></path><path d=\"M20.55 21.44 22.95 20.33C23.17 20.2 23.21 19.83 23.02 19.5 22.82 19.16 22.49 19.01 22.26 19.14L20.1 20.65C19.97 20.76 19.96 20.99 20.08 21.19 20.2 21.39 20.4 21.5 20.55 21.44Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 25 436)\"></path><path d=\"M18.66 27.04C19.04 27.04 19.35 26.83 19.35 26.57L19.11 23.93C19.09 23.78 18.89 23.65 18.66 23.65 18.42 23.65 18.23 23.78 18.21 23.93L17.97 26.57C17.97 26.83 18.28 27.04 18.66 27.04Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 25 436)\"></path><path d=\"M22.26 24.88C22.49 25.01 22.82 24.86 23.02 24.53 23.21 24.19 23.17 23.82 22.95 23.69L20.55 22.58C20.4 22.52 20.2 22.63 20.08 22.83 19.96 23.04 19.97 23.27 20.1 23.37Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 25 436)\"></path><path d=\"M15.06 24.88 17.22 23.37C17.35 23.27 17.35 23.04 17.24 22.83 17.12 22.63 16.92 22.52 16.77 22.58L14.37 23.69C14.15 23.82 14.11 24.19 14.3 24.53 14.5 24.86 14.83 25.01 15.06 24.88Z\" fill=\"currentColor\" transform=\"matrix(1.02 0 0 1 25 436)\"></path></g></g></svg>",
-  "sign-in": "<svg viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-842 -236)\"><g><path d=\"M19.61 28.1 1.89 28.1 1.89 1.89 19.61 1.89C20.83 1.89 20.83 0 19.61 0L0.95 0C0.43 0.01 0.01 0.43-3.46e-08 0.95L0 29.05C0.01 29.57 0.43 29.98 0.95 29.99L19.61 29.99C20.83 29.99 20.83 28.1 19.61 28.1Z\" fill=\"currentColor\" transform=\"matrix(-1.02 1.25e-16 -1.22e-16 -1 871 266)\"></path><path d=\"M26.61 14.15 9.56 14.15C10.71 12.88 11.85 11.6 12.99 10.33 13.8 9.43 12.47 8.08 11.65 8.99 10.03 10.8 8.41 12.61 6.79 14.42 6.45 14.79 6.4 15.39 6.79 15.76 8.54 17.45 10.29 19.14 12.05 20.83 12.92 21.67 14.26 20.34 13.38 19.49 12.19 18.34 11 17.19 9.81 16.04L26.61 16.04C27.82 16.04 27.83 14.15 26.61 14.15Z\" fill=\"currentColor\" transform=\"matrix(-1.02 1.25e-16 -1.22e-16 -1 871 266)\"></path></g></g></svg>"
+  "add-to-cart": "<svg viewBox=\"0 -1.5 42 42\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-544 -161)\"><g><g><g><g><path d=\"M14.8875 11.5423 22.0547 11.5423 22.0547 18.7094C22.0551 18.8802 22.1935 19.0187 22.3645 19.0193L24.5959 19.0193C24.7668 19.0187 24.9052 18.8802 24.9058 18.7094L24.9058 11.5423 32.0727 11.5423C32.2437 11.5418 32.3821 11.4034 32.3827 11.2325L32.3827 9.00098C32.3821 8.8301 32.2437 8.69169 32.0727 8.6912L24.9058 8.6912 24.9058 1.5241C24.9052 1.35321 24.7668 1.2148 24.5959 1.2143L22.3645 1.2143C22.1935 1.2148 22.0551 1.35322 22.0547 1.5241L22.0547 8.6912 14.8875 8.6912C14.7166 8.69171 14.5782 8.8301 14.5777 9.00098L14.5777 11.2325C14.5783 11.4034 14.7166 11.5418 14.8875 11.5423Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00061 545 162.063)\"></path><path d=\"M17.1517 30.6558C15.1649 30.6558 13.5543 32.2665 13.5543 34.2532 13.5543 36.2401 15.1649 37.8508 17.1517 37.8508 19.1385 37.8508 20.7492 36.2401 20.7492 34.2532 20.7469 32.2674 19.1375 30.658 17.1517 30.6558ZM17.1517 35.842C16.2742 35.842 15.5629 35.1306 15.5629 34.2532 15.5629 33.3756 16.2742 32.6644 17.1517 32.6644 18.0292 32.6644 18.7405 33.3756 18.7405 34.2532 18.7395 35.1302 18.0288 35.8409 17.1517 35.842Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00061 545 162.063)\"></path><path d=\"M29.7702 30.6558C27.7835 30.6558 26.1728 32.2665 26.1728 34.2532 26.1728 36.2401 27.7835 37.8508 29.7702 37.8508 31.7571 37.8508 33.3678 36.2401 33.3678 34.2532 33.3656 32.2674 31.7562 30.658 29.7702 30.6558ZM29.7702 35.842C28.8928 35.842 28.1816 35.1306 28.1816 34.2532 28.1816 33.3756 28.8928 32.6644 29.7702 32.6644 30.6478 32.6644 31.3591 33.3756 31.3591 34.2532 31.3581 35.1302 30.6473 35.8409 29.7702 35.842Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00061 545 162.063)\"></path><path d=\"M40.1916 7.24551C39.6436 7.13211 39.1074 7.48448 38.9941 8.03255 38.9939 8.03283 38.9939 8.03312 38.9939 8.03338L36.0865 22.1451 10.835 22.1451 8.02585 8.50958 7.61201 6.50099 6.98024 3.43413C6.84828 2.7935 6.41266 2.25725 5.81267 1.99684L1.40446 0.0834092C0.895691-0.137471 0.304198 0.0959054 0.0833177 0.604669-0.137563 1.11343 0.0958139 1.70493 0.604579 1.92581L5.01289 3.83932 9.87237 27.4283C10.0647 28.3617 10.8866 29.0317 11.8398 29.0317L35.9007 29.0317C36.4553 29.0317 36.9049 28.5821 36.9049 28.0273 36.9049 27.4726 36.4553 27.0231 35.9007 27.0231L11.8398 27.0231 11.2487 24.1536 36.0865 24.1536C37.0387 24.1506 37.8589 23.4822 38.0538 22.5503L40.9787 8.44359C41.0923 7.89557 40.74 7.35919 40.192 7.24558 40.192 7.24557 40.1918 7.24553 40.1916 7.24551Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00061 545 162.063)\"></path></g></g></g></g></g></svg>",
+  "bag": "<svg viewBox=\"-3 0 37 37\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-490 -252)\"><g><g><g><g><path d=\"M28.5262 9.16704 23.6265 9.16704 23.6265 6.59176C23.6362 2.96092 20.7007 0.00968426 17.0699 1.45153e-06 16.2575-0.00216491 15.4518 0.146241 14.6936 0.4377 11.3044-0.865014 7.50096 0.826364 6.19824 4.21549 5.90679 4.97375 5.75838 5.77944 5.76054 6.59176L5.76054 9.16704 0.861122 9.16704C0.385635 9.16693 9.66095e-05 9.55232-7.5024e-09 10.0278-2.76818e-08 10.0279-3.0678e-08 10.028-1.64912e-08 10.0281L0 36.139C-9.18384e-05 36.6145 0.385297 37 0.86079 37 0.8609 37 0.861011 37 0.861122 37L28.5262 37C29.0013 37 29.3863 36.615 29.3863 36.1399 29.3863 36.1395 29.3863 36.1394 29.3863 36.139L29.3863 10.0281C29.3868 9.55308 29.0023 9.16756 28.5272 9.16704 28.5269 9.16704 28.5265 9.16704 28.5262 9.16704ZM27.665 35.2787 1.72125 35.2787 1.72125 10.8883 27.665 10.8883ZM17.0358 1.72118C19.7242 1.72459 21.9025 3.90339 21.9053 6.59176L21.9053 9.16704 18.9432 9.16704 18.9432 6.59176C18.9422 4.74729 18.1656 2.98827 16.8033 1.74471 16.882 1.74092 16.9562 1.72118 17.0358 1.72118ZM14.6936 2.34802C16.2469 3.19602 17.2157 4.82209 17.2219 6.59176L17.2219 9.16704 12.1652 9.16704 12.1652 6.59176C12.1715 4.82208 13.1403 3.19602 14.6936 2.34802ZM7.4818 6.59176C7.48464 3.90339 9.663 1.72459 12.3514 1.72118 12.4309 1.72118 12.5051 1.74092 12.5838 1.74471 11.2216 2.98827 10.445 4.74729 10.444 6.59176L10.444 9.16704 7.4818 9.16704Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02067 0 0 1 491.003 252)\"></path><path d=\"M14.6933 20.4319C15.0728 20.4319 15.3853 20.2339 15.428 19.9783L15.8044 15.7307C15.8044 15.3107 15.3123 14.9657 14.6933 14.9657 14.0753 14.9657 13.5842 15.3107 13.5842 15.7307L13.9597 19.9783C14.0013 20.2339 14.3138 20.4319 14.6933 20.4319Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02067 0 0 1 491.003 252)\"></path><path d=\"M20.5076 27.7215C20.8699 27.9314 21.4146 27.6768 21.7252 27.143 22.0326 26.6084 21.9808 26.0096 21.6166 25.7997L17.7495 24.0015C17.5081 23.9102 17.1814 24.0807 16.9906 24.4104 16.8009 24.7392 16.816 25.1086 17.016 25.2751Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02067 0 0 1 491.003 252)\"></path><path d=\"M14.6933 31.2018C15.3123 31.2018 15.8044 30.8578 15.8044 30.4368L15.428 26.1892C15.3853 25.9336 15.0728 25.7377 14.6933 25.7377 14.3138 25.7377 14.0013 25.9336 13.9597 26.1892L13.5842 30.4368C13.5842 30.8578 14.0753 31.2018 14.6933 31.2018Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02067 0 0 1 491.003 252)\"></path><path d=\"M7.77103 20.368 11.6371 22.168C11.8786 22.2572 12.2073 22.0868 12.3971 21.757 12.5868 21.4283 12.5726 21.0589 12.3717 20.8955L8.88011 18.4461C8.51688 18.236 7.97298 18.4898 7.66352 19.0245 7.35405 19.5602 7.4088 20.1579 7.77103 20.368Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02067 0 0 1 491.003 252)\"></path><path d=\"M17.7495 22.168 21.6166 20.368C21.9808 20.1579 22.0326 19.5602 21.7252 19.0245 21.4146 18.4898 20.8699 18.236 20.5076 18.4461L17.016 20.8955C16.816 21.0589 16.8009 21.4283 16.9906 21.757 17.1803 22.0868 17.5081 22.2572 17.7495 22.168Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02067 0 0 1 491.003 252)\"></path><path d=\"M8.88011 27.7215 12.3717 25.2751C12.5726 25.1086 12.5868 24.7402 12.3971 24.4104 12.2073 24.0807 11.8786 23.9102 11.6371 24.0015L7.77103 25.7997C7.4088 26.0096 7.35405 26.6084 7.66352 27.143 7.97298 27.6768 8.51688 27.9314 8.88011 27.7215Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02067 0 0 1 491.003 252)\"></path></g></g></g></g></g></svg>",
+  "cart": "<svg viewBox=\"0 -1.5 41 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-485 -160)\"><g><g><g><g><path d=\"M16.7641 29.9631C14.8222 29.9631 13.2479 31.5372 13.2479 33.4791 13.248 35.4212 14.8222 36.9953 16.7641 36.9953 18.706 36.9953 20.2803 35.4212 20.2803 33.4791 20.278 31.5381 18.7051 29.9651 16.7641 29.9631ZM16.7641 35.032C15.9064 35.032 15.2112 34.3367 15.2112 33.4791 15.2112 32.6213 15.9065 31.9262 16.7641 31.9262 17.6218 31.9262 18.317 32.6213 18.317 33.4791 18.316 34.3363 17.6213 35.0309 16.7641 35.032Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00013 486.01 161)\"></path><path d=\"M29.0976 29.9631C27.1557 29.9631 25.5814 31.5372 25.5814 33.4791 25.5814 35.4212 27.1557 36.9953 29.0976 36.9953 31.0395 36.9953 32.6136 35.4212 32.6136 33.4791 32.6115 31.5381 31.0385 29.9651 29.0976 29.9631ZM29.0976 35.032C28.2398 35.032 27.5447 34.3367 27.5447 33.4791 27.5447 32.6213 28.2398 31.9262 29.0976 31.9262 29.9552 31.9262 30.6505 32.6213 30.6505 33.4791 30.6494 34.3363 29.9548 35.0309 29.0976 35.032Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00013 486.01 161)\"></path><path d=\"M15.8959 13.414 29.9632 13.414C30.5053 13.4147 30.9454 12.9759 30.9461 12.4337 30.9469 11.8916 30.5081 11.4515 29.9659 11.4507 29.9649 11.4507 29.9642 11.4507 29.9632 11.4507L15.8959 11.4507C15.3538 11.4515 14.9149 11.8916 14.9157 12.4337 14.9164 12.9748 15.3548 13.4132 15.8959 13.414Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00013 486.01 161)\"></path><path d=\"M29.1975 16.5482 16.6617 16.5482C16.1195 16.5482 15.68 16.9877 15.68 17.5299 15.68 18.072 16.1195 18.5115 16.6617 18.5115L29.1975 18.5115C29.7396 18.5115 30.1791 18.072 30.1791 17.5299 30.1792 16.9878 29.7397 16.5482 29.1975 16.5482Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00013 486.01 161)\"></path><path d=\"M39.5386 7.077C39.1665 6.61862 38.6072 6.35293 38.0167 6.35409L7.43999 6.35409 6.82248 3.3564C6.69309 2.73048 6.26745 2.20655 5.68132 1.9517L1.37272 0.0815148C0.875376-0.134205 0.297328 0.0940936 0.081607 0.591435-0.134011 1.08854 0.0939621 1.66633 0.590922 1.88228L4.8996 3.75253 9.6493 26.8086C9.83986 27.7193 10.6416 28.3728 11.5722 28.3756L35.0893 28.3756C35.6313 28.3748 36.0703 27.9348 36.0695 27.3925 36.0688 26.8514 35.6304 26.413 35.0893 26.4123L11.5723 26.4123 10.9945 23.6077 35.2711 23.6077C36.2016 23.6049 37.0034 22.9515 37.1938 22.0407L39.9396 8.71321C40.0598 8.13523 39.9124 7.53392 39.5386 7.077ZM35.2711 21.6446 10.5901 21.6446 7.84448 8.31725 38.0167 8.31734Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00013 486.01 161)\"></path></g></g></g></g></g></svg>",
+  "chat": "<svg viewBox=\"0 0 38 38\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-552 -136)\"><g><g><g><g><path d=\"M567.86 158.054C567.609 158.054 567.354 158.046 567.098 158.038 566.585 158.023 566.054 158.007 565.542 158.055 565.133 158.093 564.773 158.484 564.484 158.8 564.407 158.883 564.334 158.963 564.267 159.029 562.809 160.446 561.352 161.864 559.894 163.282L559.793 163.381 559.793 158.726C559.799 158.517 559.697 158.319 559.523 158.203 559.409 158.109 559.268 158.057 559.121 158.054L556.361 158.054 556.361 143.515 580.588 143.515 580.588 149.446C580.588 150.303 581.933 150.304 581.933 149.446L581.933 142.843C581.929 142.473 581.63 142.175 581.261 142.17L555.689 142.17C555.319 142.175 555.021 142.473 555.016 142.843L555.016 158.726C555.021 159.095 555.319 159.394 555.689 159.399L558.448 159.399 558.448 164.963C558.45 165.003 558.457 165.042 558.468 165.079 558.5 165.323 558.674 165.524 558.911 165.59 558.984 165.619 559.062 165.634 559.14 165.634 559.288 165.632 559.431 165.579 559.544 165.484 559.554 165.478 559.563 165.472 559.572 165.466L565.815 159.399 567.86 159.399C568.289 159.399 568.513 159.06 568.513 158.726 568.515 158.559 568.458 158.396 568.351 158.267 568.228 158.126 568.047 158.048 567.86 158.054Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M587.635 152.404 570.916 152.404C570.127 152.405 569.489 153.044 569.488 153.833L569.488 164.415C569.489 165.203 570.127 165.842 570.916 165.843L581.786 165.843 585.618 169.473C585.943 169.778 586.453 169.761 586.758 169.436 586.896 169.289 586.974 169.095 586.975 168.892L587.003 165.843 587.635 165.843C588.424 165.842 589.062 165.203 589.063 164.415L589.063 153.833C589.062 153.044 588.424 152.405 587.635 152.404ZM587.718 153.833 587.718 164.415C587.717 164.46 587.681 164.497 587.635 164.498L586.468 164.498C586.027 164.5 585.668 164.855 585.663 165.297L585.642 167.643 582.545 164.709C582.396 164.574 582.202 164.499 582.001 164.498L570.916 164.498C570.87 164.497 570.834 164.46 570.833 164.415L570.833 153.833C570.834 153.787 570.87 153.75 570.916 153.749L587.635 153.749C587.681 153.75 587.717 153.787 587.718 153.833Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M574.862 158.154 574.862 158.155C574.417 158.601 574.418 159.324 574.864 159.77 575.311 160.215 576.034 160.214 576.479 159.768 576.924 159.322 576.924 158.6 576.478 158.154 576.048 157.725 575.292 157.725 574.862 158.154Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M579.47 157.82C578.839 157.821 578.328 158.332 578.329 158.963 578.329 159.593 578.84 160.104 579.471 160.104 580.101 160.104 580.612 159.593 580.612 158.963 580.612 158.332 580.101 157.821 579.47 157.82Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M583.27 157.82C582.639 157.821 582.128 158.332 582.129 158.963 582.129 159.593 582.64 160.104 583.271 160.104 583.901 160.104 584.412 159.593 584.412 158.963 584.411 158.332 583.9 157.821 583.27 157.82Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M561.045 153.223C560.616 153.223 560.392 153.561 560.392 153.895 560.392 154.229 560.616 154.567 561.045 154.567L566.841 154.567C567.27 154.567 567.494 154.228 567.494 153.895 567.494 153.56 567.27 153.223 566.841 153.223Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M576.794 148.488C576.794 148.154 576.569 147.816 576.14 147.816L561.045 147.816C560.616 147.816 560.392 148.154 560.392 148.488 560.392 148.822 560.616 149.16 561.045 149.16L576.14 149.16C576.569 149.16 576.794 148.822 576.794 148.488Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></g></g></g></svg>",
+  "checkmark": "<svg viewBox=\"0 -0.5 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-896 -141)\"><g><g><g><g><path d=\"M29.8335 3.62775C28.8916 2.68585 27.2078 2.63418 26.2721 3.62775 22.3094 7.83525 18.3468 12.0427 14.384 16.2503L9.16136 10.5834C6.92463 8.22845 3.3672 11.794 5.59997 14.1448 7.96341 16.6332 10.3268 19.1217 12.6902 21.61 13.607 22.5751 15.3356 22.5826 16.2517 21.61 20.2143 17.4025 24.1771 13.195 28.1397 8.98755L29.8335 7.18914C30.7658 6.19929 30.8155 4.60976 29.8335 3.62775Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01468 0 0 1 896 142.015)\"></path><path d=\"M27.0497 14.4805C27.0024 18.7411 24.867 22.7636 21.2462 25.0596 17.6528 27.3383 13.0051 27.6639 9.1527 25.8238 5.3792 24.0137 2.74039 20.4599 2.09879 16.3241 1.45536 12.0694 3.13191 7.7343 6.37305 4.93601 10.4523 1.41415 16.4038 1.04938 21.0064 3.75274 22.1025 4.39653 23.0956 2.6935 22.0013 2.05077 17.2836-0.720107 11.2782-0.720305 6.65987 2.27711 2.554 4.94189 0 9.57694 0 14.4805 0 19.3838 2.55387 24.0189 6.65987 26.6838 10.8382 29.3956 16.2405 29.6904 20.7332 27.5881 25.7882 25.2229 28.9594 20.0145 29.0207 14.4805 29.0348 13.2117 27.0638 13.2108 27.0497 14.4805Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01468 0 0 1 896 142.015)\"></path></g></g></g></g></g></svg>",
+  "clock": "<svg viewBox=\"0 -0.5 41 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-892 -332)\"><g><g><g><g><path d=\"M20.5664 6.41333C12.7604 6.41333 6.40943 12.7643 6.40943 20.5708 6.40943 28.3773 12.7604 34.7278 20.5664 34.7278 28.3725 34.7278 34.7239 28.3768 34.7239 20.5708 34.7239 12.7647 28.3729 6.41333 20.5664 6.41333ZM29.9776 28.564 29.3011 27.8872C28.9149 27.4913 28.2808 27.4835 27.885 27.8697 27.4891 28.256 27.4813 28.89 27.8676 29.2859 27.8733 29.2918 27.8791 29.2976 27.885 29.3033L28.5614 29.9802C26.5935 31.6592 24.1463 32.6751 21.5679 32.8835L21.5679 31.9202C21.5679 31.3671 21.1195 30.9188 20.5664 30.9188 20.0134 30.9188 19.565 31.3671 19.565 31.9202L19.565 32.8831C16.9866 32.6745 14.5395 31.6586 12.5714 29.9797L13.2483 29.3029C13.6393 28.9112 13.6386 28.2768 13.247 27.8859 12.8554 27.4949 12.221 27.4955 11.83 27.8872L11.1536 28.564C9.47466 26.596 8.45875 24.1489 8.25023 21.5705L9.2131 21.5705C9.76616 21.5705 10.2145 21.1221 10.2145 20.569 10.2145 20.016 9.76616 19.5676 9.2131 19.5676L8.2524 19.5676C8.46083 16.9891 9.47674 14.542 11.1557 12.574L11.83 13.2505C12.2259 13.6367 12.8599 13.6289 13.2461 13.233 13.6257 12.844 13.6257 12.2233 13.2461 11.8343L12.5697 11.1575C14.5376 9.47839 16.9848 8.46248 19.5633 8.25413L19.5633 9.21743C19.5633 9.7705 20.0116 10.2189 20.5647 10.2189 21.1178 10.2189 21.5661 9.7705 21.5661 9.21743L21.5661 8.25457C24.1446 8.46309 26.5917 9.47899 28.5597 11.1579L27.8846 11.8343C27.4887 12.2206 27.4809 12.8546 27.8671 13.2505 28.2534 13.6463 28.8874 13.6541 29.2833 13.2679 29.2892 13.2622 29.295 13.2564 29.3007 13.2505L29.9776 12.574C31.6566 14.542 32.6725 16.9891 32.8809 19.5676L31.9172 19.5676C31.3641 19.5676 30.9157 20.016 30.9157 20.569 30.9157 21.1221 31.3641 21.5705 31.9172 21.5705L32.88 21.5705C32.6722 24.1489 31.6565 26.5961 29.9776 28.564Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02564 0 0 1 893 333)\"></path><path d=\"M20.566 4.66787C11.8018 4.66787 4.67177 11.7979 4.67177 20.5621 4.67177 29.3263 11.8018 36.4568 20.566 36.4568 29.3302 36.4568 36.4611 29.3263 36.4611 20.5621 36.4611 11.7979 29.3302 4.66787 20.566 4.66787ZM20.566 35.8726C12.1242 35.8726 5.2559 29.0047 5.2559 20.5621 5.2559 12.1195 12.1242 5.252 20.566 5.252 29.0078 5.252 35.877 12.1199 35.877 20.5621 35.877 29.0043 29.0086 35.8726 20.566 35.8726Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02564 0 0 1 893 333)\"></path><path d=\"M24.3278 16.6764 22.0021 18.9458 21.84 19.1052C21.2085 18.7025 20.4025 18.6958 19.7643 19.0879L16.0377 15.2789C15.8551 15.0931 15.6729 14.907 15.4912 14.7203 15.0306 14.2493 14.3078 14.9725 14.7684 15.4431L18.6663 19.4298 19.061 19.8332C18.5461 20.7865 18.9014 21.9766 19.8547 22.4916 20.8079 23.0064 21.9981 22.6511 22.513 21.6979 22.822 21.1259 22.8275 20.4379 22.5277 19.861L24.723 17.719 25.0488 17.4009C25.2404 17.2142 25.2503 16.8636 25.0488 16.6781 24.848 16.484 24.5296 16.4832 24.3278 16.6764ZM20.7879 21.7867C20.2207 21.7864 19.761 21.3265 19.7613 20.7593 19.7616 20.1921 20.2215 19.7324 20.7887 19.7327 21.3559 19.733 21.8156 20.1929 21.8153 20.7601 21.8143 21.327 21.3548 21.7862 20.7879 21.7867Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02564 0 0 1 893 333)\"></path></g></g></g></g></g></svg>",
+  "close": "<svg viewBox=\"0 -1 34 34\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-202 -238)\"><g><g><g><g><path d=\"M25.3476 5.65279C19.914 0.220391 11.1053 0.221351 5.67292 5.65493 0.240526 11.0885 0.241486 19.8972 5.67508 25.3295 11.1087 30.762 19.9172 30.761 25.3497 25.3274 27.958 22.7185 29.4232 19.1805 29.4234 15.4915 29.4336 11.7991 27.9658 8.25623 25.3476 5.65279ZM23.8476 23.8295C19.2424 28.434 11.7765 28.4335 7.17203 23.8283 2.56756 19.223 2.56815 11.7571 7.17334 7.15267 11.7785 2.5482 19.2444 2.54879 23.8489 7.15398 26.06 9.36533 27.302 12.3644 27.3019 15.4915 27.3002 18.6186 26.0579 21.6173 23.8476 23.8295Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.03226 0 0 1 203 239)\"></path><path d=\"M26.4651 4.53466C20.4053-1.51156 10.5947-1.51156 4.5349 4.53466-1.51137 10.581-1.51176 20.4191 4.53451 26.4652 10.5946 32.5116 20.4054 32.5116 26.4654 26.4652 32.5118 20.4191 32.5113 10.581 26.4651 4.53466ZM26.0625 26.0623C20.2292 31.8958 10.7714 31.896 4.93789 26.0627-0.895641 20.2295-0.895833 10.7716 4.93746 4.93808 10.7707-0.895452 20.2286-0.895644 26.0621 4.93764 31.8863 10.7748 31.8865 20.2249 26.0625 26.0623Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.03226 0 0 1 203 239)\"></path><path d=\"M19.9194 13.5809C20.5743 12.926 20.623 11.7267 19.9194 11.0808 19.2137 10.4329 18.118 10.382 17.4192 11.0808 16.7826 11.7174 16.1459 12.3542 15.5091 12.9908 15.135 12.6167 14.7606 12.2424 14.3865 11.8682 14.124 11.6057 13.8615 11.3433 13.599 11.0808 12.9442 10.4259 11.7448 10.3772 11.0989 11.0808 10.451 11.7864 10.4001 12.8821 11.0989 13.5809 11.7355 14.2176 12.3722 14.8543 13.0089 15.491 12.6347 15.8652 12.2606 16.2395 11.8863 16.6138 11.6238 16.8762 11.3614 17.1386 11.0989 17.4011 10.4441 18.0559 10.3953 19.2554 11.0989 19.9012 11.8046 20.5492 12.9003 20.6 13.599 19.9012 14.2357 19.2645 14.8724 18.6278 15.5091 17.9912 15.8835 18.3654 16.2576 18.7396 16.6318 19.1139L17.4192 19.9012C18.0741 20.5561 19.2735 20.6049 19.9194 19.9012 20.5673 19.1956 20.6182 18.0998 19.9194 17.4011 19.2827 16.7644 18.6461 16.1277 18.0094 15.4911 18.3835 15.1168 18.7579 14.7426 19.132 14.3683 19.3945 14.1059 19.657 13.8435 19.9194 13.5809Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.03226 0 0 1 203 239)\"></path></g></g></g></g></g></svg>",
+  "coupon": "<svg viewBox=\"0 -8.5 41 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-348 -448)\"><g><g><g><g><path d=\"M36.6513 2.8825C36.8512 2.8825 37.0133 3.04461 37.0133 3.24458L37.0133 3.83315C37.0133 4.03312 36.8512 4.19523 36.6513 4.19523L36.0627 4.19523C35.8627 4.19523 35.7006 4.03312 35.7006 3.83315L35.7006 3.24458C35.7006 3.04461 35.8627 2.8825 36.0627 2.8825Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M36.6513 4.45183 36.0627 4.45183C35.7211 4.45175 35.4442 4.17518 35.4434 3.83362L35.4434 3.24454C35.444 2.90279 35.7209 2.62588 36.0627 2.62533L36.6513 2.62533C36.9929 2.62592 37.2697 2.90288 37.27 3.24454L37.27 3.83362C37.2697 4.17509 36.9927 4.45171 36.6513 4.45183ZM36.0627 3.13916C36.0044 3.13916 35.9572 3.18633 35.9572 3.24452 35.9572 3.24454 35.9572 3.24454 35.9572 3.24454L35.9572 3.83362C35.9578 3.89149 36.0048 3.93811 36.0627 3.938L36.6513 3.938C36.709 3.9379 36.7559 3.89132 36.7562 3.83362L36.7562 3.24454C36.7562 3.18652 36.7092 3.13937 36.6513 3.13916Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M38.9824 8.13343C39.3448 8.13341 39.6387 7.83956 39.6387 7.47706L39.6387 0.913397C39.6387 0.550902 39.3448 0.257045 38.9824 0.25703L0.9131 0.25703C0.550607 0.257047 0.25675 0.550904 0.256735 0.913397L0.256735 7.47706C0.25675 7.83956 0.550607 8.13341 0.9131 8.13343 2.72561 8.13343 4.19494 9.60276 4.19494 11.4153 4.19494 13.2278 2.72561 14.6971 0.9131 14.6971 0.550607 14.6971 0.25675 14.991 0.256735 15.3535L0.256735 21.9171C0.25675 22.2795 0.550607 22.5736 0.9131 22.5736L38.9824 22.5736C39.3448 22.5736 39.6387 22.2797 39.6387 21.9171L39.6387 15.3535C39.6387 14.991 39.3448 14.6971 38.9824 14.6971 37.1698 14.6971 35.7006 13.2278 35.7006 11.4153 35.7006 9.60276 37.1698 8.13343 38.9824 8.13343ZM34.4308 12.068C34.7206 14.0871 36.3069 15.6734 38.326 15.9632L38.326 21.2607 1.56947 21.2607 1.56947 15.9632C4.08124 15.6027 5.82516 13.2742 5.46463 10.7625 5.17483 8.7434 3.58854 7.15712 1.56947 6.86731L1.56947 1.56976 38.326 1.56976 38.326 6.86729C35.8142 7.22779 34.0703 9.55623 34.4308 12.068Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M38.9826 22.8302 0.913247 22.8302C0.409045 22.8298 0.000410493 22.4211-3.70059e-08 21.9169L0 15.3536C0.000410528 14.8494 0.409045 14.4407 0.913247 14.4403 2.58377 14.439 3.93693 13.0837 3.93561 11.4132 3.9343 9.74453 2.5819 8.39214 0.913247 8.39082 0.408849 8.38994 0.000329847 7.98098-3.70059e-08 7.47657L0 0.913247C0.000410528 0.409045 0.409045 0.000410491 0.913247-3.70059e-08L38.9826 0C39.4868 0.00041053 39.8955 0.409045 39.8959 0.913247L39.8959 7.47659C39.8955 7.98098 39.487 8.38994 38.9826 8.39082 37.312 8.38951 35.9567 9.74267 35.9553 11.4132 35.954 13.0837 37.3073 14.439 38.9779 14.4403 38.9794 14.4403 38.981 14.4403 38.9826 14.4403 39.4868 14.4407 39.8955 14.8494 39.8959 15.3536L39.8959 21.9169C39.8953 22.4211 39.4868 22.8298 38.9826 22.8302ZM0.913247 0.513826C0.692817 0.514223 0.514223 0.692817 0.513826 0.913247L0.513826 7.47659C0.513786 7.69736 0.692475 7.87649 0.913247 7.87699 2.86755 7.87699 4.45183 9.46129 4.45183 11.4156 4.45183 13.3699 2.86755 14.9542 0.913247 14.9542 0.692819 14.9545 0.514223 15.1331 0.513826 15.3536L0.513826 21.9169C0.514223 22.1374 0.692819 22.316 0.913247 22.3164L38.9826 22.3164C39.2031 22.316 39.3817 22.1374 39.3821 21.9169L39.3821 15.3536C39.3815 15.1331 39.2031 14.9545 38.9826 14.9542 37.0283 14.9542 35.444 13.3699 35.444 11.4156 35.444 9.46129 37.0283 7.87699 38.9826 7.87699 39.2033 7.87649 39.3821 7.69736 39.3821 7.47659L39.3821 0.913247C39.3817 0.692819 39.2031 0.514223 38.9826 0.513826ZM38.5832 21.5176 1.31267 21.5176 1.31267 15.7399 1.53295 15.7088C3.90292 15.3658 5.54805 13.1692 5.21053 10.7984 4.92928 8.89602 3.43536 7.40231 1.53295 7.12132L1.31267 7.09021 1.31267 1.31267 38.5832 1.31267 38.5832 7.09021 38.3629 7.12132C35.992 7.4608 34.3453 9.65792 34.6848 12.0287 34.685 12.0297 34.6852 12.0307 34.6852 12.0318 34.9661 13.9344 36.4601 15.4284 38.3629 15.7088L38.5832 15.7399ZM1.82649 21.0036 38.0692 21.0036 38.0692 16.1805C36.0386 15.7846 34.4784 14.1508 34.1765 12.104 33.8087 9.53793 35.5231 7.13602 38.0692 6.64964L38.0692 1.82649 1.82649 1.82649 1.82649 6.64964C3.85669 7.04653 5.41637 8.6798 5.71933 10.7261 6.08393 13.2915 4.37104 15.6914 1.82649 16.1805Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M19.9477 4.85159C18.4977 4.85159 17.3223 6.02706 17.3223 7.47706 17.3223 8.92708 18.4977 10.1025 19.9477 10.1025 21.3978 10.1025 22.5732 8.92708 22.5732 7.47706 22.5732 6.02706 21.3978 4.85161 19.9477 4.85159ZM19.9477 8.7898C19.2228 8.7898 18.635 8.20207 18.635 7.47706 18.635 6.75207 19.2228 6.16434 19.9477 6.16434 20.6727 6.16434 21.2606 6.75207 21.2606 7.47706 21.2606 8.20203 20.6729 8.78976 19.9479 8.7898 19.9477 8.7898 19.9477 8.7898 19.9477 8.7898Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M19.9479 10.3598C18.3558 10.3601 17.0649 9.06968 17.0647 7.47758 17.0644 5.88549 18.3548 4.59461 19.947 4.59433 21.539 4.59405 22.8298 5.88448 22.8302 7.47657 22.8285 9.06785 21.5392 10.3576 19.9479 10.3598ZM19.9479 5.10816C18.6396 5.10788 17.5788 6.16826 17.5785 7.47657 17.5782 8.78489 18.6386 9.84573 19.947 9.84599 21.2553 9.84628 22.316 8.78591 22.3164 7.47758 22.3164 7.47725 22.3164 7.47691 22.3164 7.47657 22.3145 6.16926 21.2553 5.10991 19.9479 5.10816ZM19.9479 9.04715C19.0807 9.04744 18.3776 8.3447 18.3773 7.47758 18.377 6.61044 19.0797 5.90728 19.947 5.907 20.8141 5.90672 21.5172 6.60945 21.5176 7.47657 21.5168 8.34333 20.8146 9.04595 19.9479 9.04715ZM19.9479 6.42083C19.3646 6.42054 18.8914 6.89322 18.8912 7.47657 18.8908 8.05992 19.3636 8.53304 19.947 8.53333 20.5302 8.53361 21.0034 8.06094 21.0036 7.47758 21.0036 7.47725 21.0036 7.47691 21.0036 7.47657 21.003 6.8938 20.5307 6.42154 19.9479 6.42083Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M27.8241 12.728C26.3742 12.728 25.1986 13.9035 25.1986 15.3535 25.1986 16.8035 26.3742 17.9789 27.8241 17.9789 29.2741 17.9789 30.4495 16.8035 30.4495 15.3535 30.4495 13.9035 29.2741 12.728 27.8241 12.728ZM27.8241 16.6662C27.0991 16.6662 26.5115 16.0785 26.5115 15.3535 26.5115 14.6285 27.0991 14.0407 27.8241 14.0407 28.5492 14.0407 29.1369 14.6285 29.1369 15.3535 29.1369 16.0784 28.5492 16.6662 27.8243 16.6662 27.8243 16.6662 27.8241 16.6662 27.8241 16.6662Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M27.8239 18.2358C26.2321 18.2355 24.9418 16.9449 24.9422 15.3531 24.9424 13.7612 26.233 12.471 27.8248 12.4713 29.4165 12.4716 30.7067 13.762 30.7067 15.3536 30.705 16.9449 29.4151 18.2344 27.8239 18.2358ZM27.8239 12.9852C26.5158 12.9854 25.4556 14.046 25.456 15.3541 25.4562 16.6621 26.5169 17.7223 27.8248 17.722 29.1328 17.7217 30.1929 16.6614 30.1929 15.3536 30.1912 14.046 29.1314 12.9864 27.8239 12.9852ZM27.8239 16.9232C26.957 16.9229 26.2545 16.2199 26.2548 15.3531 26.255 14.4862 26.958 13.7837 27.8248 13.784 28.6915 13.7843 29.3939 14.4869 29.3939 15.3536 29.393 16.2202 28.6906 16.9223 27.8239 16.9232ZM27.8239 14.2978C27.2409 14.2981 26.7684 14.771 26.7686 15.3541 26.769 15.9372 27.2418 16.4096 27.8248 16.4093 28.4078 16.409 28.8801 15.9365 28.8801 15.3536 28.8795 14.7706 28.4069 14.2983 27.8239 14.2978Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M31.3188 10.7973C31.3788 10.7973 31.4275 10.8459 31.4275 10.9059L31.4275 12.0061C31.4275 12.0662 31.3788 12.1148 31.3188 12.1148L16.6297 12.1148C16.5696 12.1148 16.521 12.0662 16.521 12.0061L16.521 10.9059C16.521 10.8459 16.5696 10.7973 16.6297 10.7973Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(0.704501 -0.709741 0.704501 0.709741 347.977 468.383)\"></path><path d=\"M19.0995 17.3406C19.0025 17.341 18.9094 17.3027 18.841 17.2343L18.0657 16.4585C17.9233 16.3162 17.9232 16.0853 18.0655 15.9428 18.0656 15.9428 18.0657 15.9427 18.0657 15.9427L28.4144 5.59388C28.5565 5.4513 28.7872 5.45083 28.9297 5.59281 28.9301 5.59317 28.9305 5.59352 28.9308 5.59388L29.7062 6.36864C29.8487 6.51144 29.8487 6.74267 29.7062 6.88547L19.3572 17.2343C19.289 17.3027 19.1961 17.3409 19.0995 17.3406ZM18.5344 16.2006 19.0995 16.7656 29.2379 6.62755 28.6729 6.06255Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M36.6513 18.6353C36.8512 18.6353 37.0133 18.7974 37.0133 18.9974L37.0133 19.586C37.0133 19.7859 36.8512 19.948 36.6513 19.948L36.0627 19.948C35.8627 19.948 35.7006 19.7859 35.7006 19.586L35.7006 18.9974C35.7006 18.7974 35.8627 18.6353 36.0627 18.6353Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M36.6513 20.2047 36.0627 20.2047C35.7209 20.2044 35.444 19.9274 35.4434 19.5857L35.4434 18.9976C35.444 18.6558 35.7209 18.3789 36.0627 18.3783L36.6513 18.3783C36.9929 18.3789 37.2697 18.6559 37.27 18.9976L37.27 19.5857C37.2697 19.9273 36.9929 20.2042 36.6513 20.2047ZM36.0627 18.8921C36.0044 18.8921 35.9572 18.9393 35.9572 18.9976 35.9572 18.9976 35.9572 18.9976 35.9572 18.9976L35.9572 19.5857C35.9572 19.6437 36.0044 19.6909 36.0627 19.6909 36.0627 19.6909 36.0627 19.6909 36.0627 19.6909L36.6513 19.6909C36.7092 19.6907 36.7562 19.6436 36.7562 19.5857L36.7562 18.9976C36.7562 18.9395 36.7092 18.8923 36.6513 18.8921Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M3.92317 2.8825C4.12314 2.8825 4.28525 3.04461 4.28525 3.24458L4.28525 3.83315C4.28525 4.03312 4.12314 4.19523 3.92317 4.19523L3.3346 4.19523C3.13463 4.19523 2.97252 4.03312 2.97252 3.83315L2.97252 3.24458C2.97252 3.04461 3.13463 2.8825 3.3346 2.8825Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M3.92294 4.45183 3.33434 4.45183C2.99289 4.45171 2.71604 4.17509 2.71565 3.83362L2.71565 3.24454C2.71595 2.90288 2.99271 2.62592 3.33434 2.62533L3.92294 2.62533C4.26469 2.62588 4.5416 2.90279 4.54214 3.24454L4.54214 3.83362C4.54152 4.17518 4.2645 4.45175 3.92294 4.45183ZM3.33434 3.13916C3.27633 3.13937 3.22942 3.1865 3.22948 3.24454L3.22948 3.83362C3.22985 3.89132 3.27666 3.9379 3.33434 3.938L3.92294 3.938C3.98081 3.93811 4.02788 3.89149 4.02831 3.83362L4.02831 3.24454C4.02831 3.18635 3.98115 3.13916 3.92296 3.13916 3.92294 3.13916 3.92294 3.13916 3.92294 3.13916Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M3.92317 18.6353C4.12314 18.6353 4.28525 18.7974 4.28525 18.9974L4.28525 19.586C4.28525 19.7859 4.12314 19.948 3.92317 19.948L3.3346 19.948C3.13463 19.948 2.97252 19.7859 2.97252 19.586L2.97252 18.9974C2.97252 18.7974 3.13463 18.6353 3.3346 18.6353Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M3.92294 20.2047 3.33434 20.2047C2.99271 20.2042 2.71595 19.9273 2.71565 19.5857L2.71565 18.9976C2.71595 18.6559 2.99271 18.3789 3.33434 18.3783L3.92294 18.3783C4.26469 18.3789 4.5416 18.6558 4.54214 18.9976L4.54214 19.5857C4.5416 19.9274 4.26469 20.2044 3.92294 20.2047ZM3.33434 18.8921C3.27633 18.8923 3.22942 18.9395 3.22948 18.9976L3.22948 19.5857C3.22942 19.6436 3.27633 19.6907 3.33434 19.6909L3.92294 19.6909C3.98113 19.6909 4.02831 19.6437 4.02831 19.5857 4.02831 19.5857 4.02831 19.5857 4.02831 19.5857L4.02831 18.9976C4.02833 18.9393 3.98116 18.8921 3.92298 18.8921 3.92296 18.8921 3.92296 18.8921 3.92294 18.8921Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6294 2.73766C11.8735 2.73766 12.0713 2.93555 12.0713 3.17964L12.0713 3.8981C12.0713 4.14219 11.8734 4.34008 11.6293 4.34008L10.9109 4.34008C10.6668 4.34008 10.4689 4.14219 10.4689 3.8981L10.4689 3.17964C10.4689 2.93555 10.6668 2.73766 10.9109 2.73766Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6293 4.59734 10.9108 4.59734C10.5248 4.59664 10.2122 4.28379 10.2118 3.89786L10.2118 3.1793C10.2123 2.79356 10.525 2.48104 10.9108 2.48082L11.6293 2.48082C12.0151 2.48104 12.3278 2.79356 12.3283 3.1793L12.3283 3.89786C12.3279 4.28379 12.0153 4.59664 11.6293 4.59734ZM10.9108 2.99464C10.8088 2.99487 10.7261 3.07733 10.7256 3.1793L10.7256 3.89786C10.7257 4.00017 10.8085 4.08317 10.9108 4.08351L11.6293 4.08351C11.7317 4.08317 11.8144 4.00017 11.8145 3.89786L11.8145 3.1793C11.814 3.07733 11.7313 2.99487 11.6293 2.99464Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6294 5.36313C11.8735 5.36313 12.0713 5.56101 12.0713 5.80511L12.0713 6.52356C12.0713 6.76766 11.8734 6.96554 11.6293 6.96554L10.9109 6.96554C10.6668 6.96554 10.4689 6.76766 10.4689 6.52356L10.4689 5.80511C10.4689 5.56101 10.6668 5.36313 10.9109 5.36313Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6293 7.22267 10.9108 7.22267C10.5248 7.22196 10.2122 6.90912 10.2118 6.52319L10.2118 5.80463C10.2123 5.41889 10.525 5.10637 10.9108 5.10615L11.6293 5.10615C12.0151 5.10639 12.3278 5.41889 12.3283 5.80463L12.3283 6.52319C12.3279 6.90912 12.0153 7.22196 11.6293 7.22267ZM10.9108 5.61998C10.8088 5.6202 10.7261 5.70266 10.7256 5.80463L10.7256 6.52319C10.7257 6.6255 10.8085 6.70851 10.9108 6.70885L11.6293 6.70885C11.7317 6.70851 11.8144 6.6255 11.8145 6.52319L11.8145 5.80463C11.814 5.70266 11.7313 5.6202 11.6293 5.61998Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6294 7.98859C11.8735 7.98859 12.0713 8.18647 12.0713 8.43057L12.0713 9.14902C12.0713 9.39312 11.8734 9.591 11.6293 9.591L10.9109 9.591C10.6668 9.591 10.4689 9.39312 10.4689 9.14902L10.4689 8.43057C10.4689 8.18647 10.6668 7.98859 10.9109 7.98859Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6293 9.84801 10.9108 9.84801C10.525 9.84778 10.2123 9.53526 10.2118 9.14952L10.2118 8.43096C10.2122 8.04503 10.5248 7.73219 10.9108 7.73148L11.6293 7.73148C12.0153 7.73219 12.3279 8.04503 12.3283 8.43096L12.3283 9.14952C12.3278 9.53526 12.0151 9.84778 11.6293 9.84801ZM10.9108 8.24531C10.8085 8.24565 10.7257 8.32865 10.7256 8.43096L10.7256 9.14952C10.7261 9.25149 10.8088 9.33397 10.9108 9.33418L11.6293 9.33418C11.7313 9.33395 11.814 9.25149 11.8145 9.14952L11.8145 8.43096C11.8144 8.32865 11.7317 8.24565 11.6293 8.24531Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6294 10.6865C11.8735 10.6865 12.0713 10.8844 12.0713 11.1285L12.0713 11.8469C12.0713 12.091 11.8734 12.2889 11.6293 12.2889L10.9109 12.2889C10.6668 12.2889 10.4689 12.091 10.4689 11.8469L10.4689 11.1285C10.4689 10.8844 10.6668 10.6865 10.9109 10.6865Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6293 12.5456 10.9108 12.5456C10.525 12.5454 10.2123 12.2329 10.2118 11.8471L10.2118 11.1286C10.2122 10.7426 10.5248 10.4298 10.9108 10.4291L11.6293 10.4291C12.0153 10.4298 12.3279 10.7426 12.3283 11.1286L12.3283 11.8471C12.3278 12.2329 12.0151 12.5454 11.6293 12.5456ZM10.9108 10.9429C10.8085 10.9432 10.7257 11.0262 10.7256 11.1286L10.7256 11.8471C10.7261 11.9491 10.8088 12.0316 10.9108 12.0318L11.6293 12.0318C11.7313 12.0316 11.814 11.9491 11.8145 11.8471L11.8145 11.1286C11.8144 11.0262 11.7317 10.9432 11.6293 10.9429Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6294 13.1671C11.8735 13.1671 12.0713 13.365 12.0713 13.6091L12.0713 14.3275C12.0713 14.5716 11.8734 14.7695 11.6293 14.7695L10.9109 14.7695C10.6668 14.7695 10.4689 14.5716 10.4689 14.3275L10.4689 13.6091C10.4689 13.365 10.6668 13.1671 10.9109 13.1671Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6293 15.0264 10.9108 15.0264C10.525 15.0262 10.2123 14.7137 10.2118 14.3279L10.2118 13.6094C10.2122 13.2234 10.5248 12.9106 10.9108 12.9099L11.6293 12.9099C12.0153 12.9106 12.3279 13.2234 12.3283 13.6094L12.3283 14.3279C12.3278 14.7137 12.0151 15.0262 11.6293 15.0264ZM10.9108 13.4237C10.8085 13.4241 10.7257 13.5071 10.7256 13.6094L10.7256 14.3279C10.7261 14.4299 10.8088 14.5124 10.9108 14.5126L11.6293 14.5126C11.7313 14.5124 11.814 14.4299 11.8145 14.3279L11.8145 13.6094C11.8144 13.5071 11.7317 13.4241 11.6293 13.4237Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6294 15.7926C11.8735 15.7926 12.0713 15.9904 12.0713 16.2345L12.0713 16.953C12.0713 17.1971 11.8734 17.395 11.6293 17.395L10.9109 17.395C10.6668 17.395 10.4689 17.1971 10.4689 16.953L10.4689 16.2345C10.4689 15.9904 10.6668 15.7926 10.9109 15.7926Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6293 17.6517 10.9108 17.6517C10.525 17.6515 10.2123 17.339 10.2118 16.9533L10.2118 16.2347C10.2122 15.8488 10.5248 15.5359 10.9108 15.5352L11.6293 15.5352C12.0153 15.5359 12.3279 15.8488 12.3283 16.2347L12.3283 16.9533C12.3278 17.339 12.0151 17.6515 11.6293 17.6517ZM10.9108 16.049C10.8085 16.0494 10.7257 16.1324 10.7256 16.2347L10.7256 16.9533C10.7261 17.0552 10.8088 17.1377 10.9108 17.1379L11.6293 17.1379C11.7313 17.1377 11.814 17.0552 11.8145 16.9533L11.8145 16.2347C11.8144 16.1324 11.7317 16.0494 11.6293 16.049Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6294 18.4904C11.8735 18.4904 12.0713 18.6883 12.0713 18.9324L12.0713 19.6509C12.0713 19.895 11.8734 20.0929 11.6293 20.0929L10.9109 20.0929C10.6668 20.0929 10.4689 19.895 10.4689 19.6509L10.4689 18.9324C10.4689 18.6883 10.6668 18.4904 10.9109 18.4904Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path><path d=\"M11.6293 20.3493 10.9108 20.3493C10.525 20.3491 10.2123 20.0367 10.2118 19.6509L10.2118 18.9323C10.2123 18.5465 10.525 18.2341 10.9108 18.2338L11.6293 18.2338C12.0151 18.2341 12.3278 18.5465 12.3283 18.9323L12.3283 19.6509C12.3278 20.0367 12.0151 20.3491 11.6293 20.3493ZM10.9108 18.7476C10.8088 18.7479 10.7261 18.8303 10.7256 18.9323L10.7256 19.6509C10.7261 19.7528 10.8088 19.8353 10.9108 19.8355L11.6293 19.8355C11.7313 19.8353 11.814 19.7528 11.8145 19.6509L11.8145 18.9323C11.814 18.8303 11.7313 18.7479 11.6293 18.7476Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00744 349.052 448)\"></path></g></g></g></g></g></svg>",
+  "credit-card": "<svg viewBox=\"0 -6.5 45 45\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-893 -352)\"><g><g><g><g><path d=\"M33.6449 24.4695 28.9315 24.4695C27.637 24.4679 26.588 23.4189 26.5862 22.1244L26.5862 17.4108C26.588 16.1163 27.637 15.0673 28.9315 15.0655L33.6449 15.0655C34.9395 15.0673 35.9885 16.1163 35.9902 17.4108L35.9902 22.1244C35.9885 23.4189 34.9395 24.4679 33.6449 24.4695ZM28.9315 17.1085C28.7646 17.1088 28.6294 17.244 28.6292 17.4108L28.6292 22.1244C28.6294 22.2911 28.7646 22.4263 28.9315 22.4265L33.6449 22.4265C33.8118 22.4263 33.9471 22.2911 33.9473 22.1244L33.9473 17.4108C33.9471 17.244 33.8118 17.1088 33.6449 17.1085Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02402 0 0 1 894 353.044)\"></path><path d=\"M8.50665 18.6797 21.1028 18.6797C22.7461 18.6797 22.7488 16.126 21.1028 16.126L8.50665 16.126C6.86342 16.126 6.8607 18.6797 8.50665 18.6797Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02402 0 0 1 894 353.044)\"></path><path d=\"M8.50665 23.5468 21.1028 23.5468C22.7461 23.5468 22.7488 20.9931 21.1028 20.9931L8.50665 20.9931C6.86342 20.9931 6.8607 23.5468 8.50665 23.5468Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02402 0 0 1 894 353.044)\"></path><path d=\"M40.5371 6.40501 2.43062 6.40501 2.43062 3.37158C2.43078 2.85198 2.85195 2.43082 3.37154 2.43066L39.5962 2.43066C40.1155 2.43126 40.5365 2.85218 40.5371 3.37158ZM40.5371 26.5401C40.5365 27.0594 40.1155 27.4803 39.5962 27.4809L3.37154 27.4809C2.85197 27.4807 2.4308 27.0595 2.43062 26.5401L2.43062 12.0541 40.5371 12.0541ZM39.5962 0 3.37154 0C1.51015 0.00164035 0.00161891 1.51019-1.1237e-07 3.37158L0 26.5401C0.00163607 28.4014 1.51017 29.9098 3.37154 29.9116L39.5962 29.9116C41.4576 29.9098 42.966 28.4014 42.9677 26.5401L42.9677 3.37158C42.966 1.51021 41.4576 0.00166797 39.5962-5.98994e-08\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02402 0 0 1 894 353.044)\"></path></g></g></g></g></g></svg>",
+  "download": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-784 -138)\"><g><g><g><g><path d=\"M29.0872 9.24559C27.7439 7.79901 26.1951 6.96906 24.3386 6.65357 24.3207 6.65061 24.3066 6.63662 24.3036 6.61874 23.9881 4.761 23.1582 3.10987 21.7115 1.86989 20.2571 0.6233 18.5951 0 16.6212 0 14.6475 0 12.9854 0.6233 11.531 1.86989 10.0766 3.11648 9.24558 4.67474 8.93392 6.54463L7.79122 6.54463C6.72102 6.5405 5.66102 6.75251 4.67473 7.16793 3.78509 7.57425 2.97577 8.13725 2.28542 8.83005 1.58042 9.54993 1.01664 10.3956 0.623287 11.3232 0.208238 12.2732-0.00404705 13.2993-1.68153e-08 14.3358-0.0147627 15.3736 0.197987 16.4018 0.623287 17.3485 1.01664 18.276 1.58042 19.1217 2.28542 19.8417 2.90872 20.5688 3.73979 21.0882 4.67473 21.5037 5.66102 21.9192 6.72102 22.1312 7.79122 22.1271L14.3878 22.1271C14.9901 22.1271 15.4786 21.6388 15.4786 21.0363 15.4786 20.4339 14.9901 19.9456 14.3878 19.9456L7.79122 19.9456C6.30466 19.9485 4.88038 19.3488 3.84366 18.2834 2.70096 17.1406 2.18153 15.8941 2.18153 14.3358 2.18153 12.8815 2.70094 11.531 3.84366 10.3883 4.88249 9.34947 6.23297 8.83005 7.79122 8.83005L11.0116 8.83005 11.0116 7.68733C11.0116 6.12908 11.6349 4.88249 12.6737 3.73979 13.8164 2.70097 15.063 2.18154 16.6212 2.18154 18.0847 2.17921 19.494 2.73441 20.5627 3.73423 20.5668 3.73791 20.5709 3.74203 20.5746 3.74608 21.6096 4.88709 22.1271 6.13196 22.1271 7.68733L22.1271 8.83005 23.2698 8.83005C24.8281 8.83005 26.0747 9.34945 27.1135 10.3883 28.2561 11.531 28.7755 12.8815 28.7755 14.3358 28.7755 15.8941 28.2561 17.1406 27.1135 18.2834 26.0747 19.3222 24.8281 19.9456 23.2698 19.9456 23.2698 19.9456 22.0839 19.9834 22.1271 21.0173 22.1779 22.2379 23.2698 22.1271 23.2698 22.1271 24.3064 22.1312 25.3324 21.9188 26.2824 21.5037 27.2101 21.1104 28.0556 20.5466 28.7755 19.8417 29.3989 19.1145 30.0221 18.2834 30.4377 17.3485 30.8532 16.4135 30.9571 15.4786 30.9571 14.3358 30.9571 12.3621 30.3338 10.6999 29.0872 9.24559Z\" fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 1.00391 784.021 139)\"></path><path d=\"M21.9469 25.0634C21.8737 24.9902 21.7555 24.9886 21.6802 25.0596L20.2682 26.3931C20.1914 26.4657 20.0704 26.4622 19.9978 26.3854 19.9643 26.3498 19.9456 26.3028 19.9456 26.2539L19.9456 17.8515C19.9455 17.7458 19.8599 17.66 19.7541 17.66L17.9553 17.66C17.8497 17.66 17.764 17.7458 17.764 17.8515 17.764 17.8515 17.764 17.8515 17.764 17.8515L17.764 26.2539C17.764 26.3597 17.6783 26.4453 17.5726 26.4453 17.5237 26.4453 17.4767 26.4266 17.4412 26.3931L16.0293 25.0596C15.954 24.9886 15.8358 24.9902 15.7625 25.0634L14.4712 26.3549C14.3965 26.4296 14.3965 26.5508 14.4712 26.6255 14.4712 26.6255 14.4712 26.6255 14.4712 26.6255L18.669 30.8233C18.7431 30.8975 18.8631 30.8982 18.9381 30.8249L23.2352 26.6254C23.3108 26.5516 23.3121 26.4305 23.2382 26.3549 23.2378 26.3543 23.2373 26.3538 23.2368 26.3533Z\" fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 1.00391 784.021 139)\"></path></g></g></g></g></g></svg>",
+  "edit": "<svg viewBox=\"-1 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-374 -137)\"><g><g><g><g><path d=\"M22.7507 16.528C22.3534 16.528 22.0313 16.85 22.0313 17.2474L22.0313 28.2309C22.0314 28.3049 21.9716 28.3651 21.8976 28.3654L1.57338 28.3654C1.49914 28.3653 1.43897 28.3051 1.43888 28.2309L1.43888 7.39826 5.82567 7.39826C6.69383 7.39728 7.39736 6.69372 7.39831 5.82555L7.39831 1.43875 21.8975 1.43875C21.9716 1.43905 22.0313 1.49923 22.0312 1.57327L22.0312 3.84312C22.0318 4.24044 22.3542 4.56212 22.7516 4.56161 23.1482 4.56111 23.4696 4.23972 23.47 3.84312L23.47 1.57327C23.4693 0.704988 22.7658 0.00117485 21.8975-3.41863e-08L6.67881 0C6.48802 4.39704e-05 6.30505 0.0758403 6.17011 0.210731L0.210731 6.17011C0.0758238 6.30501 2.28904e-05 6.48798 5.6013e-09 6.67876L0 28.2309C0.00101743 29.0994 0.704829 29.8032 1.57334 29.8041L21.8975 29.8041C22.7657 29.803 23.4692 29.0992 23.47 28.2309L23.47 17.2474C23.47 16.85 23.148 16.528 22.7507 16.528 22.7507 16.528 22.7507 16.528 22.7507 16.528ZM5.95955 2.45629 5.95955 5.82551C5.95948 5.89943 5.89959 5.95935 5.82567 5.95944L2.45652 5.95944Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.04007 375 138.001)\"></path><path d=\"M28.2883 5.84418 27.4417 4.99785C26.4905 4.04882 24.9506 4.04882 23.9992 4.99785L17.2803 11.7168 5.62627 11.7168C5.22898 11.7168 4.90689 12.0388 4.90689 12.4362 4.90689 12.8335 5.22898 13.1555 5.62627 13.1555L15.8416 13.1555 11.5119 17.4852 5.62627 17.4852C5.22898 17.4852 4.90689 17.8072 4.90689 18.2045 4.90689 18.6018 5.22898 18.924 5.62627 18.924L10.0731 18.924 10.0615 18.9355C9.97381 19.0234 9.91028 19.1323 9.87702 19.2518L8.76589 23.2537 5.62627 23.2537C5.22898 23.2541 4.90731 23.5766 4.9078 23.9739 4.90831 24.3706 5.22968 24.6919 5.62627 24.6924L9.31283 24.6924C9.31295 24.6924 9.4705 24.6746 9.49375 24.6685 9.49749 24.6676 14.0341 23.4087 14.0341 23.4087 14.1536 23.3755 14.2625 23.312 14.3503 23.2243L28.2883 9.28643C29.2373 8.3352 29.2373 6.79541 28.2883 5.84418ZM12.362 23.0627 9.69443 23.7509C9.60814 23.7744 9.51912 23.7235 9.49561 23.6372 9.48789 23.6088 9.48802 23.5789 9.49602 23.5506L10.2702 20.9499C10.2972 20.8632 10.3893 20.8148 10.476 20.8419 10.5017 20.8499 10.525 20.8641 10.5439 20.8832L12.4374 22.7957C12.4995 22.8582 12.499 22.9591 12.4365 23.0211 12.4159 23.0415 12.3902 23.0558 12.362 23.0627ZM13.704 22.0347 11.165 19.4524 23.0974 7.58642 25.7002 10.1053Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.04007 375 138.001)\"></path></g></g></g></g></g></svg>",
+  "fast-shipping": "<svg viewBox=\"0 -12.5 62 62\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-884 -160)\"><g><g><g><g><path d=\"M60.7102 19.736 52.3888 6.79179C52.2187 6.52728 51.9258 6.36736 51.6113 6.36733L42.3969 6.36733 42.3969 0.955766C42.3894 0.431032 41.9656 0.00746101 41.4412 2.33229e-08L6.30685 0C5.07688 0 5.07482 1.91153 6.30685 1.91153L40.4852 1.91153 40.4852 3.59366 9.36009 3.59366C9.20573 3.59366 9.08059 3.71877 9.08053 3.87313L9.08053 5.16321C9.0805 5.31761 9.20564 5.44278 9.36003 5.4428 9.36006 5.4428 9.36009 5.4428 9.36009 5.4428L40.4852 5.4428 40.4852 25.8077C40.4471 25.793 40.4068 25.7848 40.3659 25.7836L25.3823 25.7836C25.1795 25.7835 25.0152 25.9479 25.0152 26.1506 25.0152 26.1507 25.0152 26.1507 25.0152 26.1507L25.0152 27.2657C25.0152 27.4684 25.1795 27.6327 25.3822 27.6327 25.3822 27.6327 25.3823 27.6327 25.3823 27.6327L40.3659 27.6327C40.4068 27.6315 40.4471 27.6234 40.4852 27.6087L40.4852 29.4506 23.7857 29.4506C23.2616 26.4359 20.3927 24.4168 17.3779 24.9409 15.0545 25.3448 13.2414 27.1751 12.8594 29.5023 12.8052 29.4912 12.7501 29.4843 12.6948 29.4817L5.014 29.4817C4.63501 29.4817 4.32782 29.6702 4.32782 29.9024L4.32782 30.9107C4.32782 31.1429 4.63501 31.3311 5.014 31.3311L12.6948 31.3311C12.7501 31.3288 12.8052 31.3219 12.8594 31.3108 13.355 34.3303 16.2047 36.3764 19.2243 35.8808 21.5514 35.4988 23.3818 33.6857 23.7857 31.3623L41.4412 31.3623C41.4921 31.3562 41.5421 31.346 41.5913 31.3311L44.2982 31.3311C44.805 34.3486 47.6621 36.3841 50.6799 35.8774 53.0096 35.4862 54.835 33.6609 55.2262 31.3311L59.9326 31.3311C60.4428 31.3314 60.8566 30.9181 60.8571 30.4083 60.8571 30.4077 60.8571 30.4071 60.8571 30.4066L60.8571 20.236C60.8571 20.0587 60.8062 19.8851 60.7102 19.736ZM18.3265 34.105C16.2839 34.105 14.6281 32.4492 14.6281 30.4066 14.628 28.3641 16.2837 26.7082 18.3263 26.7082 20.3688 26.7081 22.0246 28.3639 22.0247 30.4063 22.0247 30.4066 22.0247 30.4066 22.0247 30.4066 22.0226 32.4481 20.3681 34.1027 18.3265 34.105ZM53.4606 11.9149 53.4606 11.8786 57.6443 18.3868 46.0638 18.3868 46.0638 11.9149ZM49.7622 34.105C47.7195 34.105 46.0638 32.4492 46.0638 30.4066 46.0638 28.364 47.7195 26.7082 49.7622 26.7082 51.8046 26.7081 53.4603 28.3639 53.4606 30.4066 53.4606 30.4066 53.4606 30.4066 53.4606 30.4066 53.4583 32.4481 51.8037 34.1027 49.7622 34.105ZM59.0081 25.7836 59.0081 29.482 55.2262 29.482C54.7194 26.4643 51.8623 24.4288 48.8445 24.9355 46.5151 25.3267 44.6894 27.1521 44.2982 29.4817L42.3969 29.4817 42.3969 8.21657 51.1065 8.21657 52.295 10.0656 45.1393 10.0656C44.6288 10.0654 44.215 10.479 44.2147 10.9895 44.2147 10.9897 44.2147 10.9899 44.2147 10.9901L44.2147 19.3114C44.2142 19.8215 44.6274 20.2355 45.1376 20.236 45.1381 20.236 45.1387 20.236 45.1393 20.236L58.8331 20.236 59.0081 20.508Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M7.23642 25.338 11.9429 25.338C12.1752 25.338 12.3635 25.5263 12.3635 25.7586L12.3635 26.7668C12.3635 26.999 12.1752 27.1873 11.9429 27.1873L7.2365 27.1873C7.00424 27.1873 6.81599 26.999 6.81599 26.7668L6.81599 25.7585C6.81599 25.5263 7.00421 25.338 7.23642 25.338 7.23642 25.338 7.23642 25.338 7.23642 25.338Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M19.2808 12.9908 22.355 14.4223C22.7154 14.4434 23.0246 14.1683 23.0457 13.8078 23.0539 13.6673 23.0165 13.528 22.9392 13.4104L20.1624 11.463C19.874 11.296 19.4408 11.4969 19.1951 11.9231 18.9487 12.3485 18.9924 12.824 19.2808 12.9908Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M24.7857 21.6071C25.2779 21.6071 25.6691 21.3333 25.6691 20.9989L25.37 17.621C25.2076 17.2985 24.8145 17.1688 24.492 17.3312 24.3669 17.3943 24.2653 17.4958 24.2023 17.621L23.904 20.9988C23.904 21.3333 24.2945 21.6071 24.7857 21.6071Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M26.6327 16.8934 29.4094 18.8393C29.6974 19.006 30.1309 18.8042 30.378 18.3796 30.6227 17.9537 30.581 17.478 30.2916 17.3105L27.2168 15.8806C26.8562 15.8596 26.5469 16.1349 26.5259 16.4955 26.5177 16.6362 26.5552 16.7757 26.6327 16.8934Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M24.7854 13.0418C25.0404 13.0721 25.2827 12.9227 25.37 12.6812L25.6691 9.30307C25.6691 8.96914 25.2779 8.69473 24.7857 8.69473 24.2945 8.69473 23.904 8.96914 23.904 9.30307L24.2023 12.6812C24.289 12.9225 24.5308 13.0721 24.7854 13.0418Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M19.1951 18.3796C19.4408 18.8042 19.874 19.006 20.1624 18.8393L22.9392 16.8934C23.1381 16.592 23.0549 16.1864 22.7535 15.9875 22.6357 15.9098 22.4959 15.8723 22.355 15.8806L19.2808 17.3105C18.9924 17.478 18.9487 17.9537 19.1951 18.3796Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M27.2168 14.4223 30.2916 12.9908C30.581 12.824 30.6227 12.3485 30.378 11.9231 30.1312 11.4969 29.6974 11.296 29.4094 11.463L26.6328 13.4104C26.4344 13.7121 26.5181 14.1175 26.8198 14.3159 26.9373 14.3931 27.0765 14.4305 27.2168 14.4223Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M4.83984 9.27364 12.6331 9.27364C12.8653 9.27361 13.0536 9.08531 13.0536 8.85304L13.0536 7.84484C13.0536 7.61261 12.8653 7.42432 12.6331 7.42432 12.6331 7.42432 12.6331 7.42432 12.6331 7.42432L4.83984 7.42432C4.60764 7.42432 4.41941 7.61258 4.41941 7.84478 4.41941 7.84481 4.41941 7.84481 4.41941 7.84484L4.41941 8.85304C4.41936 9.08528 4.60758 9.27359 4.83984 9.27364 4.83984 9.27364 4.83984 9.27364 4.83984 9.27364Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M7.11677 23.2689 10.2034 23.2689C10.4356 23.2689 10.6239 23.0806 10.6239 22.8484L10.6239 21.8402C10.6239 21.608 10.4358 21.4198 10.2036 21.4197 10.2035 21.4197 10.2035 21.4197 10.2034 21.4197L2.41026 21.4197C2.1781 21.4197 1.98984 21.6078 1.98978 21.84 1.98978 21.84 1.98978 21.8401 1.98978 21.8402L1.98978 22.8484C1.98977 23.0806 2.17803 23.2689 2.41026 23.2689L7.11677 23.2689Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M13.747 18.4772 13.747 17.469C13.747 17.2368 13.5589 17.0486 13.3268 17.0486 13.3267 17.0486 13.3266 17.0486 13.3266 17.0486L6.96532 17.0486C6.73317 17.0485 6.54489 17.2366 6.54483 17.4688 6.54483 17.4689 6.54483 17.4689 6.54483 17.469L6.54483 18.4772C6.54483 18.7094 6.73306 18.8976 6.96523 18.8976 6.96526 18.8976 6.96529 18.8976 6.96535 18.8976L13.3266 18.8976C13.5587 18.8976 13.7469 18.7095 13.747 18.4774 13.747 18.4773 13.747 18.4773 13.747 18.4772Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path><path d=\"M3.72477 13.9663 10.086 13.9663C10.3182 13.9663 10.5064 13.778 10.5064 13.5458L10.5064 12.5376C10.5065 12.3054 10.3183 12.1171 10.0861 12.1171 10.086 12.1171 10.086 12.1171 10.086 12.1171L0.420434 12.1171C0.188216 12.1171-1.42241e-05 12.3054-8.65066e-09 12.5376L0 13.5458C4.26093e-05 13.778 0.188239 13.9662 0.420434 13.9663L3.72477 13.9663Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00235 0 0 1 885 161.023)\"></path></g></g></g></g></g></svg>",
+  "favorite": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-84 -138)\"><g><g><g><g><path d=\"M23.547 17.1157C23.5244 16.9832 23.5683 16.8479 23.6646 16.754L28.5692 11.9733C29.3771 11.1858 29.3937 9.89253 28.6061 9.08463 28.2926 8.76289 27.8817 8.55352 27.437 8.48892L20.6591 7.50402C20.526 7.48471 20.411 7.40113 20.3514 7.28053L17.3203 1.13876C16.8211 0.12705 15.5961-0.288353 14.5844 0.210928 14.1815 0.409757 13.8554 0.735864 13.6566 1.13876L10.6254 7.28059C10.5659 7.40116 10.4508 7.48473 10.3178 7.5041L3.53993 8.48892C2.42345 8.65113 1.64985 9.68771 1.81206 10.8042 1.87665 11.2488 2.08603 11.6597 2.40776 11.9733L7.3123 16.7541C7.40857 16.8479 7.45251 16.9832 7.4298 17.1157L6.27197 23.8663C6.08127 24.9783 6.82818 26.0344 7.94024 26.2251 8.383 26.301 8.83842 26.2288 9.23606 26.0199L15.2984 22.8327C15.4174 22.77 15.5596 22.77 15.6786 22.8327L21.741 26.0199C22.7397 26.5447 23.9749 26.1607 24.4997 25.1618 24.7087 24.7643 24.7808 24.3089 24.7049 23.8662ZM22.9318 24.5422C22.8068 24.636 22.6386 24.6481 22.5015 24.5732L16.4392 21.3861C15.844 21.0732 15.1331 21.0732 14.5379 21.3861L8.47566 24.5731C8.27601 24.6782 8.029 24.6014 7.92396 24.4018 7.88211 24.3222 7.86767 24.2312 7.88287 24.1426L9.04069 17.392C9.15445 16.7294 8.93473 16.0531 8.45318 15.5838L3.54863 10.8032C3.38706 10.6456 3.3838 10.3869 3.54137 10.2253 3.60407 10.161 3.68622 10.1192 3.77509 10.1062L10.5529 9.12135C11.2183 9.02474 11.7935 8.60682 12.091 8.00383L15.1222 1.86199C15.2221 1.65965 15.467 1.57658 15.6694 1.67645 15.75 1.71622 15.8152 1.78143 15.8549 1.86199L15.8549 1.86205 18.8861 8.00389C19.1836 8.60689 19.7588 9.02482 20.4242 9.12142L27.2021 10.1063C27.4253 10.1388 27.5801 10.3461 27.5476 10.5694 27.5347 10.6583 27.4928 10.7405 27.4285 10.8032L22.524 15.584C22.0424 16.0532 21.8228 16.7294 21.9365 17.392L23.0944 24.1427C23.1232 24.2962 23.0596 24.4525 22.9318 24.5422Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01587 85.0117 139)\"></path><path d=\"M23.2063 3.65428C23.5715 3.91955 24.0824 3.83868 24.3477 3.47364 24.3477 3.47361 24.3478 3.47358 24.3478 3.47356L25.2151 2.27975C25.4806 1.91474 25.3997 1.4037 25.0348 1.1383 24.6698 0.872908 24.1588 0.953662 23.8934 1.31867 23.8933 1.31881 23.8932 1.31896 23.893 1.3191L23.0256 2.51292C22.7603 2.87801 22.8413 3.38902 23.2063 3.65427 23.2063 3.65427 23.2063 3.65428 23.2063 3.65428Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01587 85.0117 139)\"></path><path d=\"M6.62529 3.46866C6.88998 3.83418 7.40085 3.91592 7.76637 3.65125 8.13189 3.38657 8.21364 2.8757 7.94896 2.51018 7.94845 2.50948 7.94795 2.50877 7.94744 2.50807L7.08003 1.31427C6.81477 0.949174 6.30376 0.868239 5.93866 1.1335 5.57357 1.39876 5.49264 1.90975 5.7579 2.27485Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01587 85.0117 139)\"></path><path d=\"M1.96828 17.8084 0.564831 18.2644C0.135432 18.4033-0.100092 18.864 0.0387736 19.2934 0.177639 19.7228 0.638308 19.9583 1.06771 19.8194 1.06844 19.8192 1.06916 19.819 1.06989 19.8187L2.47334 19.3626C2.90254 19.2232 3.13741 18.7623 2.99795 18.3331 2.85848 17.9039 2.39748 17.6689 1.96828 17.8084Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01587 85.0117 139)\"></path><path d=\"M15.4886 27.4056C15.0373 27.4056 14.6715 27.7715 14.6715 28.2227L14.6715 29.6985C14.671 30.1498 15.0364 30.5161 15.4876 30.5166 15.9389 30.5172 16.3052 30.1518 16.3058 29.7005 16.3058 29.6999 16.3058 29.6991 16.3058 29.6985L16.3058 28.2227C16.3058 27.7715 15.94 27.4056 15.4887 27.4056 15.4887 27.4056 15.4887 27.4056 15.4886 27.4056Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01587 85.0117 139)\"></path><path d=\"M30.4117 18.2656 29.0083 17.8096C28.579 17.6705 28.1182 17.9057 27.979 18.335 27.84 18.7638 28.0746 19.2243 28.5033 19.3639L29.9068 19.8199C30.336 19.9594 30.797 19.7245 30.9365 19.2953 31.0759 18.8661 30.8411 18.4051 30.4117 18.2656Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01587 85.0117 139)\"></path></g></g></g></g></g></svg>",
+  "filter": "<svg viewBox=\"0 -2.5 29 29\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-897 -240)\"><g><g><g><g><path d=\"M1.35702 2.80962 26.643 2.80962C28.4508 2.80962 28.4538 0 26.643 0L1.35702 0C-0.450841 0-0.453836 2.80962 1.35702 2.80962Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01008 898 241.01)\"></path><path d=\"M7.47805 12.7569 26.643 12.7569C28.4508 12.7569 28.4538 9.94732 26.643 9.94732L7.47805 9.94732C5.6702 9.94732 5.6672 12.7569 7.47805 12.7569Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01008 898 241.01)\"></path><path d=\"M12.984 22.7508 26.643 22.7508C28.4508 22.7508 28.4538 19.9411 26.643 19.9411L12.984 19.9411C11.1762 19.9411 11.1732 22.7508 12.984 22.7508Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.01008 898 241.01)\"></path></g></g></g></g></g></svg>",
+  "gift": "<svg viewBox=\"0 -1.5 36 36\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-100 -352)\"><g><g><g><g><path d=\"M33.475 8.38149 24.4181 8.38149 28.4291 6.56148 28.597 6.47749C29.3784 6.0471 29.9 5.26171 29.9934 4.37452 30.0751 3.48447 29.8326 2.59487 29.3105 1.86938 28.7854 1.09222 28.0227 0.506223 27.1363 0.199282 26.2514-0.125348 25.2701-0.0570439 24.4387 0.387044L17.7672 4.88447 17.6694 4.9566C17.5064 5.08526 17.361 5.2346 17.2368 5.40088 17.1104 5.23201 16.9626 5.08038 16.797 4.94989L10.1936 0.482138 10.0523 0.395165C9.21702-0.0539157 8.22977-0.125104 7.33869 0.199494 6.45253 0.506043 5.68967 1.09171 5.16458 1.8686 3.99651 3.57627 4.31473 5.60311 5.88204 6.47966L10.0668 8.38149 1.0001 8.38149C0.447681 8.38149 0 8.78665 0 9.28573L0 32.0958C0 32.5949 0.447681 33 1.0001 33L33.475 33C34.0274 33 34.4752 32.5949 34.4752 32.0958L34.4752 9.28573C34.4752 8.78665 34.0274 8.38149 33.475 8.38149ZM32.475 19.6482 18.2378 19.6482 18.2378 11.9388 26.5182 17.4658C26.7569 17.6221 27.0472 17.6782 27.3267 17.6219 27.5582 17.5787 27.7673 17.4565 27.9186 17.2761 28.2174 16.9137 28.1659 16.3776 27.8033 16.0789 27.7729 16.0537 27.7408 16.0308 27.7072 16.0102L18.9887 10.1909 32.475 10.1909ZM18.9727 6.32826 25.4752 1.93462C25.626 1.85207 25.7955 1.80986 25.9673 1.81207 26.1282 1.814 26.2878 1.84171 26.4398 1.89411 26.9186 2.06904 27.3282 2.39378 27.6079 2.82006 27.8985 3.21203 28.039 3.69513 28.0042 4.18184 27.981 4.49474 27.8084 4.77728 27.5406 4.94077L20.2901 8.23354C19.9046 8.3798 19.3454 8.10804 19.0153 7.6238 18.6832 7.13958 18.6694 6.56642 18.9727 6.32826ZM6.86732 2.82027C7.14734 2.39436 7.55685 2.06975 8.03541 1.89429 8.34425 1.77364 8.68913 1.78544 8.989 1.92692L15.4935 6.32252C15.8058 6.5676 15.7909 7.13879 15.4599 7.62301 15.1288 8.10825 14.5675 8.37703 14.2533 8.26239L6.93349 4.94099C6.33172 4.59609 6.30107 3.64741 6.86732 2.82027ZM15.587 10.1909 6.86768 16.0102C6.46746 16.2566 6.3428 16.7809 6.58924 17.181 6.60968 17.2143 6.63237 17.2461 6.65716 17.2761 6.80848 17.4565 7.01774 17.5787 7.24919 17.6219 7.52869 17.678 7.81904 17.6219 8.05754 17.4658L16.2366 12.0066 16.2366 19.6482 2.00112 19.6482 2.00112 10.1909ZM2.00112 21.4577 16.2366 21.4577 16.2366 31.1907 2.00112 31.1907ZM18.2378 31.1907 18.2378 21.4577 32.475 21.4577 32.475 31.1907Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01058 0 0 1 101.08 352)\"></path></g></g></g></g></g></svg>",
+  "globe": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-373 -340)\"><g><g><g><g><path d=\"M389.5 341C380.939 341 374 347.94 374 356.5 374 365.06 380.939 372 389.5 372 398.06 372 405 365.06 405 356.5 404.99 347.944 398.056 341.01 389.5 341ZM390.184 363.138 390.184 357.184 396.908 357.184C396.87 359.196 396.582 361.197 396.051 363.138ZM401.138 364.506C399.389 367.038 396.866 368.934 393.947 369.909 394.692 369.131 395.327 368.254 395.835 367.304 396.316 366.408 396.719 365.472 397.039 364.506ZM390.184 348.203 390.184 342.44C392.304 342.813 394.232 344.903 395.497 348.203ZM396.942 348.203C396.639 347.339 396.269 346.501 395.835 345.695 395.327 344.746 394.692 343.869 393.947 343.091 396.745 344.031 399.181 345.818 400.92 348.203ZM390.184 355.816 390.184 349.571 395.961 349.571C396.547 351.603 396.865 353.702 396.908 355.816ZM403.598 357.184C403.508 359.271 402.949 361.312 401.964 363.155 401.925 363.144 401.885 363.139 401.844 363.138L397.453 363.138C397.96 361.193 398.236 359.194 398.276 357.184ZM403.598 355.816 398.276 355.816C398.237 353.705 397.936 351.608 397.379 349.571L401.801 349.571C402.884 351.482 403.5 353.622 403.598 355.816ZM395.612 364.506C394.351 367.978 392.382 370.173 390.184 370.56L390.184 364.506ZM375.402 357.184 380.724 357.184C380.763 359.194 381.039 361.193 381.547 363.138L377.155 363.138C377.115 363.139 377.075 363.144 377.036 363.155 376.051 361.312 375.492 359.271 375.402 357.184ZM375.402 355.816C375.5 353.622 376.116 351.482 377.199 349.571L381.62 349.571C381.063 351.608 380.762 353.705 380.724 355.816ZM388.816 349.571 388.816 355.816 382.092 355.816C382.135 353.702 382.453 351.603 383.038 349.571ZM378.08 348.203C379.819 345.818 382.255 344.031 385.053 343.091 384.308 343.869 383.673 344.746 383.165 345.695 382.731 346.501 382.36 347.339 382.057 348.203ZM388.816 364.506 388.816 370.56C386.618 370.173 384.649 367.978 383.388 364.506ZM381.96 364.506C382.281 365.472 382.684 366.408 383.165 367.304 383.673 368.254 384.308 369.131 385.052 369.909 382.134 368.934 379.611 367.038 377.862 364.506ZM388.816 357.184 388.816 363.138 382.949 363.138C382.417 361.197 382.129 359.196 382.092 357.184ZM383.503 348.203C384.768 344.903 386.695 342.813 388.816 342.44L388.816 348.203Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></g></g></g></svg>",
+  "grid": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-556 -236)\"><g><g><g><g><path d=\"M18.3391 19.2812 11.6602 19.2812C11.1406 19.2804 10.7195 18.8594 10.7187 18.3398L10.7187 11.6609C10.7192 11.141 11.1403 10.7196 11.6602 10.7187L18.3391 10.7187C18.8592 10.7193 19.2806 11.1408 19.2812 11.6609L19.2812 18.3398C19.2804 18.8596 18.8589 19.2807 18.3391 19.2812ZM12.1355 17.8645 17.8645 17.8645 17.8645 12.1355 12.1355 12.1355Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M7.62036 8.56252 0.941476 8.56252C0.42185 8.56171 0.000811389 8.14067 3.77638e-08 7.62105L0 0.942163C0.000514519 0.422302 0.421615 0.000893738 0.941476-3.20938e-08L7.62036 0C8.14045 0.000594994 8.56193 0.422068 8.56252 0.942163L8.56251 7.62105C8.56163 8.14091 8.14022 8.56201 7.62035 8.56252ZM1.41672 7.14581 7.14581 7.14581 7.14581 1.41672 1.41672 1.41672Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M18.3391 30 11.6602 30C11.1406 29.9992 10.7195 29.5781 10.7187 29.0585L10.7187 22.3796C10.7192 21.8597 11.1403 21.4384 11.6602 21.4375L18.3391 21.4375C18.8592 21.438 19.2806 21.8595 19.2812 22.3796L19.2812 29.0585C19.2804 29.5783 18.8589 29.9994 18.3391 30ZM12.1355 28.5833 17.8645 28.5833 17.8645 22.8541 12.1355 22.8541Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M7.62036 19.2812 0.941476 19.2812C0.42185 19.2804 0.000811389 18.8594 3.77638e-08 18.3398L0 11.6609C0.000514519 11.141 0.421615 10.7196 0.941476 10.7187L7.62036 10.7187C8.14045 10.7193 8.56193 11.1408 8.56252 11.6609L8.56251 18.3398C8.56163 18.8596 8.14022 19.2807 7.62035 19.2812ZM1.41672 17.8645 7.14581 17.8645 7.14581 12.1355 1.41672 12.1355Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M7.62036 30 0.941476 30C0.42185 29.9992 0.000811389 29.5781 3.77638e-08 29.0585L0 22.3796C0.000511301 21.8597 0.421613 21.4384 0.941476 21.4375L7.62036 21.4375C8.14045 21.438 8.56193 21.8595 8.56252 22.3796L8.56251 29.0585C8.56163 29.5783 8.14022 29.9994 7.62035 30ZM1.41672 28.5833 7.14581 28.5833 7.14581 22.8541 1.41672 22.8541Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M29.0578 8.56252 22.3789 8.56252C21.8593 8.56172 21.4383 8.14067 21.4375 7.62105L21.4375 0.942163C21.4379 0.422301 21.859 0.000893094 22.3789-3.20938e-08L29.0578 0C29.5779 0.000594994 29.9994 0.422068 30 0.942163L30 7.62105C29.9991 8.14091 29.5777 8.56201 29.0578 8.56252ZM22.8541 7.14581 28.5833 7.14581 28.5833 1.41672 22.8541 1.41672Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M18.3391 8.56252 11.6602 8.56252C11.1406 8.56171 10.7195 8.14067 10.7187 7.62105L10.7187 0.942163C10.7192 0.422302 11.1403 0.000893738 11.6602-3.20938e-08L18.3391 0C18.8592 0.000594994 19.2806 0.422068 19.2812 0.942163L19.2812 7.62105C19.2804 8.14091 18.8589 8.56201 18.3391 8.56252ZM12.1355 7.14581 17.8645 7.14581 17.8645 1.41672 12.1355 1.41672Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M29.0578 19.2812 22.3789 19.2812C21.8593 19.2804 21.4383 18.8594 21.4375 18.3398L21.4375 11.6609C21.4379 11.141 21.859 10.7196 22.3789 10.7187L29.0578 10.7187C29.5779 10.7193 29.9994 11.1408 30 11.6609L30 18.3398C29.9991 18.8596 29.5777 19.2807 29.0578 19.2812ZM22.8541 17.8645 28.5833 17.8645 28.5833 12.1355 22.8541 12.1355Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path><path d=\"M29.0578 30 22.3789 30C21.8593 29.9992 21.4383 29.5781 21.4375 29.0585L21.4375 22.3796C21.4379 21.8597 21.859 21.4384 22.3789 21.4375L29.0578 21.4375C29.5779 21.438 29.9994 21.8595 30 22.3796L30 29.0585C29.9991 29.5783 29.5777 29.9994 29.0578 30ZM22.8541 28.5833 28.5833 28.5833 28.5833 22.8541 22.8541 22.8541Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.03333 557 237)\"></path></g></g></g></g></g></svg>",
+  "help": "<svg viewBox=\"0 -2 34 34\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-664 -140)\"><g><g><g><g><path d=\"M29.0653 23.7877C31.1861 21.2751 32.3586 18.0981 32.3782 14.8101 32.3782 10.8403 30.6848 7.11231 27.6102 4.31267 24.5558 1.53164 20.4998 0 16.1891 0 11.8785 0 7.82234 1.53164 4.76799 4.31273 1.69327 7.11224 0 10.8404 0 14.8102 0 18.78 1.69327 22.5081 4.76793 25.3077 7.82228 28.0887 11.8783 29.6203 16.189 29.6203 18.8607 29.6254 21.4977 29.0155 23.8958 27.8378L29.538 29.9507C29.9398 30.1013 30.3878 29.8975 30.5382 29.4955 30.5966 29.3398 30.6035 29.1693 30.5577 29.0094ZM24.1208 26.2624C23.914 26.185 23.684 26.1992 23.4883 26.3014 21.2322 27.4672 18.7285 28.0724 16.189 28.0661 8.11943 28.0661 1.55427 22.1195 1.55427 14.8102 1.55427 7.50089 8.11937 1.55421 16.189 1.55421 24.2586 1.55421 30.8238 7.50078 30.8238 14.8101 30.8238 17.8515 29.7161 20.7128 27.6206 23.0845 27.4451 23.2832 27.3829 23.5577 27.4559 23.8126L28.6396 27.9547Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01836 0 0 1 665.014 140)\"></path><path d=\"M17.0506 16.832C17.0511 17.0534 16.8722 17.2332 16.6509 17.2337 16.6505 17.2337 16.6501 17.2337 16.6499 17.2337L14.388 17.2337C14.1666 17.2341 13.9868 17.0549 13.9864 16.8335 13.9864 16.833 13.9864 16.8325 13.9864 16.832L13.9864 15.2676C13.9864 13.4926 16.9027 12.7108 16.9027 11.358 16.9027 10.7026 16.2268 10.1101 15.3176 10.1101 13.8384 10.1101 13.4368 11.4423 12.9079 10.977L11.6187 9.70841C11.4669 9.56609 11.4593 9.32768 11.6016 9.17593 11.6071 9.17005 11.6128 9.16436 11.6187 9.15885 12.7331 7.97651 14.2846 7.3042 15.9093 7.2995 18.1505 7.2995 20.2216 8.86301 20.2216 10.9985 20.2216 13.7885 17.0506 13.8727 17.0506 16.156ZM15.5077 19.0303C16.4758 19.041 17.2611 19.817 17.2838 20.7848 17.2838 21.736 16.4589 22.5186 15.5077 22.5186 14.5554 22.5064 13.7864 21.7371 13.7748 20.7848 13.7848 19.8282 14.5515 19.0521 15.5077 19.0303Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01836 0 0 1 665.014 140)\"></path></g></g></g></g></g></svg>",
+  "home": "<svg viewBox=\"0 -0.5 41 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-80 -428)\"><g><g><g><g><path d=\"M117.601 445.689 102.294 434.482C101.999 434.266 101.598 434.266 101.303 434.482L85.9964 445.689C85.6165 445.954 85.5235 446.477 85.7888 446.857 86.0541 447.237 86.5772 447.33 86.9572 447.065 86.9675 447.058 86.9776 447.05 86.9876 447.043L101.8 436.199 116.611 447.044C116.992 447.308 117.515 447.213 117.779 446.833 118.034 446.465 117.956 445.962 117.601 445.689Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M113.545 447.234C113.082 447.234 112.706 447.609 112.706 448.072L112.706 461.428 105.995 461.428 105.995 454.139C105.995 451.822 104.117 449.943 101.8 449.943 99.4824 449.943 97.604 451.822 97.604 454.139L97.604 461.428 90.8929 461.428 90.8929 448.072C90.8822 447.609 90.498 447.242 90.0347 447.253 89.5864 447.263 89.2254 447.624 89.2151 448.072L89.2151 462.267C89.2151 462.73 89.5908 463.106 90.0542 463.106L98.4422 463.106C98.8801 463.105 99.2441 462.769 99.2782 462.332 99.2782 462.312 99.2813 462.291 99.2813 462.267L99.2813 454.138C99.2813 452.747 100.408 451.62 101.799 451.62 103.189 451.62 104.316 452.747 104.316 454.138L104.316 462.267C104.316 462.291 104.316 462.311 104.319 462.331 104.353 462.768 104.717 463.105 105.155 463.106L113.545 463.106C114.009 463.106 114.384 462.73 114.384 462.267L114.384 448.072C114.384 447.609 114.009 447.234 113.545 447.234 113.545 447.234 113.545 447.234 113.545 447.234Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></g></g></g></svg>",
+  "lists": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-372 -428)\"><g><g><g><g><path d=\"M381.648 435.561 406.914 435.561C407.448 435.549 407.873 435.107 407.861 434.572 407.85 434.053 407.432 433.635 406.914 433.624L381.648 433.624C381.113 433.636 380.689 434.078 380.7 434.613 380.711 435.132 381.129 435.55 381.648 435.561\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M376.966 433.621C376.429 433.62 375.993 434.055 375.993 434.592 375.992 435.129 376.427 435.564 376.963 435.565 377.5 435.566 377.936 435.131 377.937 434.594 377.937 434.594 377.937 434.593 377.937 434.592 377.937 434.056 377.502 433.621 376.966 433.621\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M376.966 439.305C376.429 439.304 375.993 439.739 375.993 440.275 375.992 440.812 376.427 441.248 376.963 441.249 377.5 441.249 377.936 440.815 377.937 440.278 377.937 440.277 377.937 440.277 377.937 440.276 377.937 439.74 377.502 439.305 376.966 439.305\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M406.914 439.31 381.648 439.31C381.113 439.321 380.689 439.764 380.7 440.299 380.711 440.818 381.129 441.236 381.648 441.247L406.914 441.247C407.448 441.235 407.873 440.793 407.861 440.258 407.85 439.739 407.432 439.321 406.914 439.31\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M376.966 444.987C376.429 444.986 375.993 445.421 375.993 445.957 375.992 446.494 376.427 446.93 376.963 446.931 377.5 446.931 377.936 446.497 377.937 445.96 377.937 445.96 377.937 445.96 377.937 445.96 377.938 445.423 377.504 444.988 376.967 444.987 376.967 444.987 376.966 444.987 376.966 444.987\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M406.914 444.992 381.648 444.992C381.113 445.003 380.689 445.446 380.7 445.98 380.711 446.499 381.129 446.917 381.648 446.928L406.914 446.928C407.448 446.939 407.891 446.515 407.902 445.98 407.913 445.446 407.489 445.003 406.955 444.992 406.941 444.992 406.927 444.992 406.914 444.992\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M404.568 454.823 400.278 459.694C400.098 459.896 399.843 460.015 399.573 460.023L399.543 460.023C399.283 460.023 399.033 459.92 398.849 459.736L396.228 457.116C395.858 456.72 395.878 456.099 396.274 455.729 396.651 455.376 397.237 455.376 397.614 455.729L399.497 457.612 403.093 453.525C403.451 453.118 404.071 453.078 404.478 453.436 404.885 453.794 404.925 454.414 404.567 454.821M400.672 450.043C397.328 450.043 394.616 452.754 394.616 456.098 394.615 459.443 397.326 462.154 400.671 462.155 404.015 462.155 406.727 459.444 406.727 456.1 406.727 456.099 406.727 456.099 406.727 456.098 406.727 452.754 404.016 450.043 400.672 450.043\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></g></g></g></svg>",
+  "location": "<svg viewBox=\"-6 0 42 42\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-228 -346)\"><g><g><g><g><path d=\"M14.4951 20.3868C11.0667 20.3868 8.28742 17.6074 8.28742 14.179 8.28742 10.7506 11.0667 7.97127 14.4951 7.97127 17.9236 7.97127 20.703 10.7506 20.703 14.179 20.6989 17.6058 17.9219 20.3827 14.4951 20.3868ZM14.4951 9.81931C12.0874 9.81931 10.1355 11.7712 10.1355 14.179 10.1355 16.5868 12.0874 18.5387 14.4951 18.5387 16.9029 18.5387 18.8549 16.5868 18.8549 14.179 18.8521 11.7723 16.9018 9.82207 14.4951 9.81931Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00548 229.005 347)\"></path><path d=\"M14.4951 20.5288C10.9881 20.5285 8.14537 17.6852 8.14569 14.1782 8.146 10.6712 10.9892 7.82846 14.4963 7.82877 18.0033 7.82907 20.846 10.6723 20.8458 14.1793 20.8415 17.6847 18.0005 20.5251 14.4951 20.5288ZM14.4951 8.11394C11.1456 8.11425 8.43055 10.8298 8.43085 14.1793 8.43117 17.5289 11.1467 20.2439 14.4963 20.2435 17.8454 20.2434 20.5603 17.5284 20.5605 14.1793 20.5566 10.8311 17.8434 8.11783 14.4951 8.11394ZM14.4951 18.6808C12.0088 18.6804 9.99341 16.6646 9.99371 14.1782 9.99402 11.6919 12.0099 9.6765 14.4963 9.67679 16.9826 9.67709 18.9979 11.693 18.9977 14.1793 18.9945 16.6645 16.9804 18.6783 14.4951 18.6808ZM14.4951 9.96196C12.1663 9.96227 10.2786 11.8505 10.2789 14.1793 10.2792 16.5082 12.1674 18.3959 14.4963 18.3956 16.8247 18.3953 18.7122 16.5078 18.7126 14.1793 18.71 11.8512 16.8233 9.96449 14.4951 9.96196Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00548 229.005 347)\"></path><path d=\"M13.4528 39.0964C13.8558 39.6722 14.6493 39.8122 15.2251 39.4092 15.3461 39.3245 15.4515 39.2193 15.5364 39.0984 17.0257 36.9984 24.5686 26.3399 26.7191 22.7363 28.1167 20.3858 28.8523 17.7011 28.8478 14.9665 28.8478 6.79302 22.4093 0.142906 14.4946 0.142906 6.58104 0.142906 0.142555 6.79302 0.142555 14.9665 0.137757 17.711 0.878425 20.4052 2.28548 22.7615 4.51501 26.4815 12.5458 37.8187 13.4528 39.0964ZM14.4946 2.16516C21.2938 2.16516 26.8254 7.90721 26.8254 14.9665 26.8302 17.3363 26.1939 19.6633 24.9842 21.7011 23.0847 24.8814 16.632 34.0496 14.4957 37.0708 12.3681 34.0626 5.94725 24.9384 4.01817 21.722 2.80005 19.6795 2.15946 17.3446 2.1648 14.9665 2.1648 7.90721 7.69533 2.16516 14.4946 2.16516Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00548 229.005 347)\"></path><path d=\"M14.4957 39.7821C14.0342 39.7813 13.6019 39.5562 13.3367 39.1783L13.3367 39.1783C12.9757 38.6705 4.47304 26.69 2.16272 22.8347 0.742918 20.4562-0.00456957 17.7369 4.47825e-08 14.9669 0 6.71371 6.50207 0 14.4946 0 22.4877 0 28.9902 6.71371 28.9902 14.9669 28.9947 17.7273 28.2522 20.4374 26.8414 22.8101 24.7751 26.2723 17.7551 36.2153 15.6531 39.1806 15.3879 39.5573 14.9563 39.7815 14.4957 39.7821ZM14.4946 0.285169C6.65969 0.285169 0.285165 6.8719 0.285165 14.9669 0.280493 17.6852 1.01414 20.3538 2.40779 22.6875 4.71196 26.534 13.2085 38.5055 13.5694 39.0135L13.57 39.0146C13.9272 39.5258 14.6312 39.6506 15.1423 39.2934 15.2505 39.2178 15.3445 39.1238 15.4203 39.0157 17.5212 36.0528 24.5356 26.1174 26.5964 22.6631 27.9811 20.3352 28.7098 17.6756 28.7051 14.9669 28.7051 6.8719 22.33 0.285169 14.4946 0.285169ZM14.4957 37.3181 14.3793 37.1533C12.4176 34.3795 5.86323 25.0758 3.89545 21.7953 2.66435 19.7307 2.01694 17.3706 2.02236 14.9669 2.02236 7.82989 7.61713 2.02292 14.4946 2.02292 21.3726 2.02292 26.9679 7.82989 26.9679 14.9669 26.9725 17.3623 26.3295 19.7145 25.1066 21.7741 23.1805 24.9991 16.5871 34.3605 14.6121 37.1533ZM14.4946 2.30808C7.77473 2.30808 2.30753 7.98695 2.30753 14.9669 2.30216 17.3189 2.93571 19.6283 4.14052 21.6482 6.06541 24.8587 12.4048 33.8671 14.4957 36.8235 16.5994 33.8471 22.9773 24.7829 24.8615 21.6272 26.0582 19.6119 26.6874 17.3106 26.6828 14.9669 26.6828 7.98695 21.2151 2.30808 14.4946 2.30808Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00548 229.005 347)\"></path></g></g></g></g></g></svg>",
+  "lock": "<svg viewBox=\"-4 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-845 -140)\"><g><g><g><g><path d=\"M9.99015 21.2219 9.5871 24.8462C9.54826 25.197 9.80117 25.5129 10.152 25.5518 10.1753 25.5543 10.1988 25.5556 10.2223 25.5556L12.7778 25.5556C13.1308 25.5556 13.4169 25.2695 13.4169 24.9166 13.4169 24.893 13.4155 24.8696 13.4129 24.8462L13.0099 21.2219C13.6689 20.745 14.058 19.9801 14.0556 19.1666 14.0556 17.7552 12.9115 16.6111 11.5 16.6111 10.0886 16.6111 8.94443 17.7552 8.94443 19.1666 8.94202 19.9801 9.3312 20.745 9.99015 21.2219ZM11.5 17.8889C12.2033 17.8865 12.7753 18.4546 12.7778 19.158 12.7795 19.6509 12.4966 20.1004 12.0516 20.3122 11.8079 20.4302 11.6649 20.6889 11.6947 20.9579L12.0641 24.2778 10.936 24.2778 11.3054 20.9579C11.3352 20.6889 11.1923 20.4302 10.9486 20.3122 10.3135 20.01 10.0437 19.2502 10.3459 18.6151 10.5576 18.1701 11.0072 17.8872 11.5 17.8889Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00826 846 140.04)\"></path><path d=\"M22.3611 11.5 20.4444 11.5 20.4444 8.94444C20.4444 4.00457 16.4399 1.38309e-05 11.5 1.02196e-05 6.56017 6.60842e-06 2.5556 4.00456 2.5556 8.94443L2.5556 11.5 0.638906 11.5C0.286248 11.4998 0.000200344 11.7855 2.79908e-08 12.1382-1.09358e-07 12.1385-1.09358e-07 12.1387 2.79908e-08 12.139L0 28.1111C0.0013953 29.522 1.14477 30.6654 2.5556 30.6667L20.4446 30.6667C21.8554 30.6653 22.9987 29.522 23 28.1111L23 12.139C23.0002 11.7863 22.7146 11.5002 22.3618 11.5 22.3616 11.5 22.3613 11.5 22.3611 11.5ZM3.83333 8.94443C3.83333 4.71024 7.26582 1.27775 11.5 1.27775 15.7342 1.27775 19.1666 4.71024 19.1666 8.94443L19.1666 11.5 17.889 11.5 17.889 8.94444C17.8855 5.41594 15.0224 2.55828 11.4939 2.56168 7.97016 2.56508 5.1145 5.42074 5.11109 8.94443L5.11109 11.5 3.83333 11.5ZM16.6111 8.94443 16.6111 11.5 6.38893 11.5 6.38893 8.94444C6.38757 6.12167 8.67478 3.83225 11.4976 3.83088 14.3204 3.82951 16.6098 6.11672 16.6111 8.9395 16.6111 8.94115 16.6111 8.94279 16.6111 8.94443ZM21.7222 28.1111C21.7214 28.8164 21.1498 29.388 20.4446 29.3889L2.5556 29.3889C1.85029 29.388 1.27876 28.8165 1.27784 28.1111L1.27784 12.7777 21.7222 12.7777Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00826 846 140.04)\"></path></g></g></g></g></g></svg>",
+  "mail": "<svg viewBox=\"0 -6 37 37\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-432 -344)\"><g><g><g><g><path d=\"M33.3855 0 2.08496 0C0.93395 0.00156693 0.00133024 0.934377 1.99482e-08 2.08539L0 22.9155C0.00140751 24.0663 0.934124 24.9989 2.08496 25L33.3855 25C34.5362 24.9988 35.4689 24.0663 35.47 22.9155L35.47 2.08539C35.4689 0.934469 34.5364 0.00160788 33.3855 6.73409e-09ZM24.1309 12.0145 33.6762 2.98163 33.6762 21.8856ZM18.7323 14.6531C18.3367 15.0273 17.7183 15.0292 17.3202 14.6574L3.56081 1.79425 32.3195 1.79425ZM13.0647 13.135 16.0947 15.9679C17.186 16.9856 18.8801 16.9806 19.9656 15.9566L22.8275 13.2476 32.458 23.2067 3.3251 23.2067ZM11.7537 11.9089 1.79427 22.2083 1.78766 2.592Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.0125 0 0 1 433.043 344)\"></path></g></g></g></g></g></svg>",
+  "minus": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-142 -341)\"><g><g><g><g><path d=\"M158.5 371.395C150.819 371.395 144.593 365.168 144.593 357.487 144.593 349.806 150.819 343.58 158.5 343.58 166.181 343.58 172.408 349.806 172.408 357.487 172.399 365.164 166.178 371.386 158.5 371.395ZM158.5 345.7C151.991 345.7 146.713 350.977 146.713 357.487 146.713 363.997 151.991 369.274 158.5 369.274 165.01 369.274 170.287 363.997 170.287 357.487 170.28 350.98 165.007 345.708 158.5 345.7Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M158.5 373C149.939 373 143 366.06 143 357.5 143 348.939 149.94 342 158.5 342 167.061 342 174 348.94 174 357.5 173.991 366.056 167.056 372.991 158.5 373ZM158.5 342.57C150.254 342.57 143.569 349.254 143.57 357.5 143.57 365.746 150.254 372.431 158.5 372.43 166.746 372.43 173.431 365.746 173.43 357.5 173.421 349.258 166.742 342.579 158.5 342.57Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M162.967 355.72 154.033 355.72C153.109 355.72 152.223 356.533 152.266 357.487 152.309 358.445 153.042 359.254 154.033 359.254L162.967 359.254C163.891 359.254 164.777 358.441 164.734 357.487 164.691 356.53 163.958 355.72 162.967 355.72Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></g></g></g></svg>",
+  "money": "<svg viewBox=\"0 -6.5 41 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-29 -356)\"><g><g><g><g><path d=\"M37.9254 24.6501 8.63888 24.6501 8.63888 20.1594 32.3973 20.1594C32.9697 20.1596 33.4342 19.6957 33.4346 19.1233L33.4346 8.64007 37.9254 8.64007ZM2.07461 2.07461 31.3611 2.07461 31.3611 18.0859 2.07461 18.0859ZM38.9627 6.56542 33.4346 6.56542 33.4346 1.03731C33.4348 0.464567 32.9705 0.000148065 32.3979 1.29848e-08 32.3977-3.32125e-08 32.3975-3.32125e-08 32.3973 1.29848e-08L1.03731 0C0.464567-0.000148052 0.000148065 0.464031 1.29848e-08 1.03677-3.32125e-08 1.03695-3.32125e-08 1.03713 1.29848e-08 1.03731L0 19.1233C0.000348764 19.6957 0.464747 20.1596 1.03731 20.1594L6.56542 20.1594 6.56542 25.6874C6.56527 26.2602 7.02944 26.7246 7.6022 26.7248 7.60237 26.7248 7.60255 26.7248 7.60272 26.7248L38.9627 26.7248C39.5355 26.7248 39.9998 26.2607 40 25.6879 40 25.6877 40 25.6875 40 25.6874L40 7.60276C40.0002 7.03 39.5359 6.56557 38.9633 6.56542 38.9631 6.56542 38.9629 6.56542 38.9627 6.56542\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00542 30 357.065)\"></path><path d=\"M16.658 13.0462C15.8579 13.0462 15.3146 12.6795 14.8126 12.3001 14.6882 12.1992 14.5056 12.2183 14.4048 12.3427 14.3949 12.3549 14.386 12.3678 14.3782 12.3815L13.9025 13.1689C13.7948 13.3443 13.8487 13.4257 13.9713 13.5208 14.6109 14.0632 15.4022 14.395 16.2374 14.471L16.1422 15.7203C16.1285 15.937 16.4001 16.141 16.7256 16.1273 17.0523 16.1135 17.324 15.937 17.3091 15.7203L17.2013 14.4572C18.681 14.267 19.59 13.1953 19.59 12.0685 19.59 10.4673 18.1916 9.73491 16.9847 9.25923 15.9932 8.89243 15.5451 8.49932 15.5451 7.94227 15.5451 7.48149 15.9118 7.12845 16.6041 7.12845 17.2689 7.12845 17.771 7.45395 18.3005 7.77952 18.4657 7.85794 18.6633 7.79222 18.7488 7.6305L19.2507 6.91066C19.3369 6.78056 19.3015 6.60517 19.1714 6.5189 19.1707 6.51843 19.1699 6.51798 19.1694 6.51753 18.5858 6.1013 17.9109 5.83126 17.2013 5.73008L17.3091 4.44061C17.324 4.22397 17.0523 4.01994 16.7256 4.03372 16.4001 4.04748 16.1285 4.22397 16.1422 4.44061L16.2511 5.71634C14.5685 5.87909 13.8762 7.03334 13.8762 8.03738 13.8762 9.48961 15.043 10.2358 16.211 10.6977 17.2414 11.092 17.7572 11.5264 17.7572 12.1362 17.7572 12.652 17.2964 13.0462 16.658 13.0462\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00542 30 357.065)\"></path></g></g></g></g></g></svg>",
+  "more": "<svg viewBox=\"0 -12 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-198 -444)\"><g><g><g><g><path d=\"M7.80397 3.90199C7.80397 6.05699 6.05699 7.80397 3.90199 7.80397 1.74698 7.80397-1.25114e-07 6.05699-1.25114e-07 3.90199-1.25114e-07 1.74698 1.74698-1.25114e-07 3.90199-1.25114e-07 6.05699-1.25114e-07 7.80397 1.74698 7.80397 3.90199Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01021 0 0 1 199 444.033)\"></path><path d=\"M30.6865 4.03146C30.6865 6.18647 28.9396 7.93345 26.7846 7.93345 24.6296 7.93345 22.8826 6.18647 22.8826 4.03146 22.8826 1.87645 24.6296 0.129475 26.7846 0.129475 28.9396 0.129475 30.6865 1.87645 30.6865 4.03146Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01021 0 0 1 199 444.033)\"></path><path d=\"M19.3222 3.90199C19.3222 6.05699 17.5752 7.80397 15.4202 7.80397 13.2652 7.80397 11.5182 6.05699 11.5182 3.90199 11.5182 1.74698 13.2652-1.25114e-07 15.4202-1.25114e-07 17.5752-1.25114e-07 19.3222 1.74698 19.3222 3.90199Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.01021 0 0 1 199 444.033)\"></path></g></g></g></g></g></svg>",
+  "notification": "<svg viewBox=\"-3.5 0 31 31\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-316 -138)\"><g><g><g><g><path d=\"M21.5533 24.3244 20.0899 21.5776 20.0899 14.7943C20.0846 10.6923 17.3727 7.08607 13.4334 5.94258L13.4334 2.55656C13.4344 1.14466 12.2907-0.000691819 10.8787-0.00165437 9.46681-0.00261693 8.32145 1.14118 8.32049 2.55308 8.32049 2.55424 8.32049 2.55541 8.32049 2.55656L8.32049 5.94263C4.38119 7.08619 1.66932 10.6924 1.66406 14.7944L1.66406 21.5776 0.200627 24.3244C-0.238514 25.1485 0.0736019 26.1726 0.897757 26.6118 1.14252 26.7422 1.41561 26.8105 1.69295 26.8105L7.50299 26.8105C7.60777 28.6739 9.20331 30.0995 11.0667 29.9947 12.7837 29.8982 14.1544 28.5275 14.251 26.8105L20.0611 26.8105C20.9949 26.8105 21.752 26.0535 21.752 25.1197 21.752 24.8422 21.6838 24.5692 21.5533 24.3244ZM9.67319 2.55656C9.67319 1.89175 10.2121 1.35281 10.8769 1.35281 11.5418 1.35281 12.0807 1.89175 12.0807 2.55656L12.0807 5.66016C11.2816 5.55531 10.4723 5.55531 9.67319 5.66016L9.67319 2.55656ZM3.01681 14.7943C3.01681 10.4532 6.53594 6.9341 10.877 6.9341 15.2181 6.9341 18.7371 10.4532 18.7371 14.7943L18.7371 21.018 3.01681 21.018ZM10.877 28.6473C9.83175 28.646 8.95848 27.8509 8.85932 26.8105L12.8948 26.8105C12.7955 27.8509 11.9222 28.646 10.877 28.6474Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00984 0 0 1 317.016 139)\"></path><path d=\"M10.5686 12.8803C10.7569 12.9955 10.9939 12.9955 11.1822 12.8803 11.2572 12.8392 11.3205 12.7798 11.3663 12.7077L11.581 10.1747C11.5753 10.037 11.4921 9.91438 11.3663 9.8581 11.0671 9.66627 10.6837 9.66627 10.3845 9.8581 10.2587 9.91438 10.1755 10.037 10.1698 10.1747L10.4152 12.7077C10.4152 12.7652 10.4766 12.8227 10.5686 12.8803Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00984 0 0 1 317.016 139)\"></path><path d=\"M14.557 17.2841C14.6758 17.3707 14.837 17.3707 14.9559 17.2841 15.1175 17.2191 15.2487 17.0959 15.324 16.9387 15.4346 16.8127 15.48 16.6424 15.4467 16.4782 15.4557 16.345 15.3829 16.2196 15.2626 16.1615L12.8082 15.0967C12.729 15.0675 12.642 15.0675 12.5627 15.0967 12.4673 15.1574 12.384 15.2354 12.3174 15.3269 12.268 15.4144 12.2466 15.5148 12.256 15.6147 12.2539 15.7008 12.2872 15.784 12.348 15.845Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00984 0 0 1 317.016 139)\"></path><path d=\"M12.5627 13.9741C12.6393 14.0103 12.7255 14.0204 12.8082 14.0028L15.2626 12.9379C15.3901 12.8725 15.4634 12.7348 15.4467 12.5925 15.48 12.4282 15.4346 12.2579 15.324 12.1319 15.2487 11.9748 15.1175 11.8516 14.9559 11.7866 14.8292 11.7288 14.6836 11.7288 14.557 11.7866L12.348 13.2256C12.2872 13.2867 12.2539 13.3699 12.256 13.456 12.2466 13.5559 12.268 13.6563 12.3174 13.7438 12.376 13.8421 12.461 13.9218 12.5627 13.9741Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00984 0 0 1 317.016 139)\"></path><path d=\"M7.19382 11.7866C7.06714 11.7288 6.92165 11.7288 6.79496 11.7866 6.63337 11.8516 6.50202 11.9748 6.42679 12.1319 6.32989 12.2648 6.28613 12.4291 6.3041 12.5925 6.3008 12.7319 6.37061 12.8629 6.48816 12.9379L8.94256 14.0028C9.02524 14.0219 9.11197 14.0117 9.18799 13.9741 9.28977 13.9218 9.37482 13.8421 9.43344 13.7438 9.48278 13.6563 9.50419 13.5559 9.49479 13.456 9.49683 13.3699 9.46358 13.2867 9.40276 13.2257Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00984 0 0 1 317.016 139)\"></path><path d=\"M11.3663 19.2414C11.5 19.179 11.5842 19.0436 11.581 18.896L11.3663 16.3918C11.3308 16.3049 11.2656 16.2335 11.1822 16.1904 11.0891 16.1379 10.9812 16.1177 10.8754 16.1329 10.7697 16.121 10.6628 16.1409 10.5686 16.1904 10.4766 16.2479 10.4152 16.3055 10.4152 16.3918L10.1698 18.896C10.1666 19.0436 10.2508 19.179 10.3845 19.2414 10.6938 19.3949 11.057 19.3949 11.3663 19.2414Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00984 0 0 1 317.016 139)\"></path><path d=\"M9.18798 15.0967C9.10872 15.0678 9.02184 15.0678 8.94256 15.0967L6.48816 16.1615C6.37741 16.2294 6.30823 16.3484 6.3041 16.4782 6.28614 16.6416 6.3299 16.8059 6.42679 16.9387 6.50201 17.0959 6.63336 17.2191 6.79496 17.2841 6.91381 17.3707 7.07498 17.3707 7.19382 17.2841L9.40277 15.845C9.46356 15.784 9.4968 15.7008 9.49479 15.6147 9.5042 15.5148 9.48278 15.4144 9.43344 15.3269 9.36671 15.2354 9.28345 15.1574 9.18799 15.0967Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00984 0 0 1 317.016 139)\"></path></g></g></g></g></g></svg>",
+  "pharmacy": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-676 -340)\"><g><path d=\"M713.996 366.122 703.125 366.122C702.571 366.122 702.123 366.57 702.123 367.123 702.123 367.123 702.123 367.124 702.123 367.124L702.123 377.995 689.878 377.995 689.878 367.124C689.878 366.57 689.43 366.122 688.876 366.122L678.005 366.122 678.005 353.877 688.876 353.877C689.43 353.877 689.878 353.429 689.878 352.876 689.878 352.875 689.878 352.875 689.878 352.875L689.878 342.004 702.123 342.004 702.123 352.875C702.122 353.428 702.57 353.877 703.123 353.877 703.124 353.877 703.124 353.877 703.125 353.877L713.996 353.877ZM714.998 351.873 704.127 351.873 704.127 341.002C704.126 340.449 703.678 340 703.125 340L688.876 340C688.323 340 687.875 340.448 687.874 341.002 687.874 341.002 687.874 341.002 687.874 341.002L687.874 351.873 677.002 351.873C676.449 351.874 676 352.322 676 352.875L676 367.124C676 367.677 676.448 368.125 677.002 368.125 677.002 368.125 677.002 368.125 677.002 368.125L687.874 368.125 687.874 378.998C687.874 379.551 688.323 380 688.876 380 688.876 380 688.876 380 688.876 380L703.125 380C703.678 380 704.126 379.551 704.127 378.998L704.127 368.125 714.998 368.125C715.551 368.126 716 367.677 716 367.124 716 367.124 716 367.124 716 367.124L716 352.875C716 352.322 715.551 351.874 714.998 351.873\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></svg>",
+  "photo": "<svg viewBox=\"0 -0.5 38 38\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-414 -144)\"><g><g><g><g><path d=\"M2.01594 30.815 2.01594 20.9168C2.43144 20.1884 4.2792 17.4229 8.40796 17.4229 12.6426 17.4229 15.0683 19.2796 17.4152 21.075 19.5769 22.7291 21.8135 24.4398 25.2206 24.4398 27.7822 24.4398 29.5943 23.5989 30.815 22.5586L30.815 30.815ZM30.815 2.01594 30.815 19.224C30.6145 19.7708 29.4263 22.425 25.2206 22.425 22.4962 22.425 20.7086 21.0572 18.6392 19.4734 16.1488 17.5677 13.3254 15.407 8.40796 15.407 5.39182 15.407 3.33244 16.5787 2.01594 17.7682L2.01594 2.01594ZM32.8311 31.8231 32.8311 1.00797C32.8312 0.451413 32.3801 0.000128026 31.8236 1.57723e-09 31.8233-3.66108e-08 31.8232-3.37751e-08 31.8231 1.00843e-08L1.00801 0C0.451447-0.000147037 0.00014704 0.450914 2.20188e-09 1.00747-4.16577e-08 1.00764-4.44934e-08 1.00781-6.30522e-09 1.00797L0 31.8231C-0.000130946 32.3796 0.450956 32.8308 1.00753 32.8309 1.00769 32.8309 1.00785 32.8309 1.00801 32.8309L31.8231 32.8309C32.3796 32.8311 32.8309 32.3801 32.8311 31.8235 32.8311 31.8233 32.8311 31.8232 32.8311 31.8231\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path><path d=\"M23.2975 8.37217C23.5403 8.37217 23.7396 8.24634 23.7675 8.08261L24.0069 5.3683C24.0069 5.10101 23.6928 4.88048 23.2975 4.88048 22.9032 4.88048 22.5891 5.10101 22.5891 5.3683L22.8285 8.08261C22.8553 8.24634 23.0558 8.37217 23.2975 8.37217\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path><path d=\"M27.0124 13.0298C27.2439 13.1635 27.5914 13.0019 27.7897 12.66 27.9869 12.3181 27.9534 11.9361 27.7207 11.8013L25.2502 10.653C25.0966 10.5951 24.8872 10.7042 24.7657 10.9147 24.6443 11.1241 24.6544 11.3602 24.7814 11.466Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path><path d=\"M25.2508 9.4814 27.7211 8.33087C27.9538 8.19723 27.9873 7.81521 27.7902 7.47327 27.5919 7.13133 27.2432 6.96985 27.0128 7.10462L24.7818 8.66836C24.6537 8.77305 24.6436 9.00918 24.7651 9.21968 24.8865 9.43018 25.0959 9.53933 25.2508 9.4814\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path><path d=\"M23.2976 15.2534C23.6931 15.2534 24.0071 15.0339 24.0071 14.7644L23.7665 12.0512C23.7399 11.8875 23.5404 11.7616 23.2976 11.7616 23.0549 11.7616 22.8554 11.8875 22.8288 12.0512L22.5892 14.7644C22.5892 15.0339 22.9033 15.2534 23.2976 15.2534\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path><path d=\"M19.5834 13.0298 21.8144 11.466C21.9425 11.3602 21.9514 11.1252 21.831 10.9147 21.7096 10.7042 21.4991 10.5951 21.3444 10.653L18.875 11.8013C18.6433 11.9361 18.6089 12.3181 18.806 12.66 19.0043 13.0019 19.3518 13.1635 19.5834 13.0298\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path><path d=\"M21.3449 9.4814C21.4997 9.53932 21.709 9.42906 21.8304 9.21968 21.9519 9.00918 21.943 8.77305 21.8137 8.66836L19.584 7.10462C19.3523 6.96985 19.0036 7.13133 18.8065 7.47327 18.6083 7.81521 18.6439 8.19723 18.8755 8.33087Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path><path d=\"M35.97 4.90064C35.4134 4.9005 34.9622 5.3516 34.9621 5.90818 34.9621 5.90834 34.9621 5.90848 34.9621 5.90864L34.9621 34.8513 6.00474 34.8513C5.44805 34.8513 4.99676 35.3027 4.99676 35.8594 4.99676 36.416 5.44805 36.8674 6.00474 36.8674L35.97 36.8674C36.5266 36.8675 36.9778 36.4164 36.978 35.8599 36.978 35.8598 36.978 35.8595 36.978 35.8594L36.978 5.90864C36.9781 5.35209 36.5271 4.9008 35.9705 4.90064 35.9703 4.90064 35.9702 4.90064 35.97 4.90064\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.0036 415.011 144)\"></path></g></g></g></g></g></svg>",
+  "pick-up": "<svg viewBox=\"-6.5 0 41 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-164 -437)\"><g><g><g><g><path d=\"M11.8493 6.19045 12.726 6.19045C12.6775 6.33019 12.6524 6.47698 12.6517 6.62491 12.6465 7.11565 13.0402 7.51765 13.5309 7.5228 13.5523 7.52302 13.5736 7.52249 13.5949 7.52116 14.1428 7.52116 14.5421 7.14935 14.5421 6.65621 14.5425 6.43595 14.4502 6.22568 14.2877 6.07697 14.4264 6.05763 14.5269 5.93495 14.5186 5.79517 14.5242 5.74928 14.4916 5.70749 14.4457 5.70185 14.4426 5.70148 14.4395 5.70126 14.4364 5.70124L11.8493 5.70124C11.8025 5.70301 11.765 5.74053 11.7632 5.78733L11.7632 6.10438C11.7663 6.15057 11.8031 6.18733 11.8493 6.19045ZM13.1996 6.19045 13.8454 6.19045C14.0037 6.25859 14.1035 6.4175 14.0959 6.5897 14.0837 6.83871 13.872 7.03071 13.623 7.01855 13.6136 7.01809 13.6043 7.01733 13.5949 7.0163 13.3439 7.03875 13.1221 6.85345 13.0997 6.60238 13.0986 6.59034 13.098 6.57828 13.0979 6.56619 13.0964 6.43394 13.1316 6.30389 13.1996 6.19045Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path><path d=\"M14.4168 8.40587C14.4642 8.4055 14.5025 8.36719 14.5029 8.3198L14.5029 8.00277C14.5025 7.95536 14.4642 7.91705 14.4168 7.91666L12.7809 7.91666C12.7341 7.91841 12.6965 7.95595 12.6947 8.00277L12.6947 8.3198C12.6965 8.3666 12.7341 8.40412 12.7809 8.40587Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path><path d=\"M15.1252 7.8462C14.955 7.8435 14.8148 7.97929 14.8122 8.1495 14.8121 8.15146 14.8121 8.15343 14.8121 8.15539 14.8112 8.32742 14.95 8.46762 15.122 8.46849 15.1231 8.46851 15.1241 8.46851 15.1252 8.46849 15.2955 8.46904 15.4339 8.33148 15.4345 8.16124 15.4345 8.1593 15.4345 8.15734 15.4344 8.15539 15.4368 7.98699 15.3022 7.84856 15.1338 7.8462 15.1309 7.84616 15.1281 7.84616 15.1252 7.8462Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path><path d=\"M13.9276 10.2455 14.1076 10.4099C14.1468 10.449 14.1976 10.4685 14.2368 10.4294 14.4307 10.2595 14.542 10.0141 14.5421 9.75625 14.5496 9.23425 14.1326 8.80495 13.6106 8.79739 13.0886 8.78984 12.6593 9.20688 12.6517 9.72888 12.6516 9.73671 12.6516 9.74451 12.6517 9.75234 12.6409 10.0418 12.7857 10.3149 13.0313 10.4685 13.0782 10.4998 13.1213 10.4803 13.1605 10.4372L13.3092 10.2611C13.3351 10.2259 13.33 10.1768 13.2974 10.1476 13.1737 10.0588 13.0996 9.91636 13.0979 9.76404 13.1122 9.48847 13.3473 9.27676 13.6228 9.29114 13.8798 9.30456 14.0845 9.5109 14.0959 9.76793 14.0959 9.90448 14.0392 10.0349 13.9394 10.1281 13.9041 10.1633 13.8845 10.2063 13.9276 10.2455Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path><path d=\"M15.3483 10.8327 12.7809 10.8327C12.7341 10.8344 12.6965 10.8719 12.6947 10.9187L12.6947 11.2358C12.6951 11.2832 12.7335 11.3215 12.7809 11.3219L13.544 11.3219 12.73 12.0029C12.7069 12.0223 12.694 12.0511 12.6947 12.0812L12.6947 12.4647C12.6924 12.5058 12.7238 12.541 12.7649 12.5434 12.7872 12.5446 12.8088 12.5359 12.8239 12.5195L13.6654 11.7681 14.3699 12.4843C14.4018 12.5141 14.4518 12.5124 14.4817 12.4805 14.4955 12.4656 14.5032 12.446 14.503 12.4256L14.503 12.0577C14.5004 12.0141 14.4807 11.9733 14.4482 11.9442L13.818 11.3219 15.3483 11.3219C15.3951 11.3201 15.4326 11.2826 15.4344 11.2358L15.4344 10.9187C15.4312 10.8726 15.3945 10.8358 15.3483 10.8327Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path><path d=\"M13.4579 13.326 14.4168 13.326C14.4634 13.3269 14.502 13.2899 14.5029 13.2433 14.503 13.2421 14.503 13.241 14.5029 13.2399L14.5029 12.9228C14.5039 12.8762 14.4669 12.8377 14.4202 12.8368 14.4191 12.8367 14.418 12.8367 14.4168 12.8368L13.4579 12.8368C13 12.8368 12.6517 12.9581 12.6517 13.5177 12.6581 13.7266 12.7484 13.9241 12.9021 14.0657 12.7658 14.0874 12.6689 14.2098 12.6791 14.3475 12.6734 14.3934 12.7061 14.4352 12.752 14.4408 12.7551 14.4412 12.7582 14.4414 12.7612 14.4414L14.4168 14.4414C14.4634 14.4424 14.502 14.4054 14.5029 14.3588 14.503 14.3576 14.503 14.3565 14.5029 14.3553L14.5029 14.05C14.5029 13.9757 14.4872 13.9522 14.4168 13.9522L13.4344 13.9522C13.2779 13.9248 13.0979 13.8309 13.0979 13.6312 13.0979 13.4082 13.2192 13.326 13.4579 13.326Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path><path d=\"M14.5186 15.0365C14.5242 14.9906 14.4916 14.9488 14.4457 14.9432 14.4426 14.9428 14.4395 14.9426 14.4364 14.9426L11.8493 14.9425C11.8025 14.9443 11.765 14.9819 11.7632 15.0287L11.7632 15.3457C11.7664 15.3919 11.8031 15.4286 11.8493 15.4318L12.726 15.4318C12.6775 15.5715 12.6524 15.7183 12.6517 15.8662 12.6465 16.3569 13.0401 16.7589 13.5309 16.7641 13.5523 16.7643 13.5736 16.7638 13.5949 16.7625 14.1428 16.7625 14.5421 16.3906 14.5421 15.8975 14.5425 15.6772 14.4502 15.467 14.2877 15.3183 14.4264 15.2989 14.5269 15.1762 14.5186 15.0365ZM13.5949 16.2576C13.3439 16.2801 13.1221 16.0947 13.0997 15.8437 13.0986 15.8316 13.098 15.8196 13.0979 15.8075 13.0964 15.6752 13.1316 15.5452 13.1996 15.4317L13.8454 15.4317C14.0037 15.4999 14.1035 15.6588 14.0959 15.831 14.0837 16.08 13.872 16.272 13.623 16.2598 13.6136 16.2594 13.6043 16.2586 13.5949 16.2576Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path><path d=\"M26.9334 4.85873C26.9349 4.43867 26.7003 4.05341 26.3264 3.86172 25.9723 3.65828 25.6069 3.47504 25.2321 3.31293 22.9926 2.31814 20.7458 1.34004 18.5118 0.332882 18.0163 0.1073 17.4772-0.00630659 16.9328 0.000145786 14.6166 0.00988121 12.3004 0.00984554 9.98418 3.87547e-05 9.43952-0.00494547 8.90053 0.110971 8.40606 0.339434 6.54711 1.18433 4.67501 2.00037 2.80894 2.82976 2.22827 3.08784 1.64901 3.34936 1.07337 3.61849 0.866972 3.71131 0.66933 3.82249 0.482835 3.95071 0.207707 4.12283 0.0342711 4.41875 0.0185284 4.74291 0.0064714 5.15129 0.000569633 5.55986 0.000823076 5.96865-0.000356789 10.601-0.000605311 15.2334 7.75094e-05 19.8658 6.02851e-05 24.4983 0.000239295 29.1306 0.000614539 33.7631 0.000684666 34.1717 0.000129182 34.5806 0.0146991 34.989 0.0304892 35.3594 0.228193 35.6982 0.542988 35.8944 0.734016 36.0158 0.935479 36.1199 1.14499 36.2057 2.0136 36.5973 2.88549 36.9818 3.75466 37.3722 5.20344 38.0231 6.65379 38.6707 8.09803 39.3316 8.76039 39.6309 9.4818 39.7769 10.2084 39.7588 12.3882 39.7348 14.568 39.7352 16.7481 39.7597 17.5207 39.7725 18.2853 39.6029 18.98 39.2646 19.7575 38.8925 20.5448 38.5406 21.3317 38.1889 22.7815 37.5409 24.2353 36.9017 25.6851 36.2539 25.9367 36.1509 26.1782 36.0254 26.4069 35.8787 26.7204 35.6803 26.9155 35.3397 26.9282 34.9689 26.9402 34.6059 26.9423 34.2425 26.9423 33.8792 26.943 24.569 26.943 15.2588 26.9424 5.94855 26.9424 5.58527 26.9341 5.22201 26.9334 4.85873ZM8.24997 35.8043C8.2498 36.19 8.20243 36.5757 8.17547 36.9614 8.16855 37.0602 7.9754 37.1661 7.87683 37.1303 7.63667 37.043 7.39124 36.967 7.15913 36.8611 5.60804 36.1531 4.0588 35.441 2.51141 34.7246 2.20307 34.5819 1.9038 34.4191 1.57251 34.2516 1.5126 34.0489 1.46858 33.8419 1.44086 33.6324 1.41703 33.2445 1.42583 32.8546 1.4258 32.4654 1.42526 24.077 1.42521 15.6885 1.42565 7.30005 1.42567 6.95416 1.43492 6.60821 1.42989 6.26239 1.4229 5.78371 1.58932 5.4602 2.06219 5.26194 3.04396 4.85031 4.00173 4.38002 4.97291 3.94185 5.90522 3.52123 6.84107 3.10879 7.77735 2.69736 7.93281 2.62353 8.11868 2.68967 8.19252 2.84513 8.21359 2.88949 8.22389 2.93823 8.22254 2.98734 8.23295 3.11637 8.24578 3.24554 8.24882 3.37485 8.25397 3.59094 8.25309 3.8072 8.25309 4.02342 8.25325 14.6171 8.2522 25.2107 8.24997 35.8043ZM17.1072 36.1834C17.107 36.4818 17.0973 36.7806 17.0833 37.0788 17.0481 37.303 16.8587 37.4706 16.632 37.4784 16.4067 37.4963 16.1804 37.5132 15.9545 37.5136 14.2776 37.5164 12.6006 37.5164 10.9237 37.5138 10.7426 37.5136 10.5612 37.5053 10.3806 37.4928 10.0526 37.4702 9.87193 37.3084 9.85727 37.0235 9.84635 36.8105 9.84002 36.597 9.84 36.3838 9.8391 31.7744 9.83948 27.165 9.84118 22.5556 9.84133 22.3004 9.86347 22.045 9.88324 21.7903 9.92216 21.6151 10.0651 21.4821 10.2426 21.4559 10.4668 21.4328 10.692 21.4061 10.917 21.4046 11.8235 21.3981 12.7299 21.4003 13.6364 21.4005 14.4522 21.4005 15.2681 21.4 16.0839 21.404 16.2647 21.4048 16.4458 21.4193 16.6262 21.4347 16.8501 21.4561 17.0325 21.6236 17.0727 21.8451 17.0894 22.1001 17.1062 22.3559 17.1065 22.6113 17.109 24.9586 17.1095 27.306 17.108 29.6534 17.1083 31.83 17.108 34.0067 17.1072 36.1834ZM17.1078 10.6616C17.1079 13.0516 17.1073 15.4415 17.1061 17.8314 17.1055 18.2015 17.0844 18.5716 17.0658 18.9414 17.0328 19.1131 16.9013 19.2489 16.7308 19.2875 16.5537 19.3196 16.3746 19.3399 16.1948 19.3478 14.3801 19.3522 12.5655 19.3522 10.7508 19.3478 10.5708 19.3399 10.3916 19.3203 10.2141 19.2893 10.0446 19.2502 9.91347 19.116 9.87811 18.9457 9.86512 18.823 9.84611 18.7002 9.84356 18.5773 9.8376 18.2889 9.83902 18.0004 9.839 17.712 9.83882 13.0557 9.83882 8.39938 9.83898 3.74311 9.83898 3.49586 9.83644 3.24857 9.8419 3.0014 9.85742 2.30146 9.96647 2.17809 10.6786 2.17443 12.5385 2.16484 14.3986 2.16906 16.2586 2.17441 16.4383 2.17155 16.6172 2.19922 16.7877 2.25621 16.9062 2.29789 17.0002 2.38996 17.0443 2.50765 17.088 2.8338 17.1085 3.16266 17.1055 3.49172 17.1098 5.88169 17.1106 8.27165 17.1078 10.6616ZM25.4347 32.8512C25.4345 33.1952 25.4146 33.5398 25.3889 33.883 25.3819 34.0587 25.2793 34.2163 25.1215 34.2938 24.5871 34.5566 24.0537 34.822 23.513 35.0708 22.2771 35.6399 21.039 36.2031 19.7981 36.761 19.4914 36.8989 19.1727 37.0094 18.847 37.1373 18.7615 37.0033 18.646 36.9028 18.6364 36.7926 18.603 36.4073 18.5969 36.0184 18.5967 35.6311 18.5943 31.8785 18.5939 28.1261 18.5952 24.3736 18.5952 17.645 18.5962 10.9165 18.5976 4.18789 18.5978 3.75882 18.6268 3.32951 18.6521 2.9009 18.6805 2.74287 18.8316 2.63783 18.9896 2.66627 19.006 2.6692 19.0221 2.67354 19.0376 2.6792 20.2408 3.21627 21.4433 3.75531 22.6449 4.29629 23.4198 4.64632 24.1881 5.01133 24.9648 5.35686 25.249 5.47642 25.4297 5.75891 25.4194 6.06692 25.4327 6.32511 25.4358 6.58409 25.4358 6.84275 25.4367 15.5122 25.4364 24.1816 25.4347 32.8512Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00603 164.029 438)\"></path></g></g></g></g></g></svg>",
+  "plus": "<svg viewBox=\"0 -1 34 34\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-82 -340)\"><g><g><g><g><path d=\"M15.5002 1.57979C7.81934 1.57982 1.59286 7.80637 1.59289 15.4872 1.59292 23.1679 7.81946 29.3945 15.5003 29.3944 23.181 29.3944 29.4075 23.1678 29.4075 15.4871 29.399 7.80976 23.1775 1.58825 15.5002 1.57979ZM15.5002 27.274C8.99043 27.274 3.71328 21.9968 3.71328 15.4872 3.71328 8.97744 8.99043 3.70029 15.5002 3.70029 22.0098 3.70029 27.2869 8.97737 27.287 15.4871 27.2798 21.9937 22.0069 27.2668 15.5002 27.274Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.03226 0 0 1 83 340)\"></path><path d=\"M15.4997 0C6.95305 0 0 6.95299 0 15.4997 0 24.0463 6.95305 30.9999 15.4997 30.9999 24.0465 30.9999 31 24.0463 31 15.4997 31 6.95299 24.0465 0 15.4997 0ZM15.4997 30.4304C7.2539 30.4302 0.569431 23.7456 0.569558 15.4997 0.569686 7.2539 7.25436 0.56943 15.5002 0.569556 23.7458 0.569684 30.4302 7.25407 30.4304 15.4997 30.4213 23.7419 23.7419 30.4213 15.4997 30.4304Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.03226 0 0 1 83 340)\"></path><path d=\"M19.967 13.72 17.2671 13.72 17.2671 11.0199C17.2671 10.0956 16.4543 9.21011 15.5001 9.25281 14.5425 9.29573 13.733 10.0294 13.733 11.0199L13.733 13.72 11.0329 13.72C10.1086 13.72 9.2231 14.5327 9.26584 15.4871 9.30871 16.4445 10.0423 17.2541 11.0329 17.2541L13.733 17.2541 13.733 19.9541C13.733 20.8785 14.5457 21.764 15.5001 21.7212 16.4575 21.6783 17.2671 20.9448 17.2671 19.9541L17.2671 17.2541 19.967 17.2541C20.8915 17.2541 21.7769 16.4413 21.7341 15.4871 21.6913 14.5295 20.9578 13.72 19.967 13.72Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.03226 0 0 1 83 340)\"></path></g></g></g></g></g></svg>",
+  "rating": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-609 -334)\"><g><g><g><g><path d=\"M620.961 354.268C620.297 354.268 619.76 354.806 619.76 355.469 619.76 356.132 620.297 356.67 620.961 356.67 621.624 356.67 622.162 356.132 622.162 355.469 622.162 355.469 622.162 355.469 622.162 355.469 622.161 354.805 621.624 354.268 620.961 354.268Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M640.583 351.153C640.941 350.469 640.95 349.654 640.605 348.963 640.485 348.727 640.322 348.517 640.123 348.343 640.176 348.295 640.227 348.244 640.274 348.19 640.878 347.508 641.024 346.603 640.664 345.768 640.301 344.903 639.467 344.33 638.529 344.299 637.202 344.253 635.849 344.266 634.542 344.282 634.193 344.286 633.843 344.291 633.494 344.293 633.741 343.141 634.101 341.341 634.167 341.003 634.427 339.467 634.2 338.259 633.494 337.409 632.628 336.369 631.313 336.193 630.591 336.181 630.079 336.184 629.648 336.568 629.587 337.077 628.974 342.017 625.464 343.99 624.387 344.483 623.903 343.287 622.742 342.503 621.452 342.499L617.388 342.499C616.845 342.5 616.405 342.939 616.405 343.482L616.405 358.168C616.405 358.711 616.845 359.151 617.388 359.151L621.264 359.151C622.443 359.147 623.534 358.525 624.139 357.512L627.735 358.747C628.363 358.963 629.028 358.996 629.685 359.029 630.523 359.073 631.375 359.066 632.199 359.062L632.73 359.062C633.457 359.06 634.873 359.062 635.173 359.062L636.151 359.062C636.243 359.062 636.336 359.063 636.429 359.065 636.648 359.068 636.875 359.074 637.099 359.055 637.903 358.99 638.612 358.559 638.996 357.903 639.374 357.254 639.392 356.455 639.043 355.79 639.036 355.775 639.029 355.762 639.021 355.746 639.687 355.598 640.257 355.168 640.581 354.567 640.94 353.883 640.948 353.068 640.604 352.377 640.481 352.137 640.314 351.923 640.11 351.747 640.301 351.578 640.461 351.377 640.583 351.153ZM638.026 357.339C637.956 357.302 637.915 357.226 637.923 357.148L638.096 357.21 638.086 357.23C638.07 357.267 638.048 357.303 638.027 357.339ZM639.423 354.283 639.25 354.194C639.193 354.26 639.124 354.314 639.046 354.354 638.882 354.455 638.692 354.507 638.499 354.506 638.33 354.51 638.161 354.509 637.992 354.506L636.797 354.506C636.45 354.506 636.19 354.75 636.166 355.098 636.144 355.394 636.312 355.722 636.673 355.789 636.773 355.821 636.877 355.841 636.982 355.849 637.242 355.881 637.318 355.894 637.488 355.991 637.534 356.016 637.579 356.045 637.621 356.076 637.64 356.094 637.659 356.111 637.674 356.124L637.796 355.984 637.719 356.165C637.781 356.219 637.832 356.285 637.869 356.359 637.893 356.401 637.914 356.444 637.933 356.489L637.984 356.684 638.172 356.681 637.993 356.742C637.993 356.768 637.993 356.796 637.993 356.823L637.991 356.876 637.991 356.904C637.981 356.96 637.967 357.016 637.95 357.071L637.927 357.14C637.898 357.199 637.866 357.256 637.83 357.311L637.75 357.407C637.725 357.434 637.7 357.461 637.672 357.486 637.602 357.549 637.523 357.602 637.437 357.643 637.279 357.717 637.106 357.755 636.932 357.757 636.755 357.76 636.578 357.759 636.402 357.757L636.135 357.757 635.136 357.757C635.11 357.754 635.027 357.754 634.183 357.765 633.613 357.772 632.941 357.78 632.657 357.78 632.415 357.78 632.158 357.784 631.89 357.788 630.75 357.802 629.461 357.819 628.476 357.607 628.016 357.508 627.55 357.333 627.099 357.163 626.892 357.085 626.686 357.008 626.482 356.938L624.596 356.288C624.622 356.119 624.635 355.947 624.635 355.776L624.635 345.755C625.478 345.41 629.977 343.306 630.812 337.458 631.304 337.496 632.048 337.653 632.519 338.219 632.979 338.772 633.114 339.633 632.92 340.775 632.916 340.794 632.456 343.109 632.196 344.299L630.146 344.299C629.728 344.299 629.509 344.627 629.509 344.949 629.509 345.271 629.728 345.602 630.146 345.602L637.95 345.602 638.142 345.599C638.265 345.599 638.389 345.595 638.509 345.602 639.107 345.63 639.56 346.076 639.562 346.639 639.562 346.942 639.481 347.17 639.31 347.335 638.884 347.748 637.944 347.715 637.258 347.687 637.092 347.681 636.937 347.675 636.799 347.675 636.382 347.675 636.163 348.003 636.163 348.325 636.163 348.647 636.38 348.977 636.799 348.977 637.137 348.977 637.513 348.973 637.813 348.97L638.246 348.966C638.373 348.979 638.556 348.978 638.581 348.979L638.691 348.992C638.724 349 638.758 349.008 638.788 349.016 638.838 349.03 638.886 349.047 638.934 349.067L639.047 349.129C639.096 349.159 639.143 349.192 639.187 349.229L639.33 349.374C639.366 349.422 639.399 349.472 639.429 349.525 639.605 349.847 639.601 350.238 639.419 350.557 639.391 350.604 639.362 350.649 639.356 350.664 639.35 350.678 639.31 350.711 639.282 350.741L639.422 350.866 639.248 350.776C639.192 350.843 639.122 350.897 639.045 350.936 638.881 351.037 638.692 351.09 638.499 351.088 638.329 351.09 638.159 351.088 637.99 351.088L636.799 351.088C636.381 351.088 636.162 351.416 636.162 351.738 636.162 352.06 636.379 352.388 636.799 352.388L637.74 352.388C637.746 352.388 638.346 352.379 638.591 352.391 638.709 352.401 638.825 352.43 638.933 352.478L639.049 352.541C639.088 352.564 639.127 352.59 639.155 352.612L639.229 352.679 639.383 352.568 639.28 352.731 639.331 352.785C639.367 352.833 639.4 352.884 639.43 352.937 639.607 353.26 639.603 353.65 639.42 353.969 639.393 354.016 639.364 354.061 639.357 354.075 639.351 354.09 639.312 354.123 639.284 354.153L639.423 354.283ZM623.37 345.685 623.37 355.781C623.368 356.944 622.426 357.886 621.264 357.887L617.67 357.887 617.67 343.766 621.45 343.766C622.509 343.766 623.369 344.625 623.37 345.685Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M622.795 365.073 620.371 364.721 619.288 362.525C619.168 362.28 618.919 362.125 618.647 362.126 618.375 362.125 618.126 362.28 618.006 362.525L616.923 364.721 614.498 365.073C614.108 365.13 613.837 365.492 613.893 365.882 613.915 366.038 613.989 366.182 614.102 366.292L615.856 368.003 615.442 370.416C615.373 370.803 615.631 371.174 616.018 371.243 616.176 371.271 616.337 371.245 616.478 371.17L618.645 370.031 620.812 371.17C621.16 371.356 621.593 371.224 621.778 370.876 621.853 370.735 621.879 370.574 621.852 370.417L621.437 368.003 623.191 366.294C623.475 366.019 623.482 365.567 623.207 365.284 623.097 365.17 622.952 365.096 622.795 365.073Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M632.917 365.073 630.494 364.721 629.41 362.525C629.236 362.171 628.808 362.025 628.454 362.2 628.313 362.269 628.199 362.384 628.129 362.525L627.046 364.721 624.621 365.073C624.23 365.13 623.959 365.492 624.016 365.883 624.038 366.038 624.111 366.182 624.224 366.292L625.978 368.003 625.564 370.417C625.496 370.805 625.755 371.175 626.143 371.243 626.299 371.27 626.461 371.245 626.601 371.17L628.768 370.031 630.934 371.17C631.283 371.355 631.715 371.221 631.899 370.873 631.973 370.733 631.999 370.573 631.972 370.417L631.557 368.004 633.313 366.294C633.597 366.02 633.605 365.568 633.331 365.284 633.22 365.17 633.075 365.096 632.917 365.073Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M643.757 365.561C643.674 365.301 643.451 365.112 643.181 365.073L640.758 364.721 639.674 362.525C639.5 362.171 639.071 362.025 638.717 362.2 638.576 362.27 638.462 362.384 638.392 362.525L637.309 364.721 634.885 365.073C634.494 365.13 634.223 365.493 634.28 365.884 634.302 366.039 634.375 366.183 634.488 366.292L636.242 368.003 635.827 370.417C635.757 370.805 636.015 371.175 636.403 371.245 636.561 371.273 636.725 371.247 636.867 371.17L639.033 370.031 641.2 371.17C641.548 371.356 641.981 371.224 642.167 370.876 642.241 370.735 642.267 370.574 642.24 370.417L641.826 368.003 643.58 366.294C643.774 366.103 643.843 365.819 643.757 365.561Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></g></g></g></svg>",
+  "receipt": "<svg viewBox=\"-0.5 0 37 37\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-420 -252)\"><g><g><g><g><path d=\"M32.4624 3.28627C32.4699 2.91328 32.3026 2.55824 32.0104 2.32627 31.7303 2.0503 31.3489 1.90156 30.9558 1.91485 30.5174 1.90146 30.0891 2.04764 29.7505 2.32627 29.4583 2.55823 29.2911 2.91328 29.2984 3.28627L29.2984 13.572 32.4626 13.572ZM27.3506 31.4176 27.3506 2.54257C27.3541 2.31197 27.4383 2.08989 27.5884 1.91485L3.20654 1.91485C2.84974 1.91485 2.61186 2.04038 2.25507 2.29148 2.01743 2.52092 1.88782 2.84012 1.89826 3.17028L1.89826 31.4176 4.27699 33.5518 6.89358 31.1665C7.09943 30.921 7.40579 30.7824 7.72613 30.7899 8.04121 30.806 8.33856 30.9406 8.55869 31.1665L11.1753 33.5518 13.7919 31.1665C14.1961 30.7067 14.8965 30.6616 15.3563 31.0659 15.392 31.0972 15.4256 31.1308 15.457 31.1665L18.0735 33.5518 20.6902 31.1665C21.0943 30.7067 21.7947 30.6616 22.2547 31.0659 22.2903 31.0972 22.324 31.1308 22.3553 31.1665L24.9719 33.5518ZM30.5574 0C31.5107-0.000349676 32.4218 0.39309 33.0751 1.08725 33.7452 1.80922 34.1137 2.76007 34.1052 3.74496L34.1052 14.1342C34.1152 14.4519 33.9905 14.7591 33.7618 14.9798 33.5638 15.2161 33.2691 15.3495 32.9608 15.3423L29.2984 15.3423 29.2984 31.5301C29.2984 31.6509 29.184 31.8926 29.184 32.0134 29.0995 32.1937 28.9831 32.3575 28.8406 32.4965L25.4073 35.6375C25.2927 35.7583 25.1784 35.8792 25.0638 35.8792 24.9316 35.9746 24.7685 36.0177 24.6061 36 24.445 36.0051 24.286 35.963 24.1483 35.8792 24.0339 35.8792 23.9194 35.7583 23.805 35.6375L21.2872 33.3422 18.7693 35.6375C18.5575 35.855 18.2714 35.9844 17.9683 36 17.66 36.0071 17.3651 35.8739 17.1671 35.6375L14.6492 33.3422 12.1314 35.6375C11.9196 35.855 11.6334 35.9844 11.3303 36 11.022 36.0071 10.7272 35.8739 10.5291 35.6375L8.01129 33.3422 5.49345 35.6375C5.28165 35.855 4.99551 35.9844 4.69232 36 4.38408 36.0071 4.08927 35.8739 3.89119 35.6375L0.343341 32.4965C0.200122 32.3767 0.1165 32.2002 0.114452 32.0134 0.0231155 31.8697-0.0172002 31.6995 2.23598e-08 31.5301L0 3.74496C-0.00846629 2.76007 0.360046 1.80921 1.03002 1.08725 1.83115 0.362425 2.63228 0 3.6623 0Z\" fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(1.02414 0 0 1 420.036 253)\"></path><path d=\"M6.77931 10.8412 15.2002 10.8412C16.5865 10.8412 16.5888 8.68669 15.2002 8.68669L6.77931 8.68669C5.39298 8.68669 5.39068 10.8412 6.77931 10.8412Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02414 0 0 1 420.036 253)\"></path><path d=\"M6.77931 17.7483 21.6148 17.7483C23.001 17.7483 23.0033 15.5939 21.6148 15.5939L6.77931 15.5939C5.39298 15.5939 5.39068 17.7483 6.77931 17.7483Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02414 0 0 1 420.036 253)\"></path><path d=\"M6.77931 25.5404 21.6148 25.5404C23.001 25.5404 23.0033 23.3859 21.6148 23.3859L6.77931 23.3859C5.39298 23.3859 5.39068 25.5404 6.77931 25.5404Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02414 0 0 1 420.036 253)\"></path></g></g></g></g></g></svg>",
+  "reorder": "<svg viewBox=\"0 -0.5 41 41\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-601 -160)\"><g><g><g><g><path d=\"M16.7334 30.8484C14.7951 30.8484 13.2237 32.4196 13.2237 34.3581 13.2236 36.2964 14.795 37.8678 16.7333 37.8678 18.6717 37.868 20.2431 36.2966 20.2431 34.3581 20.2431 34.3581 20.2431 34.3581 20.2431 34.3581 20.2409 32.4207 18.6708 30.8507 16.7334 30.8484ZM16.7334 35.9081C15.8774 35.9081 15.1834 35.2141 15.1834 34.3579 15.1833 33.502 15.8773 32.808 16.7334 32.808 17.5895 32.808 18.2835 33.5018 18.2835 34.3579 18.2835 34.3579 18.2835 34.3579 18.2835 34.3579 18.2825 35.2137 17.5891 35.907 16.7334 35.9081Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00123 602 161.043)\"></path><path d=\"M29.0443 30.8484C27.106 30.8484 25.5346 32.4198 25.5346 34.3581 25.5346 36.2964 27.1058 37.8678 29.0443 37.8678 30.9826 37.8678 32.554 36.2966 32.554 34.3581 32.5517 32.4207 30.9817 30.8507 29.0443 30.8484ZM29.0443 35.9081C28.1882 35.9081 27.4941 35.2141 27.4941 34.3579 27.4943 33.5018 28.1882 32.808 29.0443 32.808 29.9004 32.808 30.5945 33.502 30.5945 34.3579 30.5933 35.2137 29.9 35.9072 29.0443 35.9081Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00123 602 161.043)\"></path><path d=\"M39.2114 8.00906C38.6768 7.89842 38.1536 8.24217 38.0431 8.77685 38.0429 8.77715 38.0429 8.77742 38.0429 8.77772L35.2066 22.5454 10.5707 22.5454 7.8301 9.24227 7.42636 7.28269 6.80998 4.29063C6.68124 3.66563 6.25625 3.14245 5.67089 2.88837L1.37019 1.02161C0.873366 0.807201 0.296795 1.03615 0.0823888 1.53298-0.131359 2.02827 0.095481 2.60318 0.589847 2.81908L4.89061 4.6859 9.63161 27.6996C9.81922 28.6104 10.6211 29.2639 11.551 29.2639L35.025 29.2639C35.5661 29.2646 36.0054 28.8266 36.0062 28.2855 36.0069 27.7442 35.5689 27.3049 35.0278 27.3041 35.0269 27.3041 35.0259 27.3041 35.025 27.3041L11.5511 27.3041 10.9744 24.5047 35.2066 24.5047C36.1353 24.5019 36.9356 23.8497 37.1258 22.9406L39.9792 9.17793C40.0901 8.64327 39.7466 8.12 39.2118 8.00914 39.2118 8.00912 39.2116 8.00908 39.2114 8.00906Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00123 602 161.043)\"></path><path d=\"M14.4931 11.9574 22.1589 18.8345C22.7482 19.3632 23.6789 19.4385 24.2613 18.8345 26.6505 16.3567 29.0396 13.8789 31.4288 11.4011 32.7572 10.0234 30.6577 7.91839 29.3266 9.29887 27.7001 10.9856 26.0738 12.6722 24.4474 14.3589L24.4474 1.43593C24.4474-0.47705 21.4745-0.480238 21.4745 1.43593L21.4745 14.2322C19.8481 12.7731 18.2217 11.3141 16.5953 9.85511 15.1747 8.58069 13.0653 10.6765 14.4931 11.9574Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00123 602 161.043)\"></path></g></g></g></g></g></svg>",
+  "return": "<svg viewBox=\"0 -1 38 38\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-350 -252)\"><g><g><g><g><path d=\"M33.9755 34.1213 1.85866 34.1213 1.85866 11.0605 33.9755 11.0605ZM10.5173 1.85866 16.9878 1.85866 16.9878 9.20294 3.1731 9.20294ZM32.6611 9.20294 18.8464 9.20294 18.8464 1.85866 25.3168 1.85866ZM35.7623 9.77695C35.7158 9.66373 35.6473 9.56079 35.561 9.47404L26.359 0.272147C26.1848 0.097795 25.9483-0.000112341 25.7018-6.63865e-09L10.1323 0C9.88576-8.85161e-05 9.64933 0.0978152 9.47505 0.272147L0.273142 9.47404C0.0996455 9.64936 0.00161376 9.88561 3.16127e-10 10.1323L0 35.0506C0.000235043 35.5638 0.416186 35.9798 0.92936 35.98L34.9048 35.98C35.4179 35.9801 35.8339 35.5643 35.8341 35.0511 35.8341 35.051 35.8341 35.0508 35.8341 35.0506L35.8341 10.1323C35.8338 10.0103 35.8094 9.88952 35.7623 9.77695\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00463 0 0 1 351 252.01)\"></path><path d=\"M13.5307 16.317C13.5306 16.5768 13.6337 16.8259 13.8174 17.0097L16.7556 19.9466C17.1381 20.3283 17.7579 20.3277 18.1397 19.945 18.5208 19.5629 18.5208 18.9446 18.1397 18.5625L16.8832 17.3062C20.0378 17.4101 22.5107 20.0517 22.4067 23.2063 22.3026 26.3608 19.6611 28.8338 16.5065 28.7298 13.424 28.6282 10.9782 26.0988 10.9799 23.0147 10.9799 22.4737 10.5415 22.0353 10.0006 22.0353 9.45969 22.0353 9.02122 22.4737 9.02122 23.0147 9.01744 27.2545 12.4515 30.6946 16.6913 30.6984 20.9311 30.7023 24.3714 27.2683 24.3751 23.0283 24.3789 18.8512 21.042 15.4376 16.866 15.3464L18.1397 14.0716C18.5214 13.6889 18.5206 13.0692 18.1379 12.6874 17.756 12.3064 17.1377 12.3064 16.7556 12.6874L13.8174 15.6245C13.6337 15.8081 13.5306 16.0573 13.5307 16.317\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00463 0 0 1 351 252.01)\"></path></g></g></g></g></g></svg>",
+  "search": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-498 -433)\"><g><g><g><g><path d=\"M502.289 437.289C497.897 441.682 497.896 448.803 502.289 453.196 506.463 457.37 513.153 457.607 517.612 453.74L518.951 455.08 517.586 456.445C517.275 456.757 517.275 457.261 517.586 457.573L523.982 463.969C525.36 465.345 527.593 465.343 528.969 463.965 530.343 462.589 530.343 460.359 528.969 458.982L522.573 452.586C522.262 452.275 521.756 452.275 521.445 452.586L520.08 453.952 518.74 452.612C522.81 447.919 522.305 440.815 517.612 436.745 513.153 432.878 506.463 433.115 502.289 437.289ZM528.182 459.931C529.092 460.841 529.092 462.316 528.182 463.227 527.272 464.137 525.796 464.137 524.886 463.227L520.578 458.919 523.874 455.623ZM517.75 437.735C521.897 441.885 521.894 448.61 517.743 452.757 513.593 456.903 506.867 456.9 502.721 452.75 498.577 448.602 498.577 441.882 502.721 437.735 506.874 433.591 513.597 433.591 517.75 437.735Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path><path d=\"M503.461 438.475C499.719 442.215 499.717 448.281 503.457 452.023 507.198 455.766 513.263 455.768 517.006 452.027 517.007 452.026 517.008 452.025 517.01 452.023 520.752 448.283 520.754 442.217 517.014 438.475 513.274 434.733 507.208 434.731 503.465 438.471 503.464 438.472 503.463 438.474 503.461 438.475ZM515.622 439.862C518.597 442.838 518.597 447.661 515.622 450.636 512.647 453.611 507.824 453.61 504.849 450.635 501.874 447.66 501.874 442.837 504.849 439.862 506.278 438.434 508.215 437.631 510.236 437.631 512.257 437.626 514.197 438.429 515.622 439.862Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g></g></g></g></g></svg>",
+  "settings": "<svg viewBox=\"0 -1 35 35\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-842 -340)\"><g><g><g><g><path d=\"M12.1478 16.8692C14.9955 16.6289 17.1092 14.1254 16.8688 11.2777 16.6283 8.42992 14.125 6.31626 11.2772 6.55666 8.4295 6.79708 6.31584 9.30051 6.55626 12.1482 6.78239 14.8271 9.02211 16.8864 11.7104 16.8876 11.8551 16.8876 12.0015 16.8817 12.1478 16.8692ZM8.03019 12.0273C7.86111 9.99408 9.36876 8.20727 11.4014 8.0318 11.5065 8.02264 11.6112 8.01763 11.715 8.01763 13.7558 8.01932 15.4088 9.67507 15.4072 11.7159 15.4055 13.7566 13.7496 15.4097 11.7089 15.408 9.79118 15.4064 8.19339 13.9381 8.03019 12.0273Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00972 843 340.019)\"></path><path d=\"M19.409 19.8957 18.865 18.4621C19.1146 18.1977 19.3491 17.9197 19.5675 17.6289L21.0716 17.9225C21.3819 17.9811 21.6956 17.8382 21.855 17.5656 22.1846 16.9953 22.4668 16.399 22.699 15.7825 22.8105 15.4855 22.7197 15.1504 22.4734 14.9503L21.2833 13.9805C21.3681 13.6266 21.4326 13.2682 21.4764 12.9071L22.9217 12.4109C23.2234 12.3081 23.4252 12.0233 23.422 11.7046 23.4187 11.3509 23.4062 11.0332 23.3837 10.7222 23.3574 10.4319 23.3166 10.1225 23.2553 9.74643 23.2034 9.43275 22.9573 9.18709 22.6436 9.13597L21.1358 8.89246C21.0308 8.54394 20.9067 8.2015 20.7639 7.86669L21.7708 6.71084C21.9787 6.47245 22.0122 6.12837 21.8542 5.85437 21.5235 5.28188 21.1437 4.73917 20.7193 4.23232 20.5173 3.99084 20.1843 3.9041 19.8903 4.01633L18.4579 4.5584C18.193 4.30958 17.9149 4.07518 17.6249 3.85621L17.9197 2.35007C17.9799 2.03964 17.8362 1.72523 17.5618 1.56783 16.9905 1.23589 16.3916 0.95381 15.7717 0.724707 15.4755 0.616564 15.1433 0.708336 14.9445 0.953211L13.9792 2.14076C13.6251 2.05617 13.2668 1.99158 12.9055 1.94728L12.408 0.499539C12.3038 0.200428 12.0217 8.89455e-06 11.705-1.10146e-08 11.3944 0.00167401 11.0595 0.00834109 10.7193 0.0391997 10.3974 0.0675552 10.0679 0.110918 9.73978 0.167628 9.43 0.222389 9.18859 0.466813 9.13768 0.777243L8.89164 2.28753C8.54213 2.39237 8.1987 2.51654 7.86297 2.65949L6.71086 1.65207C6.47369 1.44454 6.13108 1.41008 5.8573 1.56617 5.28586 1.89581 4.74338 2.27327 4.23567 2.69451 3.99115 2.89585 3.90239 3.23078 4.01511 3.52679L4.55926 4.96203C4.30994 5.22662 4.07538 5.50475 3.85665 5.79515L2.35094 5.49993C2.04075 5.43897 1.72614 5.58211 1.5683 5.85603 1.2374 6.42813 0.956556 7.02774 0.72889 7.64819 0.622381 7.94334 0.713051 8.27359 0.955339 8.47297L2.1412 9.44453C2.05733 9.79817 1.99331 10.1562 1.94942 10.517L0.50126 11.0099C0.199203 11.1119-0.00302565 11.3966 3.29058e-05 11.7154 0.00335196 12.1015 0.0154477 12.4134 0.038797 12.6961 0.062595 12.9897 0.102203 13.2932 0.167243 13.6794 0.22021 13.9913 0.465448 14.2353 0.777699 14.2864L2.28842 14.5324C2.39428 14.8801 2.51843 15.222 2.66036 15.5566L1.64875 16.7142C1.43991 16.9535 1.40719 17.2995 1.56746 17.5739 1.89912 18.1456 2.27926 18.6877 2.70371 19.1942 2.90688 19.4334 3.2384 19.5188 3.53183 19.4078L4.96122 18.8648C5.2258 19.1153 5.50453 19.3502 5.79602 19.5688L5.49873 21.0732C5.43624 21.3847 5.58018 21.7012 5.85604 21.8587 6.42767 22.1876 7.02558 22.4686 7.64364 22.6986 7.93993 22.8065 8.27209 22.716 8.47259 22.4725L9.44416 21.2825C9.79725 21.3662 10.1547 21.4302 10.5149 21.4743L11.0074 22.9221C11.1097 23.2212 11.3905 23.4226 11.7067 23.4232L11.7371 23.4232C12.0878 23.4232 12.4022 23.4116 12.7074 23.3866 13.0122 23.3574 13.3203 23.3174 13.6765 23.259 13.9899 23.2073 14.2354 22.9613 14.2864 22.6477L14.5308 21.1391C14.8799 21.0345 15.2228 20.9102 15.5579 20.7672L16.7117 21.7746C16.9505 21.9835 17.296 22.0168 17.5702 21.8571 18.1411 21.526 18.6832 21.1478 19.191 20.7262 19.4334 20.5242 19.5209 20.1908 19.409 19.8957ZM9.17104 19.708C8.94885 19.7076 8.73835 19.8075 8.59811 19.9799L7.67073 21.1166C7.46516 21.0274 7.25918 20.9306 7.0553 20.8264L7.33967 19.3861C7.39847 19.0926 7.27409 18.7928 7.02486 18.6272 6.53626 18.2999 6.0854 17.9195 5.68051 17.493 5.4744 17.2782 5.1601 17.2071 4.88158 17.312L3.51056 17.8341C3.3763 17.6549 3.24662 17.4692 3.12151 17.277L4.08642 16.1721C4.28197 15.9498 4.32535 15.6321 4.1965 15.3656 3.93904 14.8325 3.73685 14.2745 3.59313 13.7002 3.52227 13.4129 3.28649 13.1958 2.99434 13.149L1.54827 12.9138C1.53367 12.7954 1.52199 12.6853 1.51325 12.576 1.5045 12.4685 1.49741 12.3559 1.49199 12.235L2.87552 11.7638C3.15623 11.6685 3.35287 11.4147 3.37506 11.1191 3.41725 10.5317 3.52194 9.95052 3.68736 9.38532 3.77312 9.09983 3.6785 8.79078 3.4476 8.60224L2.31049 7.67072C2.39848 7.46473 2.4948 7.25987 2.59946 7.0561L4.03927 7.33881C4.33113 7.39509 4.62846 7.27209 4.79527 7.02607 5.12491 6.53762 5.50583 6.08584 5.93154 5.67839 6.14565 5.47327 6.21627 5.15995 6.11084 4.8828L5.59044 3.51013C5.77267 3.37418 5.95864 3.24408 6.14583 3.12233L7.24917 4.08721C7.47297 4.28359 7.79294 4.32603 8.06019 4.19479 8.59083 3.93551 9.14777 3.73393 9.72143 3.59351 10.0094 3.52309 10.2275 3.28735 10.2752 2.99474L10.5108 1.54781C10.6246 1.53448 10.7385 1.52281 10.8519 1.51196 10.9632 1.50195 11.0745 1.49529 11.185 1.49028L11.6616 2.87798C11.7581 3.15864 12.0128 3.3546 12.3088 3.37585 12.8954 3.41689 13.4759 3.52117 14.0401 3.68692 14.3265 3.77278 14.6364 3.67726 14.8248 3.44507L15.7496 2.30755C15.9544 2.39595 16.1575 2.49186 16.3638 2.5986L16.0819 4.03885C16.0247 4.32997 16.1471 4.62715 16.3926 4.79357 16.8813 5.12493 17.3341 5.50614 17.7441 5.9311 17.949 6.1447 18.2618 6.21498 18.5385 6.10955L19.9094 5.59082C20.0455 5.7718 20.1755 5.9575 20.2997 6.14791L19.3377 7.2529C19.1421 7.47578 19.0991 7.79419 19.2285 8.06101 19.4865 8.59228 19.6883 9.14903 19.8307 9.72222 19.9008 10.0106 20.1372 10.2289 20.4303 10.276L21.8729 10.5095C21.8879 10.6287 21.9 10.7388 21.9096 10.8422 21.9181 10.954 21.9246 11.0691 21.9296 11.1883L20.5453 11.6628C20.2639 11.7591 20.0678 12.0149 20.0478 12.3117 20.007 12.8989 19.9028 13.4798 19.7368 14.0446 19.6526 14.3304 19.7483 14.6389 19.9795 14.8268L21.1166 15.7525C21.0274 15.9586 20.9306 16.1621 20.8247 16.3672L19.3849 16.0869C19.0938 16.0307 18.7971 16.153 18.6302 16.398 18.2996 16.886 17.9182 17.3378 17.4926 17.7457 17.2782 17.9507 17.2074 18.2641 17.313 18.5414L17.8341 19.914C17.6545 20.0474 17.4672 20.1776 17.2745 20.3026L16.1713 19.3394C15.9472 19.1427 15.6266 19.1001 15.359 19.2319 14.8296 19.4911 14.2737 19.6925 13.7011 19.8323 13.4129 19.9028 13.1948 20.1389 13.1473 20.4318L12.913 21.8763C12.7975 21.8913 12.6865 21.9029 12.5786 21.9129 12.4676 21.9221 12.353 21.9289 12.2337 21.9338L11.7613 20.5461C11.6664 20.2629 11.4094 20.0653 11.1112 20.0466 10.5229 20.0043 9.94069 19.9003 9.37409 19.7363 9.3081 19.7172 9.23972 19.7078 9.17104 19.708Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00972 843 340.019)\"></path><path d=\"M26.0878 21.6702C24.2723 21.7966 22.9029 23.3706 23.0292 25.1861 23.1491 26.9118 24.583 28.2509 26.313 28.2527 26.3893 28.2527 26.4668 28.2502 26.5432 28.2444 28.3584 28.1181 29.7277 26.5441 29.6014 24.7287 29.475 22.9142 27.9024 21.5452 26.0878 21.6702ZM27.6839 26.1503C27.0256 26.9063 25.8792 26.9855 25.1232 26.3272 24.7607 26.0115 24.5382 25.5649 24.5045 25.0854 24.4401 24.0858 25.1924 23.2207 26.1913 23.1455 26.2328 23.143 26.2738 23.1415 26.3151 23.1415 27.2688 23.1449 28.0587 23.8829 28.1268 24.8343 28.1608 25.3145 28.0013 25.7884 27.6839 26.1503Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00972 843 340.019)\"></path><path d=\"M33.9845 24.4281C33.9608 24.1169 33.9191 23.8072 33.8598 23.5009 33.8071 23.2266 33.6039 23.0056 33.3349 22.9304L32.2565 22.626C32.1198 22.2808 31.9541 21.9477 31.7611 21.6302L32.1694 20.5837C32.2726 20.3234 32.2189 20.0272 32.0309 19.8198 31.6116 19.3553 31.1385 18.9424 30.6216 18.5897 30.3894 18.4291 30.0858 18.4158 29.8406 18.5554L28.8607 19.1075C28.5224 18.9606 28.1722 18.8425 27.8141 18.754L27.3654 17.7266C27.2521 17.4679 27.0019 17.296 26.7199 17.2828 26.4083 17.2681 26.0961 17.2697 25.7846 17.2878 25.4744 17.3123 25.1658 17.3538 24.8602 17.4122 24.5844 17.4644 24.3621 17.6687 24.2868 17.9391L23.9858 19.0167C23.6417 19.1528 23.3098 19.3177 22.9934 19.5096L21.9456 19.0975C21.6831 18.9946 21.3851 19.05 21.177 19.2402 20.716 19.6601 20.3055 20.1322 19.9536 20.647 19.7953 20.8779 19.7819 21.1786 19.919 21.4226L20.4657 22.4058C20.3166 22.7469 20.1977 23.1005 20.1109 23.4624L19.083 23.912C18.8268 24.024 18.6562 24.2715 18.6427 24.5508 18.6047 25.1749 18.6472 25.8013 18.769 26.4147 18.8211 26.6931 19.027 26.9176 19.2998 26.9934L20.3751 27.2895C20.5112 27.6367 20.6774 27.9712 20.8718 28.2894L20.4636 29.3319C20.3618 29.5909 20.4147 29.8851 20.6004 30.0924 21.0178 30.558 21.4896 30.9719 22.0056 31.325 22.2376 31.4864 22.5413 31.5006 22.7874 31.3617L23.7674 30.8112C24.1076 30.9589 24.46 31.0765 24.8206 31.1631L25.2652 32.1898C25.3781 32.4477 25.6269 32.6197 25.908 32.6343 26.0536 32.6409 26.1938 32.6443 26.3297 32.6443 26.5068 32.6443 26.6777 32.6384 26.842 32.6268 27.1529 32.6042 27.4622 32.5635 27.7681 32.505 28.0452 32.454 28.2688 32.2494 28.344 31.978L28.6463 30.9014C28.9917 30.7656 29.3246 30.6001 29.6413 30.4068L30.6841 30.8171C30.9438 30.9199 31.2391 30.8666 31.4464 30.6795 31.9135 30.2603 32.3276 29.7852 32.679 29.2651 32.8364 29.033 32.8494 28.732 32.7128 28.4871L32.1648 27.5122C32.3139 27.1713 32.4326 26.8181 32.5197 26.4563L33.5441 26.0136C33.8006 25.9025 33.9722 25.6562 33.9879 25.3773 34.005 25.061 34.004 24.7443 33.9845 24.4281ZM31.1448 25.8042C31.0605 26.2915 30.9022 26.7632 30.6754 27.2028 30.5607 27.4236 30.5654 27.6875 30.6879 27.9041L31.1904 28.7973C31.0627 28.9605 30.9268 29.117 30.7829 29.2659L29.8256 28.8898C29.5948 28.7994 29.3341 28.831 29.1317 28.974 28.7267 29.2574 28.2817 29.4782 27.8112 29.6296 27.5753 29.7056 27.3933 29.8947 27.3262 30.1333L27.0485 31.1215C26.9422 31.1348 26.8401 31.1441 26.7395 31.1506 26.6399 31.1581 26.5382 31.1631 26.4326 31.1648L26.0253 30.2241C25.9271 29.9957 25.7202 29.8324 25.4753 29.7897 24.9883 29.7046 24.5167 29.5472 24.0764 29.3226 23.8558 29.2085 23.5927 29.213 23.3762 29.3344L22.4801 29.8372C22.3167 29.708 22.1607 29.5711 22.0139 29.4302L22.3888 28.4721C22.4794 28.2407 22.4478 27.9795 22.3046 27.7766 22.0193 27.372 21.7976 26.9263 21.6473 26.4547 21.5723 26.2157 21.3807 26.0316 21.1391 25.9659L20.1521 25.6942C20.1388 25.5882 20.1288 25.4865 20.1221 25.3898 20.1155 25.2881 20.1117 25.1829 20.1105 25.077L21.0528 24.6642C21.2806 24.5653 21.4432 24.3584 21.4856 24.1137 21.5702 23.6271 21.7284 23.1561 21.9548 22.7169 22.0681 22.497 22.0636 22.2348 21.9431 22.0189L21.4418 21.1174C21.5698 20.9556 21.7058 20.7997 21.8496 20.6495L22.8088 21.0264C23.0381 21.1132 23.2954 21.0824 23.498 20.9439 23.9037 20.6615 24.3489 20.4405 24.8193 20.2884 25.057 20.2133 25.2404 20.0231 25.3071 19.783L25.5836 18.794C25.6879 18.7815 25.79 18.7706 25.8884 18.7631 25.9886 18.7564 26.0911 18.7539 26.1999 18.7523L26.6107 19.6938C26.7096 19.92 26.9148 20.082 27.1578 20.1257 27.6459 20.2156 28.1187 20.3749 28.5617 20.5986 28.7815 20.7083 29.0414 20.7024 29.2559 20.5828L30.15 20.0782C30.3155 20.2092 30.4723 20.3459 30.6195 20.4869L30.2455 21.4451C30.1553 21.6747 30.1858 21.9341 30.3268 22.1364 30.6107 22.5436 30.8328 22.9904 30.986 23.4624 31.0619 23.6975 31.2503 23.8791 31.4881 23.9461L32.478 24.2255C32.4909 24.3281 32.5013 24.4306 32.5088 24.5307 32.5151 24.6383 32.5188 24.7426 32.5205 24.8451L31.5786 25.2521C31.3504 25.3516 31.1875 25.559 31.1448 25.8042Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1 0 0 1.00972 843 340.019)\"></path></g></g></g></g></g></svg>",
+  "share": "<svg viewBox=\"-1.5 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-496 -237)\"><g><g><g><g><path d=\"M24.2849 20.1093 24.2849 10.8876C27.2763 10.4339 29.3335 7.64108 28.8797 4.64971 28.4259 1.65833 25.6332-0.398834 22.6418 0.0549055 19.6504 0.508646 17.5932 3.30146 18.0469 6.29285 18.0917 6.58747 18.1603 6.87795 18.2522 7.1614L9.84913 12.1882C8.03225 9.77014 4.59918 9.28284 2.18117 11.0997-0.236847 12.9166-0.724154 16.3497 1.09273 18.7677 2.90962 21.1857 6.34269 21.673 8.7607 19.8562 9.21525 19.5146 9.61385 19.1043 9.94215 18.6401L18.2542 23.8303C17.318 26.7073 18.8912 29.7984 21.7682 30.7346 24.6451 31.6709 27.7363 30.0976 28.6726 27.2206 29.6088 24.3436 28.0355 21.2525 25.1586 20.3162 24.8735 20.2235 24.5813 20.1543 24.2849 20.1093ZM23.463 29.3537C21.3453 29.3535 19.6285 27.6367 19.6286 25.5189 19.6287 23.4011 21.3456 21.6844 23.4634 21.6845 25.581 21.6845 27.2977 23.4012 27.2978 25.5189 27.2955 27.6358 25.58 29.3514 23.463 29.3537ZM22.6413 20.1093C21.1721 20.3332 19.8569 21.1444 18.9975 22.3569L10.6861 17.1672C11.0641 16.0172 11.0448 14.7735 10.6313 13.6357L18.9929 8.63375C19.8521 9.8497 21.1693 10.6635 22.6413 10.8876ZM19.9209 6.94341C19.0922 4.97336 20.0173 2.70442 21.9873 1.87559 23.9574 1.04677 26.2264 1.97192 27.0551 3.94197 27.884 5.91202 26.9589 8.18096 24.9889 9.00979 23.3618 9.69425 21.4779 9.19116 20.4088 7.78672L20.4209 7.77955ZM5.47808 19.3108C3.36037 19.3108 1.64362 17.5939 1.64362 15.4762 1.64362 13.3585 3.36037 11.6418 5.47808 11.6418 7.59579 11.6418 9.31253 13.3585 9.31253 15.4762 9.31012 17.593 7.59478 19.3084 5.47808 19.3108Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.00202 0 0 1 496 238.001)\"></path></g></g></g></g></g></svg>",
+  "shipping": "<svg viewBox=\"0 -1.5 52 52\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-24 -436)\"><g><g><g><g><path d=\"M46.6422 25.582 40.1606 15.4994C40.028 15.2933 39.7999 15.1688 39.5549 15.1688L32.353 15.1688 32.353 10.8477C32.3532 10.4501 32.031 10.1277 31.6334 10.1275 31.6333 10.1275 31.6331 10.1275 31.6329 10.1275L4.26577 10.1275C3.8681 10.1276 3.54575 10.45 3.54563 10.8477L3.54563 33.8937C3.5455 34.2913 3.86772 34.6137 4.26532 34.6139 4.26547 34.6139 4.26562 34.6139 4.26577 34.6139L9.37996 34.6139C9.76962 36.9601 11.9876 38.5463 14.3339 38.1566 16.1509 37.8548 17.5748 36.4309 17.8766 34.6139L31.6329 34.6139 31.6335 34.6137 33.8662 34.6137C34.2558 36.96 36.4737 38.5462 38.82 38.1566 40.6371 37.8549 42.0611 36.4309 42.3629 34.6139L46.0365 34.6139C46.4339 34.6143 46.7563 34.2924 46.7567 33.8951 46.7567 33.8946 46.7567 33.8942 46.7567 33.8937L46.7567 25.9716C46.7568 25.8334 46.7171 25.6981 46.6422 25.582ZM13.6283 36.7743C12.0373 36.7743 10.7476 35.4846 10.7476 33.8936 10.7476 32.3027 12.0373 31.013 13.6283 31.013 15.2192 31.013 16.5089 32.3027 16.5089 33.8936 16.5073 35.4839 15.2185 36.7728 13.6283 36.7743ZM30.9127 13.0082 6.64407 13.0082C6.52381 13.0082 6.42635 13.1058 6.4263 13.226L6.4263 14.2309C6.42635 14.3512 6.52381 14.4486 6.64407 14.4487L30.9127 14.4487 30.9127 30.3412C30.8782 30.3158 30.838 30.2992 30.7956 30.2927L19.1243 30.2927C18.9664 30.2927 18.8383 30.4207 18.8383 30.5786 18.8383 30.5786 18.8383 30.5786 18.8383 30.5786L18.8383 31.4472C18.8383 31.6051 18.9663 31.7331 19.1243 31.7331 19.1243 31.7331 19.1243 31.7331 19.1243 31.7331L30.7956 31.7331C30.838 31.7266 30.8782 31.71 30.9127 31.6845L30.9127 33.1734 17.8766 33.1734C17.4868 30.8272 15.2689 29.2411 12.9226 29.6308 11.1056 29.9326 9.68175 31.3565 9.37996 33.1734L4.98599 33.1734 4.98599 31.7331 8.25933 31.7331C8.44025 31.7331 8.58692 31.5864 8.58692 31.4056L8.58692 30.6203C8.58692 30.4393 8.44025 30.2927 8.25933 30.2927L4.98599 30.2927 4.98599 11.5679 30.9127 11.5679ZM40.9954 19.49 40.9954 19.4617 44.2542 24.5311 35.2338 24.5311 35.2338 19.49ZM38.1146 36.7743C36.5236 36.7743 35.2339 35.4846 35.2339 33.8936 35.2339 32.3027 36.5237 31.0129 38.1147 31.013 39.7056 31.013 40.9953 32.3027 40.9953 33.8937 40.9937 35.484 39.7049 36.7728 38.1146 36.7743ZM45.3163 33.1735 42.3629 33.1735C41.9732 30.8273 39.7553 29.2411 37.409 29.6307 35.5921 29.9325 34.1681 31.3563 33.8663 33.1733L32.353 33.1734 32.353 16.6092 39.1617 16.6092 40.0876 18.0495 34.5137 18.0495C34.1161 18.0494 33.7937 18.3717 33.7936 18.7693 33.7936 18.7694 33.7936 18.7696 33.7936 18.7697L33.7936 25.2513C33.7932 25.6487 34.115 25.9712 34.5123 25.9716 34.5128 25.9716 34.5133 25.9716 34.5137 25.9716L45.1802 25.9716 45.3163 26.1834Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02041 0 0 1 25 436)\"></path><path d=\"M18.6593 20.3677C18.8949 20.3677 19.0885 20.2454 19.1147 20.0868L19.3476 17.4555C19.3476 17.1954 19.0429 16.9817 18.6596 16.9817 18.2769 16.9817 17.9728 17.1954 17.9728 17.4555L18.2051 20.0868C18.2308 20.2454 18.4246 20.3677 18.6593 20.3677Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02041 0 0 1 25 436)\"></path><path d=\"M16.7662 21.4431C16.9162 21.4989 17.1195 21.3928 17.2371 21.1891 17.3548 20.9849 17.3457 20.7566 17.2213 20.6549L15.0583 19.1379C14.8337 19.0078 14.4963 19.1645 14.3048 19.4963 14.1129 19.8277 14.147 20.1981 14.3716 20.328Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02041 0 0 1 25 436)\"></path><path d=\"M20.5532 21.4431 22.9482 20.328C23.1737 20.1981 23.2061 19.8277 23.0155 19.4963 22.8232 19.1645 22.4854 19.0078 22.2612 19.1379L20.0983 20.6549C19.9746 20.7566 19.9649 20.9852 20.0826 21.1891 20.2003 21.3929 20.4033 21.4989 20.5532 21.4431Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02041 0 0 1 25 436)\"></path><path d=\"M18.6596 27.0396C19.0429 27.0396 19.3476 26.8262 19.3476 26.5658L19.1147 23.9345C19.0885 23.7762 18.8949 23.6544 18.6593 23.6544 18.4246 23.6544 18.2308 23.7762 18.2051 23.9345L17.9728 26.5658C17.9728 26.8262 18.2769 27.0396 18.6596 27.0396Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02041 0 0 1 25 436)\"></path><path d=\"M22.2612 24.8837C22.4854 25.0135 22.8232 24.8562 23.0155 24.5255 23.2061 24.1938 23.1737 23.8232 22.9482 23.6928L20.5532 22.5789C20.4033 22.5225 20.2006 22.6283 20.0826 22.8325 19.9649 23.0361 19.9746 23.265 20.0983 23.368Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02041 0 0 1 25 436)\"></path><path d=\"M15.0583 24.8837 17.2213 23.368C17.3457 23.265 17.3547 23.0365 17.2371 22.8325 17.1195 22.6283 16.9162 22.5225 16.7662 22.5789L14.3716 23.6928C14.147 23.8232 14.1129 24.1938 14.3048 24.5255 14.4963 24.8562 14.8337 25.0135 15.0583 24.8837Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(1.02041 0 0 1 25 436)\"></path></g></g></g></g></g></svg>",
+  "sign-in": "<svg viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(-842 -236)\"><g><g><g><g><path d=\"M19.6087 28.1013 1.89094 28.1013 1.89094 1.89094 19.6087 1.89094C20.8255 1.89094 20.8275 0 19.6087 0L0.945469 0C0.426391 0.00738604 0.00738601 0.426391-3.46212e-08 0.945469L0 29.0469C0.00738604 29.5659 0.426391 29.9849 0.945469 29.9923L19.6087 29.9923C20.8255 29.9923 20.8275 28.1013 19.6087 28.1013Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(-1.01745 1.24602e-16 -1.22465e-16 -1 871 265.996)\"></path><path d=\"M26.6064 14.1517 9.56258 14.1517C10.7054 12.8779 11.8482 11.6039 12.9911 10.3301 13.8016 9.42649 12.4686 8.08484 11.6539 8.99297 10.0314 10.8016 8.40881 12.6103 6.78624 14.4189 6.45003 14.7937 6.40209 15.3856 6.78624 15.756 8.54004 17.4471 10.2938 19.1382 12.0476 20.8293 12.924 21.6742 14.2628 20.3388 13.3847 19.4922 12.1922 18.3424 10.9998 17.1925 9.80725 16.0427L26.6064 16.0427C27.8231 16.0427 27.8251 14.1517 26.6064 14.1517Z\" fill=\"currentColor\" fill-rule=\"nonzero\" transform=\"matrix(-1.01745 1.24602e-16 -1.22465e-16 -1 871 265.996)\"></path></g></g></g></g></g></svg>"
 };
 const ICON_NAMES = Object.keys(ICONS);
 Object.assign(__ds_scope, { ICONS, ICON_NAMES });
@@ -478,170 +375,6 @@ function Icon({
 Object.assign(__ds_scope, { Icon });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Icon.jsx", error: String((e && e.message) || e) }); }
 
-// components/commerce/ProductCard.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/**
- * Walmart product tile — the core merchandising unit. Square image well,
- * price-first hierarchy, fulfillment line, and a pill "Add" affordance.
- */
-function ProductCard({
-  image,
-  title,
-  brand,
-  price,
-  was,
-  rating,
-  reviews,
-  badge,
-  fulfillment = 'Free shipping, arrives in 2 days',
-  sponsored = false,
-  onAdd,
-  style,
-  ...rest
-}) {
-  const [hover, setHover] = React.useState(false);
-  const [fav, setFav] = React.useState(false);
-  return /*#__PURE__*/React.createElement("div", _extends({
-    onMouseEnter: () => setHover(true),
-    onMouseLeave: () => setHover(false),
-    style: {
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      background: 'var(--color-surface)',
-      border: '1px solid var(--border-subtle)',
-      borderRadius: 'var(--radius-lg)',
-      padding: 12,
-      transition: 'box-shadow var(--dur-base) var(--ease-standard), border-color var(--dur-base)',
-      boxShadow: hover ? 'var(--shadow-md)' : 'none',
-      borderColor: hover ? 'var(--border-default)' : 'var(--border-subtle)',
-      fontFamily: 'var(--font-sans)',
-      ...style
-    }
-  }, rest), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'relative',
-      aspectRatio: '1 / 1',
-      borderRadius: 'var(--radius-md)',
-      overflow: 'hidden',
-      background: 'var(--wm-white)'
-    }
-  }, image ? /*#__PURE__*/React.createElement("img", {
-    src: image,
-    alt: title,
-    style: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'contain'
-    }
-  }) : /*#__PURE__*/React.createElement("div", {
-    style: {
-      width: '100%',
-      height: '100%',
-      display: 'grid',
-      placeItems: 'center',
-      background: 'var(--wm-gray-50)',
-      color: 'var(--wm-gray-300)'
-    }
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
-    name: "photo",
-    size: 40
-  })), /*#__PURE__*/React.createElement("button", {
-    onClick: () => setFav(!fav),
-    "aria-label": "Save to list",
-    style: {
-      position: 'absolute',
-      top: 8,
-      right: 8,
-      width: 36,
-      height: 36,
-      borderRadius: 'var(--radius-pill)',
-      border: 'none',
-      background: 'rgba(255,255,255,0.92)',
-      boxShadow: 'var(--shadow-sm)',
-      cursor: 'pointer',
-      display: 'grid',
-      placeItems: 'center',
-      color: fav ? 'var(--wm-true-blue)' : 'var(--wm-gray-600)'
-    }
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
-    name: "favorite",
-    size: 18
-  }))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 8,
-      paddingTop: 12
-    }
-  }, sponsored && /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: 11,
-      color: 'var(--text-tertiary)'
-    }
-  }, "Sponsored"), /*#__PURE__*/React.createElement(__ds_scope.Price, {
-    value: price,
-    was: was,
-    size: "md"
-  }), badge && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(__ds_scope.Badge, {
-    variant: badge.variant || 'rollback',
-    size: "sm"
-  }, badge.label)), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 14,
-      lineHeight: 1.35,
-      color: 'var(--text-primary)',
-      display: '-webkit-box',
-      WebkitLineClamp: 2,
-      WebkitBoxOrient: 'vertical',
-      overflow: 'hidden',
-      minHeight: 38
-    }
-  }, brand && /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, brand, " "), title), rating != null && /*#__PURE__*/React.createElement(__ds_scope.Rating, {
-    value: rating,
-    count: reviews,
-    size: 15
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 13,
-      color: 'var(--text-secondary)'
-    }
-  }, fulfillment), /*#__PURE__*/React.createElement("button", {
-    onClick: onAdd,
-    style: {
-      marginTop: 4,
-      height: 40,
-      borderRadius: 'var(--radius-pill)',
-      border: '1.5px solid var(--wm-gray-900)',
-      background: 'var(--wm-white)',
-      color: 'var(--wm-bentonville-blue)',
-      fontFamily: 'var(--font-sans)',
-      fontWeight: 'var(--fw-bold)',
-      fontSize: 15,
-      cursor: 'pointer',
-      display: 'inline-flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 6,
-      alignSelf: 'flex-start',
-      padding: '0 22px',
-      transition: 'background var(--dur-fast)'
-    },
-    onMouseEnter: e => e.currentTarget.style.background = 'var(--wm-gray-50)',
-    onMouseLeave: e => e.currentTarget.style.background = 'var(--wm-white)'
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
-    name: "add-to-cart",
-    size: 18
-  }), " Add")));
-}
-Object.assign(__ds_scope, { ProductCard });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/commerce/ProductCard.jsx", error: String((e && e.message) || e) }); }
-
 // components/core/Button.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -665,7 +398,7 @@ function Button({
     sm: {
       height: 36,
       padding: '0 16px',
-      font: 14,
+      font: 'var(--text-sm)',
       gap: 6,
       icon: 16
     },
@@ -679,7 +412,7 @@ function Button({
     lg: {
       height: 56,
       padding: '0 32px',
-      font: 17,
+      font: 'var(--text-h5)',
       gap: 8,
       icon: 22
     }
@@ -937,7 +670,7 @@ function Input({
     },
     lg: {
       h: 56,
-      font: 17,
+      font: 'var(--text-h5)',
       pad: 18
     }
   };
@@ -954,7 +687,7 @@ function Input({
   }, label && /*#__PURE__*/React.createElement("label", {
     htmlFor: inputId,
     style: {
-      fontSize: 14,
+      fontSize: 'var(--text-sm)',
       fontWeight: 'var(--fw-medium)',
       color: 'var(--text-primary)'
     }
@@ -1062,6 +795,7 @@ function Tabs({
         gap: 8
       }
     }, t.label, t.count != null && /*#__PURE__*/React.createElement("span", {
+      className: "wm-numeric",
       style: {
         fontSize: 12,
         fontWeight: 'var(--fw-bold)',
@@ -1075,1484 +809,6 @@ function Tabs({
 }
 Object.assign(__ds_scope, { Tabs });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Tabs.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/storefront/Cart.jsx
-try { (() => {
-// Walmart cart — line items with qty steppers, savings, and an order summary
-// with the Walmart+ upsell. Composes Price, Button, Icon.
-const {
-  Price,
-  Button,
-  Icon,
-  Badge
-} = window.WalmartDesignSystem_e58acd;
-function Cart({
-  items,
-  onQty,
-  onRemove,
-  onCheckout,
-  onContinue
-}) {
-  const subtotal = items.reduce((s, it) => s + it.price * it.qty, 0);
-  const savings = items.reduce((s, it) => s + ((it.was || it.price) - it.price) * it.qty, 0);
-  const count = items.reduce((s, it) => s + it.qty, 0);
-  const shipping = subtotal > 35 ? 0 : 6.99;
-  const tax = subtotal * 0.0725;
-  const total = subtotal + shipping + tax;
-  if (items.length === 0) {
-    return /*#__PURE__*/React.createElement("div", {
-      style: {
-        maxWidth: 720,
-        margin: '0 auto',
-        padding: '60px 24px',
-        textAlign: 'center',
-        fontFamily: 'var(--font-sans)'
-      }
-    }, /*#__PURE__*/React.createElement("img", {
-      src: "../../assets/placeholders/cart.svg",
-      alt: "",
-      style: {
-        width: 96,
-        height: 96,
-        margin: '0 auto 16px'
-      }
-    }), /*#__PURE__*/React.createElement("h1", {
-      style: {
-        fontSize: 26,
-        fontWeight: 'var(--fw-bold)',
-        marginBottom: 8
-      }
-    }, "Your cart is empty"), /*#__PURE__*/React.createElement("p", {
-      style: {
-        color: 'var(--text-secondary)',
-        marginBottom: 24
-      }
-    }, "Add items to get going, or reorder your essentials."), /*#__PURE__*/React.createElement(Button, {
-      variant: "primary",
-      size: "lg",
-      onClick: onContinue
-    }, "Continue shopping"));
-  }
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 1392,
-      margin: '0 auto',
-      padding: '24px',
-      fontFamily: 'var(--font-sans)'
-    }
-  }, /*#__PURE__*/React.createElement("h1", {
-    style: {
-      fontSize: 30,
-      fontWeight: 'var(--fw-bold)',
-      marginBottom: 20
-    }
-  }, "Cart ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: 'var(--text-secondary)',
-      fontWeight: 'var(--fw-regular)',
-      fontSize: 22
-    }
-  }, "(", count, " items)")), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: '1fr 360px',
-      gap: 24,
-      alignItems: 'start'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: '#fff',
-      border: '1px solid var(--border-subtle)',
-      borderRadius: 'var(--radius-lg)',
-      padding: '8px 24px'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: '16px 0',
-      borderBottom: '1px solid var(--border-subtle)',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 8,
-      color: 'var(--wm-success)',
-      fontWeight: 'var(--fw-bold)',
-      fontSize: 15
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "pick-up",
-    size: 20,
-    color: "var(--wm-success)"
-  }), " Pickup today from Sacramento Supercenter"), items.map(it => /*#__PURE__*/React.createElement("div", {
-    key: it.id,
-    style: {
-      display: 'flex',
-      gap: 18,
-      padding: '20px 0',
-      borderBottom: '1px solid var(--border-subtle)'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      width: 96,
-      height: 96,
-      flex: 'none',
-      borderRadius: 'var(--radius-md)',
-      border: '1px solid var(--border-subtle)',
-      background: '#fff',
-      display: 'grid',
-      placeItems: 'center'
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: it.img,
-    alt: "",
-    style: {
-      width: 60,
-      height: 60
-    }
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 15,
-      lineHeight: 1.35,
-      marginBottom: 4
-    }
-  }, /*#__PURE__*/React.createElement("b", null, it.brand), " ", it.title), it.badge && /*#__PURE__*/React.createElement("div", {
-    style: {
-      margin: '4px 0'
-    }
-  }, /*#__PURE__*/React.createElement(Badge, {
-    variant: it.badge.variant,
-    size: "sm"
-  }, it.badge.label)), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 13,
-      color: 'var(--wm-success)',
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, "In stock"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 16,
-      marginTop: 12
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      border: '1.5px solid var(--border-default)',
-      borderRadius: 'var(--radius-pill)',
-      height: 40
-    }
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: () => onQty(it.id, -1),
-    "aria-label": "Decrease",
-    style: stepBtn
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: it.qty === 1 ? 'return' : 'minus',
-    size: 18,
-    color: "var(--wm-true-blue)"
-  })), /*#__PURE__*/React.createElement("span", {
-    style: {
-      minWidth: 28,
-      textAlign: 'center',
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, it.qty), /*#__PURE__*/React.createElement("button", {
-    onClick: () => onQty(it.id, 1),
-    "aria-label": "Increase",
-    style: stepBtn
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "plus",
-    size: 18,
-    color: "var(--wm-true-blue)"
-  }))), /*#__PURE__*/React.createElement("button", {
-    onClick: () => onRemove(it.id),
-    style: {
-      background: 'none',
-      border: 'none',
-      color: 'var(--text-link)',
-      fontWeight: 'var(--fw-bold)',
-      fontSize: 14,
-      cursor: 'pointer',
-      fontFamily: 'inherit'
-    }
-  }, "Remove"))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      textAlign: 'right'
-    }
-  }, /*#__PURE__*/React.createElement(Price, {
-    value: it.price * it.qty,
-    was: it.was ? it.was * it.qty : undefined,
-    size: "md",
-    align: "center"
-  }))))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'sticky',
-      top: 16,
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 16
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: '#fff',
-      border: '1px solid var(--border-subtle)',
-      borderRadius: 'var(--radius-lg)',
-      padding: 24
-    }
-  }, /*#__PURE__*/React.createElement(Button, {
-    variant: "primary",
-    size: "lg",
-    block: true,
-    onClick: onCheckout
-  }, "Continue to checkout"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      height: 20
-    }
-  }), /*#__PURE__*/React.createElement(Row, {
-    label: `Subtotal (${count} items)`,
-    value: `$${subtotal.toFixed(2)}`
-  }), savings > 0 && /*#__PURE__*/React.createElement(Row, {
-    label: "Savings",
-    value: `-$${savings.toFixed(2)}`,
-    accent: true
-  }), /*#__PURE__*/React.createElement(Row, {
-    label: "Shipping",
-    value: shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`
-  }), /*#__PURE__*/React.createElement(Row, {
-    label: "Taxes",
-    value: `$${tax.toFixed(2)}`
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      height: 1,
-      background: 'var(--border-subtle)',
-      margin: '14px 0'
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'baseline'
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: 17,
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, "Estimated total"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: 22,
-      fontWeight: 'var(--fw-black)',
-      color: 'var(--text-price)'
-    }
-  }, "$", total.toFixed(2)))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: 'var(--wm-sky-50)',
-      border: '1px solid var(--wm-sky-100)',
-      borderRadius: 'var(--radius-lg)',
-      padding: 18,
-      display: 'flex',
-      gap: 12,
-      alignItems: 'center'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      width: 40,
-      height: 40,
-      borderRadius: '50%',
-      background: 'var(--wm-bentonville-blue)',
-      display: 'grid',
-      placeItems: 'center',
-      flex: 'none'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "shipping",
-    size: 22,
-    color: "#fff"
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 13.5,
-      color: 'var(--wm-bentonville-blue)'
-    }
-  }, /*#__PURE__*/React.createElement("b", null, "Want free shipping?"), " Try Walmart+ free for 30 days and skip the $", shipping.toFixed(2), " fee.")))));
-}
-const stepBtn = {
-  width: 40,
-  height: 38,
-  border: 'none',
-  background: 'none',
-  cursor: 'pointer',
-  display: 'grid',
-  placeItems: 'center'
-};
-function Row({
-  label,
-  value,
-  accent
-}) {
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      fontSize: 14.5,
-      padding: '5px 0',
-      color: accent ? 'var(--wm-success)' : 'var(--text-secondary)',
-      fontWeight: accent ? 'var(--fw-bold)' : 'var(--fw-regular)'
-    }
-  }, /*#__PURE__*/React.createElement("span", null, label), /*#__PURE__*/React.createElement("span", null, value));
-}
-window.WMCart = Cart;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/Cart.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/storefront/Header.jsx
-try { (() => {
-// Walmart storefront header — Bentonville Blue bar with the Spark, a prominent
-// pill search, location/account/cart actions. Uses the design-system Icon.
-const {
-  Icon
-} = window.WalmartDesignSystem_e58acd;
-function Header({
-  cartCount = 0,
-  query = '',
-  onSearch,
-  onNav,
-  onCart
-}) {
-  const [q, setQ] = React.useState(query);
-  const submit = e => {
-    e.preventDefault();
-    onSearch && onSearch(q);
-  };
-  return /*#__PURE__*/React.createElement("header", {
-    style: {
-      background: 'var(--wm-bentonville-blue)',
-      color: '#fff',
-      fontFamily: 'var(--font-sans)'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 1392,
-      margin: '0 auto',
-      padding: '12px 24px',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 20
-    }
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: () => onNav && onNav('home'),
-    "aria-label": "Walmart home",
-    style: {
-      background: 'none',
-      border: 'none',
-      cursor: 'pointer',
-      display: 'flex',
-      alignItems: 'center',
-      padding: 0
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/logos/spark-everyday-blue.svg",
-    alt: "Walmart",
-    style: {
-      height: 38
-    }
-  })), /*#__PURE__*/React.createElement("button", {
-    onClick: () => onNav && onNav('home'),
-    style: pillBtn
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "location",
-    size: 22,
-    color: "#fff"
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-      lineHeight: 1.1
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: 11,
-      opacity: .85
-    }
-  }, "Pickup or delivery?"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: 13,
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, "Sacramento, 95829"))), /*#__PURE__*/React.createElement("form", {
-    onSubmit: submit,
-    style: {
-      flex: 1,
-      display: 'flex',
-      alignItems: 'center',
-      background: '#fff',
-      borderRadius: 'var(--radius-pill)',
-      height: 48,
-      paddingLeft: 20,
-      paddingRight: 4
-    }
-  }, /*#__PURE__*/React.createElement("input", {
-    value: q,
-    onChange: e => setQ(e.target.value),
-    placeholder: "Search everything at Walmart online and in store",
-    style: {
-      flex: 1,
-      border: 'none',
-      outline: 'none',
-      background: 'transparent',
-      fontFamily: 'inherit',
-      fontSize: 15,
-      color: 'var(--text-primary)'
-    }
-  }), /*#__PURE__*/React.createElement("button", {
-    type: "submit",
-    "aria-label": "Search",
-    style: {
-      width: 40,
-      height: 40,
-      borderRadius: '50%',
-      border: 'none',
-      background: 'var(--wm-everyday-blue)',
-      cursor: 'pointer',
-      display: 'grid',
-      placeItems: 'center'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "search",
-    size: 20,
-    color: "var(--wm-bentonville-blue)"
-  }))), /*#__PURE__*/React.createElement("button", {
-    onClick: () => onNav && onNav('home'),
-    style: actionBtn
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "favorite",
-    size: 24,
-    color: "#fff"
-  }), /*#__PURE__*/React.createElement("span", {
-    style: actionLabel
-  }, "Reorder", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("b", null, "My Items"))), /*#__PURE__*/React.createElement("button", {
-    onClick: () => onNav && onNav('home'),
-    style: actionBtn
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "sign-in",
-    size: 24,
-    color: "#fff"
-  }), /*#__PURE__*/React.createElement("span", {
-    style: actionLabel
-  }, "Sign In", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("b", null, "Account"))), /*#__PURE__*/React.createElement("button", {
-    onClick: onCart,
-    style: {
-      ...actionBtn,
-      position: 'relative'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'relative'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "cart",
-    size: 26,
-    color: "#fff"
-  }), cartCount > 0 && /*#__PURE__*/React.createElement("span", {
-    style: {
-      position: 'absolute',
-      top: -8,
-      right: -10,
-      minWidth: 18,
-      height: 18,
-      padding: '0 4px',
-      borderRadius: 9,
-      background: 'var(--wm-everyday-blue)',
-      color: 'var(--wm-bentonville-blue)',
-      fontSize: 11,
-      fontWeight: 'var(--fw-black)',
-      display: 'grid',
-      placeItems: 'center'
-    }
-  }, cartCount)), /*#__PURE__*/React.createElement("span", {
-    style: {
-      ...actionLabel,
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, "$", (cartCount * 9.62).toFixed(2)))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: 'var(--wm-true-blue)'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 1392,
-      margin: '0 auto',
-      padding: '8px 24px',
-      display: 'flex',
-      gap: 22,
-      alignItems: 'center',
-      fontSize: 13.5,
-      fontWeight: 'var(--fw-medium)',
-      overflowX: 'auto'
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 7,
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "grid",
-    size: 18,
-    color: "#fff"
-  }), " Departments"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 7
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "lists",
-    size: 18,
-    color: "#fff"
-  }), " Services"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      opacity: .5
-    }
-  }, "|"), ['Get it Fast', 'My Items', 'Grocery & Essentials', 'Walmart+', 'Pharmacy', 'Trending', 'Deals', 'Registry'].map(d => /*#__PURE__*/React.createElement("span", {
-    key: d,
-    style: {
-      whiteSpace: 'nowrap',
-      cursor: 'pointer'
-    }
-  }, d)))));
-}
-const pillBtn = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: 8,
-  background: 'none',
-  border: 'none',
-  color: '#fff',
-  cursor: 'pointer',
-  padding: '6px 10px',
-  borderRadius: 'var(--radius-pill)'
-};
-const actionBtn = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: 8,
-  background: 'none',
-  border: 'none',
-  color: '#fff',
-  cursor: 'pointer',
-  whiteSpace: 'nowrap'
-};
-const actionLabel = {
-  fontSize: 13,
-  textAlign: 'left',
-  lineHeight: 1.15
-};
-window.WMHeader = Header;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/Header.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/storefront/Homepage.jsx
-try { (() => {
-// Walmart homepage — hero savings banner, category rail, and a
-// "Deals" product grid. Composes ProductCard + Button + Icon.
-const {
-  ProductCard,
-  Button,
-  Icon
-} = window.WalmartDesignSystem_e58acd;
-function Homepage({
-  onOpenProduct,
-  onAdd,
-  onSearch
-}) {
-  const products = window.WM_PRODUCTS;
-  const cats = window.WM_CATEGORIES;
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 1392,
-      margin: '0 auto',
-      padding: '24px',
-      fontFamily: 'var(--font-sans)'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: '2fr 1fr',
-      gap: 16,
-      marginBottom: 24
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: 'var(--wm-sky-blue)',
-      borderRadius: 'var(--radius-xl)',
-      padding: '44px 48px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      minHeight: 300,
-      position: 'relative',
-      overflow: 'hidden'
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "wm-eyebrow",
-    style: {
-      color: 'var(--wm-bentonville-blue)'
-    }
-  }, "Hot July savings"), /*#__PURE__*/React.createElement("h1", {
-    style: {
-      fontSize: 52,
-      fontWeight: 'var(--fw-black)',
-      letterSpacing: '-0.02em',
-      lineHeight: 1.02,
-      margin: '10px 0 14px',
-      color: 'var(--wm-bentonville-blue)',
-      maxWidth: 12 + 'ch'
-    }
-  }, "Everyday low prices"), /*#__PURE__*/React.createElement("p", {
-    style: {
-      fontSize: 18,
-      color: 'var(--wm-bentonville-blue)',
-      maxWidth: '34ch',
-      marginBottom: 24
-    }
-  }, "Pickup, delivery, and shipping \u2014 all in one place. Save more with Walmart+."), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Button, {
-    variant: "primary",
-    size: "lg",
-    onClick: () => onSearch('deals')
-  }, "Shop deals")), /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/logos/spark-everyday-blue.svg",
-    alt: "",
-    style: {
-      position: 'absolute',
-      right: -40,
-      bottom: -40,
-      width: 240,
-      opacity: .35
-    }
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: 'var(--wm-bentonville-blue)',
-      borderRadius: 'var(--radius-xl)',
-      padding: 32,
-      color: '#fff',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'inline-flex',
-      width: 'fit-content',
-      background: 'var(--wm-everyday-blue)',
-      color: 'var(--wm-bentonville-blue)',
-      fontWeight: 'var(--fw-black)',
-      fontSize: 12,
-      letterSpacing: '.02em',
-      textTransform: 'uppercase',
-      padding: '4px 10px',
-      borderRadius: 'var(--radius-sm)',
-      marginBottom: 14
-    }
-  }, "Walmart+"), /*#__PURE__*/React.createElement("h2", {
-    style: {
-      fontSize: 28,
-      fontWeight: 'var(--fw-bold)',
-      lineHeight: 1.1,
-      marginBottom: 10
-    }
-  }, "Free delivery, free shipping"), /*#__PURE__*/React.createElement("p", {
-    style: {
-      fontSize: 15,
-      opacity: .9,
-      marginBottom: 20
-    }
-  }, "Plus member prices on fuel and more. Try 30 days free."), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Button, {
-    variant: "spark",
-    onClick: () => onSearch('walmart+')
-  }, "Try free")))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: '#fff',
-      border: '1px solid var(--border-subtle)',
-      borderRadius: 'var(--radius-lg)',
-      padding: '20px 24px',
-      marginBottom: 24
-    }
-  }, /*#__PURE__*/React.createElement("h3", {
-    style: {
-      fontSize: 20,
-      fontWeight: 'var(--fw-bold)',
-      marginBottom: 16
-    }
-  }, "Get it all right here"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(10, 1fr)',
-      gap: 12
-    }
-  }, cats.map(c => /*#__PURE__*/React.createElement("button", {
-    key: c.label,
-    onClick: () => onSearch(c.label),
-    style: {
-      background: 'none',
-      border: 'none',
-      cursor: 'pointer',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: 8,
-      padding: 6,
-      borderRadius: 'var(--radius-md)'
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: c.img,
-    alt: "",
-    style: {
-      width: 76,
-      height: 76
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontSize: 12.5,
-      fontWeight: 'var(--fw-medium)',
-      color: 'var(--text-primary)'
-    }
-  }, c.label))))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      marginBottom: 16
-    }
-  }, /*#__PURE__*/React.createElement("h3", {
-    style: {
-      fontSize: 24,
-      fontWeight: 'var(--fw-bold)'
-    }
-  }, "Flash deals"), /*#__PURE__*/React.createElement("button", {
-    onClick: () => onSearch('deals'),
-    style: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 4,
-      background: 'none',
-      border: 'none',
-      color: 'var(--text-link)',
-      fontWeight: 'var(--fw-bold)',
-      fontSize: 15,
-      cursor: 'pointer',
-      fontFamily: 'inherit'
-    }
-  }, "View all ", /*#__PURE__*/React.createElement(Icon, {
-    name: "more",
-    size: 16,
-    color: "var(--text-link)"
-  }))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(6, 1fr)',
-      gap: 16
-    }
-  }, products.slice(0, 6).map(p => /*#__PURE__*/React.createElement(ProductCard, {
-    key: p.id,
-    image: p.img,
-    brand: p.brand,
-    title: p.title,
-    price: p.price,
-    was: p.was,
-    rating: p.rating,
-    reviews: p.reviews,
-    badge: p.badge,
-    fulfillment: p.fulfillment,
-    sponsored: p.sponsored,
-    onClick: () => onOpenProduct(p.id),
-    onAdd: () => onAdd(p),
-    style: {
-      cursor: 'pointer'
-    }
-  }))));
-}
-window.WMHomepage = Homepage;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/Homepage.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/storefront/ProductDetail.jsx
-try { (() => {
-// Walmart product detail — image well, price-first buy box, fulfillment options,
-// rating, and related rail. Composes Price, Rating, Badge, Button, Icon, Tabs.
-const {
-  Price,
-  Rating,
-  Badge,
-  Button,
-  Icon,
-  Tabs,
-  ProductCard
-} = window.WalmartDesignSystem_e58acd;
-function ProductDetail({
-  productId,
-  onOpenProduct,
-  onAdd,
-  onBack
-}) {
-  const all = window.WM_PRODUCTS;
-  const p = all.find(x => x.id === productId) || all[0];
-  const [tab, setTab] = React.useState('about');
-  const [fulfill, setFulfill] = React.useState('pickup');
-  const related = all.filter(x => x.cat === p.cat && x.id !== p.id).concat(all).slice(0, 6);
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 1392,
-      margin: '0 auto',
-      padding: '20px 24px',
-      fontFamily: 'var(--font-sans)'
-    }
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: onBack,
-    style: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 6,
-      background: 'none',
-      border: 'none',
-      color: 'var(--text-link)',
-      fontWeight: 'var(--fw-bold)',
-      fontSize: 14,
-      cursor: 'pointer',
-      marginBottom: 16,
-      fontFamily: 'inherit'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "more",
-    size: 16,
-    color: "var(--text-link)",
-    style: {
-      transform: 'rotate(180deg)'
-    }
-  }), " Back to results"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: '1.1fr 1fr',
-      gap: 40,
-      alignItems: 'start'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      gap: 16
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 10
-    }
-  }, [0, 1, 2].map(i => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    style: {
-      width: 64,
-      height: 64,
-      borderRadius: 'var(--radius-md)',
-      border: `1.5px solid ${i === 0 ? 'var(--wm-true-blue)' : 'var(--border-subtle)'}`,
-      background: '#fff',
-      display: 'grid',
-      placeItems: 'center',
-      cursor: 'pointer'
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: p.img,
-    alt: "",
-    style: {
-      width: 40,
-      height: 40
-    }
-  })))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1,
-      aspectRatio: '1 / 1',
-      borderRadius: 'var(--radius-xl)',
-      border: '1px solid var(--border-subtle)',
-      background: '#fff',
-      display: 'grid',
-      placeItems: 'center',
-      position: 'relative'
-    }
-  }, p.badge && /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'absolute',
-      top: 16,
-      left: 16
-    }
-  }, /*#__PURE__*/React.createElement(Badge, {
-    variant: p.badge.variant,
-    size: "md"
-  }, p.badge.label)), /*#__PURE__*/React.createElement("img", {
-    src: p.img,
-    alt: p.title,
-    style: {
-      width: '64%',
-      height: '64%',
-      objectFit: 'contain'
-    }
-  }))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 13,
-      color: 'var(--text-link)',
-      fontWeight: 'var(--fw-bold)',
-      marginBottom: 6
-    }
-  }, p.cat), /*#__PURE__*/React.createElement("h1", {
-    style: {
-      fontSize: 28,
-      fontWeight: 'var(--fw-bold)',
-      lineHeight: 1.15,
-      letterSpacing: '-0.01em',
-      marginBottom: 10
-    }
-  }, p.brand && /*#__PURE__*/React.createElement("span", null, p.brand, " "), p.title), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 16
-    }
-  }, /*#__PURE__*/React.createElement(Rating, {
-    value: p.rating,
-    count: p.reviews,
-    size: 18,
-    showValue: true
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 20
-    }
-  }, /*#__PURE__*/React.createElement(Price, {
-    value: p.price,
-    was: p.was,
-    size: "lg"
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gap: 12,
-      marginBottom: 22
-    }
-  }, [{
-    id: 'shipping',
-    icon: 'shipping',
-    t: 'Shipping',
-    s: 'Arrives tomorrow'
-  }, {
-    id: 'pickup',
-    icon: 'pick-up',
-    t: 'Pickup',
-    s: 'Today at 95829'
-  }].map(o => /*#__PURE__*/React.createElement("button", {
-    key: o.id,
-    onClick: () => setFulfill(o.id),
-    style: {
-      textAlign: 'left',
-      cursor: 'pointer',
-      padding: '14px 16px',
-      borderRadius: 'var(--radius-md)',
-      background: '#fff',
-      border: `1.5px solid ${fulfill === o.id ? 'var(--wm-true-blue)' : 'var(--border-default)'}`,
-      boxShadow: fulfill === o.id ? '0 0 0 1px var(--wm-true-blue)' : 'none',
-      display: 'flex',
-      gap: 10,
-      alignItems: 'flex-start'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: o.icon,
-    size: 22,
-    color: "var(--wm-bentonville-blue)"
-  }), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'block',
-      fontWeight: 'var(--fw-bold)',
-      fontSize: 15
-    }
-  }, o.t), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'block',
-      fontSize: 13,
-      color: 'var(--text-secondary)'
-    }
-  }, o.s))))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      gap: 12,
-      marginBottom: 18
-    }
-  }, /*#__PURE__*/React.createElement(Button, {
-    variant: "primary",
-    size: "lg",
-    block: true,
-    iconLeft: "add-to-cart",
-    onClick: () => onAdd(p)
-  }, "Add to cart")), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 10,
-      fontSize: 14,
-      color: 'var(--text-secondary)'
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 10
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "return",
-    size: 18,
-    color: "var(--wm-gray-600)"
-  }), " Free 90-day returns"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 10
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "lock",
-    size: 18,
-    color: "var(--wm-gray-600)"
-  }), " Secure transaction"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 10
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "favorite",
-    size: 18,
-    color: "var(--wm-gray-600)"
-  }), " Add to a list")))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 40
-    }
-  }, /*#__PURE__*/React.createElement(Tabs, {
-    tabs: [{
-      id: 'about',
-      label: 'About this item'
-    }, {
-      id: 'specs',
-      label: 'Specifications'
-    }, {
-      id: 'reviews',
-      label: 'Reviews',
-      count: p.reviews
-    }],
-    value: tab,
-    onChange: setTab
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: '20px 0',
-      fontSize: 15,
-      lineHeight: 1.6,
-      color: 'var(--text-secondary)',
-      maxWidth: '70ch'
-    }
-  }, tab === 'about' && /*#__PURE__*/React.createElement("p", null, "Everyday quality at an everyday low price. The ", p.brand, " ", p.title.toLowerCase(), " is a customer favorite, backed by Walmart's free 90-day returns. Buy online for pickup today or free shipping in as little as one day."), tab === 'specs' && /*#__PURE__*/React.createElement("p", null, "Brand: ", p.brand, " \xB7 Category: ", p.cat, " \xB7 Rating: ", p.rating, " of 5 \xB7 ", p.reviews.toLocaleString(), " reviews. Full specifications available in store."), tab === 'reviews' && /*#__PURE__*/React.createElement("p", null, p.reviews.toLocaleString(), " verified customer reviews, averaging ", p.rating, " of 5 stars. \"Great value for the price\" \u2014 a recurring theme from shoppers."))), /*#__PURE__*/React.createElement("h3", {
-    style: {
-      fontSize: 22,
-      fontWeight: 'var(--fw-bold)',
-      margin: '20px 0 16px'
-    }
-  }, "Similar items you might like"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(6, 1fr)',
-      gap: 16
-    }
-  }, related.map(r => /*#__PURE__*/React.createElement(ProductCard, {
-    key: r.id,
-    image: r.img,
-    brand: r.brand,
-    title: r.title,
-    price: r.price,
-    was: r.was,
-    rating: r.rating,
-    reviews: r.reviews,
-    badge: r.badge,
-    fulfillment: r.fulfillment,
-    onClick: () => onOpenProduct(r.id),
-    onAdd: () => onAdd(r),
-    style: {
-      cursor: 'pointer'
-    }
-  }))));
-}
-window.WMProductDetail = ProductDetail;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/ProductDetail.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/storefront/SearchResults.jsx
-try { (() => {
-// Walmart search results — filter sidebar (chips, checkboxes, price), sort bar,
-// and a product grid. Composes ProductCard, Checkbox, Chip, Tabs, Icon.
-const {
-  ProductCard,
-  Checkbox,
-  Chip,
-  Icon
-} = window.WalmartDesignSystem_e58acd;
-function SearchResults({
-  query,
-  onOpenProduct,
-  onAdd
-}) {
-  const all = window.WM_PRODUCTS;
-  const [fulfillment, setFulfillment] = React.useState('all');
-  const [deptOpen] = React.useState(true);
-  const [chosen, setChosen] = React.useState({});
-  const fulfillments = [{
-    id: 'all',
-    label: 'All'
-  }, {
-    id: 'pickup',
-    label: 'Pickup'
-  }, {
-    id: 'delivery',
-    label: 'Delivery'
-  }, {
-    id: 'shipping',
-    label: 'Shipping'
-  }];
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 1392,
-      margin: '0 auto',
-      padding: '20px 24px',
-      fontFamily: 'var(--font-sans)'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 13,
-      color: 'var(--text-secondary)',
-      marginBottom: 8
-    }
-  }, "Results for \"", /*#__PURE__*/React.createElement("b", {
-    style: {
-      color: 'var(--text-primary)'
-    }
-  }, query || 'everything'), "\" (", all.length, ")"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      marginBottom: 18
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      gap: 8
-    }
-  }, fulfillments.map(f => /*#__PURE__*/React.createElement(Chip, {
-    key: f.id,
-    selected: fulfillment === f.id,
-    onClick: () => setFulfillment(f.id)
-  }, f.label))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 8,
-      fontSize: 14,
-      color: 'var(--text-secondary)'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "filter",
-    size: 18,
-    color: "var(--wm-gray-600)"
-  }), " Sort by", /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontWeight: 'var(--fw-bold)',
-      color: 'var(--text-primary)'
-    }
-  }, "Best match"))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: '248px 1fr',
-      gap: 24,
-      alignItems: 'start'
-    }
-  }, /*#__PURE__*/React.createElement("aside", {
-    style: {
-      background: '#fff',
-      border: '1px solid var(--border-subtle)',
-      borderRadius: 'var(--radius-lg)',
-      padding: 20,
-      position: 'sticky',
-      top: 16
-    }
-  }, /*#__PURE__*/React.createElement(FilterGroup, {
-    title: "Departments"
-  }, ['Grocery', 'Electronics', 'Home', 'Beauty', 'Toys'].map(d => /*#__PURE__*/React.createElement(Checkbox, {
-    key: d,
-    label: d,
-    checked: !!chosen[d],
-    onChange: e => setChosen({
-      ...chosen,
-      [d]: e.target.checked
-    })
-  }))), /*#__PURE__*/React.createElement(Divider, null), /*#__PURE__*/React.createElement(FilterGroup, {
-    title: "Price"
-  }, ['Under $10', '$10 – $25', '$25 – $50', '$50 – $200', '$200 & above'].map(d => /*#__PURE__*/React.createElement(Checkbox, {
-    key: d,
-    label: d,
-    checked: !!chosen[d],
-    onChange: e => setChosen({
-      ...chosen,
-      [d]: e.target.checked
-    })
-  }))), /*#__PURE__*/React.createElement(Divider, null), /*#__PURE__*/React.createElement(FilterGroup, {
-    title: "Customer rating"
-  }, ['4★ & up', '3★ & up'].map(d => /*#__PURE__*/React.createElement(Checkbox, {
-    key: d,
-    label: d,
-    checked: !!chosen[d],
-    onChange: e => setChosen({
-      ...chosen,
-      [d]: e.target.checked
-    })
-  })))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: 16
-    }
-  }, all.map(p => /*#__PURE__*/React.createElement(ProductCard, {
-    key: p.id,
-    image: p.img,
-    brand: p.brand,
-    title: p.title,
-    price: p.price,
-    was: p.was,
-    rating: p.rating,
-    reviews: p.reviews,
-    badge: p.badge,
-    fulfillment: p.fulfillment,
-    sponsored: p.sponsored,
-    onClick: () => onOpenProduct(p.id),
-    onAdd: () => onAdd(p),
-    style: {
-      cursor: 'pointer'
-    }
-  })))));
-}
-function FilterGroup({
-  title,
-  children
-}) {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", {
-    style: {
-      fontSize: 15,
-      fontWeight: 'var(--fw-bold)',
-      marginBottom: 12
-    }
-  }, title), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 10
-    }
-  }, children));
-}
-const Divider = () => /*#__PURE__*/React.createElement("div", {
-  style: {
-    height: 1,
-    background: 'var(--border-subtle)',
-    margin: '18px 0'
-  }
-});
-window.WMSearchResults = SearchResults;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/SearchResults.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/storefront/data.js
-try { (() => {
-// Shared demo catalog for the Walmart storefront UI kit.
-// Product "images" use clean blue-only placeholder tiles (navy line icon on a
-// sky-blue square) — honest stand-ins, since the asset package ships no product
-// photography. Swap `img` for real product photos when available.
-window.WM_PRODUCTS = [{
-  id: 'milk',
-  brand: 'Great Value',
-  title: 'Whole Vitamin D Milk, 1 Gallon, 128 fl oz',
-  price: 3.12,
-  rating: 4.5,
-  reviews: 1284,
-  img: '../../assets/placeholders/bag.svg',
-  cat: 'Grocery',
-  badge: {
-    label: 'Rollback',
-    variant: 'rollback'
-  },
-  fulfillment: 'Pickup tomorrow · Free shipping'
-}, {
-  id: 'eggs',
-  brand: 'Great Value',
-  title: 'Large White Eggs, 12 Count Grade A',
-  price: 2.34,
-  rating: 4.5,
-  reviews: 980,
-  img: '../../assets/placeholders/cart.svg',
-  cat: 'Grocery',
-  fulfillment: 'Pickup today'
-}, {
-  id: 'bread',
-  brand: "Nature's Own",
-  title: '100% Whole Wheat Sandwich Bread, 20 oz',
-  price: 2.98,
-  rating: 4,
-  reviews: 412,
-  img: '../../assets/placeholders/bag.svg',
-  cat: 'Grocery',
-  fulfillment: 'Free shipping, arrives in 2 days'
-}, {
-  id: 'tv',
-  brand: 'onn.',
-  title: '50" Class 4K UHD (2160p) LED Roku Smart TV',
-  price: 198.00,
-  was: 248.00,
-  rating: 4.5,
-  reviews: 3940,
-  img: '../../assets/placeholders/grid.svg',
-  cat: 'Electronics',
-  badge: {
-    label: 'Best seller',
-    variant: 'info'
-  },
-  fulfillment: 'Free shipping, arrives tomorrow',
-  sponsored: true
-}, {
-  id: 'towels',
-  brand: 'Mainstays',
-  title: '7-Piece Bath Towel Set, Quick-Dry Soft Cotton',
-  price: 14.88,
-  was: 22.00,
-  rating: 4,
-  reviews: 612,
-  img: '../../assets/placeholders/home.svg',
-  cat: 'Home',
-  badge: {
-    label: 'Clearance',
-    variant: 'clearance'
-  },
-  fulfillment: 'Free shipping, arrives in 3 days'
-}, {
-  id: 'shampoo',
-  brand: 'Equate',
-  title: 'Daily Moisture Shampoo & Conditioner, 2-Pack',
-  price: 6.44,
-  rating: 4.5,
-  reviews: 2210,
-  img: '../../assets/placeholders/gift.svg',
-  cat: 'Beauty',
-  fulfillment: 'Pickup today'
-}, {
-  id: 'blocks',
-  brand: 'Play Day',
-  title: 'Building Bricks Creative Box, 500 Pieces',
-  price: 12.97,
-  rating: 4.5,
-  reviews: 1530,
-  img: '../../assets/placeholders/gift.svg',
-  cat: 'Toys',
-  badge: {
-    label: 'Rollback',
-    variant: 'rollback'
-  },
-  fulfillment: 'Free shipping, arrives in 2 days'
-}, {
-  id: 'dogfood',
-  brand: 'Ol\u2019 Roy',
-  title: 'Complete Nutrition Dry Dog Food, 50 lb Bag',
-  price: 22.86,
-  rating: 4.5,
-  reviews: 4120,
-  img: '../../assets/placeholders/favorite.svg',
-  cat: 'Pets',
-  fulfillment: 'Free shipping, arrives in 2 days'
-}, {
-  id: 'jeans',
-  brand: 'Wrangler',
-  title: "Men's Relaxed Fit Jeans with Flex",
-  price: 19.98,
-  rating: 4,
-  reviews: 860,
-  img: '../../assets/placeholders/bag.svg',
-  cat: 'Fashion',
-  fulfillment: 'Free shipping, arrives in 3 days'
-}, {
-  id: 'oil',
-  brand: 'SuperTech',
-  title: 'Full Synthetic Motor Oil 5W-30, 5 Quart',
-  price: 17.97,
-  rating: 4.5,
-  reviews: 1990,
-  img: '../../assets/placeholders/settings.svg',
-  cat: 'Auto',
-  fulfillment: 'Pickup today'
-}, {
-  id: 'plant',
-  brand: 'Expert Gardener',
-  title: 'Potting Soil Mix, 1 Cubic Foot',
-  price: 8.97,
-  rating: 4,
-  reviews: 340,
-  img: '../../assets/placeholders/globe.svg',
-  cat: 'Garden',
-  fulfillment: 'Free shipping, arrives in 2 days'
-}, {
-  id: 'vitamins',
-  brand: 'Equate',
-  title: 'Daily Multivitamin Tablets, 200 Count',
-  price: 9.88,
-  rating: 4.5,
-  reviews: 5120,
-  img: '../../assets/placeholders/pharmacy.svg',
-  cat: 'Health',
-  badge: {
-    label: 'Rollback',
-    variant: 'rollback'
-  },
-  fulfillment: 'Pickup today'
-}];
-window.WM_CATEGORIES = [{
-  label: 'Grocery',
-  img: '../../assets/placeholders/cart.svg'
-}, {
-  label: 'Electronics',
-  img: '../../assets/placeholders/grid.svg'
-}, {
-  label: 'Home',
-  img: '../../assets/placeholders/home.svg'
-}, {
-  label: 'Beauty',
-  img: '../../assets/placeholders/gift.svg'
-}, {
-  label: 'Toys',
-  img: '../../assets/placeholders/gift.svg'
-}, {
-  label: 'Pharmacy',
-  img: '../../assets/placeholders/pharmacy.svg'
-}, {
-  label: 'Fashion',
-  img: '../../assets/placeholders/bag.svg'
-}, {
-  label: 'Pets',
-  img: '../../assets/placeholders/favorite.svg'
-}, {
-  label: 'Auto',
-  img: '../../assets/placeholders/settings.svg'
-}, {
-  label: 'Garden',
-  img: '../../assets/placeholders/globe.svg'
-}];
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/data.js", error: String((e && e.message) || e) }); }
-
-__ds_ns.Price = __ds_scope.Price;
-
-__ds_ns.ProductCard = __ds_scope.ProductCard;
-
-__ds_ns.Rating = __ds_scope.Rating;
 
 __ds_ns.Badge = __ds_scope.Badge;
 
@@ -2569,6 +825,8 @@ __ds_ns.Icon = __ds_scope.Icon;
 __ds_ns.Input = __ds_scope.Input;
 
 __ds_ns.Switch = __ds_scope.Switch;
+
+__ds_ns.Table = __ds_scope.Table;
 
 __ds_ns.ICONS = __ds_scope.ICONS;
 
