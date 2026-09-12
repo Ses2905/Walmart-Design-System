@@ -1,0 +1,22 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Functional Icons" subtitle="Single-weight line icons — tint via currentColor (CSS mask)" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--color-surface); padding: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 20px 12px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .ic { width: 28px; height: 28px; background: var(--wm-bentonville-blue);
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-size: contain; mask-size: contain; }
+  .lbl { font-size: 10px; color: var(--text-tertiary); }
+  .blue .ic { background: var(--wm-true-blue); }
+</style></head>
+<body>
+  <div class="grid" id="g"></div>
+  <script>
+    const icons = ['search','cart','home','favorite','sign-in','location','help','filter','bag','rating','shipping','pick-up','credit-card','pharmacy','coupon','gift','reorder','return','chat','more'];
+    document.getElementById('g').innerHTML = icons.map(n =>
+      `<div class="item"><span class="ic" style="-webkit-mask-image:url(../assets/icons/${n}.svg);mask-image:url(../assets/icons/${n}.svg)"></span><span class="lbl">${n}</span></div>`
+    ).join('');
+  </script>
+</body></html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Layout" viewport="900x460" name="Layout primitives" subtitle="Container, section rhythm, grids, splits — all on the 4px scale" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;background:var(--color-surface);padding:24px}
+.demo{background:var(--wm-sky-50);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);height:44px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--wm-true-blue)}
+.lbl{font-size:12px;color:var(--text-tertiary);margin-bottom:8px}
+.block{margin-bottom:24px}
+code{font-family:var(--font-numeric);font-size:11px;color:var(--text-secondary)}</style></head>
+<body>
+  <div class="block"><div class="lbl"><code>.wm-grid-4</code> — gap 24px</div>
+    <div class="wm-grid-4"><div class="demo">1</div><div class="demo">2</div><div class="demo">3</div><div class="demo">4</div></div></div>
+  <div class="block"><div class="lbl"><code>.wm-split</code> — 2fr / 1fr editorial split</div>
+    <div class="wm-split"><div class="demo">primary</div><div class="demo">rail</div></div></div>
+  <div class="block"><div class="lbl"><code>.wm-grid-auto</code> — auto-fit, min 220px</div>
+    <div class="wm-grid-auto"><div class="demo">card</div><div class="demo">card</div><div class="demo">card</div></div></div>
+  <div class="wm-surface-dark" style="border-radius:var(--radius-lg);padding:24px">
+    <span class="wm-eyebrow">On dark</span>
+    <h3 style="font-size:20px;margin-top:8px">Dark surfaces retint their own tokens</h3>
+    <p style="font-size:13px;color:var(--text-secondary);margin-top:8px"><code>.wm-surface-dark</code> remaps text, border and eyebrow roles, so nothing needs a per-element colour override.</p>
+  </div>
+</body></html>

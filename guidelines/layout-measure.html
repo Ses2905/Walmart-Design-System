@@ -1,0 +1,16 @@
+<!-- @dsCard group="Layout" viewport="900x420" name="Measure & text balance" subtitle="Headings balance, body copy wraps to a fixed measure" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;background:var(--color-surface);padding:24px;display:flex;flex-direction:column;gap:24px}
+.lbl{font-size:12px;color:var(--text-tertiary);margin-bottom:8px}
+code{font-family:var(--font-numeric);font-size:11px;color:var(--text-secondary)}
+hr{border:0;border-top:1px solid var(--border-subtle);margin:0}</style></head>
+<body>
+  <div><div class="lbl"><code>--measure-heading</code> 20ch · text-wrap: balance</div>
+    <h2 class="wm-balance" style="font-size:32px;max-width:var(--measure-heading)">Headlines break into even lines, never one orphan word</h2></div>
+  <hr>
+  <div><div class="lbl"><code>--measure</code> 62ch · text-wrap: pretty</div>
+    <p class="wm-measure" style="font-size:15px;color:var(--text-secondary)">Body copy runs to a fixed measure so the ragged edge stays shallow and every paragraph in a layout wraps at the same width. Sixty-two characters is the default column; use the narrow measure inside cards and the wide one for full-bleed editorial.</p></div>
+  <hr>
+  <div><div class="lbl"><code>--measure-narrow</code> 45ch — card copy</div>
+    <p class="wm-measure-narrow" style="font-size:13px;color:var(--text-secondary)">Short supporting copy inside a card or a sidebar, kept narrow enough to read in a glance.</p></div>
+</body></html>
