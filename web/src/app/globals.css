@@ -189,3 +189,43 @@ body {
   background: var(--color-bg);
   color: var(--text-primary);
 }
+
+/* ============================================================
+   BorderBeam — a rotating conic-gradient ring standing in for
+   Magic UI's motion-driven border beam, without pulling in an
+   animation library for one decorative accent. Renders BEHIND its
+   sibling card, sized to bleed slightly past its edges — the
+   card's own opaque background covers everything except the rim
+   that peeks out. Simpler and more robust across build tools than
+   mask-composite (Tailwind's Lightning CSS build doesn't reliably
+   retain "exclude"/"xor" composite values). See
+   components/ui/border-beam.tsx.
+   ============================================================ */
+@property --border-beam-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.border-beam {
+  background: conic-gradient(
+    from var(--border-beam-angle),
+    transparent calc(180deg - var(--border-beam-size, 140deg) / 2),
+    var(--border-beam-color, var(--color-true-blue)) 180deg,
+    transparent calc(180deg + var(--border-beam-size, 140deg) / 2)
+  );
+  filter: blur(1px);
+  animation: border-beam-spin linear infinite;
+}
+
+@keyframes border-beam-spin {
+  to {
+    --border-beam-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-beam {
+    animation: none;
+  }
+}

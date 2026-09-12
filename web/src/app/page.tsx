@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
+import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -127,15 +128,18 @@ export default function Home() {
               Generic content surface with the DS&rsquo;s soft, navy-tinted shadow.
             </p>
           </Card>
-          <ProductCard
-            title="Whole Milk, 1 Gallon"
-            brand="Great Value"
-            price={3.24}
-            was={3.98}
-            rating={4.6}
-            reviews={2140}
-            badge={{ label: "Rollback" }}
-          />
+          <div className="relative rounded-lg">
+            <BorderBeam />
+            <ProductCard
+              title="Whole Milk, 1 Gallon"
+              brand="Great Value"
+              price={3.24}
+              was={3.98}
+              rating={4.6}
+              reviews={2140}
+              badge={{ label: "Rollback" }}
+            />
+          </div>
         </div>
       </Section>
 
