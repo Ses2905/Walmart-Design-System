@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Walmart Design System token layer. Vendored from the repo root's
+   tokens/ (canonical source) into this app's src/ tree — Turbopack's
+   sandboxed filesystem won't resolve @import paths that cross out of
+   the project root, so these are synced copies, not symlinks. Run
+   `npm run sync-tokens` after editing the root tokens/*.css files.
+   Everything below in @theme just aliases these into Tailwind's
+   utility namespaces; it never redefines a value twice. */
+@import "../styles/tokens/colors.css";
+@import "../styles/tokens/typography.css";
+@import "../styles/tokens/spacing.css";
+@import "../styles/tokens/layout.css";
+@import "../styles/tokens/base.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Bridge: Walmart CSS variables -> Tailwind v4 utility theme.
+   Tailwind's spacing scale (p-4, gap-6, ...) already matches the
+   DS's --space-* scale exactly (both are 4px-based with the same
+   step numbers), so spacing needs no remapping at all.
+
+   NOTE on --text-*: Tailwind v4 reserves --text-* exclusively for
+   font-size (+ line-height) pairs. The DS also uses --text-* for
+   TEXT COLOR roles (--text-primary, --text-price, ...). Those are
+   remapped below to distinct color keys (ink/price/link/...) so
+   they don't collide with the real type-scale sizes.
+   ============================================================ */
+@theme inline {
+  /* ---- Brand + neutral color ramp ---- */
+  --color-true-blue: var(--wm-true-blue);
+  --color-true-blue-hover: var(--wm-true-blue-hover);
+  --color-true-blue-press: var(--wm-true-blue-press);
+  --color-bentonville-blue: var(--wm-bentonville-blue);
+  --color-everyday-blue: var(--wm-everyday-blue);
+  --color-sky-blue: var(--wm-sky-blue);
+  --color-blue-50: var(--wm-blue-50);
+  --color-blue-100: var(--wm-blue-100);
+  --color-sky-50: var(--wm-sky-50);
+  --color-sky-100: var(--wm-sky-100);
+  --color-gray-50: var(--wm-gray-50);
+  --color-gray-100: var(--wm-gray-100);
+  --color-gray-200: var(--wm-gray-200);
+  --color-gray-300: var(--wm-gray-300);
+  --color-gray-400: var(--wm-gray-400);
+  --color-gray-500: var(--wm-gray-500);
+  --color-gray-600: var(--wm-gray-600);
+  --color-gray-700: var(--wm-gray-700);
+  --color-gray-800: var(--wm-gray-800);
+  --color-gray-900: var(--wm-gray-900);
+
+  /* ---- Semantic status ---- */
+  --color-success: var(--wm-success);
+  --color-success-bg: var(--wm-success-bg);
+  --color-error: var(--wm-error);
+  --color-error-bg: var(--wm-error-bg);
+  --color-warning: var(--wm-warning);
+  --color-info: var(--wm-info);
+
+  /* ---- Surfaces ---- */
+  --color-surface: var(--color-surface);
+  --color-surface-sunken: var(--color-surface-sunken);
+  --color-surface-brand: var(--color-surface-brand);
+  --color-surface-tint: var(--color-surface-tint);
+
+  /* ---- Text color roles (renamed off --text-* to avoid the
+     font-size namespace collision — see note above) ---- */
+  --color-ink: var(--text-primary);
+  --color-ink-secondary: var(--text-secondary);
+  --color-ink-tertiary: var(--text-tertiary);
+  --color-ink-on-brand: var(--text-on-brand);
+  --color-link: var(--text-link);
+  --color-price: var(--text-price);
+  --color-savings: var(--text-savings);
+  --color-eyebrow: var(--text-eyebrow);
+
+  /* ---- Borders ---- */
+  --color-border: var(--border-default);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+
+  /* ---- Actions ---- */
+  --color-action-primary: var(--action-primary-bg);
+  --color-action-primary-hover: var(--action-primary-bg-hover);
+  --color-action-primary-press: var(--action-primary-bg-press);
+  --color-on-primary: var(--action-primary-text);
+  --color-action-secondary: var(--action-secondary-bg);
+  --color-action-secondary-border: var(--action-secondary-border);
+  --color-action-secondary-text: var(--action-secondary-text);
+  --color-accent-blue: var(--accent);
+  --color-focus-ring: var(--focus-ring);
+
+  /* ---- On-dark roles ---- */
+  --color-on-dark: var(--on-dark-primary);
+  --color-on-dark-secondary: var(--on-dark-secondary);
+  --color-on-dark-tertiary: var(--on-dark-tertiary);
+  --color-on-dark-link: var(--on-dark-link);
+  --color-on-dark-eyebrow: var(--on-dark-eyebrow);
+  --color-on-dark-border: var(--on-dark-border);
+  --color-on-dark-border-strong: var(--on-dark-border-strong);
+
+  /* ---- shadcn-convention aliases, so any generic shadcn/ui
+     component code (bg-primary, bg-background, ring, ...) just
+     works against the same Walmart tokens. "accent" here follows
+     shadcn's "subtle hover surface" meaning, distinct from the
+     DS's own --accent-blue (Everyday Blue highlight) above. ---- */
+  --color-background: var(--color-bg);
+  --color-foreground: var(--text-primary);
+  --color-primary: var(--action-primary-bg);
+  --color-primary-foreground: var(--action-primary-text);
+  --color-secondary: var(--action-secondary-bg);
+  --color-secondary-foreground: var(--action-secondary-text);
+  --color-destructive: var(--wm-error);
+  --color-destructive-foreground: var(--wm-white);
+  --color-muted: var(--wm-gray-50);
+  --color-muted-foreground: var(--wm-gray-500);
+  --color-accent: var(--wm-blue-50);
+  --color-accent-foreground: var(--text-primary);
+  --color-ring: var(--focus-ring);
+  --color-input: var(--border-default);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--text-primary);
+
+  /* ---- Radius (Walmart's own explicit scale, no calc()) ---- */
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-pill: var(--radius-pill);
+
+  /* ---- Elevation ---- */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-card: var(--shadow-card);
+  --shadow-focus: var(--shadow-focus);
+
+  /* ---- Type scale (true font-size tokens; safe in --text-*) ---- */
+  --text-display: var(--text-display);
+  --text-h1: var(--text-h1);
+  --text-h2: var(--text-h2);
+  --text-h3: var(--text-h3);
+  --text-h4: var(--text-h4);
+  --text-h5: var(--text-h5);
+  --text-body-lg: var(--text-body-lg);
+  --text-body: var(--text-body);
+  --text-sm: var(--text-sm);
+  --text-xs: var(--text-xs);
+  --text-eyebrow-size: var(--text-eyebrow-size);
+
+  /* ---- Font families ---- */
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-ui: var(--font-ui);
+  --font-mono: var(--font-mono);
+
+  /* ---- Weights ---- */
+  --font-weight-light: var(--fw-light);
+  --font-weight-normal: var(--fw-regular);
+  --font-weight-medium: var(--fw-medium);
+  --font-weight-bold: var(--fw-bold);
+  --font-weight-black: var(--fw-black);
+
+  /* ---- Line-height + letter-spacing roles ---- */
+  --leading-tight: var(--lh-tight);
+  --leading-snug: var(--lh-snug);
+  --leading-normal: var(--lh-normal);
+  --leading-relaxed: var(--lh-relaxed);
+  --tracking-tight: var(--ls-tight);
+  --tracking-snug: var(--ls-snug);
+  --tracking-normal: var(--ls-normal);
+  --tracking-wide: var(--ls-wide);
+  --tracking-eyebrow: var(--ls-eyebrow);
+
+  /* ---- Motion ---- */
+  --ease-standard: var(--ease-standard);
+  --ease-out: var(--ease-out);
+  --duration-fast: var(--dur-fast);
+  --duration-base: var(--dur-base);
+  --duration-slow: var(--dur-slow);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--text-primary);
+}
