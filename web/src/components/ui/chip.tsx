@@ -30,7 +30,7 @@ function Chip({
       data-slot="chip"
       disabled={disabled}
       className={cn(
-        "inline-flex h-[38px] items-center gap-1.5 whitespace-nowrap rounded-pill border-[1.5px] px-4 font-sans text-sm font-medium transition-colors duration-fast disabled:cursor-not-allowed disabled:opacity-50",
+        "inline-flex h-[38px] items-center gap-1.5 whitespace-nowrap rounded-pill border-med px-4 font-sans text-sm font-medium transition-colors duration-fast disabled:cursor-not-allowed disabled:opacity-50",
         selected
           ? "border-bentonville-blue bg-bentonville-blue text-white"
           : "border-border bg-white text-ink hover:bg-gray-100",

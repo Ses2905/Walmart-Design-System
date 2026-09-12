@@ -41,7 +41,7 @@ function Input({
       )}
       <div
         className={cn(
-          "flex items-center gap-2.5 rounded-md border-[1.5px] bg-white transition-[border-color,box-shadow] duration-fast has-[input:focus]:shadow-focus",
+          "flex items-center gap-2.5 rounded-md border-med bg-white transition-[border-color,box-shadow] duration-fast has-[input:focus]:shadow-focus",
           error
             ? "border-error"
             : "border-border has-[input:focus]:border-true-blue",

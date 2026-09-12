@@ -31,7 +31,7 @@ function Checkbox({
       id={cbId}
       onCheckedChange={(checked) => onChange?.(checked === true)}
       className={cn(
-        "size-[22px] shrink-0 rounded-[6px] border-[1.5px] border-border bg-white transition-colors duration-fast outline-none disabled:cursor-not-allowed disabled:opacity-50",
+        "size-[22px] shrink-0 rounded-xs border-med border-border bg-white transition-colors duration-fast outline-none disabled:cursor-not-allowed disabled:opacity-50",
         "data-[state=checked]:bg-true-blue data-[state=checked]:border-true-blue data-[state=checked]:text-white",
         "focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2",
         className

@@ -36,7 +36,7 @@ function Switch({
       )}
       {...props}
     >
-      <SwitchPrimitive.Thumb className="pointer-events-none block size-[22px] translate-x-[3px] rounded-full bg-white shadow-sm transition-transform duration-base ease-standard data-[state=checked]:translate-x-[23px]" />
+      <SwitchPrimitive.Thumb className="pointer-events-none block size-[22px] translate-x-[3px] rounded-pill bg-white shadow-sm transition-transform duration-base ease-standard data-[state=checked]:translate-x-[23px]" />
     </SwitchPrimitive.Root>
   );
 

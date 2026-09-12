@@ -132,6 +132,12 @@
   --radius-2xl: var(--radius-2xl);
   --radius-pill: var(--radius-pill);
 
+  /* ---- Border width (was defined but never bridged, so every
+     consumer hardcoded border-[1.5px] instead of a named utility) ---- */
+  --border-width-thin: var(--border-thin);
+  --border-width-med: var(--border-med);
+  --border-width-thick: var(--border-thick);
+
   /* ---- Elevation ---- */
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
