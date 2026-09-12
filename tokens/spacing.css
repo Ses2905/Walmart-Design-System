@@ -2,6 +2,9 @@
    Walmart Design System — Spacing, Radius, Shadow, Layout
    Base unit: 4px. Walmart UI favors generous whitespace,
    pill-shaped actions, and soft, low-contrast elevation.
+   Vendored verbatim into web/src/styles/tokens/ for the Next.js
+   app (typography.css is the one exception — it rewrites font
+   paths for public/). Keep both copies in sync by hand.
    ============================================================ */
 :root {
   /* ---- Spacing scale (4px base) ---- */

@@ -2,6 +2,9 @@
    Walmart Design System — Layout primitives
    Page frames, section rhythm, and grids so templates stop
    hand-rolling geometry. Everything sits on the 4px scale.
+   Vendored from the root tokens/ (typography.css is the one
+   exception — font paths differ for Next.js's public/ folder).
+   Keep this file in sync with the root by hand.
    ============================================================ */
 :root {
   /* ---- Section rhythm ---- */

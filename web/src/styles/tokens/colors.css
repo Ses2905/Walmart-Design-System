@@ -1,6 +1,9 @@
 /* ============================================================
    Walmart Design System — Color Tokens
    2025 brand refresh. Sourced from WMT-Color-Chart ASE + logos.
+   Vendored from the root tokens/ (typography.css is the one
+   exception — font paths differ for Next.js's public/ folder).
+   Keep this file in sync with the root by hand.
    ============================================================ */
 :root {
   /* ---- Core brand palette (all blue — no yellow in this system) ---- */

@@ -1,6 +1,9 @@
 /* ============================================================
    Walmart Design System — Base / Reset
    Applies the brand typeface and sensible defaults.
+   Vendored from the root tokens/ (typography.css is the one
+   exception — font paths differ for Next.js's public/ folder).
+   Keep this file in sync with the root by hand.
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
