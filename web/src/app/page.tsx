@@ -11,7 +11,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Chip } from "@/components/ui/chip";
 import { Icon } from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
-import { ProductCard } from "@/components/ui/product-card";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -28,29 +27,30 @@ function Section({ title, subtitle, children }: { title: string; subtitle?: stri
 }
 
 export default function Home() {
-  const [selectedChip, setSelectedChip] = useState("rollback");
+  const [selectedChip, setSelectedChip] = useState("sponsored-search");
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-16 px-6 py-16">
       <header className="flex flex-col gap-2">
-        <span className="wm-eyebrow text-eyebrow">Design system</span>
+        <span className="wm-eyebrow text-eyebrow">Walmart Ads</span>
         <h1 className="text-display font-black tracking-tight text-bentonville-blue">
-          Walmart UI Kit
+          Ads Platform UI Kit
         </h1>
         <p className="max-w-[62ch] text-body-lg text-ink-secondary">
           Tailwind v4 + shadcn/ui primitives, wired directly to the design system&rsquo;s own
-          tokens and component API — pill buttons, True Blue actions, Everyday Sans type.
+          tokens and component API — built for Walmart Ads&rsquo; campaign tools: pill buttons,
+          True Blue actions, Everyday Sans type.
         </p>
       </header>
 
       <Section title="Buttons" subtitle="variant × size, ported 1:1 from Button.jsx">
         <div className="flex flex-wrap items-center gap-3">
-          <Button variant="primary">Shop now</Button>
-          <Button variant="secondary">Add to list</Button>
-          <Button variant="spark">Try Sparky</Button>
+          <Button variant="primary">Launch campaign</Button>
+          <Button variant="secondary">Save as draft</Button>
+          <Button variant="spark">Ask Sparky</Button>
           <Button variant="ghost">Learn more</Button>
-          <Button variant="primary" iconLeft={<Icon name="add-to-cart" />}>
-            Add to cart
+          <Button variant="primary" iconLeft={<Icon name="plus" />}>
+            Create ad group
           </Button>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -63,26 +63,32 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section title="Badges" subtitle="status pills for fulfillment, stock, and promos">
+      <Section title="Badges" subtitle="status pills for campaign state, delivery, and budget">
         <div className="flex flex-wrap gap-2">
-          <Badge variant="neutral">Neutral</Badge>
-          <Badge variant="info">Info</Badge>
-          <Badge variant="success">In stock</Badge>
-          <Badge variant="rollback">Rollback</Badge>
-          <Badge variant="clearance">Clearance</Badge>
-          <Badge variant="brand">Brand</Badge>
-          <Badge variant="outline">Outline</Badge>
+          <Badge variant="neutral">Draft</Badge>
+          <Badge variant="info">Under review</Badge>
+          <Badge variant="success">Active</Badge>
+          <Badge variant="rollback">Optimized</Badge>
+          <Badge variant="clearance">Rejected</Badge>
+          <Badge variant="brand">Sponsored</Badge>
+          <Badge variant="outline">Ended</Badge>
         </div>
       </Section>
 
-      <Section title="Chips">
+      <Section title="Chips" subtitle="ad-format filters">
         <div className="flex flex-wrap gap-2">
-          {["rollback", "in-store", "free-shipping"].map((id) => (
+          {(
+            [
+              { id: "sponsored-search", icon: "search" },
+              { id: "sponsored-products", icon: "bag" },
+              { id: "display", icon: "photo" },
+            ] as const
+          ).map(({ id, icon }) => (
             <Chip
               key={id}
               selected={selectedChip === id}
               onClick={() => setSelectedChip(id)}
-              icon={id === "rollback" ? "coupon" : id === "in-store" ? "pick-up" : "shipping"}
+              icon={icon}
             >
               {id.replace("-", " ")}
             </Chip>
@@ -92,10 +98,14 @@ export default function Home() {
 
       <Section title="Forms">
         <div className="grid max-w-md gap-6">
-          <Input label="Search Walmart.com" iconLeft={<Icon name="search" />} placeholder="Search" />
-          <Input label="Email" error="Enter a valid email address" defaultValue="not-an-email" />
-          <Checkbox label="Text me order updates" defaultChecked />
-          <Switch label="Save this card for later" defaultChecked />
+          <Input
+            label="Search campaigns"
+            iconLeft={<Icon name="search" />}
+            placeholder="Search campaigns, ad groups, or ads"
+          />
+          <Input label="Budget alert email" error="Enter a valid email address" defaultValue="not-an-email" />
+          <Checkbox label="Text me budget alerts" defaultChecked />
+          <Switch label="Enable automatic bidding" defaultChecked />
         </div>
       </Section>
 
@@ -103,24 +113,24 @@ export default function Home() {
         <Tabs defaultValue="all" className="max-w-md">
           <TabsList>
             <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="pharmacy">Pharmacy</TabsTrigger>
-            <TabsTrigger value="orders" count={3}>
-              Orders
+            <TabsTrigger value="active">Active</TabsTrigger>
+            <TabsTrigger value="attention" count={3}>
+              Needs attention
             </TabsTrigger>
           </TabsList>
           <TabsContent value="all" className="pt-4 text-sm text-ink-secondary">
-            Everything across your Walmart account.
+            Every campaign across your Walmart Ads account.
           </TabsContent>
-          <TabsContent value="pharmacy" className="pt-4 text-sm text-ink-secondary">
-            Prescriptions and pharmacy orders.
+          <TabsContent value="active" className="pt-4 text-sm text-ink-secondary">
+            Live campaigns currently serving impressions.
           </TabsContent>
-          <TabsContent value="orders" className="pt-4 text-sm text-ink-secondary">
-            3 orders in progress.
+          <TabsContent value="attention" className="pt-4 text-sm text-ink-secondary">
+            3 campaigns need your review.
           </TabsContent>
         </Tabs>
       </Section>
 
-      <Section title="Cards & product tiles">
+      <Section title="Cards">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <Card elevated className="flex flex-col gap-2">
             <h3 className="text-h4">Elevated card</h3>
@@ -130,38 +140,37 @@ export default function Home() {
           </Card>
           <div className="relative rounded-lg">
             <BorderBeam />
-            <ProductCard
-              title="Whole Milk, 1 Gallon"
-              brand="Great Value"
-              price={3.24}
-              was={3.98}
-              rating={4.6}
-              reviews={2140}
-              badge={{ label: "Rollback" }}
-            />
+            <Card elevated className="flex flex-col gap-3">
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <h3 className="text-h4">Back to School</h3>
+                  <p className="text-sm text-ink-secondary">Campaign · Sponsored Search</p>
+                </div>
+                <Badge variant="success">Active</Badge>
+              </div>
+              <div className="grid grid-cols-3 gap-4 pt-2">
+                <div>
+                  <div className="text-xs text-ink-tertiary">Impressions</div>
+                  <div className="wm-numeric text-h5 font-bold text-ink">128,400</div>
+                </div>
+                <div>
+                  <div className="text-xs text-ink-tertiary">Clicks</div>
+                  <div className="wm-numeric text-h5 font-bold text-ink">3,216</div>
+                </div>
+                <div>
+                  <div className="text-xs text-ink-tertiary">CTR</div>
+                  <div className="wm-numeric text-h5 font-bold text-ink">2.5%</div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </Section>
 
       <Section
         title="Illustrations & imagery"
-        subtitle="Brand imagery from the design system&rsquo;s asset library — benefit icons, spot illustrations, and Sparky"
+        subtitle="Brand imagery from the design system&rsquo;s asset library — platform visuals and Sparky"
       >
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
-          {[
-            { src: "/illustrations/benefits/free-shipping.png", label: "Free shipping" },
-            { src: "/illustrations/benefits/scan-and-go.png", label: "Scan & Go" },
-            { src: "/illustrations/benefits/onepay.png", label: "OnePay" },
-            { src: "/illustrations/benefits/gas-savings.png", label: "Gas savings" },
-            { src: "/illustrations/benefits/free-in-home-returns.png", label: "In-home returns" },
-            { src: "/illustrations/benefits/free-pharmacy-delivery.png", label: "Pharmacy delivery" },
-          ].map((benefit) => (
-            <Card key={benefit.src} padding={16} className="flex flex-col items-center gap-2 text-center">
-              <Image src={benefit.src} alt={benefit.label} width={64} height={64} />
-              <span className="text-xs text-ink-secondary">{benefit.label}</span>
-            </Card>
-          ))}
-        </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           <Card padding={24} className="flex flex-col items-center gap-3">
             <Image
@@ -174,10 +183,10 @@ export default function Home() {
           </Card>
           <Card padding={0} className="col-span-2 overflow-hidden">
             <Image
-              src="/illustrations/spot/walmart-storefront.png"
-              alt="Walmart storefront spot illustration"
-              width={764}
-              height={400}
+              src="/illustrations/marketing/seller-tools.png"
+              alt="Illustration of Walmart seller and advertiser performance tools"
+              width={1000}
+              height={563}
               className="h-full w-full object-cover"
             />
           </Card>

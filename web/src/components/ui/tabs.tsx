@@ -43,7 +43,7 @@ function TabsTrigger({
     >
       {children}
       {count != null && (
-        <span className="rounded-pill bg-gray-100 px-2 py-px text-xs font-bold text-ink-tertiary group-data-[state=active]:bg-blue-50 group-data-[state=active]:text-true-blue">
+        <span className="wm-numeric rounded-pill bg-gray-100 px-2 py-px text-xs font-bold text-ink-tertiary group-data-[state=active]:bg-blue-50 group-data-[state=active]:text-true-blue">
           {count}
         </span>
       )}

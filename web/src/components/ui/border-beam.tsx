@@ -10,6 +10,12 @@ import { cn } from "@/lib/utils";
  * outlines — it sits behind and bleeds slightly past the card's
  * edges, so the card's own opaque background covers the rest of the
  * gradient and only a thin rim shows.
+ *
+ * Needs an explicit negative z-index, not just DOM order: a
+ * `position: static` sibling (the card, when it doesn't set its own
+ * `relative`) still paints BELOW any positioned element regardless of
+ * source order, so without this the beam bleeds across the card's
+ * face instead of staying behind it.
  */
 function BorderBeam({
   className,
@@ -28,7 +34,7 @@ function BorderBeam({
       aria-hidden="true"
       data-slot="border-beam"
       className={cn(
-        "border-beam pointer-events-none absolute -inset-px rounded-[inherit]",
+        "border-beam pointer-events-none absolute -inset-px -z-10 rounded-[inherit]",
         className
       )}
       style={
