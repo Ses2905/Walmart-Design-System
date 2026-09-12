@@ -80,14 +80,14 @@ The look is **bright, blue, and friendly** — confident navy-and-True-Blue with
 
 Walmart ships **two distinct icon languages** — keep them separate:
 
-1. **Functional icons** (`assets/icons/*.svg`) — single-weight, rounded line icons for the interface: `search`, `cart`, `home`, `favorite`, `location`, `filter`, `pick-up`, `shipping`, `credit-card`, `pharmacy`, etc. (40 included). They are **monochrome** and inherit color. In this system they are exposed through the **`<Icon>` component**, which inlines the SVG so it tints via `currentColor` (navy by default, white on dark, True Blue for emphasis). Original art is navy line work; never multicolor.
-   - *Source:* Walmart Brand Asset Library → Icons. Normalized (added `viewBox`, converted fills to `currentColor`) into `components/core/icon-data.js`.
+1. **Functional icons** (`assets/icons/*.svg`) — solid-fill, single-weight glyphs for the interface: `search`, `cart`, `home`, `favorite`, `location`, `filter`, `pick-up`, `shipping`, `credit-card`, `pharmacy`, etc. (40 included). They are **monochrome** and inherit color — filled shapes (`fill="currentColor"`), not stroked outlines. In this system they are exposed through the **`<Icon>` component**, which inlines the SVG so it tints via `currentColor` (navy by default, white on dark, True Blue for emphasis). Original art is solid navy fills; never multicolor, never a stroke/outline style.
+   - *Source:* Walmart Brand Asset Library → Icons. Normalized (added `viewBox`, converted fills to `currentColor`) into `components/core/icon-data.js`. Every icon shares a common **square viewBox** — the shorter dimension is padded to match the longer one, coordinates untouched — so no glyph reads visually heavier or lighter than another purely because of its canvas shape.
 
 2. **Blue-only placeholder tiles** (`assets/placeholders/*.svg`) — where real product photography isn't available, the UI kit uses clean stand-in tiles: a single navy line icon centered on a soft sky-blue (`#EAF6FD`) rounded square. Strictly on-brand blues — no multi-color illustration, no purple. Swap them for real product photos when you have them.
 
 **Rules:**
 - **No emoji**, ever, in UI or marketing.
-- **No hand-drawn one-off SVG icons** — use the shipped functional set; if something is missing, match its rounded single-weight style.
+- **No hand-drawn one-off SVG icons** — use the shipped functional set; if something is missing, match its solid single-weight fill style and square viewBox.
 - The **Spark** is a brand mark, not an icon. Always Everyday Blue; never recolored, rotated, or stretched.
 
 ---
@@ -103,18 +103,15 @@ Walmart ships **two distinct icon languages** — keep them separate:
 **Assets** (`assets/`)
 - `logos/` — `spark-everyday-blue.svg`, `spark-white.svg`, `wordmark-trueblue.svg`, `wordmark-white.svg`
 - `fonts/` — Everyday Sans web fonts (`.woff`)
-- `icons/` — 40 functional line icons (also bundled in `icon-data.js`)
+- `icons/` — 40 functional solid-fill icons on a shared square grid (also bundled in `icon-data.js`)
 - `placeholders/` — blue-only product/category stand-in tiles (navy icon on sky-blue square)
 - `illustrations/` — `vestibule-community.jpg` (community mural), `trimming-guide.png`
 
 **Components** (React; `window.WalmartDesignSystem_e58acd.*`)
-- `core/` — `Icon`, `Button`, `Badge`, `Card`, `Input`, `Checkbox`, `Switch`, `Chip`
-- `commerce/` — `Price`, `Rating`, `ProductCard`
+- `core/` — `Icon`, `Button`, `Badge`, `Card`, `Input`, `Checkbox`, `Switch`, `Chip`, `Table`
 - `navigation/` — `Tabs`
 
 **Foundation cards** (`guidelines/*.html`) — color, type, spacing, and brand specimens shown in the Design System tab.
-
-**UI kit** (`ui_kits/storefront/`) — interactive on-brand recreation of the Walmart storefront: header/search, homepage, search results, product detail, and cart.
 
 ---
 
