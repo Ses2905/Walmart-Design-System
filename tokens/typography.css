@@ -72,6 +72,10 @@
   --text-sm: 14px;
   --text-xs: 12px;
   --text-eyebrow-size: 8px;
+  /* Price numerals sit between two scale steps and don't belong to
+     either — named here rather than left as unlabeled magic numbers. */
+  --text-price-md: 30px;
+  --text-price-lg: 48px;
 
   /* ---- Line heights ---- */
   --lh-tight: 1.05;   /* @kind font */

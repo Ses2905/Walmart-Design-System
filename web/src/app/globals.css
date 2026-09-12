@@ -152,6 +152,8 @@
   --text-sm: var(--text-sm);
   --text-xs: var(--text-xs);
   --text-eyebrow-size: var(--text-eyebrow-size);
+  --text-price-md: var(--text-price-md);
+  --text-price-lg: var(--text-price-lg);
 
   /* ---- Font families ---- */
   --font-sans: var(--font-sans);
