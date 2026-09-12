@@ -29,6 +29,7 @@ function Chip({
       type="button"
       data-slot="chip"
       disabled={disabled}
+      aria-pressed={selected}
       className={cn(
         "inline-flex h-[38px] items-center gap-1.5 whitespace-nowrap rounded-pill border-med px-4 font-sans text-sm font-medium transition-colors duration-fast disabled:cursor-not-allowed disabled:opacity-50",
         selected
@@ -43,10 +44,18 @@ function Chip({
       {onRemove && (
         <span
           role="button"
+          tabIndex={0}
           aria-label="Remove"
           onClick={(e) => {
             e.stopPropagation();
             onRemove();
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              e.stopPropagation();
+              onRemove();
+            }
           }}
           className="-mr-1 inline-flex"
         >

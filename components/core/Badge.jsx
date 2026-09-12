@@ -15,8 +15,8 @@ export function Badge({ variant = 'neutral', size = 'md', children, style, ...re
     outline: { background: 'transparent', color: 'var(--wm-gray-700)', boxShadow: 'inset 0 0 0 1px var(--wm-gray-300)' },
   };
   const sizes = {
-    sm: { font: 11, padding: '2px 8px', radius: 'var(--radius-xs)' },
-    md: { font: 12, padding: '4px 10px', radius: 'var(--radius-sm)' },
+    sm: { font: 'var(--text-2xs)', padding: '2px 8px', radius: 'var(--radius-xs)' },
+    md: { font: 'var(--text-xs)', padding: '4px 10px', radius: 'var(--radius-sm)' },
   };
   const v = variants[variant] || variants.neutral;
   const s = sizes[size] || sizes.md;
@@ -30,8 +30,8 @@ export function Badge({ variant = 'neutral', size = 'md', children, style, ...re
         fontSize: s.font,
         fontWeight: 'var(--fw-bold)',
         lineHeight: 1.2,
-        letterSpacing: variant === 'rollback' || variant === 'clearance' ? '0.02em' : 0,
-        textTransform: variant === 'rollback' || variant === 'clearance' ? 'uppercase' : 'none',
+        letterSpacing: variant === 'brand' || variant === 'clearance' ? '0.02em' : 0,
+        textTransform: variant === 'brand' || variant === 'clearance' ? 'uppercase' : 'none',
         padding: s.padding,
         borderRadius: s.radius,
         whiteSpace: 'nowrap',

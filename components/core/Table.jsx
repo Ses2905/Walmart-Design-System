@@ -25,6 +25,7 @@ export function Table({ columns = [], rows = [], getRowKey, style, ...rest }) {
             {columns.map((col) => (
               <th
                 key={col.key}
+                scope="col"
                 style={{
                   textAlign: col.align === 'right' ? 'right' : 'left',
                   padding: '12px 16px',

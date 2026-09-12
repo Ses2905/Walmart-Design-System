@@ -51,6 +51,7 @@ function TableHead({
   return (
     <th
       data-slot="table-head"
+      scope="col"
       className={cn(
         "whitespace-nowrap px-4 py-3 text-xs font-bold uppercase tracking-wide text-ink-tertiary",
         numeric ? "text-right" : "text-left",

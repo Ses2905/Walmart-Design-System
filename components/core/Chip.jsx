@@ -15,6 +15,7 @@ export function Chip({ children, selected = false, icon, onRemove, onClick, disa
       type="button"
       onClick={onClick}
       disabled={disabled}
+      aria-pressed={selected}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -30,7 +31,20 @@ export function Chip({ children, selected = false, icon, onRemove, onClick, disa
       {icon && <Icon name={icon} size={16} />}
       {children}
       {onRemove && (
-        <span onClick={(e) => { e.stopPropagation(); onRemove(); }} style={{ display: 'inline-flex', marginRight: -4 }} aria-label="Remove">
+        <span
+          role="button"
+          tabIndex={0}
+          aria-label="Remove"
+          onClick={(e) => { e.stopPropagation(); onRemove(); }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              e.stopPropagation();
+              onRemove();
+            }
+          }}
+          style={{ display: 'inline-flex', marginRight: -4 }}
+        >
           <Icon name="close" size={14} />
         </span>
       )}

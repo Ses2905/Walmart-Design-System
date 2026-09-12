@@ -64,9 +64,9 @@ function Input({
         />
       </div>
       {error ? (
-        <span className="text-[13px] text-error">{error}</span>
+        <span className="text-xs text-error">{error}</span>
       ) : hint ? (
-        <span className="text-[13px] text-ink-tertiary">{hint}</span>
+        <span className="text-xs text-ink-tertiary">{hint}</span>
       ) : null}
     </div>
   );

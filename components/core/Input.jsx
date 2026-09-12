@@ -31,8 +31,8 @@ export function Input({ label, hint, error, iconLeft, size = 'md', id, style, co
         />
       </div>
       {error
-        ? <span style={{ fontSize: 13, color: 'var(--wm-error)' }}>{error}</span>
-        : hint ? <span style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>{hint}</span> : null}
+        ? <span style={{ fontSize: 'var(--text-xs)', color: 'var(--wm-error)' }}>{error}</span>
+        : hint ? <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>{hint}</span> : null}
     </div>
   );
 }
