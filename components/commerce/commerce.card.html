@@ -1,0 +1,48 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Product Cards & Price" subtitle="The core merchandising tile, price block, rating, badges" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--color-surface); padding: 24px; }
+  .sec { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-tertiary); margin: 0 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+  .row { display: flex; gap: 28px; align-items: flex-end; flex-wrap: wrap; background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 20px; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+</style></head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { ProductCard, Price, Rating, Badge } = window.WalmartDesignSystem_e58acd;
+    function Demo() {
+      return (
+        <div>
+          <div className="sec">Product tiles</div>
+          <div className="grid">
+            <ProductCard brand="Great Value" title="Whole Vitamin D Milk, 1 Gallon" price={3.12} rating={4.5} reviews={1284} badge={{label:'Rollback',variant:'rollback'}} fulfillment="Pickup tomorrow" />
+            <ProductCard brand="Mainstays" title="7-Piece Bath Towel Set, Quick-Dry Cotton" price={14.88} was={22.00} rating={4} reviews={612} />
+            <ProductCard title="onn. 50&quot; 4K UHD Roku Smart TV" price={198.00} rating={4.5} reviews={3940} badge={{label:'Best seller',variant:'info'}} sponsored />
+          </div>
+          <div className="sec">Price & rating & badges</div>
+          <div className="row">
+            <Price value={12.98} size="sm" />
+            <Price value={12.98} was={16.98} size="md" />
+            <Price value={198.00} size="lg" />
+            <div style={{display:'flex',flexDirection:'column',gap:10}}>
+              <Rating value={4.5} count={1284} />
+              <div className="badges">
+                <Badge variant="rollback">Rollback</Badge>
+                <Badge variant="clearance">Clearance</Badge>
+                <Badge variant="success">In stock</Badge>
+                <Badge variant="info">Best seller</Badge>
+                <Badge variant="brand">Walmart+</Badge>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+  </script>
+</body></html>

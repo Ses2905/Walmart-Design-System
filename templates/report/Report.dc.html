@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Report" description="Flowing long-form report — exec summary, findings, data tables, recommendations. Paginates at print." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./doc-page.js"></script>
+<style>doc-page:not(:defined){visibility:hidden}body{margin:0}a{color:#0053e2}a:hover{color:#001e60}</style>
+</helmet>
+<doc-page margin="0.85in">
+
+<div slot="header" style="display:flex;justify-content:space-between;align-items:center;padding-bottom:8px;border-bottom:1px solid #e2e8f0;font-family:var(--font-ui);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#a0aec0">
+  <span>Quarterly product report</span>
+  <span>Internal</span>
+</div>
+
+<div slot="footer" style="display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid #e2e8f0;font-family:var(--font-ui);font-size:9px;color:#a0aec0">
+  <span>Walmart · Product</span>
+  <span style="font-family:var(--font-mono)">September 2026</span>
+</div>
+
+<div style="font-family:var(--font-ui);color:#2d3748">
+
+  <span style="display:block;font-family:var(--font-ui);font-size:8px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#0053e2;margin-bottom:14px">Q3 2026 · Product review</span>
+  <h1 style="font-family:var(--font-display);font-weight:300;font-size:42px;line-height:1.05;letter-spacing:-0.02em;margin:0 0 16px;color:#001e60;max-width:20ch;text-wrap:balance">The title of the report, stated as a finding</h1>
+  <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:#4a5568;max-width:62ch;text-wrap:pretty">A standfirst paragraph that says what the reader will learn and what changed since the last report. Keep it to two sentences.</p>
+  <div style="display:flex;gap:28px;margin:20px 0 34px;padding-top:14px;border-top:2px solid #001e60;font-size:11.5px;color:#718096">
+    <span><b style="display:block;color:#001e60;font-size:12.5px;font-weight:500">Author name</b>Director, Product</span>
+    <span><b style="display:block;color:#001e60;font-size:12.5px;font-weight:500">Reviewed by</b>Design · Engineering · Finance</span>
+    <span><b style="display:block;color:#001e60;font-size:12.5px;font-weight:500;font-family:var(--font-mono)">11 Sep 2026</b>Published</span>
+  </div>
+
+  <h2 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 12px;color:#001e60;letter-spacing:-0.01em">Executive summary</h2>
+  <p style="margin:0 0 12px;font-size:13.5px;line-height:1.65;color:#2d3748;max-width:70ch;text-wrap:pretty;orphans:3;widows:3">Open with the conclusion. State what happened this quarter in one paragraph, in the same words you would use out loud. A reader who stops here should still know the decision you are recommending and why.</p>
+  <p style="margin:0 0 24px;font-size:13.5px;line-height:1.65;color:#2d3748;max-width:70ch;text-wrap:pretty;orphans:3;widows:3">Follow with the qualification: what the numbers do not yet show, and which of last quarter's assumptions turned out to be wrong. Naming the miss early buys credibility for everything after it.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:30px;break-inside:avoid">
+    <div style="border-top:2px solid #0053e2;padding-top:12px"><div style="font-family:var(--font-mono);font-size:28px;font-weight:500;color:#001e60;letter-spacing:-0.03em;line-height:1">+18%</div><div style="font-size:11.5px;color:#718096;margin-top:6px;line-height:1.4">Weekly active accounts, quarter over quarter</div></div>
+    <div style="border-top:2px solid #0053e2;padding-top:12px"><div style="font-family:var(--font-mono);font-size:28px;font-weight:500;color:#001e60;letter-spacing:-0.03em;line-height:1">3.2M</div><div style="font-size:11.5px;color:#718096;margin-top:6px;line-height:1.4">Orders processed through the new flow</div></div>
+    <div style="border-top:2px solid #a9ddf7;padding-top:12px"><div style="font-family:var(--font-mono);font-size:28px;font-weight:500;color:#001e60;letter-spacing:-0.03em;line-height:1">−0.4pt</div><div style="font-size:11.5px;color:#718096;margin-top:6px;line-height:1.4">Guardrail: checkout error rate, against plan</div></div>
+  </div>
+
+  <h2 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 12px;color:#001e60;letter-spacing:-0.01em">What we learned</h2>
+  <h3 style="font-family:var(--font-display);font-weight:400;font-size:15px;margin:0 0 8px;color:#001e60">First finding, written as a claim</h3>
+  <p style="margin:0 0 16px;font-size:13.5px;line-height:1.65;color:#2d3748;max-width:70ch;text-wrap:pretty;orphans:3;widows:3">Support the claim with the specific evidence behind it, then say how confident you are. Where a number is directional rather than significant, label it as such — readers will trust the significant ones more.</p>
+  <h3 style="font-family:var(--font-display);font-weight:400;font-size:15px;margin:0 0 8px;color:#001e60">Second finding</h3>
+  <p style="margin:0 0 16px;font-size:13.5px;line-height:1.65;color:#2d3748;max-width:70ch;text-wrap:pretty;orphans:3;widows:3">Keep each finding to a single idea. If a paragraph needs a chart to make sense, put the chart directly under it rather than in an appendix.</p>
+
+  <blockquote style="margin:0 0 26px;padding:16px 20px;border-left:2px solid #0053e2;background:#f7fafc;break-inside:avoid">
+    <p style="margin:0 0 8px;font-family:var(--font-display);font-weight:300;font-size:17px;line-height:1.4;color:#001e60;max-width:52ch;text-wrap:pretty">A verbatim customer quote earns more attention than a paraphrase, so use the customer's own words.</p>
+    <cite style="font-style:normal;font-size:11px;color:#718096;font-family:var(--font-ui)">Research participant · Store manager, Texas</cite>
+  </blockquote>
+
+  <h2 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 12px;color:#001e60;letter-spacing:-0.01em">The numbers</h2>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:10px;font-size:12.5px">
+    <thead>
+      <tr style="border-bottom:2px solid #001e60">
+        <th style="text-align:left;padding:8px 12px 8px 0;font-family:var(--font-ui);font-size:8px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#0053e2">Metric</th>
+        <th style="text-align:right;padding:8px 12px;font-family:var(--font-ui);font-size:8px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#0053e2">Q2</th>
+        <th style="text-align:right;padding:8px 12px;font-family:var(--font-ui);font-size:8px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#0053e2">Q3</th>
+        <th style="text-align:right;padding:8px 0 8px 12px;font-family:var(--font-ui);font-size:8px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#0053e2">Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #edf2f7;break-inside:avoid"><td style="padding:9px 12px 9px 0;color:#2d3748">Weekly active accounts</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#4a5568">2.7M</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#001e60">3.2M</td><td style="text-align:right;padding:9px 0 9px 12px;font-family:var(--font-mono);color:#0053e2">+18%</td></tr>
+      <tr style="border-bottom:1px solid #edf2f7;break-inside:avoid"><td style="padding:9px 12px 9px 0;color:#2d3748">Conversion, search to cart</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#4a5568">4.1%</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#001e60">4.6%</td><td style="text-align:right;padding:9px 0 9px 12px;font-family:var(--font-mono);color:#0053e2">+0.5pt</td></tr>
+      <tr style="border-bottom:1px solid #edf2f7;break-inside:avoid"><td style="padding:9px 12px 9px 0;color:#2d3748">Median time to first order</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#4a5568">6m 20s</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#001e60">5m 05s</td><td style="text-align:right;padding:9px 0 9px 12px;font-family:var(--font-mono);color:#0053e2">−20%</td></tr>
+      <tr style="border-bottom:1px solid #edf2f7;break-inside:avoid"><td style="padding:9px 12px 9px 0;color:#2d3748">Checkout error rate</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#4a5568">1.1%</td><td style="text-align:right;padding:9px 12px;font-family:var(--font-mono);color:#001e60">0.7%</td><td style="text-align:right;padding:9px 0 9px 12px;font-family:var(--font-mono);color:#0053e2">−0.4pt</td></tr>
+    </tbody>
+  </table>
+  <p style="margin:0 0 28px;font-size:10.5px;color:#a0aec0;line-height:1.45">Source: internal analytics, 1 Jul – 30 Sep 2026. Figures exclude test traffic.</p>
+
+  <h2 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 12px;color:#001e60;letter-spacing:-0.01em">Recommendations</h2>
+  <ol style="margin:0 0 26px;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#2d3748;max-width:70ch">
+    <li><b style="font-weight:500;color:#001e60">Lead with the decision.</b> Say what should happen, who owns it, and by when. Vague recommendations get deferred.</li>
+    <li><b style="font-weight:500;color:#001e60">Attach a cost.</b> Headcount, quarters, or dollars — a recommendation without a price is a wish.</li>
+    <li><b style="font-weight:500;color:#001e60">Name the trade.</b> What gets dropped to make room, stated plainly.</li>
+  </ol>
+
+  <div style="break-inside:avoid;border-top:2px solid #001e60;padding-top:16px">
+    <span style="display:block;font-family:var(--font-ui);font-size:8px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#0053e2;margin-bottom:10px">Next review</span>
+    <p style="margin:0;font-size:13px;line-height:1.6;color:#4a5568;max-width:62ch;text-wrap:pretty">State the date of the next checkpoint and the single question it will answer.</p>
+  </div>
+
+</div>
+</doc-page>
+
+</x-dc>
+</body>
+</html>

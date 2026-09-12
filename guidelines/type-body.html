@@ -1,0 +1,26 @@
+<!-- @dsCard group="Type" viewport="700x230" name="Paragraph & Numerals" subtitle="Body copy at reading size; tabular price treatment" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--color-surface); padding: 24px; display: flex; gap: 28px; }
+  .col { flex: 1; }
+  p.body { font-size: 15px; line-height: 1.55; color: var(--text-secondary); max-width: 38ch; }
+  .priceblock { display: flex; align-items: baseline; gap: 4px; color: var(--text-price); }
+  .cur { font-size: 18px; font-weight: 700; transform: translateY(-10px); }
+  .dollars { font-size: 46px; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+  .cents { font-size: 18px; font-weight: 700; transform: translateY(-10px); }
+  .was { font-size: 13px; color: var(--text-tertiary); margin-top: 8px; }
+  .was s { color: var(--text-tertiary); }
+  .save { color: var(--text-savings); font-weight: 700; }
+  .h { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--text-tertiary); margin-bottom: 12px; }
+</style></head>
+<body>
+  <div class="col">
+    <div class="h">Body copy</div>
+    <p class="body" style="font-size: 12px">Our typeface, Everyday Sans, keeps interface text clear and human at small sizes. Use Regular for paragraphs and Medium to give labels a touch more presence.</p>
+  </div>
+  <div class="col">
+    <div class="h" style="font-weight: 500">Price numerals</div>
+    <div class="priceblock"><span class="cur">$</span><span class="dollars">12</span><span class="cents">98</span></div>
+    <div class="was"><s>$16.98</s> &nbsp;<span class="save">You save $4.00</span></div>
+  </div>
+</body></html>

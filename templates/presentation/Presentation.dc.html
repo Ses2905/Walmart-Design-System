@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Presentation" description="Multipurpose 16-layout slide template — cover, text, data & charts, infographics, tables, quotes, buyer persona & VOC" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  body{margin:0;background:#2e333c}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:30px;padding:34px}
+  .s{width:1280px;height:720px;flex:none;position:relative;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.4);font-family:var(--font-sans);color:var(--wm-bentonville-blue);box-sizing:border-box}
+  .h{font-family:var(--font-display);font-weight:var(--tpl-hw,300);letter-spacing:-.02em;line-height:1.02;margin:0;color:inherit}
+  .kick{font-family:var(--font-sans);font-weight:400;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--tpl-accent,#0053e2)}
+  .pg{position:absolute;right:36px;bottom:24px;font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;opacity:.5;display:var(--tpl-pg,block)}
+  .foot{position:absolute;left:64px;bottom:22px;font-family:var(--font-ui);font-size:13px;color:var(--wm-gray-500);display:flex;align-items:center;gap:9px}
+  .foot img{height:14px}
+  .s p{font-weight:var(--tpl-bw,300);color:inherit}
+  .s h3{font-family:var(--font-sans);font-weight:var(--tpl-sw,400);color:inherit}
+</style>
+</helmet>
+<div class="deck" style="--tpl-accent:#0053E2;--tpl-hw:300;--tpl-bw:300;--tpl-sw:400;--tpl-pg:block" ref="{{ setRoot }}">
+
+<!-- 01 COVER -->
+<section class="s" data-screen-label="01 Cover" style="background:var(--wm-bentonville-blue);color:#fff;padding:72px 64px;display:flex;flex-direction:column;justify-content:space-between">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start"><img src="../../assets/logos/spark-everyday-blue.svg" style="height:54px" alt="Spark"><span style="font-family:var(--font-ui);font-size:14px;letter-spacing:.14em;text-transform:uppercase;opacity:.7">Q3 2026 · Confidential</span></div>
+  <div style="max-width:920px"><h1 class="h" style="font-size:80px;line-height:.98">Presentation title goes here</h1><p style="font-size:26px;line-height:1.35;color:var(--wm-sky-blue);margin:24px 0 0;max-width:760px">A clear, one-line subtitle that frames the story you're about to tell.</p></div>
+  <div style="display:flex;gap:44px;font-family:var(--font-ui);font-size:15px;color:rgba(255,255,255,.72)"><span><b style="display:block;color:#fff;font-size:16px">Presenter Name</b>Team · Role</span><span><b style="display:block;color:#fff;font-size:16px">July 2026</b>Company All-Hands</span></div>
+</section>
+
+<!-- 02 SECTION DIVIDER -->
+<section class="s" data-screen-label="02 Section divider" style="background:var(--tpl-accent,#0053e2);color:#fff;padding:64px;display:flex;flex-direction:column;justify-content:center">
+  <span style="font-family:var(--font-mono);font-size:110px;line-height:1;font-weight:700;color:rgba(255,255,255,.3)">01</span>
+  <h2 class="h" style="font-size:62px;margin:10px 0 0">The opportunity</h2>
+  <p style="font-size:22px;line-height:1.4;color:rgba(255,255,255,.85);max-width:640px;margin:20px 0 0">One or two sentences that set up what this section covers and why it matters.</p>
+</section>
+
+<!-- 03 AGENDA -->
+<section class="s" data-screen-label="03 Agenda" style="background:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Agenda</span>
+  <h2 class="h" style="font-size:46px;margin:12px 0 34px">What we'll cover today</h2>
+  <div style="display:flex;flex-direction:column;flex:1">
+    <div style="display:flex;align-items:center;gap:26px;padding:18px 0;border-top:1px solid var(--wm-gray-200)"><span style="font-family:var(--font-mono);font-size:20px;color:var(--tpl-accent,#0053e2);font-weight:700;width:40px">01</span><span style="font-size:23px;font-weight:500;flex:1">Where we are today</span><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500)">5 min</span></div>
+    <div style="display:flex;align-items:center;gap:26px;padding:18px 0;border-top:1px solid var(--wm-gray-200)"><span style="font-family:var(--font-mono);font-size:20px;color:var(--tpl-accent,#0053e2);font-weight:700;width:40px">02</span><span style="font-size:23px;font-weight:500;flex:1">The customer opportunity</span><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500)">8 min</span></div>
+    <div style="display:flex;align-items:center;gap:26px;padding:18px 0;border-top:1px solid var(--wm-gray-200)"><span style="font-family:var(--font-mono);font-size:20px;color:var(--tpl-accent,#0053e2);font-weight:700;width:40px">03</span><span style="font-size:23px;font-weight:500;flex:1">Our plan &amp; roadmap</span><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500)">10 min</span></div>
+    <div style="display:flex;align-items:center;gap:26px;padding:18px 0;border-top:1px solid var(--wm-gray-200)"><span style="font-family:var(--font-mono);font-size:20px;color:var(--tpl-accent,#0053e2);font-weight:700;width:40px">04</span><span style="font-size:23px;font-weight:500;flex:1">What we need from you</span><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500)">4 min</span></div>
+    <div style="display:flex;align-items:center;gap:26px;padding:18px 0;border-top:1px solid var(--wm-gray-200);border-bottom:1px solid var(--wm-gray-200)"><span style="font-family:var(--font-mono);font-size:20px;color:var(--tpl-accent,#0053e2);font-weight:700;width:40px">05</span><span style="font-size:23px;font-weight:500;flex:1">Q&amp;A</span><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500)">10 min</span></div>
+  </div>
+  <div class="foot"><img src="../../assets/logos/spark-everyday-blue.svg">{{ footer }}</div><div class="pg">03 / 24</div>
+</section>
+
+<!-- 04 TEXT ONE COLUMN -->
+<section class="s" data-screen-label="04 Text — one column" style="background:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Overview</span>
+  <h2 class="h" style="font-size:46px;margin:12px 0 24px;max-width:900px">A single, focused idea stated plainly</h2>
+  <p style="font-size:23px;line-height:1.6;max-width:940px;margin:0 0 18px;color:var(--wm-bentonville-blue)">Lead with the one thing you want the audience to remember. Keep the opening short and declarative so it reads from the back of the room.</p>
+  <p style="font-size:20px;line-height:1.65;max-width:940px;margin:0;color:var(--wm-bentonville-blue)">Follow with supporting detail. Use this layout for narrative moments, context-setting, or a considered argument where a single column keeps the reader's eye moving straight down the page.</p>
+  <div class="foot"><img src="../../assets/logos/spark-everyday-blue.svg">{{ footer }}</div><div class="pg">04 / 24</div>
+</section>
+
+<!-- 05 TEXT TWO COLUMN -->
+<section class="s" data-screen-label="05 Text — two column" style="background:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Context</span>
+  <h2 class="h" style="font-size:46px;margin:12px 0 32px">Two columns for compare or continue</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1">
+    <div><h3 style="font-size:22px;margin:0 0 12px;color:var(--tpl-accent,#0053e2)">The situation</h3><p style="font-size:19px;line-height:1.6;color:var(--wm-bentonville-blue);margin:0">Use the left column to describe the current state — the facts, the constraints, and the forces at play that everyone in the room already recognizes.</p></div>
+    <div><h3 style="font-size:22px;margin:0 0 12px;color:var(--tpl-accent,#0053e2)">The implication</h3><p style="font-size:19px;line-height:1.6;color:var(--wm-bentonville-blue);margin:0">Use the right column to draw out what it means. Two balanced columns work for before/after, problem/solution, or a longer passage.</p></div>
+  </div>
+  <div class="foot"><img src="../../assets/logos/spark-everyday-blue.svg">{{ footer }}</div><div class="pg">05 / 24</div>
+</section>
+
+<!-- 06 THREE FEATURE CARDS -->
+<section class="s" data-screen-label="06 Three cards" style="background:var(--wm-gray-50);padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Pillars</span>
+  <h2 class="h" style="font-size:46px;margin:12px 0 32px">Three things we believe</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;flex:1">
+    <div style="background:#fff;border-radius:16px;padding:32px;display:flex;flex-direction:column;border:1px solid var(--wm-gray-200)"><div style="width:52px;height:52px;border-radius:12px;background:var(--wm-blue-50);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><span style="font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--tpl-accent,#0053e2)">1</span></div><h3 style="font-size:22px;margin:0 0 10px">Customer obsession</h3><p style="font-size:17px;line-height:1.55;color:var(--wm-bentonville-blue);margin:0">A short paragraph explaining the pillar and why it earns its place on the slide.</p></div>
+    <div style="background:#fff;border-radius:16px;padding:32px;display:flex;flex-direction:column;border:1px solid var(--wm-gray-200)"><div style="width:52px;height:52px;border-radius:12px;background:var(--wm-sky-50);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><span style="font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--tpl-accent,#0053e2)">2</span></div><h3 style="font-size:22px;margin:0 0 10px">Everyday value</h3><p style="font-size:17px;line-height:1.55;color:var(--wm-bentonville-blue);margin:0">Keep the three cards parallel in length and tone so the row reads as a set.</p></div>
+    <div style="background:#fff;border-radius:16px;padding:32px;display:flex;flex-direction:column;border:1px solid var(--wm-gray-200)"><div style="width:52px;height:52px;border-radius:12px;background:var(--wm-sky-50);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><span style="font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--wm-warning)">3</span></div><h3 style="font-size:22px;margin:0 0 10px">Move fast</h3><p style="font-size:17px;line-height:1.55;color:var(--wm-bentonville-blue);margin:0">Swap the accent tile color to signal category without adding visual noise.</p></div>
+  </div>
+  <div class="pg">06 / 24</div>
+</section>
+
+<!-- 07 BIG QUOTE -->
+<section class="s" data-screen-label="07 Quote" style="background:var(--wm-sky-50);padding:76px 96px;display:flex;flex-direction:column;justify-content:center">
+  <span style="font-family:var(--font-display);font-weight:900;font-size:120px;line-height:.6;color:var(--wm-everyday-blue)">&ldquo;</span>
+  <blockquote class="h" style="font-weight:400;font-size:44px;line-height:1.25;letter-spacing:-.01em;margin:8px 0 0;max-width:960px;color:var(--wm-bentonville-blue)">The best way to predict the customer's next move is to serve the one they're making right now.</blockquote>
+  <div style="display:flex;align-items:center;gap:16px;margin-top:36px"><span style="font-family:var(--font-ui);font-size:17px;font-weight:600">Jordan Ellis</span><span style="font-family:var(--font-ui);font-size:17px;color:var(--wm-gray-500)">VP, Customer Experience</span></div>
+  <div class="pg">07 / 24</div>
+</section>
+
+<!-- 08 KPI STATS -->
+<section class="s" data-screen-label="08 Stats / KPIs" style="background:var(--wm-bentonville-blue);color:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span style="font-family:var(--font-ui);font-weight:400;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--wm-everyday-blue)">By the numbers</span>
+  <h2 class="h" style="font-size:44px;margin:12px 0 44px">The quarter at a glance</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;flex:1">
+    <div style="border-top:4px solid var(--tpl-accent,#0053e2);padding-top:22px;display:flex;flex-direction:column"><span style="font-family:var(--font-display);font-weight:900;font-size:86px;line-height:.9;letter-spacing:-.03em">+24%</span><span style="font-size:20px;color:var(--wm-sky-blue);margin-top:12px">YoY revenue growth</span><span style="font-family:var(--font-ui);font-size:14px;color:rgba(255,255,255,.55);margin-top:5px">vs. +11% last year</span></div>
+    <div style="border-top:4px solid var(--wm-everyday-blue);padding-top:22px;display:flex;flex-direction:column"><span style="font-family:var(--font-display);font-weight:900;font-size:86px;line-height:.9;letter-spacing:-.03em">4.8M</span><span style="font-size:20px;color:var(--wm-sky-blue);margin-top:12px">Weekly active shoppers</span><span style="font-family:var(--font-ui);font-size:14px;color:rgba(255,255,255,.55);margin-top:5px">+620K this quarter</span></div>
+    <div style="border-top:4px solid var(--wm-sky-blue);padding-top:22px;display:flex;flex-direction:column"><span style="font-family:var(--font-display);font-weight:900;font-size:86px;line-height:.9;letter-spacing:-.03em">92</span><span style="font-size:20px;color:var(--wm-sky-blue);margin-top:12px">Customer NPS</span><span style="font-family:var(--font-ui);font-size:14px;color:rgba(255,255,255,.55);margin-top:5px">Best-in-class for retail</span></div>
+  </div>
+  <div class="pg" style="color:#fff">08 / 24</div>
+</section>
+
+<!-- 09 BAR CHART -->
+<section class="s" data-screen-label="09 Bar chart" style="background:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Data</span>
+  <h2 class="h" style="font-size:44px;margin:12px 0 4px">Revenue by category</h2>
+  <p style="font-size:18px;color:var(--wm-bentonville-blue);margin:0 0 26px">Quarterly, $ millions · FY26</p>
+  <div data-om-raster="true" style="flex:1;display:flex;align-items:flex-end;gap:40px;padding:0 12px 42px;position:relative">
+    <div style="position:absolute;left:0;right:0;bottom:42px;height:1px;background:var(--wm-gray-200)"></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2)">$48</span><div style="width:100%;max-width:92px;height:190px;background:var(--tpl-accent,#0053e2);border-radius:6px 6px 0 0"></div><span style="font-family:var(--font-ui);font-size:15px;color:var(--wm-bentonville-blue)">Grocery</span></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2)">$36</span><div style="width:100%;max-width:92px;height:142px;background:var(--wm-everyday-blue);border-radius:6px 6px 0 0"></div><span style="font-family:var(--font-ui);font-size:15px;color:var(--wm-bentonville-blue)">General</span></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2)">$29</span><div style="width:100%;max-width:92px;height:116px;background:var(--wm-everyday-blue);border-radius:6px 6px 0 0"></div><span style="font-family:var(--font-ui);font-size:15px;color:var(--wm-bentonville-blue)">Health</span></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2)">$21</span><div style="width:100%;max-width:92px;height:84px;background:var(--wm-sky-blue);border-radius:6px 6px 0 0"></div><span style="font-family:var(--font-ui);font-size:15px;color:var(--wm-bentonville-blue)">Apparel</span></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2)">$14</span><div style="width:100%;max-width:92px;height:56px;background:var(--wm-sky-blue);border-radius:6px 6px 0 0"></div><span style="font-family:var(--font-ui);font-size:15px;color:var(--wm-bentonville-blue)">Home</span></div>
+  </div>
+  <div class="pg">09 / 24</div>
+</section>
+
+<!-- 10 DONUT + LINE -->
+<section class="s" data-screen-label="10 Charts — donut & line" style="background:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Data</span>
+  <h2 class="h" style="font-size:44px;margin:12px 0 30px">Mix &amp; momentum</h2>
+  <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:48px;flex:1;align-items:center">
+    <div data-om-raster="true" style="display:flex;align-items:center;gap:28px">
+      <div style="width:200px;height:200px;border-radius:50%;background:conic-gradient(var(--tpl-accent,#0053e2) 0 46%,var(--wm-everyday-blue) 46% 74%,var(--wm-sky-blue) 74% 90%,var(--wm-bentonville-blue) 90% 100%);display:flex;align-items:center;justify-content:center"><div style="width:112px;height:112px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-family:var(--font-display);font-weight:900;font-size:30px">$148M</span><span style="font-family:var(--font-ui);font-size:12px;color:var(--wm-gray-500)">total</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-family:var(--font-ui);font-size:15px">
+        <span style="display:flex;align-items:center;gap:9px"><i style="width:12px;height:12px;border-radius:3px;background:var(--tpl-accent,#0053e2);display:inline-block"></i>Online 46%</span>
+        <span style="display:flex;align-items:center;gap:9px"><i style="width:12px;height:12px;border-radius:3px;background:var(--wm-everyday-blue);display:inline-block"></i>In-store 28%</span>
+        <span style="display:flex;align-items:center;gap:9px"><i style="width:12px;height:12px;border-radius:3px;background:var(--wm-sky-blue);display:inline-block"></i>Pickup 16%</span>
+        <span style="display:flex;align-items:center;gap:9px"><i style="width:12px;height:12px;border-radius:3px;background:var(--wm-bentonville-blue);display:inline-block"></i>Other 10%</span>
+      </div>
+    </div>
+    <div data-om-raster="true" style="height:260px;position:relative">
+      <svg viewBox="0 0 520 260" style="width:100%;height:100%">
+        <line x1="0" y1="60" x2="520" y2="60" stroke="#eef0f3"/><line x1="0" y1="130" x2="520" y2="130" stroke="#eef0f3"/><line x1="0" y1="200" x2="520" y2="200" stroke="#eef0f3"/>
+        <polyline points="10,200 100,178 190,150 280,120 370,78 460,40" fill="none" stroke="#0053e2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--tpl-accent,#0053e2)"/>
+        <circle cx="460" cy="40" r="6" fill="#0053e2" style="fill:var(--tpl-accent,#0053e2)"/>
+      </svg>
+      <span style="position:absolute;top:0;right:0;font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500)">Digital orders, 6 mo →</span>
+    </div>
+  </div>
+  <div class="pg">10 / 24</div>
+</section>
+
+<!-- 11 TABLE -->
+<section class="s" data-screen-label="11 Table" style="background:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Detail</span>
+  <h2 class="h" style="font-size:44px;margin:12px 0 28px">Performance by region</h2>
+  <table style="width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:18px">
+    <thead><tr style="text-align:left;color:#fff;background:var(--wm-bentonville-blue)"><th style="padding:16px 20px;font-weight:700;border-radius:8px 0 0 0">Region</th><th style="padding:16px 20px;font-weight:700">Revenue</th><th style="padding:16px 20px;font-weight:700">Growth</th><th style="padding:16px 20px;font-weight:700">NPS</th><th style="padding:16px 20px;font-weight:700;border-radius:0 8px 0 0">Status</th></tr></thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--wm-gray-200)"><td style="padding:15px 20px;font-weight:600">Northeast</td><td style="padding:15px 20px">$42.1M</td><td style="padding:15px 20px;color:var(--wm-success);font-weight:600">+18%</td><td style="padding:15px 20px">91</td><td style="padding:15px 20px"><span style="background:var(--wm-success-bg);color:var(--wm-success);padding:4px 12px;border-radius:99px;font-size:14px;font-weight:600">On track</span></td></tr>
+      <tr style="border-bottom:1px solid var(--wm-gray-200);background:var(--wm-gray-50)"><td style="padding:15px 20px;font-weight:600">Southeast</td><td style="padding:15px 20px">$38.6M</td><td style="padding:15px 20px;color:var(--wm-success);font-weight:600">+24%</td><td style="padding:15px 20px">93</td><td style="padding:15px 20px"><span style="background:var(--wm-success-bg);color:var(--wm-success);padding:4px 12px;border-radius:99px;font-size:14px;font-weight:600">On track</span></td></tr>
+      <tr style="border-bottom:1px solid var(--wm-gray-200)"><td style="padding:15px 20px;font-weight:600">Midwest</td><td style="padding:15px 20px">$29.4M</td><td style="padding:15px 20px;color:var(--wm-warning);font-weight:600">+6%</td><td style="padding:15px 20px">88</td><td style="padding:15px 20px"><span style="background:var(--wm-sky-50);color:var(--wm-warning);padding:4px 12px;border-radius:99px;font-size:14px;font-weight:600">Watch</span></td></tr>
+      <tr style="border-bottom:1px solid var(--wm-gray-200);background:var(--wm-gray-50)"><td style="padding:15px 20px;font-weight:600">West</td><td style="padding:15px 20px">$37.9M</td><td style="padding:15px 20px;color:var(--wm-success);font-weight:600">+21%</td><td style="padding:15px 20px">90</td><td style="padding:15px 20px"><span style="background:var(--wm-success-bg);color:var(--wm-success);padding:4px 12px;border-radius:99px;font-size:14px;font-weight:600">On track</span></td></tr>
+    </tbody>
+  </table>
+  <div class="pg">11 / 24</div>
+</section>
+
+<!-- 12 PROCESS INFOGRAPHIC -->
+<section class="s" data-screen-label="12 Process infographic" style="background:var(--wm-gray-50);padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">How it works</span>
+  <h2 class="h" style="font-size:44px;margin:12px 0 40px">Four steps to launch</h2>
+  <div style="display:flex;align-items:flex-start;gap:0;flex:1">
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;position:relative"><div style="width:76px;height:76px;border-radius:50%;background:var(--tpl-accent,#0053e2);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:30px">1</div><h3 style="font-size:19px;margin:0">Discover</h3><p style="font-size:15px;line-height:1.5;color:var(--wm-bentonville-blue);margin:0;max-width:200px">Research the customer need and size the opportunity.</p></div>
+    <div style="width:40px;height:2px;background:var(--wm-gray-300);margin-top:37px"></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px"><div style="width:76px;height:76px;border-radius:50%;background:var(--wm-everyday-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:30px">2</div><h3 style="font-size:19px;margin:0">Design</h3><p style="font-size:15px;line-height:1.5;color:var(--wm-bentonville-blue);margin:0;max-width:200px">Prototype and pressure-test with real shoppers.</p></div>
+    <div style="width:40px;height:2px;background:var(--wm-gray-300);margin-top:37px"></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px"><div style="width:76px;height:76px;border-radius:50%;background:var(--wm-sky-blue);color:var(--wm-bentonville-blue);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:30px">3</div><h3 style="font-size:19px;margin:0">Deliver</h3><p style="font-size:15px;line-height:1.5;color:var(--wm-bentonville-blue);margin:0;max-width:200px">Ship to a pilot market and instrument everything.</p></div>
+    <div style="width:40px;height:2px;background:var(--wm-gray-300);margin-top:37px"></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px"><div style="width:76px;height:76px;border-radius:50%;background:var(--wm-bentonville-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:30px">4</div><h3 style="font-size:19px;margin:0">Scale</h3><p style="font-size:15px;line-height:1.5;color:var(--wm-bentonville-blue);margin:0;max-width:200px">Roll out nationally with the wins baked in.</p></div>
+  </div>
+  <div class="pg">12 / 24</div>
+</section>
+
+<!-- 13 BUYER PERSONA -->
+<section class="s" data-screen-label="13 Buyer persona" style="background:#fff;padding:0;display:flex">
+  <div style="width:400px;background:var(--wm-bentonville-blue);color:#fff;padding:56px 44px;display:flex;flex-direction:column;justify-content:space-between">
+    <div><span style="font-family:var(--font-ui);font-weight:400;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--wm-everyday-blue)">Buyer persona</span><div style="width:120px;height:120px;border-radius:50%;overflow:hidden;margin:26px 0 20px;border:4px solid var(--wm-everyday-blue)"><img src="../../assets/illustrations/scenes/our-people-make-the-difference.jpg" style="width:100%;height:100%;object-fit:cover"></div><h2 class="h" style="font-size:40px;color:#fff">Busy Maria</h2><p style="font-size:18px;color:var(--wm-sky-blue);margin:8px 0 0">34 · Working parent · Suburban</p></div>
+    <blockquote style="font-size:19px;line-height:1.5;font-style:italic;color:rgba(255,255,255,.9);margin:0;border-left:3px solid var(--wm-everyday-blue);padding-left:16px">"I need it to be quick, affordable, and just work — I don't have time to comparison-shop."</blockquote>
+  </div>
+  <div style="flex:1;padding:56px 56px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:34px 44px;align-content:start">
+    <div><h3 style="font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2);margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--font-ui)">Goals</h3><ul style="margin:0;padding-left:20px;font-size:17px;line-height:1.7;color:var(--wm-bentonville-blue)"><li>Get the weekly shop done fast</li><li>Stay on budget</li><li>One trip, everything in stock</li></ul></div>
+    <div><h3 style="font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2);margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--font-ui)">Frustrations</h3><ul style="margin:0;padding-left:20px;font-size:17px;line-height:1.7;color:var(--wm-bentonville-blue)"><li>Out-of-stock surprises</li><li>Slow checkout lines</li><li>Hidden fees</li></ul></div>
+    <div><h3 style="font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2);margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--font-ui)">Channels</h3><p style="margin:0;font-size:17px;line-height:1.6;color:var(--wm-bentonville-blue)">Mobile app, in-store pickup, occasional delivery.</p></div>
+    <div><h3 style="font-size:16px;font-weight:700;color:var(--tpl-accent,#0053e2);margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--font-ui)">Tech comfort</h3><div style="display:flex;gap:6px">
+      <span style="height:8px;flex:1;border-radius:4px;background:var(--tpl-accent,#0053e2)"></span><span style="height:8px;flex:1;border-radius:4px;background:var(--tpl-accent,#0053e2)"></span><span style="height:8px;flex:1;border-radius:4px;background:var(--tpl-accent,#0053e2)"></span><span style="height:8px;flex:1;border-radius:4px;background:var(--tpl-accent,#0053e2)"></span><span style="height:8px;flex:1;border-radius:4px;background:var(--wm-gray-200)"></span></div><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500);margin-top:6px;display:block">High — app-first shopper</span></div>
+  </div>
+  <div class="pg">13 / 24</div>
+</section>
+
+<!-- 14 VOICE OF CUSTOMER -->
+<section class="s" data-screen-label="14 Voice of Customer" style="background:var(--wm-gray-50);padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Voice of Customer</span>
+  <h2 class="h" style="font-size:44px;margin:12px 0 6px">What shoppers are telling us</h2>
+  <p style="font-size:18px;color:var(--wm-bentonville-blue);margin:0 0 28px">Verbatim feedback, tagged by sentiment · n=1,240 responses</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;flex:1">
+    <div style="background:#fff;border-radius:14px;padding:26px;border-top:4px solid var(--wm-success);display:flex;flex-direction:column"><span style="font-family:var(--font-ui);font-size:13px;font-weight:700;color:var(--wm-success);text-transform:uppercase;letter-spacing:.06em">Positive · 62%</span><p style="font-size:18px;line-height:1.5;color:var(--wm-bentonville-blue);margin:14px 0 0;flex:1">"Pickup was ready in ten minutes and everything I ordered was there. This is why I keep coming back."</p><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500);margin-top:16px">— App review, 5★</span></div>
+    <div style="background:#fff;border-radius:14px;padding:26px;border-top:4px solid var(--wm-warning);display:flex;flex-direction:column"><span style="font-family:var(--font-ui);font-size:13px;font-weight:700;color:var(--wm-warning);text-transform:uppercase;letter-spacing:.06em">Mixed · 26%</span><p style="font-size:18px;line-height:1.5;color:var(--wm-bentonville-blue);margin:14px 0 0;flex:1">"Love the prices, but two items were substituted without asking. Just let me approve swaps first."</p><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500);margin-top:16px">— Survey, delivery</span></div>
+    <div style="background:#fff;border-radius:14px;padding:26px;border-top:4px solid var(--wm-error);display:flex;flex-direction:column"><span style="font-family:var(--font-ui);font-size:13px;font-weight:700;color:var(--wm-error);text-transform:uppercase;letter-spacing:.06em">Needs work · 12%</span><p style="font-size:18px;line-height:1.5;color:var(--wm-bentonville-blue);margin:14px 0 0;flex:1">"Checkout froze twice and I lost my cart. Nearly gave up on the whole order."</p><span style="font-family:var(--font-ui);font-size:14px;color:var(--wm-gray-500);margin-top:16px">— Support ticket</span></div>
+  </div>
+  <div class="pg">14 / 24</div>
+</section>
+
+<!-- 15 COMPARISON -->
+<section class="s" data-screen-label="15 Comparison" style="background:#fff;padding:60px 64px;display:flex;flex-direction:column">
+  <span class="kick">Decision</span>
+  <h2 class="h" style="font-size:44px;margin:12px 0 30px">Which path do we take?</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1">
+    <div style="border:2px solid var(--wm-gray-200);border-radius:16px;padding:34px;display:flex;flex-direction:column"><h3 style="font-size:24px;margin:0 0 6px">Option A · Build</h3><p style="font-size:16px;color:var(--wm-gray-500);margin:0 0 20px;font-family:var(--font-ui)">In-house, 2 quarters</p><div style="display:flex;flex-direction:column;gap:12px;font-size:17px;color:var(--wm-bentonville-blue)"><span>✓ Full control of roadmap</span><span>✓ Owns the customer data</span><span style="color:var(--wm-gray-500)">– Higher upfront cost</span><span style="color:var(--wm-gray-500)">– Slower to first value</span></div></div>
+    <div style="border:2px solid var(--tpl-accent,#0053e2);border-radius:16px;padding:34px;display:flex;flex-direction:column;position:relative"><span style="position:absolute;top:-13px;left:34px;background:var(--tpl-accent,#0053e2);color:#fff;font-family:var(--font-ui);font-size:13px;font-weight:700;padding:5px 14px;border-radius:99px">Recommended</span><h3 style="font-size:24px;margin:0 0 6px">Option B · Partner</h3><p style="font-size:16px;color:var(--wm-gray-500);margin:0 0 20px;font-family:var(--font-ui)">Integrate, 1 quarter</p><div style="display:flex;flex-direction:column;gap:12px;font-size:17px;color:var(--wm-bentonville-blue)"><span>✓ Live in half the time</span><span>✓ Lower risk to start</span><span>✓ Proven at scale</span><span style="color:var(--wm-gray-500)">– Revenue share on volume</span></div></div>
+  </div>
+  <div class="pg">15 / 24</div>
+</section>
+
+<!-- 16 CLOSING -->
+<section class="s" data-screen-label="16 Closing" style="background:var(--wm-bentonville-blue);color:#fff;padding:72px 64px;display:flex;flex-direction:column;justify-content:space-between">
+  <img src="../../assets/logos/spark-everyday-blue.svg" style="height:52px" alt="Spark">
+  <div><h2 class="h" style="font-size:72px">Thank you</h2><p style="font-size:24px;color:var(--wm-sky-blue);margin:20px 0 0;max-width:680px">Questions, or ready to move? Let's talk about what happens next.</p></div>
+  <div style="display:flex;gap:40px;font-family:var(--font-ui);font-size:16px;color:rgba(255,255,255,.75)"><span>presenter@walmart.com</span><span>one.walmart.com</span></div>
+</section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:720},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0053E2&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#0053E2&quot;,&quot;#001E60&quot;,&quot;#4DBDF5&quot;,&quot;#4DBDF5&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;headingWeight&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;300&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;300&quot;,&quot;400&quot;,&quot;700&quot;],&quot;section&quot;:&quot;Type&quot;},&quot;subheadWeight&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;400&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;400&quot;,&quot;500&quot;,&quot;700&quot;],&quot;section&quot;:&quot;Type&quot;},&quot;bodyWeight&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;300&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;300&quot;,&quot;400&quot;,&quot;500&quot;],&quot;section&quot;:&quot;Type&quot;},&quot;pageNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Chrome&quot;},&quot;footerLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Chrome&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props || {};
+    return {
+      setRoot: (el) => {
+        if (!el) return;
+        const s = el.style;
+        s.setProperty('--tpl-accent', p.accentColor || '#0053E2');
+        s.setProperty('--tpl-hw', String(p.headingWeight || '300'));
+        s.setProperty('--tpl-bw', String(p.bodyWeight || '300'));
+        s.setProperty('--tpl-sw', String(p.subheadWeight || '400'));
+        s.setProperty('--tpl-pg', p.pageNumbers === false ? 'none' : 'block');
+      },
+      footer: p.footerLabel || 'Walmart · Confidential'
+    };
+  }
+}
+</script>
+</body>
+</html>
