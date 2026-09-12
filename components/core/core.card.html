@@ -20,10 +20,10 @@
         <div>
           <div className="sec">Variants</div>
           <div className="row">
-            <Button variant="primary" iconLeft="cart">Add to cart</Button>
-            <Button variant="secondary">Save for later</Button>
-            <Button variant="spark">Shop deals</Button>
-            <Button variant="ghost">Details</Button>
+            <Button variant="primary" iconLeft="plus">Launch campaign</Button>
+            <Button variant="secondary">Save as draft</Button>
+            <Button variant="spark">Ask Sparky</Button>
+            <Button variant="ghost">Learn more</Button>
           </div>
           <div className="sec">Sizes & states</div>
           <div className="row">
@@ -34,15 +34,15 @@
           </div>
           <div className="sec">On dark</div>
           <div className="row dark">
-            <Button variant="ondark" iconLeft="location">Pickup at Bentonville</Button>
-            <Button variant="spark">Reserve a time</Button>
+            <Button variant="ondark" iconLeft="chat">Chat with your rep</Button>
+            <Button variant="spark">Explore Ad Center</Button>
           </div>
           <div className="sec">Chips</div>
           <div className="row">
-            <Chip selected={sel==='a'} onClick={()=>setSel('a')} icon="filter">Under $25</Chip>
-            <Chip selected={sel==='b'} onClick={()=>setSel('b')}>Free shipping</Chip>
-            <Chip selected={sel==='c'} onClick={()=>setSel('c')}>4+ stars</Chip>
-            <Chip onRemove={()=>{}}>Great Value</Chip>
+            <Chip selected={sel==='a'} onClick={()=>setSel('a')} icon="filter">Under $500 budget</Chip>
+            <Chip selected={sel==='b'} onClick={()=>setSel('b')}>Auto-bidding</Chip>
+            <Chip selected={sel==='c'} onClick={()=>setSel('c')}>High performing</Chip>
+            <Chip onRemove={()=>{}}>Back to School</Chip>
           </div>
         </div>
       );

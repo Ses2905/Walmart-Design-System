@@ -18,23 +18,23 @@
       const [tab, setTab] = React.useState('all');
       return (
         <div>
-          <Tabs tabs={[{id:'all',label:'All'},{id:'deals',label:'Deals',count:24},{id:'new',label:'New arrivals'}]} value={tab} onChange={setTab} style={{marginBottom:24}} />
+          <Tabs tabs={[{id:'all',label:'All'},{id:'active',label:'Active'},{id:'attention',label:'Needs attention',count:3}]} value={tab} onChange={setTab} style={{marginBottom:24}} />
           <div className="sec">Inputs</div>
           <div className="row">
-            <Input label="Search Walmart" iconLeft="search" placeholder="Try 'paper towels'" containerStyle={{width:280}} />
-            <Input label="Email address" iconLeft="mail" type="email" hint="For order updates" containerStyle={{width:240}} />
-            <Input label="ZIP code" error="Enter a valid 5-digit ZIP" defaultValue="9" containerStyle={{width:160}} />
+            <Input label="Search campaigns" iconLeft="search" placeholder="Try 'Back to School'" containerStyle={{width:280}} />
+            <Input label="Budget alert email" iconLeft="mail" type="email" hint="For budget and performance alerts" containerStyle={{width:240}} />
+            <Input label="Daily budget" error="Enter a budget of at least $50" defaultValue="9" containerStyle={{width:160}} />
           </div>
           <div className="sec">Selection</div>
           <div className="row">
             <div className="col">
-              <Checkbox label="Free shipping" defaultChecked />
-              <Checkbox label="Pickup today" />
-              <Checkbox label="Out of stock" disabled />
+              <Checkbox label="Auto-bidding" defaultChecked />
+              <Checkbox label="Live now" />
+              <Checkbox label="Paused" disabled />
             </div>
             <div className="col">
-              <Switch label="Walmart+ member price" defaultChecked />
-              <Switch label="Show coupons only" />
+              <Switch label="Automatic bidding" defaultChecked />
+              <Switch label="Show optimized campaigns only" />
             </div>
           </div>
         </div>
