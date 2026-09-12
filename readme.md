@@ -101,7 +101,7 @@ Walmart ships **two distinct icon languages** — keep them separate:
 - `SKILL.md` — Agent-Skill manifest for portable use.
 
 **Assets** (`assets/`)
-- `logos/` — `spark-everyday-blue.svg`, `spark-white.svg`, `wordmark-trueblue.svg`, `wordmark-white.svg`
+- `logos/` — `spark-everyday-blue.png`, `spark-white.png`, `wordmark-standard-{trueblue,white}.svg` (Walmart), `wordmark-connect-{bentonville-blue,white}.svg` and `wordmark-connect-horizontal-{bentonville-blue,white}.svg` (Walmart Connect)
 - `fonts/` — Everyday Sans web fonts (`.woff`)
 - `icons/` — 40 functional solid-fill icons on a shared square grid (also bundled in `icon-data.js`)
 - `placeholders/` — blue-only product/category stand-in tiles (navy icon on sky-blue square)
