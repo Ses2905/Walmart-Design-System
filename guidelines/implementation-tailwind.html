@@ -1,0 +1,41 @@
+<!-- @dsCard group="Implementation" viewport="920x830" name="Tailwind + shadcn bridge" subtitle="How the tokens map into a Tailwind v4 / shadcn codebase" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;background:var(--color-surface);padding:24px;color:var(--text-primary)}
+h3{font-family:var(--font-heading);font-weight:var(--fw-light);font-size:20px;margin:0 0 4px;letter-spacing:var(--ls-snug)}
+p{font-size:13px;line-height:var(--lh-normal);color:var(--text-secondary);margin:0;max-width:var(--measure)}
+.block{margin-bottom:24px}
+table{border-collapse:collapse;width:100%;font-size:12px;margin-top:12px}
+th{text-align:left;font-size:var(--text-eyebrow-size);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-eyebrow);font-weight:var(--fw-medium);padding:0 0 8px}
+td{padding:7px 12px 7px 0;border-top:1px solid var(--border-subtle);vertical-align:top}
+code{font-family:var(--font-numeric);font-size:11px;color:var(--text-primary)}
+td:last-child{color:var(--text-secondary);font-family:var(--font-body)}
+.note{background:var(--wm-sky-50);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px;margin-top:16px}
+.note p{max-width:var(--measure-wide)}</style></head>
+<body>
+  <div class="block">
+    <span class="wm-eyebrow">Implementation</span>
+    <h3>Tokens are the contract, utilities are the surface</h3>
+    <p>The reference app aliases the DS variables into Tailwind v4&rsquo;s <code>@theme</code> namespaces. No value is ever redefined &mdash; the CSS custom properties in <code>tokens/</code> stay canonical, and Tailwind only borrows them. Component APIs (variant, size, block) port 1:1, so <code>&lt;Button variant="spark" size="lg"&gt;</code> means the same thing in both.</p>
+    <table>
+      <tr><th>Design system</th><th>Tailwind utility</th><th>Notes</th></tr>
+      <tr><td><code>--wm-true-blue</code></td><td><code>bg-true-blue</code></td><td>Full brand + neutral ramp aliased as <code>--color-*</code></td></tr>
+      <tr><td><code>--action-primary-bg</code></td><td><code>bg-action-primary</code></td><td>Also aliased to shadcn&rsquo;s <code>bg-primary</code></td></tr>
+      <tr><td><code>--text-primary</code></td><td><code>text-ink</code></td><td>Renamed &mdash; see the collision note below</td></tr>
+      <tr><td><code>--text-h2</code></td><td><code>text-h2</code></td><td>Real type scale, safe in the <code>--text-*</code> namespace</td></tr>
+      <tr><td><code>--radius-pill</code></td><td><code>rounded-pill</code></td><td>Explicit scale, no <code>calc()</code> derivation</td></tr>
+      <tr><td><code>--space-*</code></td><td><code>p-4</code>, <code>gap-6</code></td><td>No remap needed &mdash; both are the same 4px scale</td></tr>
+      <tr><td><code>--on-dark-primary</code></td><td><code>text-on-dark</code></td><td>Dark-surface roles carry over intact</td></tr>
+    </table>
+  </div>
+  <div class="block">
+    <h3>Two namespace rules</h3>
+    <div class="note">
+      <p><strong>Text color roles get renamed.</strong> Tailwind v4 reserves <code>--text-*</code> for font-size pairs, but the DS also uses it for color roles (<code>--text-primary</code>, <code>--text-price</code>). Colors are remapped to <code>ink</code>, <code>price</code>, <code>link</code>, <code>savings</code> so the type scale keeps the <code>--text-*</code> names.</p>
+      <p style="margin-top:12px"><strong>shadcn aliases point at Walmart tokens.</strong> <code>background</code>, <code>primary</code>, <code>destructive</code>, <code>ring</code>, <code>card</code> all resolve to DS values, so unmodified shadcn component code lands on-brand. One caveat: shadcn&rsquo;s <code>accent</code> means &ldquo;subtle hover surface&rdquo; (Blue 50), not the DS&rsquo;s Everyday Blue highlight &mdash; that one is <code>accent-blue</code>.</p>
+    </div>
+  </div>
+  <div class="block">
+    <h3>Keeping copies honest</h3>
+    <p>Bundlers won&rsquo;t resolve <code>@import</code> paths outside their project root, so the app vendors <code>tokens/*.css</code> into its own tree and re-syncs on demand. <code>typography.css</code> is the exception: its <code>@font-face</code> <code>url()</code>s are rewritten to the app&rsquo;s public font path, so token-value edits there are applied by hand. Everything else copies verbatim.</p>
+  </div>
+</body></html>
