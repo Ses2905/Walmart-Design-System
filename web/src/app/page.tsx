@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -135,6 +136,47 @@ export default function Home() {
             reviews={2140}
             badge={{ label: "Rollback" }}
           />
+        </div>
+      </Section>
+
+      <Section
+        title="Illustrations & imagery"
+        subtitle="Brand imagery from the design system's asset library — benefit icons, spot illustrations, and Sparky"
+      >
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
+          {[
+            { src: "/illustrations/benefits/free-shipping.png", label: "Free shipping" },
+            { src: "/illustrations/benefits/scan-and-go.png", label: "Scan & Go" },
+            { src: "/illustrations/benefits/onepay.png", label: "OnePay" },
+            { src: "/illustrations/benefits/gas-savings.png", label: "Gas savings" },
+            { src: "/illustrations/benefits/free-in-home-returns.png", label: "In-home returns" },
+            { src: "/illustrations/benefits/free-pharmacy-delivery.png", label: "Pharmacy delivery" },
+          ].map((benefit) => (
+            <Card key={benefit.src} padding={16} className="flex flex-col items-center gap-2 text-center">
+              <Image src={benefit.src} alt={benefit.label} width={64} height={64} />
+              <span className="text-xs text-ink-secondary">{benefit.label}</span>
+            </Card>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <Card padding={24} className="flex flex-col items-center gap-3">
+            <Image
+              src="/illustrations/mascot/hi-im-sparky.png"
+              alt="Sparky, the Walmart mascot"
+              width={120}
+              height={120}
+            />
+            <span className="text-sm text-ink-secondary">Sparky</span>
+          </Card>
+          <Card padding={0} className="col-span-2 overflow-hidden">
+            <Image
+              src="/illustrations/spot/walmart-storefront.png"
+              alt="Walmart storefront spot illustration"
+              width={764}
+              height={400}
+              className="h-full w-full object-cover"
+            />
+          </Card>
         </div>
       </Section>
     </div>
