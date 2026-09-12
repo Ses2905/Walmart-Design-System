@@ -42,7 +42,7 @@ function Price({
       )}
       {...props}
     >
-      <div className="flex items-start leading-none text-price">
+      <div className="wm-numeric flex items-start leading-none text-price">
         <span className={cn("font-bold", s.small, s.raise)}>$</span>
         <span className={cn("font-black tracking-tight", s.dollars)}>{dollars}</span>
         <span className={cn("font-bold", s.small, s.raise)}>{cents}</span>
@@ -50,11 +50,13 @@ function Price({
       {(was != null || computedSavings != null) && (
         <div className={cn("flex items-center gap-2", size === "lg" ? "text-[13px]" : "text-xs")}>
           {was != null && (
-            <span className="text-ink-tertiary line-through">${Number(was).toFixed(2)}</span>
+            <span className="wm-numeric text-ink-tertiary line-through">
+              ${Number(was).toFixed(2)}
+            </span>
           )}
           {computedSavings != null && computedSavings > 0 && (
             <span className="font-bold text-savings">
-              You save ${Number(computedSavings).toFixed(2)}
+              You save <span className="wm-numeric">${Number(computedSavings).toFixed(2)}</span>
             </span>
           )}
         </div>

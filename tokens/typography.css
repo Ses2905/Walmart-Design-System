@@ -1,11 +1,14 @@
 /* ============================================================
    Walmart Design System — Typography Tokens
    Typeface: Everyday Sans (Commercial Type, licensed).
-   Four optical families, webfonts in assets/fonts/<family>/:
-     • Everyday Sans          — text / body / marketing
-     • Everyday Sans Headline — large display & headlines
-     • Everyday Sans UI       — interface text, small sizes
-     • Everyday Sans Mono     — code, tabular data
+   Four optical families, webfonts in assets/fonts/<family>/. Naming
+   describes the cut, not the role — see actual usage below, which
+   runs the other way from what the names might suggest:
+     • Everyday Sans          — interface controls: buttons, badges,
+                                 chips, form fields, price & rating
+     • Everyday Sans Headline — large display & headlines (h1–h6)
+     • Everyday Sans UI       — running body copy (the base font-family)
+     • Everyday Sans Mono     — tabular numerals (see .wm-numeric)
    Desktop .otf originals live in assets/fonts/desktop-otf/.
    ============================================================ */
 
