@@ -37,7 +37,7 @@ export default function Home() {
           Walmart UI Kit
         </h1>
         <p className="max-w-[62ch] text-body-lg text-ink-secondary">
-          Tailwind v4 + shadcn/ui primitives, wired directly to the design system&apos;s own
+          Tailwind v4 + shadcn/ui primitives, wired directly to the design system&rsquo;s own
           tokens and component API — pill buttons, True Blue actions, Everyday Sans type.
         </p>
       </header>
@@ -124,7 +124,7 @@ export default function Home() {
           <Card elevated className="flex flex-col gap-2">
             <h3 className="text-h4">Elevated card</h3>
             <p className="text-sm text-ink-secondary">
-              Generic content surface with the DS&apos;s soft, navy-tinted shadow.
+              Generic content surface with the DS&rsquo;s soft, navy-tinted shadow.
             </p>
           </Card>
           <ProductCard
@@ -141,7 +141,7 @@ export default function Home() {
 
       <Section
         title="Illustrations & imagery"
-        subtitle="Brand imagery from the design system's asset library — benefit icons, spot illustrations, and Sparky"
+        subtitle="Brand imagery from the design system&rsquo;s asset library — benefit icons, spot illustrations, and Sparky"
       >
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
           {[
