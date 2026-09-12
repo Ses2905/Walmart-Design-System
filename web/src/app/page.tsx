@@ -13,6 +13,7 @@ import { Icon } from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 function Section({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
   return (
@@ -165,6 +166,42 @@ export default function Home() {
             </Card>
           </div>
         </div>
+      </Section>
+
+      <Section title="Table" subtitle="campaign list — numeric columns in tabular Everyday Sans Mono">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Campaign</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead numeric>Daily budget</TableHead>
+              <TableHead numeric>Impressions</TableHead>
+              <TableHead numeric>Clicks</TableHead>
+              <TableHead numeric>CTR</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {(
+              [
+                { name: "Back to School", status: "Active", variant: "success", budget: "$450", impressions: "128,400", clicks: "3,216", ctr: "2.5%" },
+                { name: "Home Refresh", status: "Under review", variant: "info", budget: "$200", impressions: "54,110", clicks: "974", ctr: "1.8%" },
+                { name: "Holiday Toys", status: "Draft", variant: "neutral", budget: "$600", impressions: "—", clicks: "—", ctr: "—" },
+                { name: "Summer Grilling", status: "Ended", variant: "outline", budget: "$300", impressions: "212,908", clicks: "5,540", ctr: "2.6%" },
+              ] as const
+            ).map((row) => (
+              <TableRow key={row.name}>
+                <TableCell className="font-medium">{row.name}</TableCell>
+                <TableCell>
+                  <Badge variant={row.variant}>{row.status}</Badge>
+                </TableCell>
+                <TableCell numeric>{row.budget}</TableCell>
+                <TableCell numeric>{row.impressions}</TableCell>
+                <TableCell numeric>{row.clicks}</TableCell>
+                <TableCell numeric>{row.ctr}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </Section>
 
       <Section
