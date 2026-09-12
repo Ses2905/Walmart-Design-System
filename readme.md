@@ -1,8 +1,8 @@
-# Walmart Design System
+# Walmart Ads Design System
 
-A design system for building on-brand Walmart interfaces, marketing, and prototypes — grounded in the **2025 Walmart brand refresh** (the first major identity update in ~17 years). It packages the real typeface (Everyday Sans), the refreshed color palette, the official logos, the functional icon set, design tokens, and a library of React UI components plus a storefront UI kit.
+A design system for building on-brand interfaces for Walmart Global Ads — Ad Center, Campaign Manager, and the broader Walmart Connect advertiser experience — grounded in the **2025 Walmart brand refresh** (the first major identity update in ~17 years). It packages the real typeface (Everyday Sans), the refreshed color palette, the official logos (Walmart + Walmart Connect), the functional icon set, design tokens, and a library of React UI components for campaign management surfaces.
 
-> **Mission:** *Save money. Live better.* Walmart's job is to help people save money and live better — the design language is warm, clear, confident, and unpretentious. It should feel like a helpful, trustworthy store associate, not a luxury boutique or a tech startup.
+> **Mission:** *Reach shoppers. Grow sales.* An advertiser's job here is to plan, launch, and optimize campaigns with confidence — the design language is warm, clear, confident, and unpretentious. It should feel like a capable, trustworthy media partner, not a luxury boutique or a black-box ad-tech console.
 
 ---
 
@@ -16,7 +16,7 @@ This system was built from the official **Walmart Brand Asset Library** (provide
 - **`Walmart/x_To Organize + File/All assets/WMT-Colors-ASE/`** — Adobe ASE swatch files (parsed for exact hex).
 - **`uploads/Walmart Brand Guidelines.pdf`** and **`uploads/Brand Guidelines - Walmart (Icons & Illustrations).pdf`** — the brand & icon usage guidelines.
 
-There is **no product source code** in the package — it is a brand/identity kit. The UI kit in this system is therefore an on-brand recreation of the Walmart storefront experience built strictly from the brand foundations (color, type, components, iconography), not a reverse-engineering of walmart.com's codebase.
+There is **no product source code** in the package — it is a brand/identity kit. The components and guideline cards in this system are an on-brand recreation of Walmart Ads surfaces (campaign lists, ad group forms, status badges) built strictly from the brand foundations (color, type, components, iconography), not a reverse-engineering of any Walmart codebase.
 
 ### Color provenance (2025 refresh)
 Parsed directly from the official ASE swatch file:
@@ -25,8 +25,7 @@ Parsed directly from the official ASE swatch file:
 |---|---|---|
 | True Blue | `#0053E2` | Primary brand + actions (replaced the older `#0071CE`) |
 | Bentonville Blue | `#001E60` | Deep navy — text, headers, footers |
-| Everyday Blue | `#4DBDF5` | The Spark — savings, energy, highlights |
-| Everyday Blue | `#4DBDF5` | Friendly secondary mid-blue |
+| Everyday Blue | `#4DBDF5` | The Spark — friendly secondary mid-blue, energy and highlights |
 | Sky Blue | `#A9DDF7` | Light blue — tints, surfaces |
 
 The palette is deliberately **blue-only plus the Everyday Blue accent** — no purples or other accent hues in UI or imagery.
@@ -35,44 +34,44 @@ The palette is deliberately **blue-only plus the Everyday Blue accent** — no p
 
 ## Content Fundamentals
 
-How Walmart writes. The voice is **warm, direct, plainspoken, and benefit-first** — a friendly neighbor who happens to run the world's largest store.
+How Walmart Ads writes. The voice is **warm, direct, plainspoken, and confidence-first** — a capable media partner, not a black-box ad platform throwing jargon at you.
 
-- **Tone:** Optimistic, practical, inclusive, never hype-y or jargon-filled. Confidence without arrogance. "Helpful" beats "clever."
-- **Person:** Speaks to the customer as **"you"**; the brand is **"we."** Calls to action are imperative and friendly — *"Shop now," "Add to cart," "Save with Walmart+," "See all deals."*
-- **Casing:** **Sentence case** for almost everything — headings, buttons, nav, body. Reserve ALL-CAPS for the small badge flags only (**ROLLBACK**, **CLEARANCE**) and short eyebrows. Avoid Title Case In Headlines.
-- **Savings language:** Money is the hero. Lead with the price and the savings: *"Was $16.98 — You save $4.00," "Rollback," "Everyday low price."* Concrete dollar amounts, not vague "discounts."
-- **Numbers:** Prices use the supermarket convention — big dollar figure, small raised cents (`$12⁹⁸`). Quantities and review counts are specific (*"(1,284)"*, *"arrives in 2 days"*).
-- **Sentence length:** Short. Scannable. One idea per line. Fragments are fine in UI (*"Free shipping, arrives tomorrow"*).
+- **Tone:** Optimistic, practical, inclusive, never hype-y or jargon-filled. Confidence without arrogance. "Clear" beats "clever."
+- **Person:** Speaks to the advertiser as **"you"**; the brand is **"we."** Calls to action are imperative and direct — *"Launch campaign," "Save as draft," "Create ad group," "Explore Ad Center."*
+- **Casing:** **Sentence case** for almost everything — headings, buttons, nav, body. Reserve ALL-CAPS for short status/eyebrow flags only (**SPONSORED**, **REJECTED**). Avoid Title Case In Headlines.
+- **Status & performance language:** Clarity is the hero. State what's true and what happens next: *"Approved and live within 2 hours," "Under review," "Optimized," "3 campaigns need your review."* Concrete numbers and timeframes, not vague "processing."
+- **Numbers:** Currency uses the supermarket convention — big dollar figure, small raised cents (`$12⁹⁸`) — for budgets and spend. Metrics are specific and tabular (*"128,400 impressions"*, *"2.5% CTR"*).
+- **Sentence length:** Short. Scannable. One idea per line. Fragments are fine in UI (*"Live in 2 hours"*).
 - **Emoji:** **Not used** in the interface or marketing copy. The Spark and the blue color system carry the warmth instead.
-- **Inclusivity:** Broad, everyday, family-oriented. Avoid niche slang, regionalisms, or exclusionary references. Walmart serves everyone.
+- **Inclusivity:** Broad, everyday, no niche slang or exclusionary references. Walmart Ads serves sellers and brands of every size.
 
 **Example copy:**
-> **Headline:** "Everyday low prices on everything you need."
-> **Sub:** "Pickup, delivery, and shipping — all in one place."
-> **CTA:** "Shop deals" · "Reserve a time" · "Add to cart"
-> **Savings:** "Rollback · Was $22.00 · You save $7.12"
-> **Reassurance:** "Free 90-day returns. Free shipping over $35."
+> **Headline:** "Reach shoppers. Grow sales."
+> **Sub:** "Manage every campaign in one place."
+> **CTA:** "Launch campaign" · "Save as draft" · "Ask Sparky"
+> **Status:** "Active · Optimized · Approved and live within 2 hours"
+> **Reassurance:** "Every campaign across your Walmart Ads account."
 
 ---
 
 ## Visual Foundations
 
-The look is **bright, blue, and friendly** — confident navy-and-True-Blue with the Everyday Blue as the accent that signals savings and energy.
+The look is **bright, blue, and friendly** — confident navy-and-True-Blue with the Everyday Blue as the accent that signals energy and what's performing.
 
-- **Color usage:** White and very light cool-grey (`#F5F6F8`) surfaces dominate. **True Blue** carries primary actions and links. **Bentonville Blue** is the text and the "brand" color for headers/footers and dark sections. **Everyday Blue** is used *sparingly and intentionally* — savings flags, the Spark, key highlights — never for body text or large fields (it fails contrast). The system is **blue-only plus Everyday Blue** — no purples or other accent hues.
-- **Typography:** Everyday Sans throughout. Friendly, slightly rounded humanist sans. Headlines are **Bold/Black with tight tracking** (`-0.02em`); body is Regular at a comfortable 16px/1.55. Prices use Black weight with the raised-cents treatment.
+- **Color usage:** White and very light cool-grey (`#F5F6F8`) surfaces dominate. **True Blue** carries primary actions and links. **Bentonville Blue** is the text and the "brand" color for headers/footers and dark sections. **Everyday Blue** is used *sparingly and intentionally* — status highlights, the Spark, key metrics — never for body text or large fields (it fails contrast). The system is **blue-only plus Everyday Blue** — no purples or other accent hues.
+- **Typography:** Everyday Sans throughout. Friendly, slightly rounded humanist sans. Headlines (h1/h2) are **Light** with tight tracking (`-0.02em`); sub-headers (h3–h6) are Regular; body is Regular at a comfortable 15px/1.55. Only the display size (`--text-display`) and numerals/prices go up to Black weight.
 - **Shape & corners:** Soft but not bubbly. **Buttons and chips are full pills** (`border-radius: 999px`) — the single most recognizable shape cue. Cards use **12–16px** radii; feature tiles/modals **24px**. Inputs **12px**.
 - **Cards:** White, 1px subtle cool-grey border (`#DEE1E6`), generous padding, **soft navy-tinted shadow** on hover (`0 4px 12px rgba(0,30,96,.10)`). Resting cards are often flat (border only) and lift on hover. No heavy drop shadows, no neon glows.
 - **Elevation:** Shadows are **soft and tinted with navy** (`rgba(0,30,96,...)`), never pure black. Low spread, low opacity. Elevation communicates interactivity (hover) more than hierarchy.
 - **Backgrounds:** Predominantly solid white / light grey. Dark sections use **Bentonville Blue** (not black). **No gradients** in UI chrome (a subtle one may appear in marketing hero art only). No busy textures or patterns in the interface.
-- **Imagery:** Bright, clean, well-lit product photography on white. Lifestyle imagery is warm, natural, and diverse/family-oriented. Where photography isn't available, use clean blue-only placeholder tiles (a navy functional icon on a soft sky-blue square). The palette is **strictly the blue family plus Everyday Blue** — no purples or off-brand accents.
+- **Imagery:** Sparky (the mascot) and platform/marketing illustrations from `assets/illustrations/`, bright and clean on white. Where an image isn't available, use clean blue-only placeholder tiles (a navy functional icon on a soft sky-blue square). The palette is **strictly the blue family plus Everyday Blue** — no purples or off-brand accents.
 - **Borders:** 1px (`#DEE1E6` subtle, `#C3C6CD` default). Selected/active states use True Blue or Bentonville Blue borders at 1.5px.
 - **Hover states:** Buttons **darken** (True Blue → `#0045BD`); ghost/secondary pick up a faint blue or grey wash; cards raise a soft shadow. Links underline on hover.
 - **Press/active states:** A further darken (`#003AA0`). Subtle, no dramatic scale bounce.
 - **Focus:** Visible **True Blue ring** — `0 0 0 3px rgba(0,83,226,.35)` on inputs, 2px outline on other controls. Accessibility is non-negotiable at Walmart's scale.
 - **Motion:** Quick and functional. `120–200ms`, `cubic-bezier(0.2,0,0,1)` standard easing. Fades and short slides (toggle thumb, tab underline). **No bounce, no spinning, no decorative looping animation.** Reduced-motion respected.
-- **Transparency / blur:** Used lightly — e.g. a translucent white scrim behind the save-to-list heart on product images. Not a glassmorphism-heavy system.
-- **Layout:** Max content width ~`1392px`, 24px gutters. A persistent blue header (Bentonville Blue) with search front-and-center. Generous whitespace; dense but never cramped product grids. Everyday Blue accents anchor the eye to savings.
+- **Transparency / blur:** Used lightly — e.g. a translucent white scrim behind an overlaid icon on illustration or imagery. Not a glassmorphism-heavy system.
+- **Layout:** Max content width ~`1392px`, 24px gutters. A persistent blue header (Bentonville Blue) with search front-and-center. Generous whitespace; dense but never cramped campaign tables and data grids. Everyday Blue accents anchor the eye to what's live or performing.
 
 ---
 
@@ -83,7 +82,7 @@ Walmart ships **two distinct icon languages** — keep them separate:
 1. **Functional icons** (`assets/icons/*.svg`) — solid-fill, single-weight glyphs for the interface: `search`, `cart`, `home`, `favorite`, `location`, `filter`, `pick-up`, `shipping`, `credit-card`, `pharmacy`, etc. (40 included). They are **monochrome** and inherit color — filled shapes (`fill="currentColor"`), not stroked outlines. In this system they are exposed through the **`<Icon>` component**, which inlines the SVG so it tints via `currentColor` (navy by default, white on dark, True Blue for emphasis). Original art is solid navy fills; never multicolor, never a stroke/outline style.
    - *Source:* Walmart Brand Asset Library → Icons. Normalized (added `viewBox`, converted fills to `currentColor`) into `components/core/icon-data.js`. Every icon shares a common **square viewBox** — the shorter dimension is padded to match the longer one, coordinates untouched — so no glyph reads visually heavier or lighter than another purely because of its canvas shape.
 
-2. **Blue-only placeholder tiles** (`assets/placeholders/*.svg`) — where real product photography isn't available, the UI kit uses clean stand-in tiles: a single navy line icon centered on a soft sky-blue (`#EAF6FD`) rounded square. Strictly on-brand blues — no multi-color illustration, no purple. Swap them for real product photos when you have them.
+2. **Blue-only placeholder tiles** (`assets/placeholders/*.svg`) — where real photography or illustration isn't available yet, use clean stand-in tiles: a single solid-navy icon centered on a soft sky-blue (`#EAF6FD`) rounded square. Strictly on-brand blues — no multi-color illustration, no purple. Swap them for real imagery when you have it.
 
 **Rules:**
 - **No emoji**, ever, in UI or marketing.
@@ -102,10 +101,14 @@ Walmart ships **two distinct icon languages** — keep them separate:
 
 **Assets** (`assets/`)
 - `logos/` — `spark-everyday-blue.png`, `spark-white.png`, `wordmark-standard-{trueblue,white}.svg` (Walmart), `wordmark-connect-{bentonville-blue,white}.svg` and `wordmark-connect-horizontal-{bentonville-blue,white}.svg` (Walmart Connect)
-- `fonts/` — Everyday Sans web fonts (`.woff`)
+- `fonts/` — Everyday Sans web fonts (`.woff`, plus desktop `.otf` in `desktop-otf/`)
 - `icons/` — 40 functional solid-fill icons on a shared square grid (also bundled in `icon-data.js`)
-- `placeholders/` — blue-only product/category stand-in tiles (navy icon on sky-blue square)
-- `illustrations/` — `vestibule-community.jpg` (community mural), `trimming-guide.png`
+- `placeholders/` — blue-only stand-in tiles (navy icon on sky-blue square)
+- `illustrations/` — organized into `mascot/` (Sparky), `benefits/`, `scenes/`, `spot/`, `marketing/`, `wallpapers/`, plus a few flat root files (`vestibule-community.jpg`, `trimming-guide.png`)
+- `patches/`, `merch/`, `pins/` — associate recognition patches, apparel, and enamel-pin-style marks (decorative, not UI icons)
+- `motion/` — brand video/gif reference (store, wordmark, product/spark motion)
+- `favicons/` — app icons and favicons at standard sizes
+- `brand/`, `colors/` — source brand-guideline PDFs and Adobe `.ase` color swatches
 
 **Components** (React; `window.WalmartDesignSystem_e58acd.*`)
 - `core/` — `Icon`, `Button`, `Badge`, `Card`, `Input`, `Checkbox`, `Switch`, `Chip`, `Table`

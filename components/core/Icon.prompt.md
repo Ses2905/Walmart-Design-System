@@ -1,4 +1,4 @@
-Walmart functional line icon that inherits `color` (via currentColor) and scales crisply at any size.
+Walmart functional icon (solid-fill, shared square grid) that inherits `color` (via currentColor) and scales crisply at any size.
 
 ```jsx
 <Icon name="cart" size={24} />

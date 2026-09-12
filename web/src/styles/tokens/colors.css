@@ -31,9 +31,9 @@
   --wm-gray-50:  #f5f6f8;         /* page background */
 
   /* ---- Semantic status ---- */
-  --wm-success: #128a08;          /* in-stock, savings copy */
+  --wm-success: #128a08;          /* active, savings copy */
   --wm-success-bg: #e7f4e4;
-  --wm-error: #de1c24;            /* clearance / errors */
+  --wm-error: #de1c24;            /* rejected, clearance, errors */
   --wm-error-bg: #fdeaea;
   --wm-warning: #b25e00;          /* warning text on yellow */
   --wm-info: var(--wm-true-blue);

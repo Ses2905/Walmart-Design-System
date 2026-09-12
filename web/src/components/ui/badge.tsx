@@ -5,8 +5,9 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 /**
- * Status/label pill — delivery promises, stock state, "Rollback",
- * "Best seller". Ported from components/core/Badge.jsx.
+ * Status/label pill for campaign and ad group state — "Active",
+ * "Under review", "Optimized", "Rejected", "Sponsored". Ported from
+ * components/core/Badge.jsx.
  */
 const badgeVariants = cva(
   "inline-flex items-center gap-1 whitespace-nowrap font-sans font-bold leading-tight w-fit",

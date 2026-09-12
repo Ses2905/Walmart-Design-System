@@ -6,7 +6,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    * Visual style.
    * - `primary` True Blue fill (default CTA)
    * - `secondary` white with dark outline
-   * - `spark` Everyday Blue (savings / emphasis)
+   * - `spark` Everyday Blue (Sparky/AI-assist emphasis)
    * - `ghost` text-only blue
    * - `ondark` white pill for dark backgrounds
    */
@@ -22,7 +22,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 /**
- * Pill-shaped Walmart button. Primary uses True Blue; `spark` flags savings.
+ * Pill-shaped Walmart button. Primary uses True Blue; `spark` flags a
+ * Sparky/AI-assist moment.
  * @startingPoint section="Core" subtitle="Pill buttons in every variant & size" viewport="700x220"
  */
 export declare function Button(props: ButtonProps): JSX.Element;

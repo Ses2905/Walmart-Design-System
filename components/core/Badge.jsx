@@ -1,8 +1,8 @@
 import React from 'react';
 
 /**
- * Small status/label pill. Walmart uses these for delivery promises,
- * stock state, "Rollback", "Best seller", etc.
+ * Small status/label pill for campaign and ad group state — "Active",
+ * "Under review", "Optimized", "Rejected", "Sponsored", etc.
  */
 export function Badge({ variant = 'neutral', size = 'md', children, style, ...rest }) {
   const variants = {

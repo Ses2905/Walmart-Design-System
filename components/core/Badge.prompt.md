@@ -1,9 +1,9 @@
-Small status/label pill for delivery promises, stock, and price flags.
+Small status/label pill for campaign, ad group, and delivery state.
 
 ```jsx
-<Badge variant="rollback">Rollback</Badge>
-<Badge variant="success">In stock</Badge>
-<Badge variant="clearance">Clearance</Badge>
+<Badge variant="success">Active</Badge>
+<Badge variant="rollback">Optimized</Badge>
+<Badge variant="clearance">Rejected</Badge>
 ```
 
-Variants: `neutral`, `info`, `success`, `rollback` (Everyday Blue — the signature Walmart price flag), `clearance` (red), `brand` (navy), `outline`. Sizes `sm | md`.
+Variants: `neutral` (Draft), `info` (Under review), `success` (Active), `rollback` (Everyday Blue — an optimized/highlight flag), `clearance` (red — Rejected), `brand` (navy — Sponsored), `outline` (Ended). Sizes `sm | md`.

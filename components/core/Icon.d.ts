@@ -21,6 +21,7 @@ export interface IconProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, '
 }
 
 /**
- * Walmart functional icon — single-weight line icons that inherit color and scale crisply.
+ * Walmart functional icon — solid-fill, single-weight icons on a shared
+ * square grid that inherit color and scale crisply.
  */
 export declare function Icon(props: IconProps): JSX.Element;
