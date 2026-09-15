@@ -1,0 +1,16 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Enamel Pins" subtitle="Pin-style brand marks for associate recognition and event swag" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--wm-sky-100);padding: 24px}
+  .grid{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+  .grid img{height:64px;filter:drop-shadow(0 2px 4px rgba(0,30,96,.18))}
+  .note{margin-top:20px;font-size:11px;color:var(--wm-bentonville-blue);max-width:640px;line-height:1.5;opacity:.75}
+</style></head>
+<body>
+  <div class="grid" id="g"></div>
+  <p class="note">Enamel-pin-style brand marks for associate recognition, events, and swag — decorative, not UI icons. Full set in <b>assets/pins/</b>; culture patches & buttons in <b>assets/patches/</b> (see the Patches card).</p>
+  <script>
+    const pins = ['spark-pin','sparky-pin','walmart-patch-v2','walmart-patch-v3','walmart-pennant-pin','walmart-wordmark-pin'];
+    document.getElementById('g').innerHTML = pins.map(n => `<img src="../assets/pins/${n}.svg" alt="${n}">`).join('');
+  </script>
+</body></html>
