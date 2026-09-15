@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path transform="matrix(1,0,0,-1,2.9365,15.5541)" d="M0 0H26.063V-10.076C26.063-11.385 25.003-12.446 23.694-12.446H2.369C1.061-12.446 0-11.385 0-10.076Z" fill="var(--wm-true-blue, #0053e2)"/>
+  <path transform="matrix(1,0,0,-1,0,32)" d="M2.937 20H29V16.446H2.937Z" fill="var(--wm-true-blue, #0053e2)"/>
+  <path transform="matrix(1,0,0,-1,2.9365,12)" d="M0 0H6.516L3.554-3.554H0Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,14.7836,12)" d="M0 0H5.924L2.962-3.554H-2.962Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,25.4459,12)" d="M0 0H3.554V-3.554H-2.962Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,2.6887,10.8412)" d="M0 0C-.272 1.28 .545 2.538 1.825 2.81L22.684 7.244C23.964 7.516 25.222 6.699 25.494 5.419L25.74 4.26 .246-1.159Z" fill="var(--wm-true-blue, #0053e2)"/>
+  <path transform="matrix(1,0,0,-1,2.9351,12)" d="M0 0 6.373 1.355 2.738 4.215 1.579 3.969C.299 3.697-.518 2.439-.246 1.159Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,14.5232,9.5369)" d="M0 0 5.794 1.232 2.158 4.092-3.636 2.861Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,24.9525,7.320101)" d="M0 0 3.476 .739 3.23 1.898C2.958 3.178 1.7 3.995 .42 3.723L-3.636 2.861Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+</svg>

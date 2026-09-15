@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { CategoryIcon } from "@/components/ui/category-icon";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Chip } from "@/components/ui/chip";
 import { Icon } from "@/components/ui/icon";
@@ -202,6 +203,51 @@ export default function Home() {
             ))}
           </TableBody>
         </Table>
+      </Section>
+
+      <Section
+        title="Icons"
+        subtitle="Outline (line-style, variant=&quot;outline&quot;) and Category (two-tone merchandising) sets"
+      >
+        <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-6 gap-4 sm:grid-cols-10">
+            {(
+              [
+                "cart-outline", "search-outline", "notification-outline", "favorite-outline",
+                "lock-outline", "calendar", "truck", "wallet", "qr-code", "thumbs-up",
+              ] as const
+            ).map((name) => (
+              <div key={name} className="flex flex-col items-center gap-2">
+                <Icon name={name} variant="outline" size={24} className="text-bentonville-blue" />
+                <span className="text-center text-[10px] text-ink-tertiary">{name}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-4 gap-4 sm:grid-cols-8">
+            {(
+              [
+                "auto", "baby", "electronics", "pets", "grocery", "toys", "clothing", "gifts",
+              ] as const
+            ).map((name) => (
+              <div key={name} className="flex flex-col items-center gap-2">
+                <CategoryIcon name={name} size={40} />
+                <span className="text-center text-[10px] text-ink-tertiary">{name}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-4 gap-4 rounded-md bg-bentonville-blue p-4 sm:grid-cols-8">
+            {(
+              [
+                "auto", "baby", "electronics", "pets", "grocery", "toys", "clothing", "gifts",
+              ] as const
+            ).map((name) => (
+              <div key={name} className="flex flex-col items-center gap-2">
+                <CategoryIcon name={name} size={40} reverse />
+                <span className="text-center text-[10px] text-white/70">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </Section>
 
       <Section

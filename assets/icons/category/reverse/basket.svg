@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path transform="matrix(1,0,0,-1,6.1948,15.1973)" d="M0 0-2.399 1.801 5.406 12.197 7.805 10.396Z" fill="#fff" fill-rule="evenodd"/>
+  <path transform="matrix(1,0,0,-1,25.8052,15.1973)" d="M0 0 2.399 1.801-5.406 12.197-7.805 10.396Z" fill="#fff" fill-rule="evenodd"/>
+  <path transform="matrix(1,0,0,-1,0,32)" d="M25 6.125H23V15H25ZM19.666 6.125H17.666V15H19.666ZM14.333 6.125H12.333V15H14.333ZM9 6.125H7V15H9ZM1 19V15H2.875L3.691 5.274C3.808 3.986 4.888 3 6.181 3H25.819C27.112 3 28.192 3.986 28.309 5.274L29.125 15H31V19Z" fill="var(--wm-everyday-blue, #4dbdf5)" fill-rule="evenodd"/>
+</svg>

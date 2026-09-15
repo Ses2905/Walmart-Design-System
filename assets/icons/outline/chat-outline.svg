@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path transform="matrix(1,0,0,-1,13.9785,2)" d="M0 0H-11.957C-12.521 0-12.978-.457-12.978-1.022V-9-10-11.5C-12.978-11.69-12.868-11.86-12.708-11.95-12.538-12.03-12.338-12.02-12.188-11.9L-9.568-10H-2.978V-9H-9.728C-9.838-9-9.938-9.03-10.018-9.1L-11.978-10.52V-10L-11.957-1H0L.022-1.022 .002-9H-.978V-10H.022V-9.996C.575-9.983 1.022-9.535 1.022-8.978V-1.022C1.022-.457 .564 0 0 0" fill="currentColor" fill-rule="evenodd"/>
+  <path transform="matrix(1,0,0,-1,0,16)" d="M5 7.5H8V8.5H5Z" fill="currentColor" fill-rule="evenodd"/>
+  <path transform="matrix(1,0,0,-1,0,16)" d="M5 9.5H11V10.5H5Z" fill="currentColor" fill-rule="evenodd"/>
+</svg>

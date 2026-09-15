@@ -14,8 +14,8 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - `readme.md` — the full design guide: brand context, **Content Fundamentals** (voice/tone), **Visual Foundations**, **Iconography**, and an index/manifest.
 - `styles.css` — global entry point; `@import`s every token file and the `@font-face` rules. Link this one file to inherit the whole system.
 - `tokens/` — `colors.css`, `typography.css`, `spacing.css`, `base.css` (CSS custom properties).
-- `assets/` — `logos/` (Walmart + Walmart Connect wordmarks, Spark, color & reverse), `fonts/` (Everyday Sans `.woff`), `icons/` (40 functional solid-fill icons), `placeholders/` (blue-only stand-in tiles), `illustrations/`, `patches/`/`merch/`/`pins/` (associate recognition, not UI icons).
-- `components/` — React UI primitives (`Icon`, `Button`, `Badge`, `Card`, `Input`, `Checkbox`, `Switch`, `Chip`, `Table`, `Tabs`).
+- `assets/` — `logos/` (Walmart + Walmart Connect wordmarks, Spark, color & reverse), `fonts/` (Everyday Sans `.woff`), `icons/` (40 functional solid-fill icons, plus `outline/` for 68 line-style icons and `category/` for 38 two-tone merchandising icons), `placeholders/` (blue-only stand-in tiles), `illustrations/`, `patches/`/`merch/`/`pins/` (associate recognition, not UI icons).
+- `components/` — React UI primitives (`Icon`, `CategoryIcon`, `Button`, `Badge`, `Card`, `Input`, `Checkbox`, `Switch`, `Chip`, `Table`, `Tabs`).
 - `guidelines/` — foundation specimen cards (color, type, spacing, brand, icon, logo).
 - `templates/` — `.dc.html` document templates (one-pager, presentation, product review, report).
 
@@ -24,7 +24,7 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - **Type:** Everyday Sans. Sentence case everywhere except short status badges (SPONSORED, REJECTED). Headings (h1/h2) are **Light**, sub-headers (h3–h6) **Regular** — not bold. Tight tracking on headlines. Numerals use Everyday Sans Mono, tabular.
 - **Shape:** Buttons & chips are full pills (999px). Cards 12–16px radius, soft navy-tinted shadows on hover.
 - **Voice:** Warm, plainspoken, confidence-first — for advertisers, not shoppers. "You" = advertiser, "we" = brand. Lead with status and performance ("Approved and live within 2 hours"). No emoji.
-- **Icons:** Use the shipped functional set (solid-fill, single-weight, `currentColor`, shared square grid). Where imagery isn't available, use the blue-only placeholder tiles in `assets/placeholders/`. Never hand-draw icons or use emoji.
+- **Icons:** Three sets — Functional (solid-fill, `<Icon>` default), Outline (line-style, `<Icon variant="outline">`), and Category (two-tone merchandising illustrations, `<CategoryIcon>`, with a `reverse` colorway for dark backgrounds). All `currentColor`/token-driven on a shared square grid. Where imagery isn't available, use the blue-only placeholder tiles in `assets/placeholders/`. Never hand-draw icons or use emoji.
 
 ## Using components in static HTML
 Load React + Babel, then the compiled bundle, then read components off the namespace:

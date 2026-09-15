@@ -1,0 +1,35 @@
+<!-- @dsCard group="Brand" viewport="900x820" name="Category Icons" subtitle="Two-tone merchandising icons for category tiles and browsing" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--color-surface); padding: 24px; }
+  .note { font-size: 12px; color: var(--text-tertiary); margin: 0 0 16px; max-width: 640px; }
+  h2 { font-size: 13px; color: var(--text-secondary); margin: 0 0 12px; }
+  .panel { padding: 20px; border-radius: var(--radius-md); margin-bottom: 24px; }
+  .panel.light { background: var(--color-surface-sunken); }
+  .panel.dark { background: var(--wm-bentonville-blue); }
+  .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 18px 10px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .item img { width: 32px; height: 32px; }
+  .lbl { font-size: 9px; color: var(--text-tertiary); text-align: center; }
+  .dark .lbl { color: var(--wm-white); }
+</style></head>
+<body>
+  <p class="note">Illustrative two-tone icons for merchandising categories (auto, baby, electronics, pets, toys…) — sized for category tiles and browse nav, not inline text like the Functional or Outline icon sets. Use <code>&lt;CategoryIcon name="pets" reverse /&gt;</code> for the dark-background colorway below; it's an art-directed alternate, not a mechanical color flip, so a few icons look identical in both rows. Names are best-effort visual labels assigned during asset extraction.</p>
+  <div class="panel light">
+    <h2>Primary — light backgrounds</h2>
+    <div class="grid" id="g-primary"></div>
+  </div>
+  <div class="panel dark">
+    <h2 style="color:var(--wm-white)">Reverse — dark backgrounds</h2>
+    <div class="grid" id="g-reverse"></div>
+  </div>
+  <script>
+    const icons = ['auto','auto-care','baby','bakery','basket','beauty','books','camping-outdoors','cell-phones','clothing','delivery-van','drinkware','electronics','featured-brand','garden-center','gifts','greeting-cards','grocery','hardware','home-decor','home-improvement','household-essentials','money-services','movies-tv','music','office-school','personal-care','pets','photo-center','protection-plans','registry','salon-services','scan-and-go','seasonal','shop','store-locator','toys','video-games'];
+    document.getElementById('g-primary').innerHTML = icons.map(n =>
+      `<div class="item"><img src="../assets/icons/category/${n}.svg" alt=""><span class="lbl">${n}</span></div>`
+    ).join('');
+    document.getElementById('g-reverse').innerHTML = icons.map(n =>
+      `<div class="item"><img src="../assets/icons/category/reverse/${n}.svg" alt=""><span class="lbl">${n}</span></div>`
+    ).join('');
+  </script>
+</body></html>
