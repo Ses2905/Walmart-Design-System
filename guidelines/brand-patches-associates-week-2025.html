@@ -1,0 +1,20 @@
+<!-- @dsCard group="Brand" viewport="900x620" name="Associates Week 2025 Patches" subtitle="Campaign-specific patch set — extracted from the raw Illustrator source" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--wm-sky-100);padding: 24px}
+  .note{margin:0 0 16px;font-size:11px;color:var(--wm-bentonville-blue);max-width:680px;line-height:1.5;opacity:.85}
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:16px}
+  .item{display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border-radius:8px;padding:10px}
+  .item img{width:88px;height:88px}
+  .lbl{font-size:8.5px;color:var(--text-tertiary);text-align:center}
+</style></head>
+<body>
+  <p class="note">Full-color campaign patches for Associates Week (21 designs) — extracted from <b>assets/patches/aw-2026/FY26-Associates_Week-Pins&amp;Patches-RGB-042125.ai</b> (the source file itself is dated/named for FY26 planning, but its content is the 2025 campaign — kept as delivered). Real vector art, not raster like the general patch set, so colors are literal to the source rather than tokenized — this is a dated campaign line, not a systematized UI set. Names are best-effort visual labels; no names were embedded in the source file.</p>
+  <div class="grid" id="g"></div>
+  <script>
+    const names = ['thank-you-associates','arkansas-plaid','associates-week-badge','aw25','bentonville-arkansas','happy-to-help','good-job','walmart-chrome','save-money-live-better','we-love-our-people','low-prices-every-day','whats-that-spell','stars-unboxed','walmart-walmart-walmart-walmart','we-appreciate-you-always','how-can-i-help-you','our-people-make-the-difference','truck','together-the-walmart-way','interstate-shield-2025','be-americas-favorite'];
+    document.getElementById('g').innerHTML = names.map(n =>
+      `<div class="item"><img src="../assets/patches/associates-week-2025/${n}.svg" alt="${n}"><span class="lbl">${n}</span></div>`
+    ).join('');
+  </script>
+</body></html>

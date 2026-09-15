@@ -111,7 +111,7 @@ Walmart ships **three distinct icon languages** — keep them separate:
 - `icons/` — 40 functional solid-fill icons on a shared square grid (also bundled in `icon-data.js`); `outline/` — 68 line-style icons (`icon-data-outline.js`); `category/` — 38 two-tone merchandising icons, `category/reverse/` for the dark-background colorway (both bundled in `category-icon-data.js`); `ai-files/` — archived Illustrator/PDF source files
 - `placeholders/` — blue-only stand-in tiles (navy icon on sky-blue square)
 - `illustrations/` — organized into `mascot/` (Sparky), `benefits/`, `scenes/`, `spot/`, `marketing/`, `wallpapers/`, plus a few flat root files (`vestibule-community.jpg`, `trimming-guide.png`)
-- `patches/`, `merch/`, `pins/` — associate recognition patches, apparel, and enamel-pin-style marks (decorative, not UI icons)
+- `patches/`, `merch/`, `pins/` — associate recognition patches, apparel, and enamel-pin-style marks (decorative, not UI icons). `patches/associates-week-2025/` is a dedicated 21-design campaign set extracted from the raw Illustrator source archived in `patches/aw-2026/`.
 - `motion/` — brand video/gif reference (store, wordmark, product/spark motion)
 - `favicons/` — app icons and favicons at standard sizes
 - `brand/`, `colors/` — source brand-guideline PDFs and Adobe `.ase` color swatches
