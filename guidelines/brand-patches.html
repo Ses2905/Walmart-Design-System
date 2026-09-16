@@ -17,11 +17,11 @@
     <h2>Merch marks</h2>
     <div class="grid" id="merch"></div>
   </div>
-  <p class="note">Embroidered-style patches and buttons for associate recognition and culture moments. Playful, tactile, always on-brand blue + yellow. Full set in <b>assets/patches/</b>; merch marks (vest, hat) in <b>assets/merch/</b>; enamel-pin-style marks in <b>assets/pins/</b> (see the Pins card). The dedicated Associates Week 2025 campaign patch set (21 designs, extracted from <b>assets/patches/aw-2026/</b>'s raw Illustrator source) has its own card.</p>
+  <p class="note">Embroidered-style patches and buttons for associate recognition and culture moments. Playful, tactile, always on-brand blue + yellow. Pins, patches, and merch marks are consolidated in <b>assets/illustrations/pins-patches/</b> (see the Pins card for the enamel-pin-style marks). The dedicated Associates Week 2025 campaign patch set (21 designs) has its own card.</p>
   <script>
-    const patches = ['associate-of-the-month','happy-to-help','international','make-a-difference-that-matters-button','make-a-difference-that-matters','megaphone','our-people-make-the-difference-button','people-powered-button','success-starts-here','team-w-always','we-appreciate-you-always-button','we-heart-our-people','we-make-walmart','whats-that-spell'];
-    const merch = ['associate-vest','trucker-hat'];
-    document.getElementById('patches').innerHTML = patches.map(n => `<img src="../assets/patches/${n}.svg" alt="${n}">`).join('');
-    document.getElementById('merch').innerHTML = merch.map(n => `<img src="../assets/merch/${n}.svg" alt="${n}">`).join('');
+    const patches = ['associate-of-the-month-patch','happy-to-help-patch','international-pin','make-a-difference-that-matters-button','make-a-difference-that-matters-patch','megaphone-patch','our-people-make-the-difference-button','people-powered-button','success-starts-here-patch','team-w-always-patch','we-appreciate-you-always-button','we-heart-our-people-patch','we-make-walmart-patch','whats-that-spell-patch'];
+    const merch = ['associate-vest-pin','trucker-hat-pin'];
+    document.getElementById('patches').innerHTML = patches.map(n => `<img src="../assets/illustrations/pins-patches/${n}.svg" alt="${n}">`).join('');
+    document.getElementById('merch').innerHTML = merch.map(n => `<img src="../assets/illustrations/pins-patches/${n}.svg" alt="${n}">`).join('');
   </script>
 </body></html>
