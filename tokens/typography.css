@@ -9,7 +9,7 @@
      • Everyday Sans Headline — large display & headlines (h1–h6)
      • Everyday Sans UI       — running body copy (the base font-family)
      • Everyday Sans Mono     — tabular numerals (see .wm-numeric)
-   Desktop .otf originals live in assets/fonts/desktop-otf/.
+   Desktop .otf originals for design tooling (not shipped to consumers) live in reference/fonts-desktop/, outside the assets/ tree.
    ============================================================ */
 
 /* ---- Everyday Sans (text) ---- */
