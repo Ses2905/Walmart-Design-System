@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path transform="matrix(1,0,0,-1,31,14.040001)" d="M0 0V-8.96H-30V7.15C-30 8.2-29.16 9.04-28.11 9.04H-10.65C-9.83 9.04-9.06 8.64-8.59 7.97L-4.94 2.7-2.51 1.8-.82 1.17C-.33 .99 0 .52 0 0" fill="var(--wm-true-blue, #0053e2)"/>
+  <path transform="matrix(1,0,0,-1,31,14.040001)" d="M0 0V-1.02H-1.26C-1.95-1.02-2.51-.45-2.51 .24V1.8L-.82 1.17C-.33 .99 0 .52 0 0" fill="var(--wm-everyday-blue, #4dbdf5)" fill-rule="evenodd"/>
+  <path transform="matrix(1,0,0,-1,23.7661,11.914301)" d="M0 0H-7.766V4.914H-4.091C-3.643 4.914-3.231 4.693-2.979 4.331L-2.74 3.981Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,23.7661,11.914301)" d="M0 0H-6.745V.006L-2.74 3.981Z" fill="#fff" fill-rule="evenodd"/>
+  <path transform="matrix(1,0,0,-1,7,19)" d="M0 0C2.209 0 4-1.791 4-4 4-6.209 2.209-8 0-8-2.209-8-4-6.209-4-4-4-1.791-2.209 0 0 0" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,7,21)" d="M0 0C1.105 0 2-.895 2-2 2-3.105 1.105-4 0-4-1.105-4-2-3.105-2-2-2-.895-1.105 0 0 0" fill="var(--wm-true-blue, #0053e2)"/>
+  <path transform="matrix(1,0,0,-1,25,19)" d="M0 0C2.209 0 4-1.791 4-4 4-6.209 2.209-8 0-8-2.209-8-4-6.209-4-4-4-1.791-2.209 0 0 0" fill="var(--wm-everyday-blue, #4dbdf5)"/>
+  <path transform="matrix(1,0,0,-1,25,21)" d="M0 0C1.105 0 2-.895 2-2 2-3.105 1.105-4 0-4-1.105-4-2-3.105-2-2-2-.895-1.105 0 0 0" fill="var(--wm-true-blue, #0053e2)"/>
+</svg>
