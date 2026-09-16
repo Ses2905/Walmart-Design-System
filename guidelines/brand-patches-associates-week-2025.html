@@ -9,12 +9,12 @@
   .lbl{font-size:8.5px;color:var(--text-tertiary);text-align:center}
 </style></head>
 <body>
-  <p class="note">Full-color campaign patches for Associates Week (21 designs) — extracted from <b>assets/patches/aw-2026/FY26-Associates_Week-Pins&amp;Patches-RGB-042125.ai</b> (the source file itself is dated/named for FY26 planning, but its content is the 2025 campaign — kept as delivered). Real vector art, not raster like the general patch set, so colors are literal to the source rather than tokenized — this is a dated campaign line, not a systematized UI set. Names are best-effort visual labels; no names were embedded in the source file.</p>
+  <p class="note">Full-color campaign patches for Associates Week (21 designs) — extracted from the raw Illustrator source now archived at <b>assets/illustrations/pins-patches/ai-files/</b> (the source file itself is dated/named for FY26 planning, but its content is the 2025 campaign — kept as delivered). Real vector art, not raster like the general patch set, so colors are literal to the source rather than tokenized — this is a dated campaign line, not a systematized UI set. Names are best-effort visual labels; no names were embedded in the source file. Consolidated alongside the other pins, patches, and merch in <b>assets/illustrations/pins-patches/</b>; two names were reconciled against that shared folder (<code>associates-week-badge</code> → <code>associates-week-2025</code>, <code>we-love-our-people</code> → <code>we-heart-our-people</code>).</p>
   <div class="grid" id="g"></div>
   <script>
-    const names = ['thank-you-associates','arkansas-plaid','associates-week-badge','aw25','bentonville-arkansas','happy-to-help','good-job','walmart-chrome','save-money-live-better','we-love-our-people','low-prices-every-day','whats-that-spell','stars-unboxed','walmart-walmart-walmart-walmart','we-appreciate-you-always','how-can-i-help-you','our-people-make-the-difference','truck','together-the-walmart-way','interstate-shield-2025','be-americas-favorite'];
+    const names = ['thank-you-associates','arkansas-plaid','associates-week-2025','aw25','bentonville-arkansas','happy-to-help','good-job','walmart-chrome','save-money-live-better','we-heart-our-people','low-prices-every-day','whats-that-spell','stars-unboxed','walmart-walmart-walmart-walmart','we-appreciate-you-always','how-can-i-help-you','our-people-make-the-difference','truck','together-the-walmart-way','interstate-shield-2025','be-americas-favorite'];
     document.getElementById('g').innerHTML = names.map(n =>
-      `<div class="item"><img src="../assets/patches/associates-week-2025/${n}.svg" alt="${n}"><span class="lbl">${n}</span></div>`
+      `<div class="item"><img src="../assets/illustrations/pins-patches/${n}.svg" alt="${n}"><span class="lbl">${n}</span></div>`
     ).join('');
   </script>
 </body></html>

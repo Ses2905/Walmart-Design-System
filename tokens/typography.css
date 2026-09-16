@@ -13,36 +13,36 @@
    ============================================================ */
 
 /* ---- Everyday Sans (text) ---- */
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-Light-Web.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-LightItalic-Web.woff') format('woff');font-weight:300;font-style:italic;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-Regular-Web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-RegularItalic-Web.woff') format('woff');font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-Medium-Web.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-MediumItalic-Web.woff') format('woff');font-weight:500;font-style:italic;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-Bold-Web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-BoldItalic-Web.woff') format('woff');font-weight:700;font-style:italic;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-Black-Web.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/EverydaySans-BlackItalic-Web.woff') format('woff');font-weight:900;font-style:italic;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-light-web.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-lightitalic-web.woff') format('woff');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-regular-web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-regularitalic-web.woff') format('woff');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-medium-web.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-mediumitalic-web.woff') format('woff');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-bold-web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-bolditalic-web.woff') format('woff');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-black-web.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans';src:url('../assets/fonts/everyday-sans/everydaysans-blackitalic-web.woff') format('woff');font-weight:900;font-style:italic;font-display:swap}
 
 /* ---- Everyday Sans Headline (display) ---- */
-@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/EverydaySansHeadline-Light-Web.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/EverydaySansHeadline-Regular-Web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/EverydaySansHeadline-Medium-Web.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/EverydaySansHeadline-Bold-Web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/EverydaySansHeadline-BoldItalic-Web.woff') format('woff');font-weight:700;font-style:italic;font-display:swap}
-@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/EverydaySansHeadline-Black-Web.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/everydaysansheadline-light-web.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/everydaysansheadline-regular-web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/everydaysansheadline-medium-web.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/everydaysansheadline-bold-web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/everydaysansheadline-bolditalic-web.woff') format('woff');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'Everyday Sans Headline';src:url('../assets/fonts/everyday-sans-headline/everydaysansheadline-black-web.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
 
 /* ---- Everyday Sans UI (interface) ---- */
-@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/EverydaySansUI-Light-Web.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/EverydaySansUI-Regular-Web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/EverydaySansUI-RegularItalic-Web.woff') format('woff');font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/EverydaySansUI-Medium-Web.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/EverydaySansUI-Bold-Web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/EverydaySansUI-Black-Web.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/everydaysansui-light-web.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/everydaysansui-regular-web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/everydaysansui-regularitalic-web.woff') format('woff');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/everydaysansui-medium-web.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/everydaysansui-bold-web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans UI';src:url('../assets/fonts/everyday-sans-ui/everydaysansui-black-web.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
 
 /* ---- Everyday Sans Mono ---- */
-@font-face{font-family:'Everyday Sans Mono';src:url('../assets/fonts/everyday-sans-mono/EverydaySansMono-Regular-Web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Everyday Sans Mono';src:url('../assets/fonts/everyday-sans-mono/EverydaySansMono-Bold-Web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans Mono';src:url('../assets/fonts/everyday-sans-mono/everydaysansmono-regular-web.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Everyday Sans Mono';src:url('../assets/fonts/everyday-sans-mono/everydaysansmono-bold-web.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
 
 :root {
   /* ---- Families ---- */
@@ -84,6 +84,7 @@
   /* ---- Line heights ---- */
   --lh-tight: 1.05;   /* @kind font */
   --lh-snug: 1.15;    /* @kind font */
+  --lh-heading: 1.25; /* @kind font */  /* multi-line headings, 17-32px — between snug and normal */
   --lh-normal: 1.4;   /* @kind font */
   --lh-relaxed: 1.55; /* @kind font */
 
@@ -92,6 +93,7 @@
   --ls-snug: -0.01em;    /* @kind font */
   --ls-normal: 0;        /* @kind font */
   --ls-wide: 0.04em;     /* @kind font */
+  --ls-wider: 0.06em;    /* @kind font */
   --ls-eyebrow: 0.25em;  /* @kind font */  /* 2.5 expanded */
 
   /* ---- Measure: how wide a line of text may run ---- */

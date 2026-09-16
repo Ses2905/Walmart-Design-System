@@ -1,5 +1,5 @@
 // Auto-generated Walmart outline (line-style) functional icon set.
-// Source: assets/icons/outline/*.svg, extracted from WMT-Icons-Functional-Primary-RGB.ai
+// Source: assets/icons/functional/primary/*.svg, extracted from WMT-Icons-Functional-Primary-RGB.ai
 // (68 artboards, one icon per page). Names are best-effort visual labels
 // assigned during extraction — no icon names were embedded in the source file.
 // Each value is an inline <svg> using fill="currentColor"/stroke="currentColor" and a

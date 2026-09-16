@@ -178,12 +178,14 @@
   /* ---- Line-height + letter-spacing roles ---- */
   --leading-tight: var(--lh-tight);
   --leading-snug: var(--lh-snug);
+  --leading-heading: var(--lh-heading);
   --leading-normal: var(--lh-normal);
   --leading-relaxed: var(--lh-relaxed);
   --tracking-tight: var(--ls-tight);
   --tracking-snug: var(--ls-snug);
   --tracking-normal: var(--ls-normal);
   --tracking-wide: var(--ls-wide);
+  --tracking-wider: var(--ls-wider);
   --tracking-eyebrow: var(--ls-eyebrow);
 
   /* ---- Motion ---- */

@@ -1,5 +1,5 @@
 // Auto-generated Walmart functional icon set.
-// Source: assets/icons/*.svg (regenerated from the clean, full-precision source
+// Source: assets/icons/ui/*.svg (regenerated from the clean, full-precision source
 // files — the design system's own pre-minified icon-data.js had corrupted path
 // data in 10/40 icons, a scientific-notation bug in its minifier, confirmed by
 // rendering every icon headlessly and diffing against these source files.

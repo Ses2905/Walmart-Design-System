@@ -1,5 +1,5 @@
 // Auto-generated Walmart category (two-tone merchandising) icon set.
-// Source: assets/icons/category/*.svg and assets/icons/category/reverse/*.svg,
+// Source: assets/icons/general/primary/*.svg and assets/icons/general/reverse/*.svg,
 // extracted from WMT-Icons-General-Primary-RGB.ai / …-Reverse-RGB.ai (38 artboards
 // each, one icon per page). Names are best-effort visual labels assigned during
 // extraction — no icon names were embedded in the source file.
