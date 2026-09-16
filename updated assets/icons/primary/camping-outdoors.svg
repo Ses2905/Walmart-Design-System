@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path transform="matrix(1,0,0,-1,30.5813,28)" d="M0 0H-29.163L-15.447 24.493C-15.068 25.169-14.095 25.169-13.716 24.493Z" fill="var(--wm-true-blue, #0053e2)" fill-rule="evenodd"/>
-  <path transform="matrix(1,0,0,-1,22,28)" d="M0 0H-12L-6 11Z" fill="var(--wm-everyday-blue, #4dbdf5)" fill-rule="evenodd"/>
-  <path transform="matrix(1,0,0,-1,16,17)" d="M0 0 7-3 6-11" fill="#fff" fill-rule="evenodd"/>
-</svg>

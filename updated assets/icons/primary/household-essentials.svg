@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path transform="matrix(1,0,0,-1,21,2)" d="M0 0H3V-2L0-2.6Z" fill="var(--wm-everyday-blue, #4dbdf5)"/>
-  <path transform="matrix(1,0,0,-1,22,7)" d="M0 0H-4V-1.503C-4-2.964-3.543-4.389-2.694-5.579L-.306-8.921C.543-10.111 1-11.536 1-12.997V-23H-13V-12.997C-13-11.536-12.543-10.111-11.694-8.921L-9.306-5.579C-8.457-4.389-8-2.964-8-1.503V0H-11C-11 2.761-8.761 5-6 5H0V1.5 .333" fill="var(--wm-true-blue, #0053e2)" fill-rule="evenodd"/>
-  <path transform="matrix(1,0,0,-1,0,32)" d="M23 6H9V12H23Z" fill="var(--wm-everyday-blue, #4dbdf5)" fill-rule="evenodd"/>
-  <path transform="matrix(1,0,0,-1,0,32)" d="M20 8H12V10H20Z" fill="#fff" fill-rule="evenodd"/>
-  <path transform="matrix(1,0,0,-1,0,32)" d="M22 23H20V26.5H22Z" fill="var(--wm-true-blue, #0053e2)" fill-rule="evenodd"/>
-</svg>

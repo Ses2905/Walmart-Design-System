@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path transform="matrix(1,0,0,-1,16,1)" d="M0 0C3.038 0 5.5-2.462 5.5-5.5 5.5-8.538 3.038-11 0-11-3.038-11-5.5-8.538-5.5-5.5-5.5-2.462-3.038 0 0 0" fill="var(--wm-everyday-blue, #4dbdf5)"/>
-  <path transform="matrix(1,0,0,-1,16,3.4444009)" d="M0 0C1.688 0 3.056-1.368 3.056-3.056 3.056-4.743 1.688-6.111 0-6.111-1.688-6.111-3.056-4.743-3.056-3.056-3.056-1.368-1.688 0 0 0Z" fill="none" stroke="var(--wm-true-blue, #0053e2)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4"/>
-  <path transform="matrix(1,0,0,-1,0,32)" d="M3 19H29V2H3Z" fill="var(--wm-true-blue, #0053e2)"/>
-  <path transform="matrix(1,0,0,-1,16,17.6568)" d="M0 0 .273 .218C.927 .764 1.745 1.091 2.564 1.091 4.473 1.091 6-.436 6-2.291V-2.345C6-5.4 1.527-8.018 .491-8.618 .354-8.684 .226-8.777 0-8.777" fill="var(--wm-everyday-blue, #4dbdf5)"/>
-  <path transform="matrix(1,0,0,-1,16,17.6568)" d="M0 0-.273 .218C-.927 .764-1.745 1.091-2.564 1.091-4.473 1.091-6-.436-6-2.291V-2.345C-6-5.4-1.527-8.018-.491-8.618-.354-8.684-.226-8.777 0-8.777" fill="var(--wm-everyday-blue, #4dbdf5)"/>
-</svg>
