@@ -62,6 +62,9 @@
   --border-subtle: var(--on-dark-border);
   --border-default: var(--on-dark-border-strong);
   --color-surface: var(--wm-bentonville-blue);
+  /* True Blue's own focus ring is invisible against this background
+     (True Blue on Bentonville Blue) — swap to on-dark white. */
+  --focus-ring: var(--on-dark-primary);
   background: var(--wm-bentonville-blue);
   color: var(--on-dark-primary);
 }
@@ -73,6 +76,9 @@
   --text-eyebrow: var(--on-dark-primary);
   --border-subtle: var(--on-dark-border);
   --color-surface: var(--wm-true-blue);
+  /* This surface's ground IS True Blue, the default focus-ring color —
+     same failure as .wm-surface-dark, so the same on-dark swap applies. */
+  --focus-ring: var(--on-dark-primary);
   background: var(--wm-true-blue);
   color: var(--on-dark-primary);
 }

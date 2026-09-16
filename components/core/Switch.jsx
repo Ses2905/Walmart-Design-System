@@ -18,7 +18,7 @@ export function Switch({ checked, defaultChecked, onChange, disabled, label, id,
       }}>
         <span style={{
           position: 'absolute', top: 3, left: on ? 23 : 3, width: 22, height: 22, borderRadius: '50%',
-          background: '#fff', boxShadow: 'var(--shadow-sm)',
+          background: 'var(--wm-white)', boxShadow: 'var(--shadow-sm)',
           transition: 'left var(--dur-base) var(--ease-standard)',
         }} />
       </span>

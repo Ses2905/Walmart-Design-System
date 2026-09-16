@@ -18,9 +18,9 @@ export function Button({
   ...rest
 }) {
   const sizes = {
-    sm: { height: 36, padding: '0 16px', font: 14, gap: 6, icon: 16 },
-    md: { height: 48, padding: '0 24px', font: 16, gap: 8, icon: 20 },
-    lg: { height: 56, padding: '0 32px', font: 17, gap: 8, icon: 22 },
+    sm: { height: 36, padding: '0 16px', font: 'var(--text-sm)', gap: 6, icon: 16 },
+    md: { height: 48, padding: '0 24px', font: 'var(--text-md)', gap: 8, icon: 20 },
+    lg: { height: 56, padding: '0 32px', font: 'var(--text-h5)', gap: 8, icon: 22 },
   };
   const s = sizes[size] || sizes.md;
 

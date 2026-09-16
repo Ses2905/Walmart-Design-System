@@ -60,7 +60,7 @@ export default function Home() {
           <Button size="md">Medium</Button>
           <Button size="lg">Large</Button>
         </div>
-        <div className="rounded-lg bg-bentonville-blue p-6">
+        <div className="wm-surface-dark rounded-lg p-6">
           <Button variant="ondark">On dark surface</Button>
         </div>
       </Section>

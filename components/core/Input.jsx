@@ -9,12 +9,12 @@ export function Input({ label, hint, error, iconLeft, size = 'md', id, style, co
   const reactId = React.useId();
   const inputId = id || reactId;
   const [focus, setFocus] = React.useState(false);
-  const sizes = { md: { h: 48, font: 16, pad: 16 }, lg: { h: 56, font: 17, pad: 18 } };
+  const sizes = { md: { h: 48, font: 'var(--text-md)', pad: 16 }, lg: { h: 56, font: 'var(--text-h5)', pad: 18 } };
   const s = sizes[size] || sizes.md;
   const borderColor = error ? 'var(--wm-error)' : focus ? 'var(--wm-true-blue)' : 'var(--border-default)';
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6, fontFamily: 'var(--font-sans)', ...containerStyle }}>
-      {label && <label htmlFor={inputId} style={{ fontSize: 14, fontWeight: 'var(--fw-medium)', color: 'var(--text-primary)' }}>{label}</label>}
+      {label && <label htmlFor={inputId} style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--fw-medium)', color: 'var(--text-primary)' }}>{label}</label>}
       <div style={{
         display: 'flex', alignItems: 'center', gap: 10, height: s.h, padding: `0 ${s.pad}px`,
         background: 'var(--wm-white)', border: `1.5px solid ${borderColor}`, borderRadius: 'var(--radius-md)',

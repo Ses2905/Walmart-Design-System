@@ -72,6 +72,7 @@
   --text-h5: 17px;
   --text-body-lg: 18px;
   --text-body: 15px;
+  --text-md: 16px;      /* Button/Input md-size control text — used, but sits between sm and h5 */
   --text-sm: 14px;
   --text-xs: 12px;
   --text-2xs: 11px;   /* Badge's small size — named rather than left a magic number */

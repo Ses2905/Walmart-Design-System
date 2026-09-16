@@ -21,7 +21,7 @@ export function Chip({ children, selected = false, icon, onRemove, onClick, disa
       style={{
         display: 'inline-flex', alignItems: 'center', gap: 7, height: 38, padding: '0 16px',
         background: bg, color, border: `1.5px solid ${border}`, borderRadius: 'var(--radius-pill)',
-        fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 'var(--fw-medium)',
+        fontFamily: 'var(--font-sans)', fontSize: 'var(--text-sm)', fontWeight: 'var(--fw-medium)',
         cursor: disabled ? 'not-allowed' : 'pointer', opacity: disabled ? 0.5 : 1, whiteSpace: 'nowrap',
         transition: 'background var(--dur-fast), border-color var(--dur-fast)',
         ...style,
