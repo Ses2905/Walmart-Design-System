@@ -11,34 +11,34 @@
 <helmet>
 <script src="./ds-base.js"></script>
 <style>
-body{margin:0;background:#2e333c}
-a{color:#0053e2}a:hover{color:#001e60}
+body{margin:0;background:var(--wm-gray-800)}
+a{color:var(--wm-true-blue)}a:hover{color:var(--wm-bentonville-blue)}
 .deck{display:flex;flex-direction:column;align-items:center;gap:30px;padding:34px}
-.s{width:1280px;height:720px;flex:none;position:relative;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.4);box-sizing:border-box;background:#fff;color:#001e60;font-family:var(--font-ui);padding:64px 72px;display:flex;flex-direction:column}
-.br{font-family:var(--font-ui);font-size:11px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:#0053e2}
-.h{font-family:var(--font-display);font-weight:300;letter-spacing:-.02em;line-height:1.03;margin:0;color:inherit}
-.n{font-family:var(--font-mono);letter-spacing:-.02em}
+.s{width:1280px;height:720px;flex:none;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);box-sizing:border-box;background:var(--wm-white);color:var(--wm-bentonville-blue);font-family:var(--font-ui);padding:64px 72px;display:flex;flex-direction:column}
+.br{font-family:var(--font-ui);font-size:11px;font-weight:500;letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--wm-true-blue)}
+.h{font-family:var(--font-display);font-weight:300;letter-spacing:var(--ls-tight);line-height:1.03;margin:0;color:inherit}
+.n{font-family:var(--font-mono);letter-spacing:var(--ls-tight)}
 .pg{position:absolute;right:40px;bottom:26px;font-family:var(--font-mono);font-size:12px;opacity:.4}
 </style>
 </helmet>
 <div class="deck">
 
-<section class="s" data-screen-label="01 Cover" style="background:#001e60;color:#fff;justify-content:space-between">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start"><img src="../../assets/logos/walmart/spark/spark-everyday-blue.png" alt="" style="height:48px"><span class="br" style="color:#4dbdf5">Q3 2026 · Business review</span></div>
+<section class="s" data-screen-label="01 Cover" style="background:var(--wm-bentonville-blue);color:var(--wm-white);justify-content:space-between">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start"><img src="../../assets/logos/walmart/spark/spark-white.png" alt="" style="height:48px"><span class="br" style="color:var(--wm-everyday-blue)">Q3 2026 · Business review</span></div>
   <div>
     <h1 class="h" style="font-size:76px;max-width:18ch">Product review</h1>
-    <p style="font-size:24px;line-height:1.4;color:#a9ddf7;margin:22px 0 0;max-width:46ch;text-wrap:pretty">One line that frames the quarter: what changed, and what you are asking this room to decide.</p>
+    <p style="font-size:24px;line-height:1.4;color:var(--wm-sky-blue);margin:22px 0 0;max-width:46ch;text-wrap:pretty">One line that frames the quarter: what changed, and what you are asking this room to decide.</p>
   </div>
-  <div style="display:flex;gap:48px;font-size:14px;color:rgba(255,255,255,.72)"><span><b style="display:block;color:#fff;font-size:15px;font-weight:500">Presenter name</b>Director, Product</span><span><b style="display:block;color:#fff;font-size:15px;font-weight:500">11 September 2026</b>Leadership review</span></div>
+  <div style="display:flex;gap:48px;font-size:14px;color:rgba(255,255,255,.72)"><span><b style="display:block;color:var(--wm-white);font-size:15px;font-weight:500">Presenter name</b>Director, Product</span><span><b style="display:block;color:var(--wm-white);font-size:15px;font-weight:500">11 September 2026</b>Leadership review</span></div>
 </section>
 
 <section class="s" data-screen-label="02 Takeaways">
   <span class="br">In three lines</span>
   <h2 class="h" style="font-size:46px;margin-top:14px;max-width:20ch">What you need to know</h2>
-  <div style="margin-top:44px;display:flex;flex-direction:column;gap:0;border-top:1px solid #e2e8f0">
-    <div style="display:grid;grid-template-columns:64px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid #e2e8f0"><span class="n" style="font-size:22px;color:#0053e2">01</span><p style="margin:0;font-size:21px;line-height:1.45;color:#2d3748;max-width:62ch;text-wrap:pretty">The headline result of the quarter, stated as a conclusion rather than an activity.</p></div>
-    <div style="display:grid;grid-template-columns:64px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid #e2e8f0"><span class="n" style="font-size:22px;color:#0053e2">02</span><p style="margin:0;font-size:21px;line-height:1.45;color:#2d3748;max-width:62ch;text-wrap:pretty">The thing that did not work, named before anyone has to ask about it.</p></div>
-    <div style="display:grid;grid-template-columns:64px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid #e2e8f0"><span class="n" style="font-size:22px;color:#0053e2">03</span><p style="margin:0;font-size:21px;line-height:1.45;color:#2d3748;max-width:62ch;text-wrap:pretty">The decision you need today, with the date it becomes expensive to delay.</p></div>
+  <div style="margin-top:44px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--wm-gray-200)">
+    <div style="display:grid;grid-template-columns:64px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--wm-gray-200)"><span class="n" style="font-size:22px;color:var(--wm-true-blue)">01</span><p style="margin:0;font-size:21px;line-height:1.45;color:var(--wm-gray-800);max-width:62ch;text-wrap:pretty">The headline result of the quarter, stated as a conclusion rather than an activity.</p></div>
+    <div style="display:grid;grid-template-columns:64px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--wm-gray-200)"><span class="n" style="font-size:22px;color:var(--wm-true-blue)">02</span><p style="margin:0;font-size:21px;line-height:1.45;color:var(--wm-gray-800);max-width:62ch;text-wrap:pretty">The thing that did not work, named before anyone has to ask about it.</p></div>
+    <div style="display:grid;grid-template-columns:64px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--wm-gray-200)"><span class="n" style="font-size:22px;color:var(--wm-true-blue)">03</span><p style="margin:0;font-size:21px;line-height:1.45;color:var(--wm-gray-800);max-width:62ch;text-wrap:pretty">The decision you need today, with the date it becomes expensive to delay.</p></div>
   </div>
   <span class="pg">02</span>
 </section>
@@ -47,12 +47,12 @@ a{color:#0053e2}a:hover{color:#001e60}
   <span class="br">Scoreboard</span>
   <h2 class="h" style="font-size:42px;margin-top:14px;max-width:22ch">Against the plan we committed to in April</h2>
   <div style="margin-top:48px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px">
-    <div style="border-top:3px solid #0053e2;padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:#001e60">+18%</div><div style="font-size:15px;color:#4a5568;margin-top:12px;line-height:1.4">Weekly active accounts</div><div class="n" style="font-size:13px;color:#0053e2;margin-top:8px">Plan +12%</div></div>
-    <div style="border-top:3px solid #0053e2;padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:#001e60">3.2M</div><div style="font-size:15px;color:#4a5568;margin-top:12px;line-height:1.4">Orders in the new flow</div><div class="n" style="font-size:13px;color:#0053e2;margin-top:8px">Plan 3.0M</div></div>
-    <div style="border-top:3px solid #0053e2;padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:#001e60">4.6%</div><div style="font-size:15px;color:#4a5568;margin-top:12px;line-height:1.4">Search-to-cart conversion</div><div class="n" style="font-size:13px;color:#0053e2;margin-top:8px">Plan 4.8%</div></div>
-    <div style="border-top:3px solid #a9ddf7;padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:#001e60">0.7%</div><div style="font-size:15px;color:#4a5568;margin-top:12px;line-height:1.4">Checkout error rate</div><div class="n" style="font-size:13px;color:#718096;margin-top:8px">Guardrail &lt;1%</div></div>
+    <div style="border-top:3px solid var(--wm-true-blue);padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:var(--wm-bentonville-blue)">+18%</div><div style="font-size:15px;color:var(--wm-gray-600);margin-top:12px;line-height:1.4">Weekly active accounts</div><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-top:8px">Plan +12%</div></div>
+    <div style="border-top:3px solid var(--wm-true-blue);padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:var(--wm-bentonville-blue)">3.2M</div><div style="font-size:15px;color:var(--wm-gray-600);margin-top:12px;line-height:1.4">Orders in the new flow</div><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-top:8px">Plan 3.0M</div></div>
+    <div style="border-top:3px solid var(--wm-true-blue);padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:var(--wm-bentonville-blue)">4.6%</div><div style="font-size:15px;color:var(--wm-gray-600);margin-top:12px;line-height:1.4">Search-to-cart conversion</div><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-top:8px">Plan 4.8%</div></div>
+    <div style="border-top:3px solid var(--wm-sky-blue);padding-top:18px"><div class="n" style="font-size:56px;line-height:1;color:var(--wm-bentonville-blue)">0.7%</div><div style="font-size:15px;color:var(--wm-gray-600);margin-top:12px;line-height:1.4">Checkout error rate</div><div class="n" style="font-size:13px;color:var(--wm-gray-600);margin-top:8px">Guardrail &lt;1%</div></div>
   </div>
-  <p style="margin:auto 0 0;font-size:14px;color:#a0aec0;max-width:70ch">Source: internal analytics, 1 Jul – 30 Sep 2026. Conversion excludes app traffic.</p>
+  <p style="margin:auto 0 0;font-size:14px;color:var(--wm-gray-500);max-width:70ch">Source: internal analytics, 1 Jul – 30 Sep 2026. Conversion excludes app traffic.</p>
   <span class="pg">03</span>
 </section>
 
@@ -60,16 +60,16 @@ a{color:#0053e2}a:hover{color:#001e60}
   <div style="flex:1.1;padding:64px 56px 64px 72px;display:flex;flex-direction:column;justify-content:center">
     <span class="br">Trend</span>
     <h2 class="h" style="font-size:40px;margin-top:14px;max-width:18ch">Growth held through the pricing change</h2>
-    <p style="margin:22px 0 0;font-size:18px;line-height:1.55;color:#4a5568;max-width:44ch;text-wrap:pretty">Explain what the chart shows in one paragraph, and point at the inflection worth arguing about. Put the caveat here rather than in a footnote.</p>
+    <p style="margin:22px 0 0;font-size:18px;line-height:1.55;color:var(--wm-gray-600);max-width:44ch;text-wrap:pretty">Explain what the chart shows in one paragraph, and point at the inflection worth arguing about. Put the caveat here rather than in a footnote.</p>
   </div>
-  <div style="flex:1;background:#f7fafc;padding:64px 72px 64px 56px;display:flex;flex-direction:column;justify-content:flex-end" data-om-raster="true">
+  <div style="flex:1;background:var(--wm-sky-50);padding:64px 72px 64px 56px;display:flex;flex-direction:column;justify-content:flex-end" data-om-raster="true">
     <div style="display:flex;align-items:flex-end;gap:18px;height:340px">
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:42%;background:#a9ddf7"></div><span class="n" style="font-size:12px;color:#718096;text-align:center">Apr</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:51%;background:#a9ddf7"></div><span class="n" style="font-size:12px;color:#718096;text-align:center">May</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:58%;background:#4dbdf5"></div><span class="n" style="font-size:12px;color:#718096;text-align:center">Jun</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:64%;background:#4dbdf5"></div><span class="n" style="font-size:12px;color:#718096;text-align:center">Jul</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:79%;background:#0053e2"></div><span class="n" style="font-size:12px;color:#718096;text-align:center">Aug</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:92%;background:#0053e2"></div><span class="n" style="font-size:12px;color:#718096;text-align:center">Sep</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:42%;background:var(--wm-sky-blue)"></div><span class="n" style="font-size:12px;color:var(--wm-gray-600);text-align:center">Apr</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:51%;background:var(--wm-sky-blue)"></div><span class="n" style="font-size:12px;color:var(--wm-gray-600);text-align:center">May</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:58%;background:var(--wm-everyday-blue)"></div><span class="n" style="font-size:12px;color:var(--wm-gray-600);text-align:center">Jun</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:64%;background:var(--wm-everyday-blue)"></div><span class="n" style="font-size:12px;color:var(--wm-gray-600);text-align:center">Jul</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:79%;background:var(--wm-true-blue)"></div><span class="n" style="font-size:12px;color:var(--wm-gray-600);text-align:center">Aug</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px"><div style="height:92%;background:var(--wm-true-blue)"></div><span class="n" style="font-size:12px;color:var(--wm-gray-600);text-align:center">Sep</span></div>
     </div>
   </div>
   <span class="pg">04</span>
@@ -79,33 +79,33 @@ a{color:#0053e2}a:hover{color:#001e60}
   <span class="br">What shipped</span>
   <h2 class="h" style="font-size:42px;margin-top:14px;max-width:20ch">Three releases, one theme</h2>
   <div style="margin-top:44px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px">
-    <div><div class="n" style="font-size:13px;color:#0053e2;margin-bottom:12px">July</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 10px;color:#001e60;max-width:16ch">Release name</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#4a5568;text-wrap:pretty">What customers can now do that they could not before, and the measured effect.</p></div>
-    <div><div class="n" style="font-size:13px;color:#0053e2;margin-bottom:12px">August</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 10px;color:#001e60;max-width:16ch">Release name</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#4a5568;text-wrap:pretty">Same framing. If a release has no measured effect yet, say when the read arrives.</p></div>
-    <div><div class="n" style="font-size:13px;color:#0053e2;margin-bottom:12px">September</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 10px;color:#001e60;max-width:16ch">Release name</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#4a5568;text-wrap:pretty">Close the set with the release that sets up next quarter's bet.</p></div>
+    <div><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-bottom:12px">July</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 10px;color:var(--wm-bentonville-blue);max-width:16ch">Release name</h3><p style="margin:0;font-size:15px;line-height:1.55;color:var(--wm-gray-600);text-wrap:pretty">What customers can now do that they could not before, and the measured effect.</p></div>
+    <div><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-bottom:12px">August</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 10px;color:var(--wm-bentonville-blue);max-width:16ch">Release name</h3><p style="margin:0;font-size:15px;line-height:1.55;color:var(--wm-gray-600);text-wrap:pretty">Same framing. If a release has no measured effect yet, say when the read arrives.</p></div>
+    <div><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-bottom:12px">September</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 10px;color:var(--wm-bentonville-blue);max-width:16ch">Release name</h3><p style="margin:0;font-size:15px;line-height:1.55;color:var(--wm-gray-600);text-wrap:pretty">Close the set with the release that sets up next quarter's bet.</p></div>
   </div>
-  <div style="margin-top:auto;border-top:1px solid #e2e8f0;padding-top:20px;display:flex;gap:48px;font-size:14px;color:#718096"><span><b class="n" style="color:#001e60;font-size:18px;display:block">14</b>Experiments run</span><span><b class="n" style="color:#001e60;font-size:18px;display:block">9</b>Shipped to 100%</span><span><b class="n" style="color:#001e60;font-size:18px;display:block">3</b>Rolled back</span></div>
+  <div style="margin-top:auto;border-top:1px solid var(--wm-gray-200);padding-top:20px;display:flex;gap:48px;font-size:14px;color:var(--wm-gray-600)"><span><b class="n" style="color:var(--wm-bentonville-blue);font-size:18px;display:block">14</b>Experiments run</span><span><b class="n" style="color:var(--wm-bentonville-blue);font-size:18px;display:block">9</b>Shipped to 100%</span><span><b class="n" style="color:var(--wm-bentonville-blue);font-size:18px;display:block">3</b>Rolled back</span></div>
   <span class="pg">05</span>
 </section>
 
-<section class="s" data-screen-label="06 Customer voice" style="background:#001e60;color:#fff;justify-content:center">
-  <span class="br" style="color:#4dbdf5">Customer voice</span>
-  <p style="font-family:var(--font-display);font-weight:300;font-size:46px;line-height:1.25;margin:28px 0 0;max-width:24ch;color:#fff;text-wrap:pretty">A verbatim quote that makes the problem impossible to argue with.</p>
-  <div style="margin-top:36px;display:flex;align-items:center;gap:16px"><span style="width:40px;height:1px;background:#4dbdf5"></span><span style="font-size:15px;color:#a9ddf7">Research participant · Store manager, Texas</span></div>
+<section class="s" data-screen-label="06 Customer voice" style="background:var(--wm-bentonville-blue);color:var(--wm-white);justify-content:center">
+  <span class="br" style="color:var(--wm-everyday-blue)">Customer voice</span>
+  <p style="font-family:var(--font-display);font-weight:300;font-size:46px;line-height:1.25;margin:28px 0 0;max-width:24ch;color:var(--wm-white);text-wrap:pretty">A verbatim quote that makes the problem impossible to argue with.</p>
+  <div style="margin-top:36px;display:flex;align-items:center;gap:16px"><span style="width:40px;height:1px;background:var(--wm-everyday-blue)"></span><span style="font-size:15px;color:var(--wm-sky-blue)">Research participant · Store manager, Texas</span></div>
   <div style="margin-top:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;border-top:1px solid rgba(255,255,255,.18);padding-top:24px">
-    <div><div class="n" style="font-size:30px;color:#fff">61%</div><div style="font-size:14px;color:#a9ddf7;margin-top:6px;line-height:1.4">Said the same thing unprompted</div></div>
-    <div><div class="n" style="font-size:30px;color:#fff">24</div><div style="font-size:14px;color:#a9ddf7;margin-top:6px;line-height:1.4">Interviews this quarter</div></div>
-    <div><div class="n" style="font-size:30px;color:#fff">4.2</div><div style="font-size:14px;color:#a9ddf7;margin-top:6px;line-height:1.4">Task satisfaction, out of 5</div></div>
+    <div><div class="n" style="font-size:30px;color:var(--wm-white)">61%</div><div style="font-size:14px;color:var(--wm-sky-blue);margin-top:6px;line-height:1.4">Said the same thing unprompted</div></div>
+    <div><div class="n" style="font-size:30px;color:var(--wm-white)">24</div><div style="font-size:14px;color:var(--wm-sky-blue);margin-top:6px;line-height:1.4">Interviews this quarter</div></div>
+    <div><div class="n" style="font-size:30px;color:var(--wm-white)">4.2</div><div style="font-size:14px;color:var(--wm-sky-blue);margin-top:6px;line-height:1.4">Task satisfaction, out of 5</div></div>
   </div>
-  <span class="pg" style="color:#fff">06</span>
+  <span class="pg" style="color:var(--wm-white)">06</span>
 </section>
 
 <section class="s" data-screen-label="07 What we learned">
   <span class="br">What we learned</span>
   <h2 class="h" style="font-size:42px;margin-top:14px;max-width:22ch">Two assumptions held, one did not</h2>
   <div style="margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px">
-    <div style="border-top:2px solid #0053e2;padding-top:18px"><h3 style="font-family:var(--font-display);font-weight:400;font-size:20px;margin:0 0 10px;color:#001e60">Held</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#4a5568;text-wrap:pretty">The assumption, the evidence that confirmed it, and what you will now build on top of it.</p></div>
-    <div style="border-top:2px solid #0053e2;padding-top:18px"><h3 style="font-family:var(--font-display);font-weight:400;font-size:20px;margin:0 0 10px;color:#001e60">Held</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#4a5568;text-wrap:pretty">Same structure. Keep confirmations short; the room will spend its attention on the miss.</p></div>
-    <div style="border-top:2px solid #001e60;padding-top:18px;grid-column:1 / -1"><h3 style="font-family:var(--font-display);font-weight:400;font-size:20px;margin:0 0 10px;color:#001e60">Did not hold</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#4a5568;max-width:80ch;text-wrap:pretty">State the wrong assumption plainly, what it cost in time or spend, and the change you have already made in response. Ending on the correction is what makes the admission useful.</p></div>
+    <div style="border-top:2px solid var(--wm-true-blue);padding-top:18px"><h3 style="font-family:var(--font-display);font-weight:400;font-size:20px;margin:0 0 10px;color:var(--wm-bentonville-blue)">Held</h3><p style="margin:0;font-size:15px;line-height:1.55;color:var(--wm-gray-600);text-wrap:pretty">The assumption, the evidence that confirmed it, and what you will now build on top of it.</p></div>
+    <div style="border-top:2px solid var(--wm-true-blue);padding-top:18px"><h3 style="font-family:var(--font-display);font-weight:400;font-size:20px;margin:0 0 10px;color:var(--wm-bentonville-blue)">Held</h3><p style="margin:0;font-size:15px;line-height:1.55;color:var(--wm-gray-600);text-wrap:pretty">Same structure. Keep confirmations short; the room will spend its attention on the miss.</p></div>
+    <div style="border-top:2px solid var(--wm-bentonville-blue);padding-top:18px;grid-column:1 / -1"><h3 style="font-family:var(--font-display);font-weight:400;font-size:20px;margin:0 0 10px;color:var(--wm-bentonville-blue)">Did not hold</h3><p style="margin:0;font-size:15px;line-height:1.55;color:var(--wm-gray-600);max-width:80ch;text-wrap:pretty">State the wrong assumption plainly, what it cost in time or spend, and the change you have already made in response. Ending on the correction is what makes the admission useful.</p></div>
   </div>
   <span class="pg">07</span>
 </section>
@@ -114,10 +114,10 @@ a{color:#0053e2}a:hover{color:#001e60}
   <span class="br">Next two quarters</span>
   <h2 class="h" style="font-size:42px;margin-top:14px;max-width:20ch">Where the team goes next</h2>
   <div style="margin-top:44px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;flex:1;align-content:start">
-    <div style="border-top:3px solid #001e60;padding-top:16px"><div class="n" style="font-size:13px;color:#0053e2;margin-bottom:10px">Q4 2026</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:#001e60">Theme</h3><p style="margin:0;font-size:14px;line-height:1.5;color:#4a5568;text-wrap:pretty">The outcome this quarter is accountable for.</p></div>
-    <div style="border-top:3px solid #0053e2;padding-top:16px"><div class="n" style="font-size:13px;color:#0053e2;margin-bottom:10px">Q1 2027</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:#001e60">Theme</h3><p style="margin:0;font-size:14px;line-height:1.5;color:#4a5568;text-wrap:pretty">What becomes possible once the first theme lands.</p></div>
-    <div style="border-top:3px solid #4dbdf5;padding-top:16px"><div class="n" style="font-size:13px;color:#0053e2;margin-bottom:10px">Q2 2027</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:#001e60">Theme</h3><p style="margin:0;font-size:14px;line-height:1.5;color:#4a5568;text-wrap:pretty">Directional. Say so rather than implying commitment.</p></div>
-    <div style="border-top:3px solid #e2e8f0;padding-top:16px"><div class="n" style="font-size:13px;color:#a0aec0;margin-bottom:10px">Not doing</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:#718096">Explicitly out</h3><p style="margin:0;font-size:14px;line-height:1.5;color:#a0aec0;text-wrap:pretty">The work you are declining, so nobody assumes it is queued.</p></div>
+    <div style="border-top:3px solid var(--wm-bentonville-blue);padding-top:16px"><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-bottom:10px">Q4 2026</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:var(--wm-bentonville-blue)">Theme</h3><p style="margin:0;font-size:14px;line-height:1.5;color:var(--wm-gray-600);text-wrap:pretty">The outcome this quarter is accountable for.</p></div>
+    <div style="border-top:3px solid var(--wm-true-blue);padding-top:16px"><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-bottom:10px">Q1 2027</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:var(--wm-bentonville-blue)">Theme</h3><p style="margin:0;font-size:14px;line-height:1.5;color:var(--wm-gray-600);text-wrap:pretty">What becomes possible once the first theme lands.</p></div>
+    <div style="border-top:3px solid var(--wm-everyday-blue);padding-top:16px"><div class="n" style="font-size:13px;color:var(--wm-true-blue);margin-bottom:10px">Q2 2027</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:var(--wm-bentonville-blue)">Theme</h3><p style="margin:0;font-size:14px;line-height:1.5;color:var(--wm-gray-600);text-wrap:pretty">Directional. Say so rather than implying commitment.</p></div>
+    <div style="border-top:3px solid var(--wm-gray-200);padding-top:16px"><div class="n" style="font-size:13px;color:var(--wm-gray-500);margin-bottom:10px">Not doing</div><h3 style="font-family:var(--font-display);font-weight:400;font-size:19px;margin:0 0 8px;color:var(--wm-gray-600)">Explicitly out</h3><p style="margin:0;font-size:14px;line-height:1.5;color:var(--wm-gray-500);text-wrap:pretty">The work you are declining, so nobody assumes it is queued.</p></div>
   </div>
   <span class="pg">08</span>
 </section>
@@ -126,37 +126,37 @@ a{color:#0053e2}a:hover{color:#001e60}
   <span class="br">Risks</span>
   <h2 class="h" style="font-size:42px;margin-top:14px;max-width:20ch">What could take this off course</h2>
   <table style="width:100%;border-collapse:collapse;margin-top:40px;font-size:16px">
-    <thead><tr style="border-bottom:2px solid #001e60"><th style="text-align:left;padding:12px 16px 12px 0" class="br">Risk</th><th style="text-align:left;padding:12px 16px" class="br">Impact</th><th style="text-align:left;padding:12px 16px" class="br">Owner</th><th style="text-align:left;padding:12px 0 12px 16px" class="br">Mitigation</th></tr></thead>
+    <thead><tr style="border-bottom:2px solid var(--wm-bentonville-blue)"><th style="text-align:left;padding:12px 16px 12px 0" class="br">Risk</th><th style="text-align:left;padding:12px 16px" class="br">Impact</th><th style="text-align:left;padding:12px 16px" class="br">Owner</th><th style="text-align:left;padding:12px 0 12px 16px" class="br">Mitigation</th></tr></thead>
     <tbody>
-      <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:16px 16px 16px 0;color:#001e60">The dependency outside your control</td><td style="padding:16px;color:#4a5568">High</td><td style="padding:16px;color:#4a5568">Name</td><td style="padding:16px 0 16px 16px;color:#4a5568">The specific step already underway</td></tr>
-      <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:16px 16px 16px 0;color:#001e60">The assumption most likely to break</td><td style="padding:16px;color:#4a5568">Medium</td><td style="padding:16px;color:#4a5568">Name</td><td style="padding:16px 0 16px 16px;color:#4a5568">How you will know early</td></tr>
-      <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:16px 16px 16px 0;color:#001e60">The resourcing gap</td><td style="padding:16px;color:#4a5568">Medium</td><td style="padding:16px;color:#4a5568">Name</td><td style="padding:16px 0 16px 16px;color:#4a5568">What you are asking for on the next slide</td></tr>
+      <tr style="border-bottom:1px solid var(--wm-gray-200)"><td style="padding:16px 16px 16px 0;color:var(--wm-bentonville-blue)">The dependency outside your control</td><td style="padding:16px;color:var(--wm-gray-600)">High</td><td style="padding:16px;color:var(--wm-gray-600)">Name</td><td style="padding:16px 0 16px 16px;color:var(--wm-gray-600)">The specific step already underway</td></tr>
+      <tr style="border-bottom:1px solid var(--wm-gray-200)"><td style="padding:16px 16px 16px 0;color:var(--wm-bentonville-blue)">The assumption most likely to break</td><td style="padding:16px;color:var(--wm-gray-600)">Medium</td><td style="padding:16px;color:var(--wm-gray-600)">Name</td><td style="padding:16px 0 16px 16px;color:var(--wm-gray-600)">How you will know early</td></tr>
+      <tr style="border-bottom:1px solid var(--wm-gray-200)"><td style="padding:16px 16px 16px 0;color:var(--wm-bentonville-blue)">The resourcing gap</td><td style="padding:16px;color:var(--wm-gray-600)">Medium</td><td style="padding:16px;color:var(--wm-gray-600)">Name</td><td style="padding:16px 0 16px 16px;color:var(--wm-gray-600)">What you are asking for on the next slide</td></tr>
     </tbody>
   </table>
   <span class="pg">09</span>
 </section>
 
-<section class="s" data-screen-label="10 The ask" style="background:#0053e2;color:#fff;justify-content:center">
-  <span class="br" style="color:#a9ddf7">The ask</span>
-  <h2 class="h" style="font-size:58px;margin-top:18px;max-width:20ch;color:#fff">One decision, stated in a single sentence</h2>
+<section class="s" data-screen-label="10 The ask" style="background:var(--wm-true-blue);color:var(--wm-white);justify-content:center">
+  <span class="br" style="color:var(--wm-white)">The ask</span>
+  <h2 class="h" style="font-size:58px;margin-top:18px;max-width:20ch;color:var(--wm-white)">One decision, stated in a single sentence</h2>
   <div style="margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;border-top:1px solid rgba(255,255,255,.3);padding-top:24px">
-    <div><div class="br" style="color:#a9ddf7">What</div><p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:#fff;text-wrap:pretty">The specific approval, headcount, or budget.</p></div>
-    <div><div class="br" style="color:#a9ddf7">By when</div><p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:#fff;text-wrap:pretty">The date, and what slips if it passes.</p></div>
-    <div><div class="br" style="color:#a9ddf7">From whom</div><p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:#fff;text-wrap:pretty">The named decision-maker in this room.</p></div>
+    <div><div class="br" style="color:var(--wm-sky-blue)">What</div><p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:var(--wm-white);text-wrap:pretty">The specific approval, headcount, or budget.</p></div>
+    <div><div class="br" style="color:var(--wm-sky-blue)">By when</div><p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:var(--wm-white);text-wrap:pretty">The date, and what slips if it passes.</p></div>
+    <div><div class="br" style="color:var(--wm-sky-blue)">From whom</div><p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:var(--wm-white);text-wrap:pretty">The named decision-maker in this room.</p></div>
   </div>
-  <span class="pg" style="color:#fff">10</span>
+  <span class="pg" style="color:var(--wm-white)">10</span>
 </section>
 
 <section class="s" data-screen-label="11 Appendix">
   <span class="br">Appendix</span>
   <h2 class="h" style="font-size:38px;margin-top:14px;max-width:22ch">Backup, for the questions you expect</h2>
   <div style="margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 48px">
-    <div style="border-bottom:1px solid #e2e8f0;padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:#001e60">Methodology and sample sizes</span><span class="n" style="font-size:14px;color:#a0aec0">A1</span></div>
-    <div style="border-bottom:1px solid #e2e8f0;padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:#001e60">Cohort detail by segment</span><span class="n" style="font-size:14px;color:#a0aec0">A2</span></div>
-    <div style="border-bottom:1px solid #e2e8f0;padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:#001e60">Experiment log, full quarter</span><span class="n" style="font-size:14px;color:#a0aec0">A3</span></div>
-    <div style="border-bottom:1px solid #e2e8f0;padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:#001e60">Cost model assumptions</span><span class="n" style="font-size:14px;color:#a0aec0">A4</span></div>
+    <div style="border-bottom:1px solid var(--wm-gray-200);padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:var(--wm-bentonville-blue)">Methodology and sample sizes</span><span class="n" style="font-size:14px;color:var(--wm-gray-500)">A1</span></div>
+    <div style="border-bottom:1px solid var(--wm-gray-200);padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:var(--wm-bentonville-blue)">Cohort detail by segment</span><span class="n" style="font-size:14px;color:var(--wm-gray-500)">A2</span></div>
+    <div style="border-bottom:1px solid var(--wm-gray-200);padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:var(--wm-bentonville-blue)">Experiment log, full quarter</span><span class="n" style="font-size:14px;color:var(--wm-gray-500)">A3</span></div>
+    <div style="border-bottom:1px solid var(--wm-gray-200);padding-bottom:14px;display:flex;justify-content:space-between;gap:16px"><span style="font-size:16px;color:var(--wm-bentonville-blue)">Cost model assumptions</span><span class="n" style="font-size:14px;color:var(--wm-gray-500)">A4</span></div>
   </div>
-  <div style="margin-top:auto;display:flex;align-items:center;gap:12px;color:#a0aec0;font-size:13px"><img src="../../assets/logos/walmart/spark/spark-everyday-blue.png" alt="" style="height:16px"><span>Walmart · Product · Q3 2026</span></div>
+  <div style="margin-top:auto;display:flex;align-items:center;gap:12px;color:var(--wm-gray-500);font-size:13px"><img src="../../assets/logos/walmart/spark/spark-everyday-blue.png" alt="" style="height:16px"><span>Walmart · Product · Q3 2026</span></div>
   <span class="pg">11</span>
 </section>
 

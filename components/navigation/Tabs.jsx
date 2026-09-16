@@ -21,7 +21,7 @@ export function Tabs({ tabs = [], value, defaultValue, onChange, style, ...rest 
             onClick={() => select(t.id)}
             style={{
               position: 'relative', appearance: 'none', background: 'none', border: 'none', cursor: 'pointer',
-              padding: '14px 0', fontFamily: 'inherit', fontSize: 16,
+              padding: '14px 0', fontFamily: 'inherit', fontSize: 'var(--text-md)',
               fontWeight: on ? 'var(--fw-bold)' : 'var(--fw-medium)',
               color: on ? 'var(--wm-bentonville-blue)' : 'var(--text-secondary)',
               borderBottom: `3px solid ${on ? 'var(--wm-true-blue)' : 'transparent'}`,
@@ -31,7 +31,7 @@ export function Tabs({ tabs = [], value, defaultValue, onChange, style, ...rest 
           >
             {t.label}
             {t.count != null && (
-              <span style={{ fontSize: 12, fontWeight: 'var(--fw-bold)', color: on ? 'var(--wm-true-blue)' : 'var(--text-tertiary)', background: on ? 'var(--wm-blue-50)' : 'var(--wm-gray-100)', borderRadius: 'var(--radius-pill)', padding: '1px 8px' }}>{t.count}</span>
+              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 'var(--fw-bold)', color: on ? 'var(--wm-true-blue)' : 'var(--text-tertiary)', background: on ? 'var(--wm-blue-50)' : 'var(--wm-gray-100)', borderRadius: 'var(--radius-pill)', padding: '1px 8px' }}>{t.count}</span>
             )}
           </button>
         );
